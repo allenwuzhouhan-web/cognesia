@@ -1,0 +1,66 @@
+cell_type,compartments,status,role,source,url,note
+MBON01,g5;bp2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON02,b2;bp2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON03,bp2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON04,bp2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON05,g4,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON06,b1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON07,a1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON09,g3;bp1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON10,bp1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON11,g1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON12,g2;ap1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON13,ap2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON14,a3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON15,ap1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON15-like,ap1;ap2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,"Figure7 explicitly labels MBON15-like alpha-prime1 alpha-prime2, unlike MBON15 alpha-prime1."
+MBON16,ap3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON17,ap3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON17-like,ap2;ap3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,"Figure7 explicitly labels MBON17-like alpha-prime2 alpha-prime3, unlike MBON17 alpha-prime3m."
+MBON18,a2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON19,a2;a3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON20,g1;g2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON21,g4;g5,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON22,,outside_15,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published calyx MBON; the calyx is outside the 15 lobe compartments.
+MBON23,a2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig7,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON24,bp2;g5,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+"MBON25,MBON34",g1;g2,ambiguous_label,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,FlyWire merged alternatives: MBON25=g1;g2 and MBON34=g2. Candidate union shown; not a claim that every neuron innervates g1.
+MBON26,bp2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON27,g5,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON28,ap3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON29,g4;g5,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON30,g1;g2;g3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON31,ap1,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON32,g2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON33,g2;g3,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+MBON35,g2,published,MBON,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig8,Published postsynaptic MB input compartment; axonal output compartments excluded.
+PAL01,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PAL02,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PAL03,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PAM01,g5,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM02,bp2,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM03,b2;bp2,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM04,b2,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM05,bp2,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM06,bp2,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM07,g4,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,"g4 release territory; gamma1/gamma2 in gamma4<gamma1gamma2 denote dendritic territories, not extra release compartments."
+PAM08,g4,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM09,b1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM10,b1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM11,a1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM12,g3,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM13,bp1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM14,bp1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PAM15,g5;bp2,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PPL101,g1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PPL102,g1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PPL103,g2;ap1,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PPL104,ap3,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PPL105,ap2;a2,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PPL106,a3,published,DAN,PMID:33315010,https://pmc.ncbi.nlm.nih.gov/articles/PMC7909955/#fig6,Published presynaptic MB compartment; anatomical subcompartment suffixes collapsed.
+PPL107,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PPL108,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PPL201,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PPL202,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PPL203,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.
+PPL204,,unmapped,DAN,DOI:10.7554/eLife.57443,https://elifesciences.org/articles/57443/figures,Broad DAN category in Scheffer nomenclature; no 15-compartment MB assignment established by the inspected primary map.

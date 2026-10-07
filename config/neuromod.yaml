@@ -1,0 +1,851 @@
+schema_version: 1
+stage: coupled_runtime
+parameters:
+  dt_base_ms:
+    value: 0.1
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 0.05
+    - 0.1
+    note: Matches unchanged base integrator timestep; not a performance shortcut.
+  dt_mod_ms:
+    value: 1.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    note: Integer multiple of base timestep.
+  concentration_max_au:
+    value: 5.0
+    unit: a.u.
+    source: ASSUMPTION
+    sweep:
+    - 2.5
+    - 5.0
+    - 10.0
+    note: Numerical guard; every activated clamp is counted.
+  tau_clear_ms_DA:
+    value: 400.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 200.0
+    - 400.0
+    - 800.0
+    note: DA400 is the supplied reference assumption, not a measured absolute concentration/clearance
+      calibration.
+  spillover_per_ms_DA:
+    value: 0.0
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.001
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_DA:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_DA:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  tau_clear_ms_OA:
+    value: 1500.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 750.0
+    - 1500.0
+    - 3000.0
+    note: Provisional kinetics; no per-compartment concentration measurement exists
+      in this build.
+  spillover_per_ms_OA:
+    value: 0.0
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.001
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_OA:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_OA:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  tau_clear_ms_5HT:
+    value: 2000.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 1000.0
+    - 2000.0
+    - 4000.0
+    note: Provisional kinetics; no per-compartment concentration measurement exists
+      in this build.
+  spillover_per_ms_5HT:
+    value: 0.0
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.001
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_5HT:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_5HT:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  tau_clear_ms_NO:
+    value: 50.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Provisional kinetics; no per-compartment concentration measurement exists
+      in this build.
+  spillover_per_ms_NO:
+    value: 0.01
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.005
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_NO:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_NO:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  tau_clear_ms_sNPF:
+    value: 10000.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 5000.0
+    - 10000.0
+    - 20000.0
+    note: Provisional kinetics; no per-compartment concentration measurement exists
+      in this build.
+  spillover_per_ms_sNPF:
+    value: 0.0
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.001
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_sNPF:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_sNPF:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  tau_clear_ms_peptide_pool:
+    value: 60000.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 30000.0
+    - 60000.0
+    - 120000.0
+    note: Provisional kinetics; no per-compartment concentration measurement exists
+      in this build.
+  spillover_per_ms_peptide_pool:
+    value: 0.0
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.001
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_peptide_pool:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_peptide_pool:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  tau_clear_ms_TA:
+    value: 1500.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 750.0
+    - 1500.0
+    - 3000.0
+    note: Provisional kinetics; no per-compartment concentration measurement exists
+      in this build.
+  spillover_per_ms_TA:
+    value: 0.0
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.001
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_TA:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_TA:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  tau_clear_ms_ACh:
+    value: 100.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 50.0
+    - 100.0
+    - 200.0
+    note: Provisional kinetics; no per-compartment concentration measurement exists
+      in this build.
+  spillover_per_ms_ACh:
+    value: 0.0
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 0.001
+    - 0.01
+    note: Symmetric compartment adjacency; multi-hop spread occurs over repeated steps.
+      Default DA has no spillover.
+  max_source_rate_hz_ACh:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Mean source firing rate normalization; full normalized drive has equilibrium
+      1a.u. at unit source gain.
+  source_gain_ACh:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 2.0
+    note: Dimensionless release gain; fields never add a membrane current.
+  odour_max_rate_hz:
+    value: 150.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 75.0
+    - 150.0
+    - 300.0
+    note: Hz conversion and adapting transduction are model assumptions. Preserve
+      DoOR signed consensus-minus-SFR deltas; default tonic baseline uses measured
+      SFR where available, and unmapped/untyped cells remain zero.
+  odour_adaptation_tau_ms:
+    value: 200.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 100.0
+    - 200.0
+    - 400.0
+    note: Hz conversion and adapting transduction are model assumptions. Preserve
+      DoOR signed consensus-minus-SFR deltas; default tonic baseline uses measured
+      SFR where available, and unmapped/untyped cells remain zero.
+  odour_transduction_tau_ms:
+    value: 12.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 6.0
+    - 12.0
+    - 24.0
+    note: Hz conversion and adapting transduction are model assumptions. Preserve
+      DoOR signed consensus-minus-SFR deltas; default tonic baseline uses measured
+      SFR where available, and unmapped/untyped cells remain zero.
+  odour_half_saturation:
+    value: 0.2
+    unit: a.u.
+    source: ASSUMPTION
+    sweep:
+    - 0.1
+    - 0.2
+    - 0.4
+    note: Hz conversion and adapting transduction are model assumptions. Preserve
+      DoOR signed consensus-minus-SFR deltas; default tonic baseline uses measured
+      SFR where available, and unmapped/untyped cells remain zero.
+  odour_adaptation_strength:
+    value: 0.5
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.25
+    - 0.5
+    - 1.0
+    note: Hz conversion and adapting transduction are model assumptions. Preserve
+      DoOR signed consensus-minus-SFR deltas; default tonic baseline uses measured
+      SFR where available, and unmapped/untyped cells remain zero.
+  odour_baseline_mode:
+    value: source_sfr
+    unit: method
+    source: ASSUMPTION
+    sweep:
+    - source_sfr
+    - zero
+    note: Hz conversion and adapting transduction are model assumptions. Preserve
+      DoOR signed consensus-minus-SFR deltas; default tonic baseline uses measured
+      SFR where available, and unmapped/untyped cells remain zero.
+  receptor_gain_min:
+    value: 0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0
+    - 0.1
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_gain_max:
+    value: 3
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 2
+    - 3
+    - 4
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_threshold_factor_min:
+    value: 0.25
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.125
+    - 0.25
+    - 0.5
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_threshold_factor_max:
+    value: 3
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 2
+    - 3
+    - 4
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_tau_factor_min:
+    value: 0.1
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.05
+    - 0.1
+    - 0.2
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_tau_factor_max:
+    value: 5
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 2.5
+    - 5
+    - 10
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_release_min:
+    value: 0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0
+    - 0.1
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_release_max:
+    value: 2
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 1.5
+    - 2
+    - 3
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  receptor_signal_abs_max:
+    value: 5
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 2.5
+    - 5
+    - 10
+    note: Receptor numerical guard, not a measured biological magnitude; every activated
+      guard is counted.
+  dt_plast_ms:
+    value: 1.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_tau_pre_ms:
+    value: 600.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 300.0
+    - 600.0
+    - 1200.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_tau_da_trace_ms:
+    value: 1500.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 750.0
+    - 1500.0
+    - 3000.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_eta_per_ms:
+    value: 0.00055
+    unit: 1/ms
+    source: ASSUMPTION
+    sweep:
+    - 0.000275
+    - 0.00055
+    - 0.0011
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_A1:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.5
+    - 1.0
+    - 1.5
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_A2:
+    value: 0.55
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.275
+    - 0.55
+    - 0.825
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_w_max_multiplier:
+    value: 2.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 1.5
+    - 2.0
+    - 3.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_tau_forget_ms:
+    value: 600000.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 300000.0
+    - 600000.0
+    - 1200000.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  plasticity_beta:
+    value: 1.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.0
+    - 1.0
+    - 2.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  max_kc_rate_hz:
+    value: 50.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50.0
+    - 100.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  runtime_rate_tau_ms:
+    value: 20.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 10.0
+    - 20.0
+    - 40.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  runtime_chunk_ms:
+    value: 10.0
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 5.0
+    - 10.0
+    - 20.0
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  runtime_seed:
+    value: 7
+    unit: integer
+    source: ASSUMPTION
+    sweep:
+    - 7
+    - 11
+    - 23
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  runtime_threads:
+    value: 1
+    unit: integer
+    source: ASSUMPTION
+    sweep:
+    - 1
+    note: Final brief Part III normalized-rule fixture or explicitly declared runtime
+      assumption; no biological fit.
+  state_dt_ms:
+    value: 1000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 500.0
+    - 1000
+    - 2000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_energy_depletion_tau_ms:
+    value: 3600000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 1800000.0
+    - 3600000
+    - 7200000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_feeding_tau_ms:
+    value: 300000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 150000.0
+    - 300000
+    - 600000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_hydration_loss_tau_ms:
+    value: 1800000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 900000.0
+    - 1800000
+    - 3600000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_drinking_tau_ms:
+    value: 60000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 30000.0
+    - 60000
+    - 120000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_arousal_tau_ms:
+    value: 5000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 2500.0
+    - 5000
+    - 10000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_stress_tau_ms:
+    value: 60000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 30000.0
+    - 60000
+    - 120000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_circadian_period_ms:
+    value: 86400000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 43200000.0
+    - 86400000
+    - 172800000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_hormone_tau_ms:
+    value: 10000
+    unit: ms
+    source: ASSUMPTION
+    sweep:
+    - 5000.0
+    - 10000
+    - 20000
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_source_max_rate_hz:
+    value: 50
+    unit: Hz
+    source: ASSUMPTION
+    sweep:
+    - 25.0
+    - 50
+    - 100
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_endocrine_tonic_drive:
+    value: 0.25
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0
+    - 0.25
+    - 0.5
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_pam_hunger_gain:
+    value: 0.35
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.175
+    - 0.35
+    - 0.7
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_pam_insulin_suppression:
+    value: 0.2
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.1
+    - 0.2
+    - 0.4
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_oa_arousal_gain:
+    value: 0.5
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.25
+    - 0.5
+    - 1.0
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_circadian_tone_amplitude:
+    value: 0.1
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.05
+    - 0.1
+    - 0.2
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_gain_min:
+    value: 0.25
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 0.1
+    - 0.25
+    - 0.5
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+  state_gain_max:
+    value: 3.0
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep:
+    - 2
+    - 3
+    - 5
+    note: Explicit state dynamics assumption; no measured coupling strength or biological
+      fitting.
+source_policy:
+  identity:
+    value: positive_known_nt_only
+    unit: selection_rule
+    source: DOI:10.1038/s41586-024-07686-5
+    note: Split known_nt on comma/semicolon; drop fragments ending in -negative. top_nt
+      is audit evidence only.
+  kc_aminergic_exclusion:
+    value: true
+    unit: assertion
+    source: PMID:26948892
+    note: 'Defect D: known cholinergic KCs cannot become aminergic sources through
+      top_nt.'
+  kc_peptide_conflict:
+    value: retain_positive_snpf_independently
+    unit: audit_interpretation
+    source: ASSUMPTION
+    note: 'NEUROMOD_PATCH1.md section 3 resolves the conflict: exclude KCs from aminergic
+      sources, retain 4133 KC sNPF and 5034 whole-annotation sNPF sources.'
+  expected_counts:
+    value: primary_data_exact_population_selector_authoritative
+    unit: assertion
+    source: ASSUMPTION
+    note: 'NEUROMOD_PATCH1.md section 1.2: stop on primary-data or software-integrity
+      mismatch; report definition-count disagreements and proceed using normative
+      selectors.'
+compartment_policy:
+  clustering:
+    value: average_linkage_Jaccard_15
+    unit: method
+    source: ASSUMPTION
+    note: DAN to KC outputs and KC to MBON inputs; binary partner vectors, lexicographic
+      type order, hemispheres pooled. Clustering fixed before canonical label alignment.
+  canonical_alignment:
+    value: Hungarian_fractional_type_votes
+    unit: method
+    source: ASSUMPTION
+    note: One over published compartment-count vote; keep zero-support labels and
+      disagreements visible. Published anatomy never changes empirical cluster membership.
+  membership:
+    value: KC_partner_proxy
+    unit: selection_rule
+    source: ASSUMPTION
+    note: KC belongs to each empirical compartment containing an observed DAN/MBON
+      partner. This is not a measured release-site map.
+  adjacency:
+    value: coarse_neighbor_graph
+    unit: topology
+    source: ASSUMPTION
+    note: Consecutive MB lobe slices, consecutive FB layers and coarse optic neighbors;
+      no AL adjacency without geometry.

@@ -1,0 +1,65 @@
+schema_version: 1
+status: EXPERIMENTAL; does not supersede the failed V-C stability gate
+parameters:
+  optics_samples:
+    value: 4096
+    unit: deterministic Gaussian rays per column
+    source: NUMERICAL_SETTING
+  optics_convergence_tolerance:
+    value: 0.005
+    unit: absolute normalized luminance
+    source: NUMERICAL_SETTING
+  adaptation_tau_ms:
+    value: 200.0
+    unit: ms
+    source: ASSUMPTION
+    sweep: [100.0, 200.0, 400.0]
+  phototransduction_tau_ms:
+    value: 12.0
+    unit: ms
+    source: ASSUMPTION
+    sweep: [6.0, 12.0, 24.0]
+  half_saturation:
+    value: 0.2
+    unit: normalized luminance
+    source: ASSUMPTION
+    sweep: [0.1, 0.2, 0.4]
+  adaptation_strength:
+    value: 0.5
+    unit: dimensionless
+    source: ASSUMPTION
+    sweep: [0.25, 0.5, 1.0]
+  maximum_drive_mv:
+    value: 20.0
+    unit: mV additive normalized membrane input
+    source: ASSUMPTION
+    sweep: [10.0, 20.0, 30.0]
+  eye_center_azimuth_deg:
+    value: 45.0
+    unit: degrees
+    source: ASSUMPTION
+    sweep: [30.0, 45.0, 60.0]
+  apparent_point_radius_columns:
+    value: 0.45
+    unit: column spacing
+    source: ASSUMPTION
+    sweep: [0.3, 0.45, 0.6]
+  apparent_onset_ms:
+    value: 100.0
+    unit: ms
+    source: ASSUMPTION
+    sweep: [50.0, 100.0, 150.0]
+  display_sample_ms:
+    value: 20.0
+    unit: ms
+    source: ASSUMPTION
+    sweep: [10.0, 20.0, 40.0]
+notes:
+  - Optics use deterministic scrambled-Sobol Gaussian ray integration on the sphere, with a four-times-denser convergence check on representative columns and frames.
+  - Grayscale luminance is normalized to 0-1; no calibrated photon flux or physical current is claimed.
+  - The Naka-Rushton exponent is fixed at one; adaptation changes the semisaturation denominator.
+  - Left-eye handedness, global gaze placement and tangent-plane-to-sphere conversion are assumptions.
+  - No parameter was fitted to stabilize or improve a neural response.
+  - Apparent motion is two bright disk flashes of one 240 Hz frame each, on a mean-luminance background.
+  - Requested apparent intervals are rounded to the nearest stimulus frame and both requested and effective intervals are saved.
+  - Display voltage sampling does not change the neural integration timestep.

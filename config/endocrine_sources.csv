@@ -1,0 +1,11 @@
+cell_type,expected_model_count,hormone,positive_nt,state_driver,source,url,expression_provenance,coupling_provenance,driver_line,notes
+CAPA,2,capa,capability,thirst,PMID:30799021,https://doi.org/10.1016/j.neuron.2019.01.045,ANNOTATION,ASSUMPTION,,Capability token is the literal release annotation; state coefficient assumed.
+CRZ,6,corazonin,corazonin,hunger_stress,PMID:30799021,https://doi.org/10.1016/j.neuron.2019.01.045,ANNOTATION,ASSUMPTION,,State sign is an assumption; source peptide is annotated.
+DH31,6,dh31,dh31,arousal,PMID:30799021,https://doi.org/10.1016/j.neuron.2019.01.045,ANNOTATION,ASSUMPTION,,State coefficient is assumed.
+DH44,6,dh44,dh44,stress,DOI:10.7554/eLife.98514,https://elifesciences.org/articles/98514,ANNOTATION,ASSUMPTION,,Stress coupling is assumed; no claim of measured physiological stress.
+DMS,6,myosuppressin,myosuppressin,energy,PMID:30799021,https://doi.org/10.1016/j.neuron.2019.01.045,ANNOTATION,ASSUMPTION,,State coefficient is assumed.
+Hugin-RG,4,hugin,hugin,energy,PMID:30799021,https://doi.org/10.1016/j.neuron.2019.01.045,ANNOTATION,ASSUMPTION,,State coefficient is assumed.
+IPC,18,insulin,dilp2;dilp3;dilp5,energy,DOI:10.7554/eLife.98514,https://elifesciences.org/articles/98514,ANNOTATION,ASSUMPTION,,Nutritional modulation supported; tonic coefficient and PAM target are assumptions.
+ITP,4,itp,itp,thirst,PMID:30457986,https://doi.org/10.1371/journal.pgen.1007767,ANNOTATION,ASSUMPTION,,Coexpressed leucokinin is annotated; thirst coefficient is assumed.
+lNSC_unknown,14,unknown,,none,ANNOTATION,https://doi.org/10.1038/s41586-024-07686-5,ANNOTATION,UNKNOWN,,No identified hormone assigned; retained in inventory.
+mNSC_unknown,10,unknown,,none,ANNOTATION,https://doi.org/10.1038/s41586-024-07686-5,ANNOTATION,UNKNOWN,,No identified hormone assigned; retained in inventory.

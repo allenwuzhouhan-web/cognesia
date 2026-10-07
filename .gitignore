@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+data/raw/
+build/
+runs/
+sessions/
+checkpoints/
+boundaries/
+*.nbc
+*.nbi
+.DS_Store
+
+# Local credentials and machine state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+.DS_Store?
+.idea/
+.vscode/
+.coverage
+htmlcov/
+.ruff_cache/
+
+# Distribution copies and public-site build output
+dist/
+release/
+_site/

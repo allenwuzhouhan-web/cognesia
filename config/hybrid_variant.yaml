@@ -1,0 +1,20 @@
+schema_version: 1
+description: Isolated FINAL Part III stability variant; never replaces base build evidence.
+parameters:
+  graded_norm: {value: in_weight, unit: choice, source: ASSUMPTION, sweep: [none, in_weight, in_degree_alpha]}
+  kappa: {value: 0.8, unit: dimensionless, source: ASSUMPTION, sweep: [0.1, 0.25, 0.5, 0.8, 0.95]}
+  in_degree_alpha: {value: 0.5, unit: dimensionless, source: ASSUMPTION, sweep: [0.5, 1.0]}
+  ct1_mode: {value: excluded, unit: choice, source: ASSUMPTION, sweep: [excluded, point]}
+  syn_model: {value: current, unit: choice, source: ASSUMPTION, sweep: [current, conductance]}
+  E_exc: {value: 0.0, unit: mV, source: ASSUMPTION, sweep: [0.0, 5.0]}
+  E_inh: {value: -80.0, unit: mV, source: ASSUMPTION, sweep: [-85.0, -80.0, -75.0]}
+  fixed_point_damping: {value: 0.5, unit: dimensionless, source: ASSUMPTION, sweep: [0.5]}
+  fixed_point_tolerance: {value: 0.000001, unit: relative, source: 'FINAL Part III V-C1'}
+  fixed_point_max_iterations: {value: 10000, unit: iterations, source: 'FINAL Part III V-C1'}
+  perturbation_mV: {value: 1.0, unit: mV, source: 'FINAL Part III V-C2'}
+  growth_duration_ms: {value: 2000.0, unit: ms, source: 'FINAL Part III V-C2'}
+  diagnostic_interval_ms: {value: 1.0, unit: ms, source: ASSUMPTION, sweep: [1.0]}
+  arnoldi_tolerance: {value: 0.0000001, unit: relative, source: ASSUMPTION, sweep: [0.0000001]}
+  arnoldi_max_iterations: {value: 3000, unit: iterations, source: ASSUMPTION, sweep: [3000]}
+  arnoldi_modes: {value: 6, unit: eigenvalues, source: ASSUMPTION, sweep: [6]}
+  seed: {value: 783, unit: integer, source: ASSUMPTION, sweep: [783]}

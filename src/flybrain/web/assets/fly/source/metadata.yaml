@@ -1,0 +1,11 @@
+name: neuromechfly_fullsize_meshes
+description: >
+  Body model from NeuroMechFly v2 (Wang-Chen et al., 2024, doi:10.1038/s41592-024-02497-y).
+  This folder contains full-size meshes used for the publication. Some of these meshes
+  contain >10x more faces than others, causing performance degredation. Therefore, in
+  FlyGym v2.x.x, simplified meshes containing at most ~2000 faces per body segment are used
+  by default. The simplified meshes are included natively in the FlyGym codebase, while the
+  full-size meshes are stored on S3 and can be pulled lazily.
+source: https://github.com/NeLy-EPFL/flygym/tree/f3a325d62f512325e81135b8cd93eb7100a9dd30/src/flygym/assets/model/meshes/fullsize
+license: Apache-2.0
+version: 20260623a

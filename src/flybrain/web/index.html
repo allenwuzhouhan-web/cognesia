@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#171a20" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Cognesia — Flybrain</title>
+    <link rel="stylesheet" href="/style.css?v=neuromod-20260927" />
+    <link rel="stylesheet" href="/workspace.css?v=neuromod-20260927" />
+    <link rel="stylesheet" href="/analysis.css?v=neuromod-20260927" />
+    <link rel="stylesheet" href="/orientation.css?v=neuromod-20260927" />
+    <link rel="stylesheet" href="/chemistry.css?v=neuromod-20260927" />
+    <link rel="stylesheet" href="/fly-body.css" />
+    <link rel="stylesheet" href="/region-atlas.css" />
+    <link rel="stylesheet" href="/experiment-controls.css" />
+    <link rel="stylesheet" href="/sensory-maps.css" />
+    <link rel="stylesheet" href="/layout-workbench.css" data-layout-workbench />
+    <link rel="stylesheet" href="/sequence-timeline.css" />
+    <link rel="stylesheet" href="/workspace-notes.css" />
+    <link rel="stylesheet" href="/workspace-page.css" />
+    <script type="importmap">
+      { "imports": { "three": "/vendor/three.module.min.js" } }
+    </script>
+  </head>
+  <body class="editor-theme">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Cognesia home"
+        ><span class="brand-mark"
+          ><i></i><i></i><i></i><i></i><i></i><i></i></span
+        ><span>Cognesia <small>Flybrain</small></span></a
+      >
+      <div class="top-right">
+        <button id="stop-all" class="global-stop">■ Stop all</button><button id="clear-cache">Clear cache</button><span id="global-engine-status" role="status">STOPPED</span><span class="local-badge"><i></i> MODEL — NOT A FLY</span
+        ><button
+          id="about-button"
+          class="status-badge"
+          title="Read the model limitations"
+        >
+          Experimental model
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="page-heading">
+        <div>
+          <div class="eyebrow">Flybrain</div>
+          <h1>FlyWire v783 · whole-brain model</h1>
+          <p>
+            Graded and spiking dynamics with paired controls.
+          </p>
+        </div>
+        <div class="network-stats">
+          <div>
+            <strong id="neuron-count">138,639</strong><span>Neurons</span>
+          </div>
+          <div>
+            <strong id="connection-count">54.49M</strong><span id="connection-count-label">Synapses</span>
+          </div>
+          <div>
+            <strong id="eye-count">—</strong><span>Visual columns</span>
+          </div>
+        </div>
+      </section>
+      <div class="lab-strip">
+        <div class="lab-strip-left">
+          <span class="lab-ready-dot"></span
+          ><strong>Experiment parameters</strong
+          ><span id="lab-settings-summary">Original model parameters</span>
+        </div>
+        <div class="lab-strip-actions">
+          <span id="mini-cpu">CPU —</span><span id="mini-ram">RAM —</span
+          ><button id="open-comparison">Compare signals</button><button id="open-workbench">Edit parameters</button>
+        </div>
+      </div>
+      <nav class="workspace-tabs" role="tablist" aria-label="Workspace">
+        <button id="simulation-tab" role="tab" aria-controls="experiment-view" aria-selected="true" class="active">Simulate</button>
+        <button id="parameters-tab" role="tab" aria-controls="workbench" aria-selected="false" tabindex="-1">Parameters</button>
+      </nav>
+      <section id="session-controls" aria-label="Simulate session"></section>
+      <div class="workspace" id="experiment-view" role="tabpanel" aria-labelledby="simulation-tab">
+        <aside class="stimulus-panel panel">
+          <div class="section-title">
+            <h2>Experiment controls</h2>
+          </div>
+          <div class="input-tabs" role="group" aria-label="Input controls">
+            <button data-input-tab="chemistry" class="active">Chemicals</button><button data-input-tab="vision">Visual stimulus</button
+            ><button data-input-tab="electrical">
+              Electrodes <i id="electrode-enabled-dot"></i>
+            </button>
+          </div>
+          <div id="vision-controls" hidden>
+            <div class="stimulus-screen">
+              <canvas
+                id="stimulus-canvas"
+                aria-label="Editable stimulus preview"
+              ></canvas>
+              <div class="screen-label">
+                <span id="stimulus-screen-title">Moving grating</span
+                ><span id="preview-status">Preview</span>
+              </div>
+              <div class="stimulus-crosshair"></div>
+            </div>
+            <label class="field-label" for="stimulus-type">Pattern</label
+            ><select id="stimulus-type">
+              <option value="grating">Moving grating</option>
+              <option value="flash">Full-field flash</option>
+              <option value="edge">Moving edge</option>
+              <option value="looming">Looming disc</option>
+              <option value="apparent_motion">Apparent motion</option>
+              <option value="dark">Dark control</option>
+            </select>
+            <div id="grating-controls">
+              <label class="field-label" for="grating-waveform"
+                >Grating waveform</label
+              >
+              <select id="grating-waveform">
+                <option value="square">Square wave</option>
+                <option value="sine">Sine wave</option>
+              </select>
+            </div>
+            <div class="scene-parameters">
+              <label for="mean-luminance"
+                >Mean luminance
+                <input
+                  id="mean-luminance"
+                  type="number"
+                  min="0"
+                  max="1"
+                  step="any"
+                  value="0.5"
+              /></label>
+              <label id="spatial-period-field" for="spatial-period"
+                >Spatial period (°)
+                <input
+                  id="spatial-period"
+                  type="number"
+                  min="5"
+                  max="180"
+                  step="any"
+                  value="30"
+              /></label>
+            </div>
+            <div class="field">
+              <div class="field-head">
+                <label for="direction">Direction</label
+                ><output id="direction-output">0° · rightward</output>
+              </div>
+              <div
+                class="direction-picker"
+                role="group"
+                aria-label="Motion direction"
+              >
+                <button data-direction="180" title="Leftward">←</button
+                ><button data-direction="90" title="Upward">↑</button
+                ><button data-direction="0" class="active" title="Rightward">
+                  →</button
+                ><button data-direction="270" title="Downward">↓</button>
+              </div>
+              <input
+                id="direction"
+                type="range"
+                min="0"
+                max="315"
+                step="45"
+                value="0"
+                aria-label="Direction in degrees"
+              />
+            </div>
+            <div class="field">
+              <div class="field-head">
+                <label for="speed">Speed</label
+                ><output id="speed-output">80 °/s</output>
+              </div>
+              <input
+                id="speed"
+                type="range"
+                min="20"
+                max="300"
+                step="10"
+                value="80"
+              />
+            </div>
+            <div class="field">
+              <div class="field-head">
+                <label for="contrast">Contrast</label
+                ><output id="contrast-output">80%</output>
+              </div>
+              <input
+                id="contrast"
+                type="range"
+                min="0"
+                max="100"
+                step="5"
+                value="80"
+              />
+            </div>
+            <div class="field">
+              <div class="field-head">
+                <label for="duration">Duration</label
+                ><output id="duration-output">0.6 s</output>
+              </div>
+              <input
+                id="duration"
+                type="range"
+                min="300"
+                max="1000"
+                step="20"
+                value="600"
+              />
+            </div>
+            <div id="apparent-controls" hidden>
+              <div class="field">
+                <div class="field-head">
+                  <label for="apparent-interval">Flash interval</label
+                  ><output id="apparent-interval-output">16.67 ms</output>
+                </div>
+                <input
+                  id="apparent-interval"
+                  type="range"
+                  min="0"
+                  max="24"
+                  step="1"
+                  value="4"
+                />
+              </div>
+              <div class="field">
+                <div class="field-head">
+                  <label for="apparent-separation">Separation</label
+                  ><output id="apparent-separation-output"
+                    >1 column · 5.1°</output
+                  >
+                </div>
+                <input
+                  id="apparent-separation"
+                  type="range"
+                  min="0"
+                  max="4"
+                  step="1"
+                  value="1"
+                />
+              </div>
+              <p id="apparent-frame-note" class="eye-note">
+                Two point flashes · one 240 Hz frame each.
+              </p>
+            </div>
+          </div>
+          <div id="electrode-controls" hidden>
+            <div class="electrode-heading">
+              <label class="toggle-row" for="electrical-enabled"
+                ><span>Electrical stimulation</span
+                ><input id="electrical-enabled" type="checkbox"
+              /></label>
+            </div>
+            <div class="electrode-list-head">
+              <span
+                >Electrodes
+                <output id="electrode-count">0 / 16</output></span
+              ><button id="add-electrode" title="Add another virtual electrode">
+                Add
+              </button>
+            </div>
+            <div id="electrode-list" class="electrode-list"></div>
+            <div class="fly-stage">
+              <svg
+                id="fly-schematic"
+                viewBox="0 0 240 235"
+                role="group"
+                aria-label="Schematic fly with five virtual electrode target sites"
+              >
+                <g class="fly-wing">
+                  <path
+                    d="M105 86 C57 62 12 54 18 105 C23 145 61 161 107 130 Z"
+                  />
+                  <path
+                    d="M135 86 C183 62 228 54 222 105 C217 145 179 161 133 130 Z"
+                  />
+                  <path
+                    d="M104 94 28 81 M106 108 24 113 M108 124 52 145 M136 94 212 81 M134 108 216 113 M132 124 188 145"
+                  />
+                </g>
+                <g class="fly-leg">
+                  <path
+                    d="M103 83 74 66 50 33 M137 83 166 66 190 33 M105 105 66 114 42 151 M135 105 174 114 198 151 M107 123 84 169 56 204 M133 123 156 169 184 204"
+                  />
+                  <path d="M108 40 103 22 92 15 M132 40 137 22 148 15" />
+                </g>
+                <ellipse class="fly-body" cx="120" cy="161" rx="24" ry="48" />
+                <path
+                  class="fly-segment"
+                  d="M100 146 Q120 153 140 146 M98 161 Q120 169 142 161 M100 178 Q120 186 140 178 M107 194 Q120 200 133 194"
+                />
+                <ellipse class="fly-body" cx="120" cy="100" rx="30" ry="38" />
+                <ellipse class="fly-body" cx="120" cy="49" rx="36" ry="25" />
+                <ellipse class="fly-eye" cx="91" cy="48" rx="12" ry="20" />
+                <ellipse class="fly-eye" cx="149" cy="48" rx="12" ry="20" />
+                <g class="electrode-sites">
+                  <g
+                    data-electrode-site="left_eye"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Place electrode on left eye"
+                    transform="translate(92,49)"
+                  >
+                    <circle r="13" />
+                    <circle r="4" />
+                    <title>Left eye</title>
+                  </g>
+                  <g
+                    data-electrode-site="right_eye"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Place electrode on right eye"
+                    transform="translate(148,49)"
+                  >
+                    <circle r="13" />
+                    <circle r="4" />
+                    <title>Right eye</title>
+                  </g>
+                  <g
+                    data-electrode-site="antennae"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Place electrode on antennae"
+                    transform="translate(120,22)"
+                  >
+                    <circle r="12" />
+                    <circle r="4" />
+                    <title>Antennae</title>
+                  </g>
+                  <g
+                    data-electrode-site="legs"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Place electrode on legs mapping"
+                    transform="translate(59,137)"
+                  >
+                    <circle r="14" />
+                    <circle r="4" />
+                    <title>Legs · ascending proxy</title>
+                  </g>
+                  <g
+                    data-electrode-site="wings"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Place electrode on wings mapping"
+                    transform="translate(188,102)"
+                  >
+                    <circle r="14" />
+                    <circle r="4" />
+                    <title>Wings · ascending proxy</title>
+                  </g>
+                </g></svg
+              ><span class="fly-caption">Schematic target map</span>
+            </div>
+            <label class="field-label" for="electrode-target"
+              >Electrode site</label
+            ><select id="electrode-target">
+              <option value="left_eye">Left eye</option>
+              <option value="right_eye">Right eye</option>
+              <option value="antennae">Antennae</option>
+              <option value="legs">Legs · ascending proxy</option>
+              <option value="wings">Wings · ascending proxy</option>
+            </select>
+            <p id="electrode-mapping-note" class="mapping-note">
+              Select a site to view mapped neurons.
+            </p>
+            <div class="electrode-fields">
+              <label for="electrode-amplitude"
+                >Membrane input <span>mV</span
+                ><input
+                  id="electrode-amplitude"
+                  type="number"
+                  min="-100"
+                  max="100"
+                  step="0.5"
+                  value="5" /></label
+              ><label for="electrode-frequency"
+                >Pulse frequency <span>Hz</span
+                ><input
+                  id="electrode-frequency"
+                  type="number"
+                  min="0"
+                  max="500"
+                  step="1"
+                  value="20" /></label
+              ><label for="electrode-duty"
+                >Duty cycle <span>%</span
+                ><input
+                  id="electrode-duty"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="50" /></label
+              ><label for="electrode-onset"
+                >Onset <span>ms</span
+                ><input
+                  id="electrode-onset"
+                  type="number"
+                  min="0"
+                  max="10000"
+                  step="10"
+                  value="100"
+              /></label>
+            </div>
+            <div class="electrode-fields">
+              <label for="electrode-end"
+                >End <span>ms</span
+                ><input
+                  id="electrode-end"
+                  type="number"
+                  min="0"
+                  max="10000"
+                  step="10"
+                  value="600" /></label
+              ><label for="electrode-phase"
+                >Phase <span>°</span
+                ><input
+                  id="electrode-phase"
+                  type="number"
+                  min="0"
+                  max="359"
+                  step="1"
+                  value="0"
+              /></label>
+            </div>
+            <label class="field-label" for="electrode-polarity">Polarity</label
+            ><select id="electrode-polarity">
+              <option value="positive">Depolarizing (+)</option>
+              <option value="negative">Hyperpolarizing (−)</option>
+            </select>
+            <button id="remove-electrode" class="remove-electrode">
+              Remove selected electrode
+            </button>
+            <div class="pulse-preview">
+              <div>
+                <span id="pulse-source-label">Programmed input</span
+                ><output id="pulse-preview-label">20 Hz · 50% duty</output>
+              </div>
+              <canvas
+                id="pulse-canvas"
+                aria-label="Programmed electrical pulse preview"
+              ></canvas>
+            </div>
+            <p class="mapping-note">
+              mV-equivalent input to mapped neurons; schematic body map.
+              Tissue voltage and body physiology are not simulated here.
+              Baseline: electrodes off.
+            </p>
+          </div>
+          <section class="chemical-controls" id="chemical-controls" aria-label="Chemical levels and scenario controls">
+            <h3>Chemical levels &amp; internal state</h3>
+            <label class="check-field"><input type="checkbox" id="chemical-enabled" checked> Enable chemical modulation</label>
+            <p>Model units (a.u.), not measured concentrations. Sliders set manual levels.</p>
+            <label class="field-label" for="chemical-control-mode">Level control</label>
+            <select id="chemical-control-mode"><option value="initial">Set initial levels; then evolve</option><option value="clamped">Hold levels constant</option></select>
+            <div id="chemical-level-sliders"></div>
+            <div class="chemical-control-actions"><button id="chemical-set-all">Set all manually</button><button id="chemical-model-reset">Return to model control</button></div>
+            <p id="chemical-intervention-note" role="status"></p>
+            <label class="field-label" for="state-scenario">Initial condition</label>
+            <select id="state-scenario"><option value="fed">Fed</option><option value="starved">Starved</option><option value="dehydrated">Dehydrated</option><option value="stressed">Stressed</option></select>
+            <div id="initial-state-sliders"></div>
+            <p id="scenario-note">Fed model: energy 1 · hydration 1 · arousal 0 · stress 0.</p>
+            <section class="scenario-context" aria-label="What these settings could resemble">
+              <h3>Possible context</h3><p id="scenario-context-summary" role="status"></p>
+              <ul id="scenario-context-items"></ul>
+              <details><summary>Interpretation limits &amp; research</summary><div id="scenario-context-limits"></div><div id="scenario-context-sources"></div></details>
+            </section>
+            <label class="check-field"><input type="checkbox" id="chemical-plasticity" checked> Learning: Kenyon cells → mushroom body output neurons</label>
+            <div class="state-drive-grid"><label>Feeding drive<input id="state-feeding" type="number" min="0" max="1" step="any" value="0" required></label><label>Drinking drive<input id="state-drinking" type="number" min="0" max="1" step="any" value="0" required></label><label>Aversive drive<input id="state-aversive" type="number" min="0" max="1" step="any" value="0" required></label><label>Locomotion drive<input id="state-locomotion" type="number" min="0" max="1" step="any" value="0" required></label></div>
+            <p>Applied on Run simulation. Starvation is an assumed initial state.</p>
+          </section>
+          <button id="run-button" class="primary-button">
+            <span class="run-icon">▶</span
+            ><span id="run-button-text">Run simulation</span>
+          </button>
+          <div class="job-progress" id="job-progress" hidden>
+            <div><span></span></div>
+            <p id="job-message" role="status">Preparing simulation…</p>
+            <button id="cancel-job" class="cancel-job" hidden>
+              Stop experiment
+            </button>
+          </div>
+          <p class="input-note">
+            Records stimulus and matched baseline.
+          </p>
+          <div class="eye-section">
+            <div class="field-head">
+              <h3>Compound-eye sampling</h3>
+              <span class="micro-label" id="eye-sample-label">Preview</span>
+            </div>
+            <canvas
+              id="eyes-canvas"
+              aria-label="Left and right compound-eye column samples"
+            ></canvas>
+            <div class="eye-labels">
+              <span id="eye-left-label">Fly's left eye</span><span id="eye-right-label">Fly's right eye</span>
+            </div>
+            <label class="field-label" for="eye-orientation">Eye display orientation</label>
+            <select id="eye-orientation">
+              <option value="fly">Fly's left → right</option>
+              <option value="facing">Facing the fly (mirrored)</option>
+            </select>
+            <p id="eye-note">Loading column geometry…</p>
+            <p class="eye-selection-note" id="eye-selection-note">Select a column for recorded light input and mapped receptors.</p>
+            <button id="pin-eye-column" disabled>Chart selected light input</button>
+            <select id="eye-receptor" aria-label="Mapped photoreceptor" disabled><option>Select an eye column</option></select>
+            <button id="pin-eye-receptor" disabled>Chart receptor voltage</button>
+          </div>
+        </aside>
+        <section class="brain-panel panel">
+          <div class="brain-toolbar">
+            <div class="section-title">
+              <h2>Neural activity</h2>
+            </div>
+            <div class="view-tools">
+              <button
+                id="reset-view"
+                class="icon-button"
+                title="Reset view"
+                aria-label="Reset view"
+              >
+                ↺</button
+              ><button
+                id="fullscreen-button"
+                class="icon-button"
+                title="Expand brain view"
+                aria-label="Expand brain view"
+              >
+                ⛶
+              </button>
+            </div>
+          </div>
+          <div class="morphology-toolbar">
+            <div
+              class="segmented"
+              role="group"
+              aria-label="Neuron representation"
+            >
+              <button id="anchor-view-button" class="active">
+                Neuron anchors</button
+              ><button id="morphology-view-button">Whole-brain neurites</button
+              ><button id="arbor-view-button">Selected arbor</button>
+            </div>
+            <span id="morphology-status"
+              >Select a neuron to inspect its branches</span
+            >
+          </div>
+          <div id="morphology-controls" class="morphology-controls" hidden>
+            <label for="morphology-detail"
+              >Branch detail<select id="morphology-detail">
+                <option value="500000">500k segments</option>
+                <option value="1000000" selected>1M segments</option>
+                <option value="5000000">5M segments</option>
+              </select></label
+            ><button id="load-morphology" class="outline-button">
+              Load neurites</button
+            ><span id="morphology-progress"
+              >Official source skeletons · axon / dendrite identity
+              unclassified</span
+            >
+          </div>
+          <div id="region-atlas-controls" class="region-atlas-controls"></div>
+          <div class="brain-stage" id="brain-stage">
+            <div id="brain-canvas"></div>
+            <div id="brain-region-labels" class="brain-region-labels" aria-label="Brain region labels"></div>
+            <div class="stage-top">
+              <div
+                class="brain-view-tabs"
+                role="group"
+                aria-label="Camera view"
+              >
+                <button data-view="overview" class="active">Overview</button
+                ><button data-view="xy">XY</button
+                ><button data-view="xz">XZ</button
+                ><button data-view="yz">YZ</button
+                ><button data-view="left" title="View from the fly's anatomical left side">Left side</button
+                ><button data-view="right" title="View from the fly's anatomical right side">Right side</button>
+              </div>
+              <span class="recording-label" id="recording-label"
+                ><i></i> Anatomy</span
+              >
+            </div>
+            <div class="stage-label stage-label-left">
+              <b id="representation-label" style="font-weight: 400"
+                >Annotation anchors</b
+              ><span></span>
+            </div>
+            <div class="stage-label stage-label-right">
+              <b id="visible-count" style="font-weight: 400">Anatomical positions</b
+              ><span></span>
+            </div>
+            <div class="stage-loading" id="stage-loading">
+              <span class="loader"></span><strong>Loading the connectome</strong
+              ><span>138,639 annotated point neurons</span>
+            </div>
+            <div class="brain-inspector" id="brain-inspector" hidden></div>
+            <span class="anatomical-side-marker" id="brain-left-marker" hidden title="Fly's anatomical left; annotation-derived">L</span>
+            <span class="anatomical-side-marker" id="brain-right-marker" hidden title="Fly's anatomical right; annotation-derived">R</span>
+            <span id="orientation-note" class="orientation-note">L / R: fly's sides</span>
+            <div class="stage-bottom">
+              <div class="axis-key">
+                <span class="axis-v">Y</span><span class="axis-h">X</span
+                ><i></i>
+              </div>
+              <span class="interaction-hint"
+                >Drag to orbit · scroll to zoom · right-drag to pan</span
+              ><button class="subtle-button" id="rotate-button">
+                Auto-rotate
+              </button>
+            </div>
+          </div>
+          <div class="activity-toolbar">
+            <div class="segmented" role="group" aria-label="Activity display">
+              <button data-mode="delta" class="active">
+                Stimulus − baseline</button
+              ><button data-mode="absolute">Absolute voltage</button
+              ><button data-mode="baseline">Baseline</button
+              ><button data-mode="anatomy">Anatomy</button><button data-mode="chemical">Chemicals</button>
+            </div>
+            <div class="activity-scale">
+              <span id="scale-low">−5 mV</span><i id="color-scale"></i
+              ><span id="scale-high">+5 mV</span>
+            </div>
+          </div>
+          <section class="chemical-readout" aria-label="Recorded chemicals and internal state">
+            <div class="chemical-heading"><strong>Chemical fields <span class="assumption-label">MODEL · a.u.</span></strong><span id="chemical-status">No chemical recording loaded</span></div>
+            <div class="chemical-selectors"><label>Species<select id="chemical-species"><option>DA</option><option>OA</option><option>5HT</option><option>NO</option><option>sNPF</option><option>peptide_pool</option><option>TA</option><option>ACh</option></select></label><label>Recorded field<select id="chemical-condition"><option value="stimulated">Stimulated run</option><option value="baseline">Matched baseline</option></select></label><label>Compartment<select id="chemical-compartment"><option value="">No recorded field</option></select></label><button id="pin-chemical" disabled>Compare field</button></div>
+            <div class="chemical-charts"><div><div class="chemical-chart-label"><span id="chemical-trace-label">Compartment concentration</span><output id="chemical-value">—</output></div><canvas id="chemical-trace" aria-label="Recorded compartment concentration over model time"></canvas></div><div><div id="state-condition-label" class="chemical-chart-label">Stimulated state</div><div class="chemical-chart-label"><label>Internal state<select id="state-trace-variable"><option>energy</option><option>hydration</option><option>arousal</option><option>circadian_phase</option><option>stress</option></select></label><button id="pin-state" disabled>Compare state</button></div><canvas id="state-trace" aria-label="Recorded internal state over model time"></canvas></div></div>
+            <div id="state-readings" class="state-readings">Energy — · hydration — · arousal — · stress —</div>
+            <p id="chemical-provenance">Colors show recorded model exposure. Unassigned = unknown; this is not molecule imaging.</p>
+            <details id="chemical-details" class="chemical-details" hidden><summary>Assumptions, provenance &amp; diagnostics</summary><div id="chemical-assumptions"></div><pre id="chemical-diagnostics"></pre></details>
+          </section>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <div>
+                <span class="eyebrow">Recorded activity</span>
+                <h3 id="run-title">No recording loaded</h3>
+              </div>
+              <span class="time-readout"
+                ><strong id="time-current">0.000</strong
+                ><span> / <span id="time-total">1.000</span> s</span></span
+              >
+            </div>
+            <div class="playback-controls">
+              <button
+                id="play-button"
+                class="play-button"
+                aria-label="Play recorded simulation"
+                disabled
+              >
+                ▶
+              </button>
+              <div class="timeline-track">
+                <input
+                  id="timeline"
+                  type="range"
+                  min="0"
+                  max="1000"
+                  value="0"
+                  aria-label="Playback position"
+                  disabled
+                />
+                <div class="timeline-ticks">
+                  <span>0 ms</span><span id="timeline-mid">500</span
+                  ><span id="timeline-end">1,000 ms</span>
+                </div>
+              </div>
+              <select id="playback-speed" aria-label="Playback speed">
+                <option value="0.1">0.1×</option>
+                <option value="0.25" selected>0.25×</option>
+                <option value="0.5">0.5×</option>
+                <option value="1">1×</option>
+              </select>
+            </div>
+            <p id="playback-note">
+              Load a recording to view activity.
+            </p>
+          </div>
+          <div class="run-diagnostics">
+            <span
+              ><i class="amber-dot"></i
+              ><strong id="clamp-count">—</strong> clamp events</span
+            ><span
+              ><strong id="baseline-clamp-count">—</strong> in baseline</span
+            ><span><strong id="spike-count">—</strong> spikes</span
+            ><button id="details-button">Run details</button>
+          </div>
+        </section>
+        <aside class="readout-panel panel">
+          <div class="section-title">
+            <h2>Measurements</h2>
+          </div>
+          <div class="readout-intro">
+            <span class="live-dot"></span
+            ><span id="readout-state">Waiting for recorded activity</span>
+          </div>
+          <div class="readout-tabs" role="group" aria-label="Readout grouping">
+            <button data-readout="types" class="active">Cell types</button
+            ><button data-readout="regions">Brain areas</button
+            ><button data-readout="classes">Cell classes</button>
+          </div>
+          <select id="trace-family" aria-label="Readout cell family">
+            <option value="pathway">Visual pathway</option>
+            <option value="input">Photoreceptors &amp; early vision</option>
+            <option value="motion">T4 / T5 motion pathways</option>
+            <option value="output">Projection &amp; descending</option>
+            <option value="all">All recorded cell types</option>
+          </select>
+          <input
+            id="trace-search"
+            type="search"
+            aria-label="Filter brain areas or cell classes"
+            placeholder="Filter areas, e.g. ME_L"
+            hidden
+          />
+          <div id="traces-container" class="traces-container">
+            <div class="empty-readout">
+              <svg viewBox="0 0 140 54" aria-hidden="true">
+                <path d="M0 28h34l8-9 9 18 9-26 9 32 9-15h62" />
+              </svg>
+              <h3>No recorded activity</h3>
+              <p>
+                Run or open a recording to view traces.
+              </p>
+            </div>
+          </div>
+          <div class="readout-footnote" id="readout-footnote">
+            ΔV = stimulus − baseline. Model instability remains.
+          </div>
+          <div class="recordings">
+            <div class="field-head">
+              <h3>Saved experiments</h3>
+              <button
+                id="refresh-runs"
+                class="subtle-button"
+                title="Refresh saved experiments"
+              >
+                ↻
+              </button>
+            </div>
+            <select id="saved-runs" aria-label="Choose a saved experiment">
+              <option value="">No saved experiments</option>
+            </select>
+          </div>
+          <div class="model-card">
+            <div class="model-card-title"><i></i> Model status</div>
+            <p>Experimental dynamics</p>
+            <span
+              >Female fly · point neurons. Biological validation pending.</span
+            ><button id="assumptions-button">
+              Model &amp; provenance
+            </button>
+          </div>
+        </aside>
+        <section id="whole-fly-panel" class="panel whole-fly-panel" aria-label="Whole fly and brain">
+          <div id="whole-fly-host"><p class="fly-loading-note">Loading fly surface…</p></div>
+          <div class="fly-playback-bar">
+            <button id="fly-play-button" disabled>Play recorded activity</button>
+            <input type="range" id="fly-timeline" aria-label="Whole fly recorded time" min="0" max="600" value="0" step="any" disabled>
+            <output id="fly-time-label">No recording loaded</output>
+            <label>Brain colors<select id="fly-color-mode" aria-label="Whole fly brain colors"><option value="delta">Stimulus − baseline voltage</option><option value="absolute">Membrane voltage</option><option value="baseline">Baseline voltage</option><option value="chemical">Selected chemical</option><option value="anatomy">Anatomy</option></select></label>
+          </div>
+        </section>
+        <section id="analysis-workspace" class="panel analysis-workspace" aria-label="Chart comparison and Fourier analysis"></section>
+      </div>
+      <section id="workbench" class="workbench panel" role="tabpanel" aria-labelledby="parameters-tab" hidden>
+        <div class="workbench-heading">
+          <div>
+            <div class="eyebrow">Configuration</div>
+            <h2>Experiment parameters</h2>
+            <p>
+              Settings are saved with each run.
+            </p>
+          </div>
+          <button id="reset-lab" class="outline-button">
+            Reset defaults
+          </button>
+        </div>
+        <div class="workbench-grid">
+          <section class="compute-card">
+            <div class="card-heading">
+              <h3>Compute &amp; recording</h3>
+              <span id="compute-preset-name">Custom</span>
+            </div>
+            <div id="performance-presets" class="preset-grid">
+              <span class="lab-loading"
+                >Loading compute presets…</span
+              >
+            </div>
+            <div class="compute-fields">
+              <label for="compute-threads"
+                >CPU threads<input
+                  id="compute-threads"
+                  type="number"
+                  min="1"
+                  max="64"
+                  step="1"
+                  value="16" /></label
+              ><label for="compute-duration"
+                >Duration <span>ms</span
+                ><input
+                  id="compute-duration"
+                  type="number"
+                  min="300"
+                  max="1000"
+                  step="20"
+                  value="600" /></label
+              ><label for="compute-snapshot"
+                >Record interval <span>ms</span
+                ><select id="compute-snapshot">
+                  <option value="20">20 ms</option>
+                </select></label
+              ><label for="compute-timestep"
+                >Integration step <span>ms</span
+                ><select id="compute-timestep">
+                  <option value="0.1">0.1 ms</option>
+                </select></label
+              >
+            </div>
+            <p id="compute-estimate" class="mapping-note">
+              Loading recording limits…
+            </p>
+            <div class="resource-card">
+              <div class="card-heading">
+                <h3>System resources</h3>
+                <span id="resource-status">Connecting</span>
+              </div>
+              <div class="resource-meters">
+                <div>
+                  <div class="resource-value">
+                    <strong id="resource-cpu">—</strong><span>CPU usage</span>
+                  </div>
+                  <div class="meter"><i id="resource-cpu-bar"></i></div>
+                </div>
+                <div>
+                  <div class="resource-value">
+                    <strong id="resource-memory">—</strong
+                    ><span>Memory usage</span>
+                  </div>
+                  <div class="meter"><i id="resource-memory-bar"></i></div>
+                </div>
+              </div>
+              <div class="resource-details">
+                <span>Simulator <strong id="resource-process">—</strong></span
+                ><span
+                  >Available memory
+                  <strong id="resource-available">—</strong></span
+                ><span
+                  >Logical CPUs <strong id="resource-cores">—</strong></span
+                >
+              </div>
+              <p>
+                Local server measurements.
+              </p>
+            </div>
+          </section>
+          <section class="parameter-card">
+            <div class="card-heading">
+              <h3>Neural &amp; optical parameters</h3>
+              <span id="parameter-change-count">Defaults</span>
+            </div>
+            <div class="parameter-filter">
+              <button data-parameter-group="all" class="active">All</button
+              ><button data-parameter-group="neural">Neural</button
+              ><button data-parameter-group="optical">Optical</button>
+            </div>
+            <div id="parameter-controls">
+              <p class="lab-loading">
+                Loading model parameters…
+              </p>
+            </div>
+            <div class="parameter-footer">
+              <span>Saves edited assumptions with the run.</span
+              ><button id="lab-run-button" class="primary-button">
+                Review in Simulate
+              </button>
+            </div>
+          </section>
+        </div>
+      </section>
+      <footer>
+        <span id="model-footer"><i></i> Computed locally · FlyWire v783</span
+        ><span>Experimental point-neuron model</span
+        ><span id="connection-state">Connecting to engine…</span>
+      </footer>
+    </main>
+    <dialog id="details-dialog">
+      <div class="dialog-header">
+        <div>
+          <div class="eyebrow">Model information</div>
+          <h2 id="dialog-title">Model &amp; provenance</h2>
+        </div>
+        <button
+          id="close-dialog"
+          class="icon-button"
+          aria-label="Close details"
+        >
+          ×
+        </button>
+      </div>
+      <div id="dialog-content"></div>
+      <div class="dialog-bottom">
+        <a href="/api/bootstrap" target="_blank">View metadata</a
+        ><button id="done-dialog" class="primary-button">Done</button>
+      </div>
+    </dialog>
+    <div id="toast" class="toast" role="alert" hidden></div>
+    <script type="module" src="/live-reload.js"></script>
+    <script type="module" src="/app.js?v=neuromod-20260927"></script>
+  </body>
+</html>

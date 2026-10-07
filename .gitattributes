@@ -1,0 +1,2 @@
+# Preserve the byte-exact CSV used by recorded configuration hashes.
+config/compartment_rules.csv -text whitespace=cr-at-eol

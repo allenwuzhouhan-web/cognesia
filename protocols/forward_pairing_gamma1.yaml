@@ -1,0 +1,13 @@
+name: forward_pairing_gamma1
+seed: 7
+notes: >-
+  Nominal published gamma1/PPL101 protocol. The empirical clustering assigns
+  PPL101 to g4; the engine stimulates the named released cells and reports that
+  discrepancy. No compartment remapping or artificial dopamine injection.
+blocks:
+  - {t_ms: 0, kind: rest, dur_ms: 5000}
+  - {t_ms: 5000, kind: odour, id: OCT, dur_ms: 1000, intensity: 1.0}
+  - {t_ms: 5500, kind: dan_pulse, compartment: g1, source: PPL101, dur_ms: 500, drive: 1.0}
+  - {t_ms: 15000, kind: test, odours: [OCT, MCH], dur_ms: 1000, iti_ms: 1000, readout: [MBON]}
+sweeps:
+  pairing_interval_ms: [-2000, -1500, -1000, -750, -500, -250, 0, 250, 500, 1000, 1500, 2000]

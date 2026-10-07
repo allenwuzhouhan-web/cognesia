@@ -1,0 +1,31 @@
+.sensory-maps{display:flex;flex-direction:column;gap:9px;min-width:0;color:var(--text,#d6dce5)}
+.sensory-map-heading{display:flex;flex-direction:column;gap:5px}
+.sensory-map-tabs{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+.sensory-map-tabs button{min-width:0;padding:7px 5px;font-size:11px}
+.sensory-map-tabs button[aria-pressed="true"]{background:#334b65;border-color:#6c8fae;color:#edf4ff}
+.sensory-map-model{color:#8d9cad;font-size:10px;overflow-wrap:anywhere}
+.sensory-map-filter{display:grid;grid-template-columns:minmax(0,1fr) 90px;gap:5px}
+.sensory-map-filter input,.sensory-map-filter select{min-width:0;width:100%;font-size:11px}
+.sensory-map-count{margin:0;font-size:10px;line-height:1.45;color:#8d9cad}
+.sensory-map-picker{width:100%;min-height:106px;height:118px;padding:3px;border:1px solid #343e4c;border-radius:3px;background:#141a22;color:#cdd6e2;font-size:11px}
+.sensory-map-picker option{padding:4px 6px;white-space:normal}
+.sensory-map-details{display:flex;flex-direction:column;gap:8px;min-width:0;padding:9px;border:1px solid #343e4c;border-radius:3px;background:#191f28;font-size:11px}
+.sensory-detail-heading{display:flex;flex-wrap:wrap;gap:5px;align-items:center;justify-content:space-between}
+.sensory-detail-heading strong{font-size:11px;font-weight:550}
+.sensory-map-status{font-size:9px;color:#a7b9cb;border:1px solid #435061;border-radius:2px;padding:2px 4px}
+.sensory-map-details dl{display:grid;grid-template-columns:88px minmax(0,1fr);gap:5px;margin:0;font-size:10px;line-height:1.45}
+.sensory-map-details dt{color:#8d9cad}.sensory-map-details dd{margin:0;overflow-wrap:anywhere}
+.sensory-map-details details{min-width:0;font-size:10px}
+.sensory-map-details summary{cursor:pointer;color:#a9bfd4;padding:3px 0}
+.sensory-map-details details[open]>dl,.sensory-map-details details[open]>.sensory-receptor-list{margin-top:7px}
+.sensory-map-details a{font-size:10px;color:#a4c2e4;align-self:flex-start}
+.sensory-map-note{margin:0!important;color:#94a2b3;font-size:10px!important;line-height:1.5;overflow-wrap:anywhere}
+.sensory-connection-map{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.sensory-connection-map span{padding:7px 5px;background:#222d3a;border:1px solid #3b4c5e;border-radius:3px;font-size:10px;text-align:center}
+.sensory-receptor-list{max-height:130px;overflow:auto;display:flex;flex-direction:column;gap:5px}
+.sensory-receptor-list>div{display:flex;justify-content:space-between;gap:8px}.sensory-receptor-list code{font-size:9px;overflow-wrap:anywhere}
+.sensory-eye-host .eye-section{margin:0;padding:0;border:0}.sensory-eye-host #eyes-canvas{height:155px;min-height:155px;width:100%}
+.sensory-eye-host .eye-section>.panel-heading{margin-bottom:4px}.sensory-eye-host .eye-section h3{font-size:11px}
+.sensory-eye-host .eye-labels{font-size:10px}.sensory-eye-host .eye-section>p{font-size:10px;line-height:1.4;margin:6px 0}
+.sensory-eye-host #eye-orientation{font-size:10px}.sensory-eye-host .eye-section>button,.sensory-eye-host #eye-receptor{font-size:10px;padding:5px}
+.sensory-eye-host[hidden]{display:none!important}

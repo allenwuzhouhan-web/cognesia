@@ -1,0 +1,116 @@
+schema_version: 1
+parameters:
+  dt:
+    value: 0.1
+    unit: ms
+    source: ASSUMPTION
+    sweep: [0.05, 0.1]
+  dt_graded:
+    value: 0.5
+    unit: ms
+    source: ASSUMPTION
+    sweep: [0.1, 0.5]
+  v_rest:
+    value: -52.0
+    unit: mV
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py v_0'
+  v_reset:
+    value: -52.0
+    unit: mV
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py v_rst'
+  v_threshold:
+    value: -45.0
+    unit: mV
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py v_th'
+  tau_membrane:
+    value: 20.0
+    unit: ms
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py t_mbr'
+  tau_synapse:
+    value: 5.0
+    unit: ms
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py tau'
+  refractory:
+    value: 2.2
+    unit: ms
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py t_rfc'
+  synaptic_delay:
+    value: 1.8
+    unit: ms
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py t_dly'
+  spike_weight:
+    value: 0.275
+    unit: mV/synapse
+    source: 'DOI:10.1038/s41586-024-07763-9; released model.py w_syn (free parameter of reference)'
+  poisson_rate:
+    value: 150.0
+    unit: Hz
+    source: 'DOI:10.1038/s41586-024-07763-9; reference cross-check only'
+  poisson_factor:
+    value: 250.0
+    unit: dimensionless
+    source: 'DOI:10.1038/s41586-024-07763-9; reference cross-check only'
+  graded_tau_membrane:
+    value: 20.0
+    unit: ms
+    source: ASSUMPTION
+    sweep: [10.0, 20.0, 40.0]
+  graded_tau_synapse:
+    value: 5.0
+    unit: ms
+    source: ASSUMPTION
+    sweep: [2.5, 5.0, 10.0]
+  graded_rest:
+    value: -52.0
+    unit: mV
+    source: ASSUMPTION
+    sweep: [-55.0, -52.0, -49.0]
+  graded_release:
+    value: -54.0
+    unit: mV
+    source: ASSUMPTION
+    sweep: [-56.0, -54.0, -53.0]
+  graded_gain:
+    value: 0.0001
+    unit: 1/(ms*synapse)
+    source: ASSUMPTION
+    sweep: [0.00003, 0.0001, 0.0003]
+    note: 'Predeclared uniform gain; not fitted to validation outcomes. Uses normalized voltage-state equations in DESIGN_NOTES.md.'
+  voltage_min:
+    value: -90.0
+    unit: mV
+    source: ASSUMPTION
+    sweep: [-100.0, -90.0]
+  voltage_max:
+    value: 20.0
+    unit: mV
+    source: ASSUMPTION
+    sweep: [10.0, 20.0]
+  pre_equilibration:
+    value: 1000.0
+    unit: ms
+    source: ASSUMPTION
+    sweep: [1000.0, 2000.0]
+  stationary_tolerance:
+    value: 0.001
+    unit: mV/ms
+    source: ASSUMPTION
+    sweep: [0.0005, 0.001, 0.002]
+  frame_rate:
+    value: 240.0
+    unit: Hz
+    source: ASSUMPTION
+    sweep: [120.0, 240.0, 480.0]
+  eye_spacing:
+    value: 5.1
+    unit: degrees
+    source: 'DOI:10.1016/j.neuron.2011.05.023'
+  eye_fwhm:
+    value: 5.7
+    unit: degrees
+    source: 'DOI:10.1016/j.neuron.2011.05.023'
+  seed:
+    value: 783
+    unit: integer
+    source: ASSUMPTION
+    sweep: [783, 784, 785]

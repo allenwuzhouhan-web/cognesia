@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flybrain"
+version = "0.0.1"
+description = "Cognesia: an experimental Drosophila connectome and neural simulation workbench"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["cognesia", "drosophila", "connectomics", "neuroscience", "neural-simulation", "flywire", "banc"]
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy>=2,<3", "scipy>=1.14", "numba>=0.61", "pandas>=2.2", "pyarrow>=18", "PyYAML>=6", "psutil>=6", "matplotlib>=3.9", "zarr>=3", "brian2>=2.8", "joblib>=1.4", "aiohttp>=3.12,<4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+flybrain = "flybrain.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flybrain"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: requires downloaded release tables", "slow: whole-brain simulation"]

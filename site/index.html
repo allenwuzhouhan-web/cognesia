@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cognesia — Drosophila neural simulation workbench</title>
+  <meta name="description" content="Cognesia is an experimental neuroscience workbench for fruit fly connectomes, neural simulation, visual stimuli and neuromodulation. Explore the source and scientific limits.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="@@SITE_URL@@">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cognesia">
+  <meta property="og:title" content="Cognesia — Drosophila neural simulation workbench">
+  <meta property="og:description" content="Explore fruit fly connectomes, neural simulation and recorded model signals in a local experimental workbench.">
+  <meta property="og:url" content="@@SITE_URL@@">
+  <meta name="theme-color" content="#193934">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">@@STRUCTURED_DATA@@</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><a class="brand" href="./"><img src="icon.svg" width="32" height="32" alt="">Cognesia</a><nav aria-label="Main navigation"><a href="#workbench">Workbench</a><a href="#science">Scientific status</a><a href="@@REPO_URL@@">GitHub ↗</a></nav></header>
+  <main id="main">
+    <section class="hero">
+      <p class="eyebrow">Computational neuroscience · v@@VERSION@@</p>
+      <h1>Cognesia</h1>
+      <p class="lead">Explore the fruit fly nervous system.</p>
+      <p class="intro">An experimental workbench for <i>Drosophila melanogaster</i> connectomes, neural simulation, visual stimulation and neuromodulation. Follow each model from its source anatomy to its recorded signals.</p>
+      <div class="actions"><a class="button" href="@@REPO_URL@@#installation">Get started</a><a class="text-link" href="@@REPO_URL@@/tree/@@BRANCH@@/docs">Read the documentation ↗</a></div>
+      <div class="facts"><span>Python 3.12</span><span>Local browser interface</span><span>Optional macOS app</span></div>
+    </section>
+    <section id="workbench" class="section">
+      <p class="eyebrow">The workbench</p><h2>From anatomy to experiment.</h2>
+      <div class="grid">
+        <article><span class="number">01 / Explore</span><h3>Connectome-based models</h3><p>Inspect 3D anatomy and source pathways for FlyWire and BANC. Model provenance keeps measured anatomy and inferred relationships distinguishable.</p></article>
+        <article><span class="number">02 / Configure</span><h3>Controlled experiments</h3><p>Set visual stimuli, virtual electrodes, chemical fields and timeline interventions. Pause runs and branch supported checkpoints.</p></article>
+        <article><span class="number">03 / Inspect</span><h3>Recorded model signals</h3><p>Compare signals and numerical diagnostics, retain source identity and export local sessions for further analysis.</p></article>
+      </div>
+    </section>
+    <section id="science" class="science section"><div><p class="eyebrow">Scientific status</p><h2>Experimental, with explicit limits.</h2></div><div><p>Cognesia v@@VERSION@@ is an early research software release. Its ability to assemble anatomy and execute equations does not establish biologically validated vision, learning or behavior.</p><p>Historical numerical and biological validation failures remain documented. Peripheral dynamics, some source mappings and model parameters include explicit assumptions.</p><a class="text-link" href="@@REPO_URL@@/blob/@@BRANCH@@/LIMITATIONS.md">Read the limitations ↗</a><br><a class="text-link" href="@@REPO_URL@@/blob/@@BRANCH@@/REPORT.md">Inspect the execution report ↗</a></div></section>
+    <section class="section start"><p class="eyebrow">Run locally</p><h2>Start with the source.</h2><p>Install from the repository with Python 3.12, acquire and build the initial model inputs, then launch the local viewer. Datasets and saved recordings are downloaded or generated separately. Large models require substantial memory and disk space.</p><a class="button" href="@@REPO_URL@@#installation">Installation guide</a><p class="small">This website introduces Cognesia. The simulation workbench runs on your computer.</p></section>
+  </main>
+  <footer><span>Cognesia · v@@VERSION@@ · All rights reserved</span><a href="@@REPO_URL@@/blob/@@BRANCH@@/THIRD_PARTY_NOTICES.md">Sources &amp; attribution</a><a href="@@REPO_URL@@">Source repository ↗</a></footer>
+</body>
+</html>

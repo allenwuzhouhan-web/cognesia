@@ -1,0 +1,139 @@
+/* Recorded-signal analysis uses the same flat scientific workspace as the viewer. */
+.analysis-workspace { grid-column: 1 / -1; min-width: 0; margin-top: 6px; border: 1px solid var(--line, #c4c8cd); border-radius: 2px; background: #fff; color: var(--text, #20252b); }
+.analysis-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 10px; border-bottom: 1px solid var(--line-soft, #e1e4e7); background: #f7f8f9; }
+.analysis-heading h2 { font-size: 13px; font-weight: 600; }
+.analysis-heading p { margin-top: 2px; color: var(--muted, #59636d); font-size: 11px; }
+.analysis-card-count { flex-shrink: 0; color: var(--muted, #59636d); font-size: 11px; font-variant-numeric: tabular-nums; }
+.analysis-picker { display: grid; grid-template-columns: minmax(150px, 1fr) minmax(110px, .65fr) 92px minmax(190px, 1.5fr) minmax(120px, .75fr) auto; align-items: start; gap: 7px; padding: 8px 10px 2px; }
+.analysis-picker label, .analysis-chart-controls > label { display: flex; flex-direction: column; gap: 3px; min-width: 0; font-size: 11px; color: var(--muted, #59636d); }
+.analysis-picker input, .analysis-picker select { width: 100%; font-size: 11px; }
+.analysis-picker .analysis-add { align-self: start; margin-top: 18px; min-height: 27px; border-color: #a7b8cb; background: #e5eef8; color: #245d91; white-space: nowrap; }
+.analysis-match-count { min-height: 14px; font-size: 10px; color: var(--muted, #59636d); }
+.analysis-status { min-height: 19px; margin: 0; padding: 2px 10px 6px; font-size: 11px; color: var(--muted, #59636d); }
+.analysis-status.analysis-error { color: #95452e; }
+.analysis-cards { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 8px; padding: 0 8px 8px; }
+.analysis-card { display: flex; flex-direction: column; position: relative; width: calc(50% - 4px); min-width: 310px; max-width: 100%; height: 390px; min-height: 340px; resize: both; overflow: auto; border: 1px solid var(--line, #c4c8cd); border-radius: 2px; background: #fff; }
+.analysis-card:focus-within { border-color: #899fb7; }
+.analysis-card-heading { display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; min-height: 31px; gap: 8px; padding: 4px 7px; background: #f3f5f7; border-bottom: 1px solid var(--line-soft, #e1e4e7); }
+.analysis-card-heading h3 { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; font-weight: 600; }
+.analysis-card-actions { display: flex; flex-shrink: 0; gap: 3px; }
+.analysis-card-actions button { min-height: 22px; padding: 1px 5px; font-size: 10px; }
+.analysis-card-actions .analysis-close { width: 24px; font-size: 15px; line-height: 17px; }
+.analysis-legend { display: grid; gap: 3px; flex-shrink: 0; padding: 6px 8px 3px; }
+.analysis-legend-item { display: flex; gap: 5px; align-items: center; min-width: 0; font-size: 10px; }
+.analysis-swatch { display: block; flex: 0 0 12px; height: 2px; }
+.analysis-legend-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.analysis-run { min-width: 45px; max-width: 46%; margin-left: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted, #59636d); font-size: 9px; font-variant-numeric: tabular-nums; }
+.analysis-remove-overlay { width: 18px; min-height: 18px; padding: 0; flex-shrink: 0; line-height: 14px; font-size: 13px; border-color: transparent; background: transparent; }
+.analysis-chart-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 5px 9px; flex-shrink: 0; padding: 4px 8px 6px; border-bottom: 1px solid #eef0f2; }
+.analysis-chart-controls select { width: 158px; max-width: 100%; min-height: 24px; padding: 2px 4px; font-size: 11px; }
+.analysis-chart-controls .analysis-harmonics input { width: 65px; min-height: 24px; padding: 2px 4px; font-size: 11px; }
+.analysis-chart-controls .analysis-spectrum-option { flex-direction: row; align-items: center; align-self: end; min-height: 24px; gap: 3px; white-space: nowrap; }
+.analysis-spectrum-option input { margin: 0; }
+.analysis-export { margin-left: auto; min-height: 24px; padding: 2px 6px; font-size: 10px; }
+.analysis-plot { position: relative; flex: 1 1 auto; width: 100%; min-height: 130px; }
+.analysis-plot canvas { width: 100%; height: 100%; cursor: crosshair; position: absolute; inset: 0; }
+.analysis-plot-error { position: absolute; inset: 10px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px; color: #95452e; font-size: 11px; background: #fff8f3; border: 1px solid #e3c8b8; }
+.analysis-inspection { min-height: 23px; padding: 4px 8px; flex-shrink: 0; border-top: 1px solid #eef0f2; color: #46525e; font-size: 10px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.analysis-method-note { padding: 3px 16px 7px 8px; flex-shrink: 0; color: var(--muted, #59636d); font-size: 10px; line-height: 1.4; white-space: pre-line; }
+.analysis-empty { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 25px 20px; text-align: center; color: var(--muted, #59636d); }
+.analysis-empty strong { color: var(--text, #20252b); font-size: 12px; font-weight: 500; }
+.analysis-empty span { max-width: 540px; font-size: 11px; }
+.analysis-footer { margin: 0; padding: 6px 10px; border-top: 1px solid var(--line-soft, #e1e4e7); background: #fafbfc; color: var(--muted, #59636d); font-size: 10px; }
+@media (max-width: 1080px) {
+  .analysis-picker { grid-template-columns: minmax(150px, 1fr) minmax(110px, 1fr) 100px; }
+  .analysis-picker .analysis-add { justify-self: stretch; }
+}
+@media (max-width: 720px) {
+  .analysis-card { width: 100%; min-width: min(310px, 100%); }
+  .analysis-picker { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .analysis-search, .analysis-signal-field { grid-column: 1 / -1; }
+  .analysis-picker .analysis-add { margin-top: 18px; }
+  .analysis-card-heading { flex-wrap: wrap; }
+  .analysis-heading { align-items: flex-start; }
+}
+
+.analysis-all-harmonics { min-height: 24px; padding: 2px 6px; font-size: 10px; }
+.analysis-range-controls { display:flex; flex-wrap:wrap; align-items:end; gap:6px; padding:5px 8px; border-bottom:1px solid #e1e7ed; font-size:10px; }
+.analysis-range-controls label { display:flex; flex-direction:column; gap:3px; color:#536170; }
+.analysis-range-controls input { width:90px; min-height:25px; font-size:11px; }
+.analysis-range-controls select { width:124px; min-height:25px; font-size:11px; }
+.analysis-range-controls button { min-height:25px; padding:3px 6px; font-size:10px; }
+.analysis-fit-button { background:#e5eef8; color:#245d91; }
+.analysis-card:has(.analysis-fit-result:not([hidden])) { min-height:580px; }
+.analysis-fit-result { padding:7px 9px; border-top:1px solid #cbd6e1; background:#f7fafc; flex:0 0 auto; }
+.analysis-fit-summary { font-size:10px; line-height:1.5; font-variant-numeric:tabular-nums; }
+.analysis-equation { max-height:94px; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; font-size:11px; line-height:1.65; user-select:text; margin:5px 0; }
+.analysis-fit-actions { display:flex; gap:6px; }
+.analysis-fit-actions button { font-size:10px; padding:3px 7px; min-height:24px; }
+.analysis-residual { display:block; width:100%; height:70px; margin-top:4px; }
+.analysis-fit-result small { display:block; color:#526272; font-size:9px; line-height:1.4; }
+.analysis-plot canvas { touch-action:none; }
+
+/* Custom workspaces retain their expanded controls. The primary comparison
+   tile spends its limited height on plots and reveals controls on demand. */
+.analysis-picker-disclosure, .analysis-card-tools { flex: 0 0 auto; min-width: 0; }
+.analysis-picker-disclosure > summary, .analysis-card-tools > summary,
+.analysis-fit-result > summary { display: none; }
+.dock-primary-grid .analysis-workspace { display: flex; flex-direction: column; position: relative; height: 100%; min-height: 0; margin: 0; overflow: auto; }
+.dock-primary-grid .analysis-heading { flex: 0 0 auto; padding: 4px 8px; min-height: 28px; gap: 6px; }
+.dock-primary-grid .analysis-heading > div { min-width: 0; padding-right: 85px; }
+.dock-primary-grid .analysis-heading h2 { font-size: 12px; }
+.dock-primary-grid .analysis-heading p, .dock-primary-grid .analysis-footer { display: none; }
+.dock-primary-grid .analysis-card-count { font-size: 10px; }
+.dock-primary-grid .analysis-picker-disclosure > summary,
+.dock-primary-grid .analysis-card-tools > summary,
+.dock-primary-grid .analysis-fit-result > summary { display: list-item; cursor: pointer; padding: 3px 8px; color: #245d91; font-size: 11px; line-height: 18px; user-select: none; }
+.dock-primary-grid .analysis-picker-disclosure > summary { position: absolute; top: 3px; right: 83px; z-index: 1; padding: 0 6px; border: 1px solid #c8d4df; border-radius: 2px; background: #f8fafc; font-size: 10px; }
+.dock-primary-grid .analysis-picker-disclosure[open] > summary,
+.dock-primary-grid .analysis-card-tools[open] > summary,
+.dock-primary-grid .analysis-fit-result[open] > summary { background: #eaf1f8; }
+.dock-primary-grid .analysis-picker { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 8px; padding: 7px 8px; background: #fff; }
+.dock-primary-grid .analysis-picker .analysis-search,
+.dock-primary-grid .analysis-picker .analysis-signal-field { grid-column: 1 / -1; }
+.dock-primary-grid .analysis-picker .analysis-add { align-self: end; margin: 0; }
+.dock-primary-grid .analysis-status { flex: 0 0 auto; padding: 2px 8px; min-height: 0; font-size: 10px; }
+.dock-primary-grid .analysis-has-cards .analysis-status:not(.analysis-error) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.dock-primary-grid .analysis-cards { flex: 1 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); align-items: start; gap: 6px; padding: 5px; min-height: 0; }
+.dock-primary-grid .analysis-card { width: 100%; min-width: 0; height: 240px; min-height: 240px; max-width: 100%; resize: vertical; overflow: auto; }
+.dock-primary-grid .analysis-card-heading { min-height: 26px; padding: 2px 5px; gap: 4px; flex-wrap: nowrap; }
+.dock-primary-grid .analysis-card-heading h3 { font-size: 11px; }
+.dock-primary-grid .analysis-card-actions { gap: 1px; }
+.dock-primary-grid .analysis-card-actions button { min-height: 20px; }
+.dock-primary-grid .analysis-move-left, .dock-primary-grid .analysis-move-right { font-size: 0; width: 21px; padding: 0; }
+.dock-primary-grid .analysis-move-left::before { content: '←'; font-size: 12px; }
+.dock-primary-grid .analysis-move-right::before { content: '→'; font-size: 12px; }
+.dock-primary-grid .analysis-legend { padding: 3px 6px; gap: 2px; max-height: 55px; overflow: auto; }
+.dock-primary-grid .analysis-legend-item { font-size: 9px; }
+.dock-primary-grid .analysis-run { font-size: 8px; }
+.dock-primary-grid .analysis-card-tools > summary { padding: 1px 6px; font-size: 10px; border-top: 1px solid #edf0f2; border-bottom: 1px solid #edf0f2; }
+.dock-primary-grid .analysis-tool-state { margin-left: 5px; font-weight: 400; color: #697887; }
+.dock-primary-grid .analysis-chart-controls, .dock-primary-grid .analysis-range-controls { gap: 6px; padding: 6px; }
+.dock-primary-grid .analysis-chart-controls select { width: 145px; }
+.dock-primary-grid .analysis-range-controls input { width: 83px; }
+.dock-primary-grid .analysis-export { margin-left: 0; }
+.dock-primary-grid .analysis-plot { min-height: 145px; }
+.dock-primary-grid .analysis-inspection { min-height: 19px; padding: 2px 6px; font-size: 9px; }
+.dock-primary-grid .analysis-method-note { padding: 4px 6px 6px; }
+.dock-primary-grid .analysis-card:has(.analysis-card-tools[open]) { height: auto; min-height: 430px; }
+.dock-primary-grid .analysis-card:has(.analysis-fit-result:not([hidden])) { min-height: 270px; }
+.dock-primary-grid .analysis-card:has(.analysis-fit-result[open]:not([hidden])) { height: auto; min-height: 440px; }
+.dock-primary-grid .analysis-card:has(.analysis-card-tools[open]) .analysis-plot,
+.dock-primary-grid .analysis-card:has(.analysis-fit-result[open]:not([hidden])) .analysis-plot { flex: 0 0 165px; }
+.dock-primary-grid .analysis-fit-result { padding: 0; }
+.dock-primary-grid .analysis-fit-result > :not(summary) { margin-left: 7px; margin-right: 7px; }
+.dock-primary-grid .analysis-fit-result > summary { padding: 2px 6px; }
+.dock-primary-grid .analysis-fit-result small { margin-bottom: 7px; }
+.dock-primary-grid .analysis-residual { width: calc(100% - 14px); }
+.dock-primary-grid .analysis-empty { flex: 1; justify-content: center; min-height: 120px; padding: 14px; }
+
+/* Two rectangular scientific charts per row, measured against their own panel. */
+.analysis-workspace { container-type:inline-size;container-name:analysis-panel; }
+.analysis-workspace .analysis-cards { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:8px; }
+.analysis-workspace .analysis-card { width:100%;min-width:0;max-width:100%;height:auto;min-height:285px;resize:vertical; }
+.analysis-workspace .analysis-plot,
+.dock-primary-grid .analysis-card:has(.analysis-card-tools[open]) .analysis-plot,
+.dock-primary-grid .analysis-card:has(.analysis-fit-result[open]:not([hidden])) .analysis-plot { flex:0 0 190px;height:190px;min-height:190px; }
+@container analysis-panel (max-width:649px) {
+  .analysis-workspace .analysis-cards { grid-template-columns:minmax(0,1fr); }
+}

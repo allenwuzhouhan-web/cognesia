@@ -1,0 +1,3653 @@
+{
+  "schema": 1,
+  "units": "mm",
+  "source_axes": "+X anterior, +Y left, +Z dorsal; official neutral pose",
+  "source": "NeuroMechFly v2 full-resolution micro-CT-derived surfaces, EPFL",
+  "license": "Apache-2.0",
+  "source_version": "neuromechfly_fullsize_meshes_20260623a",
+  "flygym_commit": "38c8ec61034cd59bc5ba0de20688d4a3c0000d60",
+  "rig_repository": "https://github.com/NeLy-EPFL/fly-svg-maker",
+  "rig_commit": "152506d3471646f009480c81f34aefbaec29a6e5",
+  "rig_sha256": "6ad88360fdd0264a8a71b5a077b0c72293eaf66c2ae68aa5fc29ffd323e28cc2",
+  "rig_url": "https://raw.githubusercontent.com/NeLy-EPFL/fly-svg-maker/152506d3471646f009480c81f34aefbaec29a6e5/assets/model.json",
+  "sources": [
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen12.stl",
+      "bytes": 144334,
+      "etag": "34713db10c8a410d5533fdc0f7ca5aa7",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen12.stl",
+      "sha256": "aed84b41c264a93755678df79a99ce8ea399cf2674fdd6a8fe7e2dcfec6c6d6b"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen3.stl",
+      "bytes": 140084,
+      "etag": "bf7d12580756ddcecb49881693b65405",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen3.stl",
+      "sha256": "07c5b43e2f91a9262cbfbcea4d0beabb0e5a1381afe01260df95548bf3cfefbc"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen4.stl",
+      "bytes": 143384,
+      "etag": "db3a6c916bfa598498ccfe93552d9080",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen4.stl",
+      "sha256": "010667e71500c425eea1307004833c5990a0f76ceb0b57957e39c52bd9e6a52d"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen5.stl",
+      "bytes": 158834,
+      "etag": "96e626c89aa39c2987c242a001cfa8a6",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen5.stl",
+      "sha256": "0b83e74ef96eac7c944c74062b224e1ecaef356ed490dad1a2c6a78f2618d008"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen6.stl",
+      "bytes": 203134,
+      "etag": "ff42eeb8b4c8c52df819f0fbc6887cb0",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_abdomen6.stl",
+      "sha256": "6ec06369174ff0fec5ce2dd5129aa5291ae81d1b624c0cb3e2e1986bf76c7ea7"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_haustellum.stl",
+      "bytes": 215634,
+      "etag": "bb1b3bfea417706d7ce0e296ea931a3c",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_haustellum.stl",
+      "sha256": "9498e99c33324fbc6b3381ceb1bb13b874f919b9deccc7a5cfce618fb42d742f"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_head.stl",
+      "bytes": 4200384,
+      "etag": "d40944ae63733e36693a1ae157ddb5d4",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_head.stl",
+      "sha256": "0061f3da284f16da8ab35993084bca4e0cdbe99907c799d4442ca68c3f4b75ea"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_rostrum.stl",
+      "bytes": 189384,
+      "etag": "ad735ddbb3dcfaf36330e02593076307",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_rostrum.stl",
+      "sha256": "9616109271847e638de093e85553903b81e4db67b06d237a70abae5994d1c4c9"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_thorax.stl",
+      "bytes": 281534,
+      "etag": "5a343f1255d711c17d0b9e474a866421",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/c_thorax.stl",
+      "sha256": "0ac93168a38e8feb80f544ee25c2c03272072f00048f041b77966ad450fb0fc9"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_arista.stl",
+      "bytes": 2718884,
+      "etag": "dd82c8561f89ad47742429c04afa429a",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_arista.stl",
+      "sha256": "b5b435f31f4d5cf05fb53880c3f46fcfeea58d3d9a9eb52048b0b36a4e3d738f"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_eye.stl",
+      "bytes": 1133584,
+      "etag": "73e6633d2757db96d5fdd4ddd8ecf89b",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_eye.stl",
+      "sha256": "85d1f097fba8c815c2bf6a89eac48e6a2494a927684c5a84b102c4b544116fc0"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_funiculus.stl",
+      "bytes": 26584,
+      "etag": "5fd49683100fad2459d033393091e485",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_funiculus.stl",
+      "sha256": "d2a6d35751922fb8b1ce07b269bc432f33d7f8f6d243b2dd1801e021b91d8156"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_haltere.stl",
+      "bytes": 41284,
+      "etag": "5a1b60d319ca6529aa6c12dd9d77164e",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_haltere.stl",
+      "sha256": "13d77fcca66fca90db5cf00b33a7369ae80366fe39974df3667e709882e64ed6"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_pedicel.stl",
+      "bytes": 864484,
+      "etag": "f71ff00694fecc9030ad30da3bb417fd",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_pedicel.stl",
+      "sha256": "de6616286ac1e8df5561e0d747110dbaf28103bee7117aaf2fbc21322fede382"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_wing.stl",
+      "bytes": 996734,
+      "etag": "c1fcd63f607b40a9798d2450898c9013",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/l_wing.stl",
+      "sha256": "80dbf9e0903b67923b11659a785a059641b48b38003b6b2d8768e366dbbe3287"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_coxa.stl",
+      "bytes": 184034,
+      "etag": "0826e27a808f9aacf2ac72edcefee21d",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_coxa.stl",
+      "sha256": "ab910d0111cf8fecc6dc11268b4e21c91c58440ef7ae55e432cfc12400e181e6"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus1.stl",
+      "bytes": 89584,
+      "etag": "5a63bd184a0d1e070e99ed1006fb9797",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus1.stl",
+      "sha256": "29085dda732699c4a3110458303adf2eec667f7db6e42166d408c260ae6acf5e"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus2.stl",
+      "bytes": 89884,
+      "etag": "7d7a73547b50d95b0b47527e2810baa0",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus2.stl",
+      "sha256": "996735c15a7e8e0c022babf5500224fa6e23de0e277305279d4b6787d56335d8"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus3.stl",
+      "bytes": 152584,
+      "etag": "9d081137bd6c0d2cc1fc6cbbb7bf49ea",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus3.stl",
+      "sha256": "edd3137f00db0d4c8830eaa08d9b9206fefc1f90311200365c37264a6ca3c08e"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus4.stl",
+      "bytes": 164234,
+      "etag": "e2a072eb13dfaaa150df7a746c02dbf4",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus4.stl",
+      "sha256": "8370f6944a607adbc29eb6a2cec06a5da8d67fc060e0abd4a560755e3b5cd6f8"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus5.stl",
+      "bytes": 142184,
+      "etag": "0e58a87ebdd73f367e5b1a95a930e21a",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tarsus5.stl",
+      "sha256": "1e8fc058a866f6a6bb6fb0430229297996e5e0639bede2e8fa169958e871a039"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tibia.stl",
+      "bytes": 85534,
+      "etag": "53aeca82dfe3b1a9539a678cd80f3696",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_tibia.stl",
+      "sha256": "8138fe5f1fc52588dca6677bb338d39451813ac96159f78d6cf677eba73f3862"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_trochanterfemur.stl",
+      "bytes": 80984,
+      "etag": "ad58d7ba9887bebe9c46e8d3ceffeaca",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lf_trochanterfemur.stl",
+      "sha256": "50e4e7baf2852a369f0dda2a2c9708a68c45893b3019a79dd74799e8e2ea64c9"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_coxa.stl",
+      "bytes": 199084,
+      "etag": "a8624e98cfdd86987e1a92ef9249d82a",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_coxa.stl",
+      "sha256": "c6fc7487ba8a057731af02dec60860d5c6e3abd5818612ffd61a6e405d3d16a6"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus1.stl",
+      "bytes": 38934,
+      "etag": "557172160ae693c2fee2df2a72501ce1",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus1.stl",
+      "sha256": "61af16259215525e092d61426b874c7855485a9c7cfa91eecfc2fe99281a2dc6"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus2.stl",
+      "bytes": 98684,
+      "etag": "7a53554f47b92cc392850b8194944288",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus2.stl",
+      "sha256": "da796bc3ad5d355b9e941aeeb6ad96c7fb00dee7421995605dcc81cd6fd7af12"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus3.stl",
+      "bytes": 129584,
+      "etag": "22936c0eab5acc1691675b3ba81819a2",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus3.stl",
+      "sha256": "4864f883168d6397ac96666605504a512187ad8c0befde812e0c570bca2962b1"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus4.stl",
+      "bytes": 130984,
+      "etag": "8d7d62cb95971bb31bbbec082d6742e9",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus4.stl",
+      "sha256": "925687a8b26ab3695ffc9d57507ec201381a1b104b7b0248fde95467939d9466"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus5.stl",
+      "bytes": 147084,
+      "etag": "62a8cbbd37564ccb608b7f5c1edd347d",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tarsus5.stl",
+      "sha256": "82a1aedb3f34ba510f143fe5fe0a1dfedeb8872edfef147945aa0a0938b1f6fc"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tibia.stl",
+      "bytes": 37484,
+      "etag": "c46cefa1ca2f947bcb40ab4eb7908014",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_tibia.stl",
+      "sha256": "2853873ade9abeb35da5f1a6c822d223bbe19a50d8ed77921bb77743b4782a60"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_trochanterfemur.stl",
+      "bytes": 165884,
+      "etag": "cb8f045161a3853b6a258b0c8e8efda7",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lh_trochanterfemur.stl",
+      "sha256": "01f790eb37bfb8fcba791106665d14e5921f226101d84dd65786534d43cf3ac1"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_coxa.stl",
+      "bytes": 130384,
+      "etag": "ef4b54d5d2ebf353137c50d433ffb35b",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_coxa.stl",
+      "sha256": "9d63a3ac0de274b899016e2a918ad460df00c4f2bae014eed32c3e5f7fa1537f"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus1.stl",
+      "bytes": 46284,
+      "etag": "7cf9a80738df4c0a60fab2122d82c79b",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus1.stl",
+      "sha256": "b7f50bfe1e75dfa65110a4f80e0216858a7a75712115b04605f344c8e837b1ae"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus2.stl",
+      "bytes": 77884,
+      "etag": "1428af11f47234f6d86faa0e7754f177",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus2.stl",
+      "sha256": "2dbb000ae11ef58de0023ccbdbfc8f1c5ff7b7517824a58d3e204f3ee00770c4"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus3.stl",
+      "bytes": 92884,
+      "etag": "89b8447f198ced1c28f3757b8221ac30",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus3.stl",
+      "sha256": "8f1814f0054382e037279f04d0bb998e36ccaabd57ec418d35dd6f7e47bd51bb"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus4.stl",
+      "bytes": 159584,
+      "etag": "6c53acd5563a8d40eede3be342266a70",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus4.stl",
+      "sha256": "0cb0ed43055e24d14fa580ac36cb5ae2bf0c0fa9f353615c146291e0b8d1ba9a"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus5.stl",
+      "bytes": 49384,
+      "etag": "040e66370cd95be123a98e973910d5fb",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tarsus5.stl",
+      "sha256": "3e9a76e4c0c4e829705271846f93a3aa056a0e87bc99996519722eeb841c1b70"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tibia.stl",
+      "bytes": 33884,
+      "etag": "d92194c9d47527ff99f14d681e23d693",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_tibia.stl",
+      "sha256": "dc1ad6da6db91ba703150e6150f59a498f9dbd311b1ec0678da3f896c421dab5"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_trochanterfemur.stl",
+      "bytes": 41384,
+      "etag": "87b58f0b1d0bb633d201d9029b5ecf3e",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/lm_trochanterfemur.stl",
+      "sha256": "9619105028e5006d891b12dfced77aafa3c41a599edbf49d14691907ce2eb502"
+    },
+    {
+      "key": "flygym_assets/neuromechfly_fullsize_meshes_20260623a/metadata.yaml",
+      "bytes": 730,
+      "etag": "64806ed557aa739942a747e64ebf778d",
+      "url": "https://datasets.epfl.ch/nely-public-share/flygym_assets/neuromechfly_fullsize_meshes_20260623a/metadata.yaml",
+      "sha256": "7b72fbe307e4647a60d3a2b55e08c5c3b5471216b5dbdf25ddccd0fea833591b"
+    }
+  ],
+  "binary": "full-resolution.bin",
+  "binary_sha256": "61619926c8dc1680796bc62579f0dc9b0a7934f6fa5ab1cd67b3da8b5338f5b4",
+  "bytes": 6687192,
+  "geometries": {
+    "c_abdomen12.stl": {
+      "vertices": 1257,
+      "triangles": 2885,
+      "positions": {
+        "byte_offset": 0,
+        "count": 3771
+      },
+      "normals": {
+        "byte_offset": 15084,
+        "count": 3771
+      },
+      "indices": {
+        "byte_offset": 30168,
+        "count": 8655
+      }
+    },
+    "c_abdomen3.stl": {
+      "vertices": 1296,
+      "triangles": 2800,
+      "positions": {
+        "byte_offset": 64788,
+        "count": 3888
+      },
+      "normals": {
+        "byte_offset": 80340,
+        "count": 3888
+      },
+      "indices": {
+        "byte_offset": 95892,
+        "count": 8400
+      }
+    },
+    "c_abdomen4.stl": {
+      "vertices": 1431,
+      "triangles": 2866,
+      "positions": {
+        "byte_offset": 129492,
+        "count": 4293
+      },
+      "normals": {
+        "byte_offset": 146664,
+        "count": 4293
+      },
+      "indices": {
+        "byte_offset": 163836,
+        "count": 8598
+      }
+    },
+    "c_abdomen5.stl": {
+      "vertices": 1499,
+      "triangles": 3175,
+      "positions": {
+        "byte_offset": 198228,
+        "count": 4497
+      },
+      "normals": {
+        "byte_offset": 216216,
+        "count": 4497
+      },
+      "indices": {
+        "byte_offset": 234204,
+        "count": 9525
+      }
+    },
+    "c_abdomen6.stl": {
+      "vertices": 2071,
+      "triangles": 4061,
+      "positions": {
+        "byte_offset": 272304,
+        "count": 6213
+      },
+      "normals": {
+        "byte_offset": 297156,
+        "count": 6213
+      },
+      "indices": {
+        "byte_offset": 322008,
+        "count": 12183
+      }
+    },
+    "c_haustellum.stl": {
+      "vertices": 2174,
+      "triangles": 4311,
+      "positions": {
+        "byte_offset": 370740,
+        "count": 6522
+      },
+      "normals": {
+        "byte_offset": 396828,
+        "count": 6522
+      },
+      "indices": {
+        "byte_offset": 422916,
+        "count": 12933
+      }
+    },
+    "c_head.stl": {
+      "vertices": 42215,
+      "triangles": 84006,
+      "positions": {
+        "byte_offset": 474648,
+        "count": 126645
+      },
+      "normals": {
+        "byte_offset": 981228,
+        "count": 126645
+      },
+      "indices": {
+        "byte_offset": 1487808,
+        "count": 252018
+      }
+    },
+    "c_rostrum.stl": {
+      "vertices": 1792,
+      "triangles": 3786,
+      "positions": {
+        "byte_offset": 2495880,
+        "count": 5376
+      },
+      "normals": {
+        "byte_offset": 2517384,
+        "count": 5376
+      },
+      "indices": {
+        "byte_offset": 2538888,
+        "count": 11358
+      }
+    },
+    "c_thorax.stl": {
+      "vertices": 2723,
+      "triangles": 5629,
+      "positions": {
+        "byte_offset": 2584320,
+        "count": 8169
+      },
+      "normals": {
+        "byte_offset": 2616996,
+        "count": 8169
+      },
+      "indices": {
+        "byte_offset": 2649672,
+        "count": 16887
+      }
+    },
+    "l_arista.stl": {
+      "vertices": 27151,
+      "triangles": 54376,
+      "positions": {
+        "byte_offset": 2717220,
+        "count": 81453
+      },
+      "normals": {
+        "byte_offset": 3043032,
+        "count": 81453
+      },
+      "indices": {
+        "byte_offset": 3368844,
+        "count": 163128
+      }
+    },
+    "l_eye.stl": {
+      "vertices": 11276,
+      "triangles": 22670,
+      "positions": {
+        "byte_offset": 4021356,
+        "count": 33828
+      },
+      "normals": {
+        "byte_offset": 4156668,
+        "count": 33828
+      },
+      "indices": {
+        "byte_offset": 4291980,
+        "count": 68010
+      }
+    },
+    "l_funiculus.stl": {
+      "vertices": 261,
+      "triangles": 530,
+      "positions": {
+        "byte_offset": 4564020,
+        "count": 783
+      },
+      "normals": {
+        "byte_offset": 4567152,
+        "count": 783
+      },
+      "indices": {
+        "byte_offset": 4570284,
+        "count": 1590
+      }
+    },
+    "l_haltere.stl": {
+      "vertices": 372,
+      "triangles": 824,
+      "positions": {
+        "byte_offset": 4576644,
+        "count": 1116
+      },
+      "normals": {
+        "byte_offset": 4581108,
+        "count": 1116
+      },
+      "indices": {
+        "byte_offset": 4585572,
+        "count": 2472
+      }
+    },
+    "l_pedicel.stl": {
+      "vertices": 8621,
+      "triangles": 17288,
+      "positions": {
+        "byte_offset": 4595460,
+        "count": 25863
+      },
+      "normals": {
+        "byte_offset": 4698912,
+        "count": 25863
+      },
+      "indices": {
+        "byte_offset": 4802364,
+        "count": 51864
+      }
+    },
+    "l_wing.stl": {
+      "vertices": 9334,
+      "triangles": 19933,
+      "positions": {
+        "byte_offset": 5009820,
+        "count": 28002
+      },
+      "normals": {
+        "byte_offset": 5121828,
+        "count": 28002
+      },
+      "indices": {
+        "byte_offset": 5233836,
+        "count": 59799
+      }
+    },
+    "lf_coxa.stl": {
+      "vertices": 1626,
+      "triangles": 3679,
+      "positions": {
+        "byte_offset": 5473032,
+        "count": 4878
+      },
+      "normals": {
+        "byte_offset": 5492544,
+        "count": 4878
+      },
+      "indices": {
+        "byte_offset": 5512056,
+        "count": 11037
+      }
+    },
+    "lf_tarsus1.stl": {
+      "vertices": 854,
+      "triangles": 1790,
+      "positions": {
+        "byte_offset": 5556204,
+        "count": 2562
+      },
+      "normals": {
+        "byte_offset": 5566452,
+        "count": 2562
+      },
+      "indices": {
+        "byte_offset": 5576700,
+        "count": 5370
+      }
+    },
+    "lf_tarsus2.stl": {
+      "vertices": 888,
+      "triangles": 1796,
+      "positions": {
+        "byte_offset": 5598180,
+        "count": 2664
+      },
+      "normals": {
+        "byte_offset": 5608836,
+        "count": 2664
+      },
+      "indices": {
+        "byte_offset": 5619492,
+        "count": 5388
+      }
+    },
+    "lf_tarsus3.stl": {
+      "vertices": 1515,
+      "triangles": 3050,
+      "positions": {
+        "byte_offset": 5641044,
+        "count": 4545
+      },
+      "normals": {
+        "byte_offset": 5659224,
+        "count": 4545
+      },
+      "indices": {
+        "byte_offset": 5677404,
+        "count": 9150
+      }
+    },
+    "lf_tarsus4.stl": {
+      "vertices": 1625,
+      "triangles": 3283,
+      "positions": {
+        "byte_offset": 5714004,
+        "count": 4875
+      },
+      "normals": {
+        "byte_offset": 5733504,
+        "count": 4875
+      },
+      "indices": {
+        "byte_offset": 5753004,
+        "count": 9849
+      }
+    },
+    "lf_tarsus5.stl": {
+      "vertices": 1413,
+      "triangles": 2842,
+      "positions": {
+        "byte_offset": 5792400,
+        "count": 4239
+      },
+      "normals": {
+        "byte_offset": 5809356,
+        "count": 4239
+      },
+      "indices": {
+        "byte_offset": 5826312,
+        "count": 8526
+      }
+    },
+    "lf_tibia.stl": {
+      "vertices": 828,
+      "triangles": 1709,
+      "positions": {
+        "byte_offset": 5860416,
+        "count": 2484
+      },
+      "normals": {
+        "byte_offset": 5870352,
+        "count": 2484
+      },
+      "indices": {
+        "byte_offset": 5880288,
+        "count": 5127
+      }
+    },
+    "lf_trochanterfemur.stl": {
+      "vertices": 687,
+      "triangles": 1618,
+      "positions": {
+        "byte_offset": 5900796,
+        "count": 2061
+      },
+      "normals": {
+        "byte_offset": 5909040,
+        "count": 2061
+      },
+      "indices": {
+        "byte_offset": 5917284,
+        "count": 4854
+      }
+    },
+    "lh_coxa.stl": {
+      "vertices": 1974,
+      "triangles": 3980,
+      "positions": {
+        "byte_offset": 5936700,
+        "count": 5922
+      },
+      "normals": {
+        "byte_offset": 5960388,
+        "count": 5922
+      },
+      "indices": {
+        "byte_offset": 5984076,
+        "count": 11940
+      }
+    },
+    "lh_tarsus1.stl": {
+      "vertices": 371,
+      "triangles": 777,
+      "positions": {
+        "byte_offset": 6031836,
+        "count": 1113
+      },
+      "normals": {
+        "byte_offset": 6036288,
+        "count": 1113
+      },
+      "indices": {
+        "byte_offset": 6040740,
+        "count": 2331
+      }
+    },
+    "lh_tarsus2.stl": {
+      "vertices": 982,
+      "triangles": 1972,
+      "positions": {
+        "byte_offset": 6050064,
+        "count": 2946
+      },
+      "normals": {
+        "byte_offset": 6061848,
+        "count": 2946
+      },
+      "indices": {
+        "byte_offset": 6073632,
+        "count": 5916
+      }
+    },
+    "lh_tarsus3.stl": {
+      "vertices": 1284,
+      "triangles": 2590,
+      "positions": {
+        "byte_offset": 6097296,
+        "count": 3852
+      },
+      "normals": {
+        "byte_offset": 6112704,
+        "count": 3852
+      },
+      "indices": {
+        "byte_offset": 6128112,
+        "count": 7770
+      }
+    },
+    "lh_tarsus4.stl": {
+      "vertices": 1283,
+      "triangles": 2618,
+      "positions": {
+        "byte_offset": 6159192,
+        "count": 3849
+      },
+      "normals": {
+        "byte_offset": 6174588,
+        "count": 3849
+      },
+      "indices": {
+        "byte_offset": 6189984,
+        "count": 7854
+      }
+    },
+    "lh_tarsus5.stl": {
+      "vertices": 1440,
+      "triangles": 2940,
+      "positions": {
+        "byte_offset": 6221400,
+        "count": 4320
+      },
+      "normals": {
+        "byte_offset": 6238680,
+        "count": 4320
+      },
+      "indices": {
+        "byte_offset": 6255960,
+        "count": 8820
+      }
+    },
+    "lh_tibia.stl": {
+      "vertices": 363,
+      "triangles": 748,
+      "positions": {
+        "byte_offset": 6291240,
+        "count": 1089
+      },
+      "normals": {
+        "byte_offset": 6295596,
+        "count": 1089
+      },
+      "indices": {
+        "byte_offset": 6299952,
+        "count": 2244
+      }
+    },
+    "lh_trochanterfemur.stl": {
+      "vertices": 1630,
+      "triangles": 3316,
+      "positions": {
+        "byte_offset": 6308928,
+        "count": 4890
+      },
+      "normals": {
+        "byte_offset": 6328488,
+        "count": 4890
+      },
+      "indices": {
+        "byte_offset": 6348048,
+        "count": 9948
+      }
+    },
+    "lm_coxa.stl": {
+      "vertices": 1269,
+      "triangles": 2606,
+      "positions": {
+        "byte_offset": 6387840,
+        "count": 3807
+      },
+      "normals": {
+        "byte_offset": 6403068,
+        "count": 3807
+      },
+      "indices": {
+        "byte_offset": 6418296,
+        "count": 7818
+      }
+    },
+    "lm_tarsus1.stl": {
+      "vertices": 453,
+      "triangles": 924,
+      "positions": {
+        "byte_offset": 6449568,
+        "count": 1359
+      },
+      "normals": {
+        "byte_offset": 6455004,
+        "count": 1359
+      },
+      "indices": {
+        "byte_offset": 6460440,
+        "count": 2772
+      }
+    },
+    "lm_tarsus2.stl": {
+      "vertices": 767,
+      "triangles": 1556,
+      "positions": {
+        "byte_offset": 6471528,
+        "count": 2301
+      },
+      "normals": {
+        "byte_offset": 6480732,
+        "count": 2301
+      },
+      "indices": {
+        "byte_offset": 6489936,
+        "count": 4668
+      }
+    },
+    "lm_tarsus3.stl": {
+      "vertices": 924,
+      "triangles": 1856,
+      "positions": {
+        "byte_offset": 6508608,
+        "count": 2772
+      },
+      "normals": {
+        "byte_offset": 6519696,
+        "count": 2772
+      },
+      "indices": {
+        "byte_offset": 6530784,
+        "count": 5568
+      }
+    },
+    "lm_tarsus4.stl": {
+      "vertices": 1573,
+      "triangles": 3190,
+      "positions": {
+        "byte_offset": 6553056,
+        "count": 4719
+      },
+      "normals": {
+        "byte_offset": 6571932,
+        "count": 4719
+      },
+      "indices": {
+        "byte_offset": 6590808,
+        "count": 9570
+      }
+    },
+    "lm_tarsus5.stl": {
+      "vertices": 469,
+      "triangles": 986,
+      "positions": {
+        "byte_offset": 6629088,
+        "count": 1407
+      },
+      "normals": {
+        "byte_offset": 6634716,
+        "count": 1407
+      },
+      "indices": {
+        "byte_offset": 6640344,
+        "count": 2958
+      }
+    },
+    "lm_tibia.stl": {
+      "vertices": 329,
+      "triangles": 676,
+      "positions": {
+        "byte_offset": 6652176,
+        "count": 987
+      },
+      "normals": {
+        "byte_offset": 6656124,
+        "count": 987
+      },
+      "indices": {
+        "byte_offset": 6660072,
+        "count": 2028
+      }
+    },
+    "lm_trochanterfemur.stl": {
+      "vertices": 379,
+      "triangles": 826,
+      "positions": {
+        "byte_offset": 6668184,
+        "count": 1137
+      },
+      "normals": {
+        "byte_offset": 6672732,
+        "count": 1137
+      },
+      "indices": {
+        "byte_offset": 6677280,
+        "count": 2478
+      }
+    }
+  },
+  "segments": [
+    {
+      "name": "c_thorax",
+      "geometry": "c_thorax.stl",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.496,
+        0.0,
+        1.3,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -0.5289079205095768,
+          -0.4677488759625703,
+          0.6627331568859518
+        ],
+        [
+          0.5391701046181843,
+          0.4838948370888829,
+          1.745470097474754
+        ]
+      ]
+    },
+    {
+      "name": "c_head",
+      "geometry": "c_head.stl",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.5246999999999999,
+        0.0,
+        1.3006980000000001,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.5090888672330649,
+          -0.37689824239350855,
+          1.0233036875661017
+        ],
+        [
+          1.0195328714817762,
+          0.37689824239350855,
+          1.7034188487968893
+        ]
+      ]
+    },
+    {
+      "name": "c_rostrum",
+      "geometry": "c_rostrum.stl",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.9546999999999999,
+        0.0,
+        1.026698,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.5755050288259982,
+          -0.1987059076782316,
+          0.7496879745434524
+        ],
+        [
+          0.9959263616453855,
+          0.20737684099003673,
+          1.2517179031550438
+        ]
+      ]
+    },
+    {
+      "name": "c_haustellum",
+      "geometry": "c_haustellum.stl",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.5836999999999999,
+        0.0,
+        1.007098,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.570199852639099,
+          -0.16370097000617534,
+          0.7826830054090843
+        ],
+        [
+          0.9260245216254144,
+          0.17631777154747397,
+          1.029307793314687
+        ]
+      ]
+    },
+    {
+      "name": "c_abdomen12",
+      "geometry": "c_abdomen12.stl",
+      "matrix": [
+        0.9656519641888551,
+        0.0,
+        0.259838957930111,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -0.259838957930111,
+        0.0,
+        0.9656519641888551,
+        0.0,
+        -0.366,
+        0.0,
+        1.3,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -0.9044781276907577,
+          -0.46672552707605064,
+          0.9217224203786163
+        ],
+        [
+          -0.3389954032269035,
+          0.4828586825169623,
+          1.591963483568589
+        ]
+      ]
+    },
+    {
+      "name": "c_abdomen3",
+      "geometry": "c_abdomen3.stl",
+      "matrix": [
+        0.9397532941931779,
+        0.0,
+        0.3418533984810894,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -0.3418533984810894,
+        0.0,
+        0.9397532941931779,
+        0.0,
+        -0.6911960986427712,
+        0.0,
+        1.253918578282338,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -1.0294290136589708,
+          -0.4746729682665318,
+          0.7797572612331221
+        ],
+        [
+          -0.4547323860575345,
+          0.4915155586786568,
+          1.5484814231947512
+        ]
+      ]
+    },
+    {
+      "name": "c_abdomen4",
+      "geometry": "c_abdomen4.stl",
+      "matrix": [
+        0.9656519641888551,
+        0.0,
+        0.259838957930111,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -0.259838957930111,
+        0.0,
+        0.9656519641888552,
+        0.0,
+        -0.8952111187969795,
+        0.0,
+        1.206306903753101,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -1.2026512963118936,
+          -0.4776792193297297,
+          0.7904238760588652
+        ],
+        [
+          -0.7397071342540711,
+          0.4944912507198751,
+          1.494670650823815
+        ]
+      ]
+    },
+    {
+      "name": "c_abdomen5",
+      "geometry": "c_abdomen5.stl",
+      "matrix": [
+        0.9701722636691407,
+        0.0,
+        0.24241653987938908,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -0.24241653987938908,
+        0.0,
+        0.9701722636691408,
+        0.0,
+        -1.0655731111872113,
+        0.0,
+        1.1697857927509614,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -1.3705427016321674,
+          -0.43255140190012753,
+          0.7549836878206863
+        ],
+        [
+          -0.9338907605523928,
+          0.4497034824453294,
+          1.4381686778479246
+        ]
+      ]
+    },
+    {
+      "name": "c_abdomen6",
+      "geometry": "c_abdomen6.stl",
+      "matrix": [
+        0.9743782527951361,
+        0.0,
+        0.2249155852312106,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -0.22491558523121058,
+        0.0,
+        0.9743782527951362,
+        0.0,
+        -1.28895413616269,
+        0.0,
+        1.123246372031483,
+        1.0
+      ],
+      "color": [
+        0.39,
+        0.2,
+        0.0
+      ],
+      "bounds": [
+        [
+          -1.7308019227115752,
+          -0.3555298026185483,
+          0.7614700864048342
+        ],
+        [
+          -1.136647848861582,
+          0.3721910761669278,
+          1.3961704592270021
+        ]
+      ]
+    },
+    {
+      "name": "l_eye",
+      "geometry": "l_eye.stl",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.7556999999999999,
+        -9.31e-10,
+        1.317698,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.21,
+        0.12,
+        1.0
+      ],
+      "bounds": [
+        [
+          0.549796453115344,
+          0.19898723892434161,
+          1.0391921831771285
+        ],
+        [
+          0.9528924793906509,
+          0.4151231541767217,
+          1.548141518375978
+        ]
+      ]
+    },
+    {
+      "name": "r_eye",
+      "geometry": "l_eye.stl",
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.7556999999999999,
+        9.31e-10,
+        1.317698,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.21,
+        0.12,
+        1.0
+      ],
+      "bounds": [
+        [
+          0.549796453115344,
+          -0.4151231541767217,
+          1.0391921831771285
+        ],
+        [
+          0.9528924793906509,
+          -0.19898723892434161,
+          1.548141518375978
+        ]
+      ]
+    },
+    {
+      "name": "l_pedicel",
+      "geometry": "l_pedicel.stl",
+      "matrix": [
+        0.9622501868990583,
+        -0.25881904510252074,
+        -0.08418598282936919,
+        0.0,
+        0.229993028203663,
+        0.6078768187253738,
+        0.7599927501193864,
+        0.0,
+        -0.1455258904471524,
+        -0.7506653549675371,
+        0.644456158370005,
+        0.0,
+        0.9537,
+        0.086,
+        1.383698,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.9465377358367761,
+          0.03016292601767915,
+          1.272963834632621
+        ],
+        [
+          1.133316869196352,
+          0.16922070643244774,
+          1.467109703560627
+        ]
+      ]
+    },
+    {
+      "name": "l_funiculus",
+      "geometry": "l_funiculus.stl",
+      "matrix": [
+        0.9622501868990583,
+        -0.25881904510252074,
+        -0.08418598282936919,
+        0.0,
+        0.229993028203663,
+        0.6078768187253738,
+        0.7599927501193864,
+        0.0,
+        -0.1455258904471524,
+        -0.7506653549675371,
+        0.644456158370005,
+        0.0,
+        1.0090629652256928,
+        0.10556233620489744,
+        1.3505561223732678,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.9617852630720539,
+          0.08182245958974754,
+          1.1929522824390257
+        ],
+        [
+          1.0901041279563646,
+          0.2451718304470693,
+          1.3600141475017036
+        ]
+      ]
+    },
+    {
+      "name": "l_arista",
+      "geometry": "l_arista.stl",
+      "matrix": [
+        0.9622501868990583,
+        -0.25881904510252074,
+        -0.08418598282936919,
+        0.0,
+        0.265531973841831,
+        0.9606343835461697,
+        0.08169670750116936,
+        0.0,
+        0.059727285895046875,
+        -0.10096674225253482,
+        0.9930953470228936,
+        0.0,
+        1.0504515614640122,
+        0.18447272338544796,
+        1.3458364935280098,
+        1.0
+      ],
+      "color": [
+        0.26,
+        0.2,
+        0.16,
+        1.0
+      ],
+      "bounds": [
+        [
+          1.0316817909673626,
+          0.16752561177136965,
+          1.305301944652571
+        ],
+        [
+          1.1346603356160145,
+          0.4189243906830286,
+          1.431978075400521
+        ]
+      ]
+    },
+    {
+      "name": "r_pedicel",
+      "geometry": "l_pedicel.stl",
+      "matrix": [
+        0.9622501868990583,
+        0.25881904510252074,
+        -0.08418598282936919,
+        0.0,
+        0.229993028203663,
+        -0.6078768187253738,
+        0.7599927501193864,
+        0.0,
+        -0.1455258904471524,
+        0.7506653549675371,
+        0.644456158370005,
+        0.0,
+        0.9537,
+        -0.086,
+        1.383698,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.9465377358367761,
+          -0.16922070643244774,
+          1.272963834632621
+        ],
+        [
+          1.133316869196352,
+          -0.03016292601767915,
+          1.467109703560627
+        ]
+      ]
+    },
+    {
+      "name": "r_funiculus",
+      "geometry": "l_funiculus.stl",
+      "matrix": [
+        0.9622501868990583,
+        0.25881904510252074,
+        -0.08418598282936919,
+        0.0,
+        0.229993028203663,
+        -0.6078768187253738,
+        0.7599927501193864,
+        0.0,
+        -0.1455258904471524,
+        0.7506653549675371,
+        0.644456158370005,
+        0.0,
+        1.0090629652256928,
+        -0.10556233620489744,
+        1.3505561223732678,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.9617852630720539,
+          -0.2451718304470693,
+          1.1929522824390257
+        ],
+        [
+          1.0901041279563646,
+          -0.08182245958974754,
+          1.3600141475017036
+        ]
+      ]
+    },
+    {
+      "name": "r_arista",
+      "geometry": "l_arista.stl",
+      "matrix": [
+        0.9622501868990583,
+        0.25881904510252074,
+        -0.08418598282936919,
+        0.0,
+        0.265531973841831,
+        -0.9606343835461697,
+        0.08169670750116936,
+        0.0,
+        0.059727285895046875,
+        0.10096674225253482,
+        0.9930953470228936,
+        0.0,
+        1.0504515614640122,
+        -0.18447272338544796,
+        1.3458364935280098,
+        1.0
+      ],
+      "color": [
+        0.26,
+        0.2,
+        0.16,
+        1.0
+      ],
+      "bounds": [
+        [
+          1.0316817909673626,
+          -0.4189243906830286,
+          1.305301944652571
+        ],
+        [
+          1.1346603356160145,
+          -0.16752561177136965,
+          1.431978075400521
+        ]
+      ]
+    },
+    {
+      "name": "l_wing",
+      "geometry": "l_wing.stl",
+      "matrix": [
+        -0.17364817766693058,
+        0.9834581082132787,
+        0.05154085546935876,
+        0.0,
+        -0.9774671453588049,
+        -0.1657394769244396,
+        -0.1307226282359815,
+        0.0,
+        -0.12001787423989645,
+        -0.07307923903799468,
+        0.990078347750603,
+        0.0,
+        -0.17800000000000005,
+        0.395,
+        1.381,
+        1.0
+      ],
+      "color": [
+        0.8,
+        0.8,
+        0.9,
+        0.3
+      ],
+      "bounds": [
+        [
+          -2.4277954345482287,
+          -0.48007441414569885,
+          1.0205348098181222
+        ],
+        [
+          -0.07517443667809458,
+          0.55677202553942,
+          1.591526045533688
+        ]
+      ]
+    },
+    {
+      "name": "r_wing",
+      "geometry": "l_wing.stl",
+      "matrix": [
+        -0.17364817766693058,
+        -0.9834581082132787,
+        0.05154085546935876,
+        0.0,
+        -0.9774671453588049,
+        0.1657394769244396,
+        -0.1307226282359815,
+        0.0,
+        -0.12001787423989645,
+        0.07307923903799468,
+        0.990078347750603,
+        0.0,
+        -0.17800000000000005,
+        -0.395,
+        1.381,
+        1.0
+      ],
+      "color": [
+        0.8,
+        0.8,
+        0.9,
+        0.3
+      ],
+      "bounds": [
+        [
+          -2.4277954345482287,
+          -0.55677202553942,
+          1.0205348098181222
+        ],
+        [
+          -0.07517443667809458,
+          0.48007441414569885,
+          1.591526045533688
+        ]
+      ]
+    },
+    {
+      "name": "l_haltere",
+      "geometry": "l_haltere.stl",
+      "matrix": [
+        0.8191520442889918,
+        0.573576436351046,
+        0.0,
+        0.0,
+        -0.5540322932223234,
+        0.7912401152362238,
+        0.25881904510252074,
+        0.0,
+        0.1484525055496845,
+        -0.21201214989665462,
+        0.9659258262890683,
+        0.0,
+        -0.31000000000000005,
+        0.214,
+        1.151,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.43,
+        0.24,
+        1.0
+      ],
+      "bounds": [
+        [
+          -0.5528075284147266,
+          0.17942535340636717,
+          1.1282142549542167
+        ],
+        [
+          -0.306158935353346,
+          0.48497078222673384,
+          1.306918870558944
+        ]
+      ]
+    },
+    {
+      "name": "r_haltere",
+      "geometry": "l_haltere.stl",
+      "matrix": [
+        0.8191520442889918,
+        -0.573576436351046,
+        0.0,
+        0.0,
+        -0.5540322932223234,
+        -0.7912401152362238,
+        0.25881904510252074,
+        0.0,
+        0.1484525055496845,
+        0.21201214989665462,
+        0.9659258262890683,
+        0.0,
+        -0.31000000000000005,
+        -0.214,
+        1.151,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.43,
+        0.24,
+        1.0
+      ],
+      "bounds": [
+        [
+          -0.5528075284147266,
+          -0.48497078222673384,
+          1.1282142549542167
+        ],
+        [
+          -0.306158935353346,
+          -0.17942535340636717,
+          1.306918870558944
+        ]
+      ]
+    },
+    {
+      "name": "lf_coxa",
+      "geometry": "lf_coxa.stl",
+      "matrix": [
+        0.7935880396557845,
+        0.43837114678907746,
+        -0.42195824553872424,
+        0.0,
+        -0.5131894365463446,
+        0.8548039345401107,
+        -0.07711572934227726,
+        0.0,
+        0.32688625779089336,
+        0.2777426347494659,
+        0.9033296205205995,
+        0.0,
+        0.33499999999999996,
+        0.172,
+        1.07,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.15542262435632287,
+          0.0008271890938372772,
+          0.677319965178413
+        ],
+        [
+          0.3588243507282062,
+          0.23771805261619736,
+          1.095448458498279
+        ]
+      ]
+    },
+    {
+      "name": "lf_trochanterfemur",
+      "geometry": "lf_trochanterfemur.stl",
+      "matrix": [
+        -0.23854805605321194,
+        -0.36480252516708117,
+        0.9000077458471981,
+        0.0,
+        -0.5952115586699747,
+        0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.7673447891130122,
+        -0.49721237618163344,
+        -0.40492200186322413,
+        0.0,
+        0.21513280738540663,
+        0.0683602237733477,
+        0.7411810719888751,
+        1.0
+      ],
+      "color": [
+        0.63,
+        0.43,
+        0.16
+      ],
+      "bounds": [
+        [
+          0.20816275725472216,
+          0.039313802690554456,
+          0.7040283206183187
+        ],
+        [
+          0.7989007452464973,
+          0.473245572949214,
+          1.092389503268622
+        ]
+      ]
+    },
+    {
+      "name": "lf_tibia",
+      "geometry": "lf_tibia.stl",
+      "matrix": [
+        0.7009795347311679,
+        0.410500382995143,
+        0.5831956167950135,
+        0.0,
+        -0.5952115586699747,
+        0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.39287516123284605,
+        -0.4602069805612534,
+        0.7961523991855827,
+        0.0,
+        0.7581069973931458,
+        0.4194183384040273,
+        1.0222256800805303,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.47,
+        0.2
+      ],
+      "bounds": [
+        [
+          0.7366523681696912,
+          0.42397691606240007,
+          0.576153979949689
+        ],
+        [
+          1.008746170360357,
+          0.7001237953025038,
+          1.03554092343891
+        ]
+      ]
+    },
+    {
+      "name": "lf_tarsus1",
+      "geometry": "lf_tarsus1.stl",
+      "matrix": [
+        0.6221080247074594,
+        0.3243498562640355,
+        0.7125859782061968,
+        0.0,
+        -0.5952115586699747,
+        0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.5086303235359081,
+        -0.5244980458857444,
+        0.6827861992174367,
+        0.0,
+        0.9620820312626125,
+        0.6569970187305665,
+        0.6095811802356274,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.9557305478878761,
+          0.6546303413008387,
+          0.4242120737930726
+        ],
+        [
+          1.1184250883573323,
+          0.8068575569325207,
+          0.6176670022370264
+        ]
+      ]
+    },
+    {
+      "name": "lf_tarsus2",
+      "geometry": "lf_tarsus2.stl",
+      "matrix": [
+        0.5754106622221459,
+        0.27740259037818454,
+        0.7693831117541796,
+        0.0,
+        -0.5952115586699747,
+        0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.560915118557818,
+        -0.5507711251036479,
+        0.6180820313884972,
+        0.0,
+        1.07823761235598,
+        0.7748302920039624,
+        0.4570935819873129,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.084549552650587,
+          0.7777218835891497,
+          0.3313360378017216
+        ],
+        [
+          1.1980935575033134,
+          0.8850823543099782,
+          0.4660764239762596
+        ]
+      ]
+    },
+    {
+      "name": "lf_tarsus3",
+      "geometry": "lf_tarsus3.stl",
+      "matrix": [
+        0.5243340771548646,
+        0.22834412327929193,
+        0.8203247752554885,
+        0.0,
+        -0.5952115586699747,
+        0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.6089310108376941,
+        -0.5728525034948145,
+        0.5486738860925567,
+        0.0,
+        1.1655070467719493,
+        0.8598861894821989,
+        0.36292659517723946,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.1743733147784627,
+          0.85930344413792,
+          0.279595085104235
+        ],
+        [
+          1.2577451676813387,
+          0.9407313930514706,
+          0.373034314084867
+        ]
+      ]
+    },
+    {
+      "name": "lf_tarsus4",
+      "geometry": "lf_tarsus4.stl",
+      "matrix": [
+        0.46926699315886283,
+        0.17754781952429255,
+        0.8650232718914612,
+        0.0,
+        -0.5952115586699747,
+        0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.6523125704424982,
+        -0.5905741284365869,
+        0.4750900012251015,
+        0.0,
+        1.2261925268275768,
+        0.9169365871567114,
+        0.31031744630940483,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.2336507416507685,
+          0.9126935941742865,
+          0.24229249466894903
+        ],
+        [
+          1.3078954905114986,
+          0.9895276833144458,
+          0.31500432252883453
+        ]
+      ]
+    },
+    {
+      "name": "lf_tarsus5",
+      "geometry": "lf_tarsus5.stl",
+      "matrix": [
+        0.41062850399376455,
+        0.12540026965640874,
+        0.9031384191130076,
+        0.0,
+        -0.5952115586699747,
+        0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.690729637509136,
+        -0.6038011276625482,
+        0.39789039458113723,
+        0.0,
+        1.2838747327110487,
+        0.9684501058262487,
+        0.2704289608192284,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.2921850718322634,
+          0.9605272613238569,
+          0.20383802404873785
+        ],
+        [
+          1.3752804860538101,
+          1.0507270867521958,
+          0.28017320594545486
+        ]
+      ]
+    },
+    {
+      "name": "lm_coxa",
+      "geometry": "lm_coxa.stl",
+      "matrix": [
+        0.05259408695168881,
+        0.981627183447664,
+        -0.1834173784959443,
+        0.0,
+        -0.9905673975515242,
+        0.07455501408938198,
+        0.11496860781157794,
+        0.0,
+        0.12653099590898098,
+        0.17564060632649373,
+        0.9762890373672866,
+        0.0,
+        -0.061000000000000054,
+        0.125,
+        0.8180000000000001,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -0.18942488268485919,
+          0.010585153517186835,
+          0.6071327872008826
+        ],
+        [
+          0.00877905319734941,
+          0.18667470853218887,
+          0.8938122505818695
+        ]
+      ]
+    },
+    {
+      "name": "lm_trochanterfemur",
+      "geometry": "lm_trochanterfemur.stl",
+      "matrix": [
+        -0.21453521040811896,
+        -0.5849993359842838,
+        0.7821447566742944,
+        0.0,
+        -0.9680262953990019,
+        0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.1299989804238036,
+        -0.7765630250741022,
+        -0.6164820623315255,
+        0.0,
+        -0.08406106512454235,
+        0.09300812748037925,
+        0.6413484327128403,
+        1.0
+      ],
+      "color": [
+        0.63,
+        0.43,
+        0.16
+      ],
+      "bounds": [
+        [
+          -0.143679818039466,
+          0.07416282036668004,
+          0.5966655970928647
+        ],
+        [
+          0.061881714800393325,
+          0.7499375417823557,
+          1.171062500382079
+        ]
+      ]
+    },
+    {
+      "name": "lm_tibia",
+      "geometry": "lm_tibia.stl",
+      "matrix": [
+        0.17492703675274532,
+        0.8882559824713968,
+        0.4247373793494956,
+        0.0,
+        -0.9680262953990019,
+        0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.17979327915411086,
+        -0.3953171696474456,
+        0.9007767271377213,
+        0.0,
+        0.018013014165519925,
+        0.7024144867128848,
+        1.123905908618155,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.47,
+        0.2
+      ],
+      "bounds": [
+        [
+          -0.02368592053385652,
+          0.696447943868734,
+          0.4622965357156167
+        ],
+        [
+          0.1691347811981846,
+          1.0051677655024576,
+          1.140490413660462
+        ]
+      ]
+    },
+    {
+      "name": "lm_tarsus1",
+      "geometry": "lm_tarsus1.stl",
+      "matrix": [
+        0.10288472250721922,
+        0.6994811570753917,
+        0.7072063664667363,
+        0.0,
+        -0.9680262953990019,
+        0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.22877898786972733,
+        -0.6752780656224255,
+        0.701184504106115,
+        0.0,
+        0.13830481128962785,
+        0.966062930113327,
+        0.5231492831309148,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.10204786939021104,
+          0.9525172758230337,
+          0.2731877447766098
+        ],
+        [
+          0.22354786834430268,
+          1.1922937469986254,
+          0.5045981037007179
+        ]
+      ]
+    },
+    {
+      "name": "lm_tarsus2",
+      "geometry": "lm_tarsus2.stl",
+      "matrix": [
+        0.08255381246348871,
+        0.6379650587230603,
+        0.7656274889894075,
+        0.0,
+        -0.9680262953990019,
+        0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.23687540915812152,
+        -0.7336722284936072,
+        0.6368791892293206,
+        0.0,
+        0.205255819302461,
+        1.1635793339847709,
+        0.31877437156944594,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.17832623940215175,
+          1.1577894485197757,
+          0.1816230072828665
+        ],
+        [
+          0.2562825269002317,
+          1.299782869816383,
+          0.3131749639032585
+        ]
+      ]
+    },
+    {
+      "name": "lm_tarsus3",
+      "geometry": "lm_tarsus3.stl",
+      "matrix": [
+        0.061594618059556204,
+        0.5715936610600119,
+        0.8182217240223518,
+        0.0,
+        -0.9680262953990019,
+        0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.24316906555353981,
+        -0.7864827027025489,
+        0.5677268391643224,
+        0.0,
+        0.24330167302882627,
+        1.2809131716507283,
+        0.21686604143191118,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.21907455902005912,
+          1.2762465394332871,
+          0.12006349322766449
+        ],
+        [
+          0.2811217468500476,
+          1.3738829162351829,
+          0.21854881530258308
+        ]
+      ]
+    },
+    {
+      "name": "lm_tarsus4",
+      "geometry": "lm_tarsus4.stl",
+      "matrix": [
+        0.04016665142034323,
+        0.5008720904986077,
+        0.8645887976797011,
+        0.0,
+        -0.9680262953990019,
+        0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.24761205853059942,
+        -0.8333075686526843,
+        0.4942537450504457,
+        0.0,
+        0.26563150700129945,
+        1.3524450434558324,
+        0.1650603256486124,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.24244766936667886,
+          1.3581804375354667,
+          0.09893391673667332
+        ],
+        [
+          0.29235106165816066,
+          1.4250928486845866,
+          0.1660336488072384
+        ]
+      ]
+    },
+    {
+      "name": "lm_tarsus5",
+      "geometry": "lm_tarsus5.stl",
+      "matrix": [
+        0.018432992310534208,
+        0.4263385808936721,
+        0.9043758285337183,
+        0.0,
+        -0.9680262953990019,
+        0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.2501705742299924,
+        -0.8737904608405058,
+        0.41701908149816425,
+        0.0,
+        0.2812956556448473,
+        1.4058349266947123,
+        0.13444614362505355,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.2575309262403135,
+          1.4092791426165903,
+          0.06273091577592166
+        ],
+        [
+          0.3264366384844384,
+          1.5051754377037585,
+          0.1417547902475552
+        ]
+      ]
+    },
+    {
+      "name": "lh_coxa",
+      "geometry": "lh_coxa.stl",
+      "matrix": [
+        -0.6355433650282368,
+        0.7071067811865475,
+        0.30997521057108,
+        0.0,
+        -0.6645744387245002,
+        -0.7053843046066397,
+        0.24652342324538423,
+        0.0,
+        0.3929700326521105,
+        -0.049325275616132515,
+        0.9182274068131443,
+        0.0,
+        -0.28800000000000003,
+        0.087,
+        0.803,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -0.41637299285593665,
+          -0.018720157673724327,
+          0.5761440381550176
+        ],
+        [
+          -0.25190771671427703,
+          0.16015834023415274,
+          0.8540149715140799
+        ]
+      ]
+    },
+    {
+      "name": "lh_trochanterfemur",
+      "geometry": "lh_trochanterfemur.stl",
+      "matrix": [
+        0.5468206511583052,
+        -0.3479291871318926,
+        0.7615329646236907,
+        0.0,
+        -0.7044346866115923,
+        -0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.45250298094624153,
+        -0.6424644524758902,
+        -0.6184500622844336,
+        0.0,
+        -0.3659376869245696,
+        0.09685069418448605,
+        0.6201619196148366,
+        1.0
+      ],
+      "color": [
+        0.63,
+        0.43,
+        0.16
+      ],
+      "bounds": [
+        [
+          -0.7925040031285973,
+          0.07668411982592194,
+          0.5973883167927364
+        ],
+        [
+          -0.34875446806955734,
+          0.6733404790354058,
+          1.1706589650820272
+        ]
+      ]
+    },
+    {
+      "name": "lh_tibia",
+      "geometry": "lh_tibia.stl",
+      "matrix": [
+        -0.5485275257865954,
+        0.697048589607968,
+        0.46178005281733264,
+        0.0,
+        -0.7044346866115923,
+        -0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.45043237644830064,
+        -0.2189487512614484,
+        0.8655472942411574,
+        0.0,
+        -0.7443782261631662,
+        0.6337126636046296,
+        1.137325416152561,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.47,
+        0.2
+      ],
+      "bounds": [
+        [
+          -1.0996557592348066,
+          0.6057422485932167,
+          0.49996071970199274
+        ],
+        [
+          -0.7060962731050104,
+          0.8201454523719207,
+          1.1544610265370512
+        ]
+      ]
+    },
+    {
+      "name": "lh_tarsus1",
+      "geometry": "lh_tarsus1.stl",
+      "matrix": [
+        -0.5071824446190452,
+        0.6753134682399229,
+        0.5354602576139669,
+        0.0,
+        -0.7044346866115923,
+        -0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.49652566919412827,
+        -0.2788673727189533,
+        0.8220068419813495,
+        0.0,
+        -1.0522452444317336,
+        0.7836942061195821,
+        0.5452278389374062,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.2655718247295449,
+          0.7334810968653002,
+          0.225904800924852
+        ],
+        [
+          -1.027836166654246,
+          0.8943441485806644,
+          0.5524998953640138
+        ]
+      ]
+    },
+    {
+      "name": "lh_tarsus2",
+      "geometry": "lh_tarsus2.stl",
+      "matrix": [
+        -0.46197739880281086,
+        0.6484388036131512,
+        0.6050652865304154,
+        0.0,
+        -0.7044346866115923,
+        -0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.5388401017869924,
+        -0.33666364508534347,
+        0.7722104213127621,
+        0.0,
+        -1.2279272133263164,
+        0.8818516101912475,
+        0.25521018547326857,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.3510994235872196,
+          0.8483179239680976,
+          0.07878984967182612
+        ],
+        [
+          -1.2141353737903668,
+          0.9474089025130565,
+          0.25855749883878776
+        ]
+      ]
+    },
+    {
+      "name": "lh_tarsus3",
+      "geometry": "lh_tarsus3.stl",
+      "matrix": [
+        -0.41325642603210705,
+        0.6166291281528288,
+        0.6700654032679585,
+        0.0,
+        -0.7044346866115923,
+        -0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.5770536358447084,
+        -0.39189770382956735,
+        0.7165370130645837,
+        0.0,
+        -1.322101423514007,
+        0.9410216142406258,
+        0.1200983469456205,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.4009747968001471,
+          0.9080863540754974,
+          0.0169043329129913
+        ],
+        [
+          -1.3097752278134913,
+          0.9823809946505101,
+          0.1231782017646844
+        ]
+      ]
+    },
+    {
+      "name": "lh_tarsus4",
+      "geometry": "lh_tarsus4.stl",
+      "matrix": [
+        -0.3613903223282464,
+        0.5801265326964158,
+        0.7299659176900799,
+        0.0,
+        -0.7044346866115923,
+        -0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.6108754432991342,
+        -0.44414918441334483,
+        0.6554103254901061,
+        0.0,
+        -1.3780298843363945,
+        0.9785342658901606,
+        0.05070185327872603,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.443743294902011,
+          0.9500777652404023,
+          -0.029867270665734136
+        ],
+        [
+          -1.373015750786273,
+          1.0149340260201865,
+          0.0555951399072118
+        ]
+      ]
+    },
+    {
+      "name": "lh_tarsus5",
+      "geometry": "lh_tarsus5.stl",
+      "matrix": [
+        -0.30677382005802506,
+        0.5392088240362054,
+        0.7843109507131077,
+        0.0,
+        -0.7044346866115923,
+        -0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.6400481197733762,
+        -0.4930204215191268,
+        0.5892955695910741,
+        0.0,
+        -1.4229256717318348,
+        1.0111745374415981,
+        0.002827850133471463,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.5127371108598935,
+          0.9850759436171849,
+          -0.09190466651555813
+        ],
+        [
+          -1.4170532592846674,
+          1.063385913120271,
+          0.006200057076836145
+        ]
+      ]
+    },
+    {
+      "name": "rf_coxa",
+      "geometry": "lf_coxa.stl",
+      "matrix": [
+        0.7935880396557845,
+        -0.43837114678907746,
+        -0.42195824553872424,
+        0.0,
+        -0.5131894365463446,
+        -0.8548039345401107,
+        -0.07711572934227726,
+        0.0,
+        0.32688625779089336,
+        -0.2777426347494659,
+        0.9033296205205995,
+        0.0,
+        0.33499999999999996,
+        -0.172,
+        1.07,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          0.15542262435632287,
+          -0.23771805261619736,
+          0.677319965178413
+        ],
+        [
+          0.3588243507282062,
+          -0.0008271890938372772,
+          1.095448458498279
+        ]
+      ]
+    },
+    {
+      "name": "rf_trochanterfemur",
+      "geometry": "lf_trochanterfemur.stl",
+      "matrix": [
+        -0.23854805605321194,
+        0.36480252516708117,
+        0.9000077458471981,
+        0.0,
+        -0.5952115586699747,
+        -0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.7673447891130122,
+        0.49721237618163344,
+        -0.40492200186322413,
+        0.0,
+        0.21513280738540663,
+        -0.0683602237733477,
+        0.7411810719888751,
+        1.0
+      ],
+      "color": [
+        0.63,
+        0.43,
+        0.16
+      ],
+      "bounds": [
+        [
+          0.20816275725472216,
+          -0.473245572949214,
+          0.7040283206183187
+        ],
+        [
+          0.7989007452464973,
+          -0.039313802690554456,
+          1.092389503268622
+        ]
+      ]
+    },
+    {
+      "name": "rf_tibia",
+      "geometry": "lf_tibia.stl",
+      "matrix": [
+        0.7009795347311679,
+        -0.410500382995143,
+        0.5831956167950135,
+        0.0,
+        -0.5952115586699747,
+        -0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.39287516123284605,
+        0.4602069805612534,
+        0.7961523991855827,
+        0.0,
+        0.7581069973931458,
+        -0.4194183384040273,
+        1.0222256800805303,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.47,
+        0.2
+      ],
+      "bounds": [
+        [
+          0.7366523681696912,
+          -0.7001237953025038,
+          0.576153979949689
+        ],
+        [
+          1.008746170360357,
+          -0.42397691606240007,
+          1.03554092343891
+        ]
+      ]
+    },
+    {
+      "name": "rf_tarsus1",
+      "geometry": "lf_tarsus1.stl",
+      "matrix": [
+        0.6221080247074594,
+        -0.3243498562640355,
+        0.7125859782061968,
+        0.0,
+        -0.5952115586699747,
+        -0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.5086303235359081,
+        0.5244980458857444,
+        0.6827861992174367,
+        0.0,
+        0.9620820312626125,
+        -0.6569970187305665,
+        0.6095811802356274,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.9557305478878761,
+          -0.8068575569325207,
+          0.4242120737930726
+        ],
+        [
+          1.1184250883573323,
+          -0.6546303413008387,
+          0.6176670022370264
+        ]
+      ]
+    },
+    {
+      "name": "rf_tarsus2",
+      "geometry": "lf_tarsus2.stl",
+      "matrix": [
+        0.5754106622221459,
+        -0.27740259037818454,
+        0.7693831117541796,
+        0.0,
+        -0.5952115586699747,
+        -0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.560915118557818,
+        0.5507711251036479,
+        0.6180820313884972,
+        0.0,
+        1.07823761235598,
+        -0.7748302920039624,
+        0.4570935819873129,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.084549552650587,
+          -0.8850823543099782,
+          0.3313360378017216
+        ],
+        [
+          1.1980935575033134,
+          -0.7777218835891497,
+          0.4660764239762596
+        ]
+      ]
+    },
+    {
+      "name": "rf_tarsus3",
+      "geometry": "lf_tarsus3.stl",
+      "matrix": [
+        0.5243340771548646,
+        -0.22834412327929193,
+        0.8203247752554885,
+        0.0,
+        -0.5952115586699747,
+        -0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.6089310108376941,
+        0.5728525034948145,
+        0.5486738860925567,
+        0.0,
+        1.1655070467719493,
+        -0.8598861894821989,
+        0.36292659517723946,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.1743733147784627,
+          -0.9407313930514706,
+          0.279595085104235
+        ],
+        [
+          1.2577451676813387,
+          -0.85930344413792,
+          0.373034314084867
+        ]
+      ]
+    },
+    {
+      "name": "rf_tarsus4",
+      "geometry": "lf_tarsus4.stl",
+      "matrix": [
+        0.46926699315886283,
+        -0.17754781952429255,
+        0.8650232718914612,
+        0.0,
+        -0.5952115586699747,
+        -0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.6523125704424982,
+        0.5905741284365869,
+        0.4750900012251015,
+        0.0,
+        1.2261925268275768,
+        -0.9169365871567114,
+        0.31031744630940483,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.2336507416507685,
+          -0.9895276833144458,
+          0.24229249466894903
+        ],
+        [
+          1.3078954905114986,
+          -0.9126935941742865,
+          0.31500432252883453
+        ]
+      ]
+    },
+    {
+      "name": "rf_tarsus5",
+      "geometry": "lf_tarsus5.stl",
+      "matrix": [
+        0.41062850399376455,
+        -0.12540026965640874,
+        0.9031384191130076,
+        0.0,
+        -0.5952115586699747,
+        -0.7872096103348427,
+        0.16132027095850132,
+        0.0,
+        -0.690729637509136,
+        0.6038011276625482,
+        0.39789039458113723,
+        0.0,
+        1.2838747327110487,
+        -0.9684501058262487,
+        0.2704289608192284,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          1.2921850718322634,
+          -1.0507270867521958,
+          0.20383802404873785
+        ],
+        [
+          1.3752804860538101,
+          -0.9605272613238569,
+          0.28017320594545486
+        ]
+      ]
+    },
+    {
+      "name": "rm_coxa",
+      "geometry": "lm_coxa.stl",
+      "matrix": [
+        0.05259408695168881,
+        -0.981627183447664,
+        -0.1834173784959443,
+        0.0,
+        -0.9905673975515242,
+        -0.07455501408938198,
+        0.11496860781157794,
+        0.0,
+        0.12653099590898098,
+        -0.17564060632649373,
+        0.9762890373672866,
+        0.0,
+        -0.061000000000000054,
+        -0.125,
+        0.8180000000000001,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -0.18942488268485919,
+          -0.18667470853218887,
+          0.6071327872008826
+        ],
+        [
+          0.00877905319734941,
+          -0.010585153517186835,
+          0.8938122505818695
+        ]
+      ]
+    },
+    {
+      "name": "rm_trochanterfemur",
+      "geometry": "lm_trochanterfemur.stl",
+      "matrix": [
+        -0.21453521040811896,
+        0.5849993359842838,
+        0.7821447566742944,
+        0.0,
+        -0.9680262953990019,
+        -0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.1299989804238036,
+        0.7765630250741022,
+        -0.6164820623315255,
+        0.0,
+        -0.08406106512454235,
+        -0.09300812748037925,
+        0.6413484327128403,
+        1.0
+      ],
+      "color": [
+        0.63,
+        0.43,
+        0.16
+      ],
+      "bounds": [
+        [
+          -0.143679818039466,
+          -0.7499375417823557,
+          0.5966655970928647
+        ],
+        [
+          0.061881714800393325,
+          -0.07416282036668004,
+          1.171062500382079
+        ]
+      ]
+    },
+    {
+      "name": "rm_tibia",
+      "geometry": "lm_tibia.stl",
+      "matrix": [
+        0.17492703675274532,
+        -0.8882559824713968,
+        0.4247373793494956,
+        0.0,
+        -0.9680262953990019,
+        -0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.17979327915411086,
+        0.3953171696474456,
+        0.9007767271377213,
+        0.0,
+        0.018013014165519925,
+        -0.7024144867128848,
+        1.123905908618155,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.47,
+        0.2
+      ],
+      "bounds": [
+        [
+          -0.02368592053385652,
+          -1.0051677655024576,
+          0.4622965357156167
+        ],
+        [
+          0.1691347811981846,
+          -0.696447943868734,
+          1.140490413660462
+        ]
+      ]
+    },
+    {
+      "name": "rm_tarsus1",
+      "geometry": "lm_tarsus1.stl",
+      "matrix": [
+        0.10288472250721922,
+        -0.6994811570753917,
+        0.7072063664667363,
+        0.0,
+        -0.9680262953990019,
+        -0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.22877898786972733,
+        0.6752780656224255,
+        0.701184504106115,
+        0.0,
+        0.13830481128962785,
+        -0.966062930113327,
+        0.5231492831309148,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.10204786939021104,
+          -1.1922937469986254,
+          0.2731877447766098
+        ],
+        [
+          0.22354786834430268,
+          -0.9525172758230337,
+          0.5045981037007179
+        ]
+      ]
+    },
+    {
+      "name": "rm_tarsus2",
+      "geometry": "lm_tarsus2.stl",
+      "matrix": [
+        0.08255381246348871,
+        -0.6379650587230603,
+        0.7656274889894075,
+        0.0,
+        -0.9680262953990019,
+        -0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.23687540915812152,
+        0.7336722284936072,
+        0.6368791892293206,
+        0.0,
+        0.205255819302461,
+        -1.1635793339847709,
+        0.31877437156944594,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.17832623940215175,
+          -1.299782869816383,
+          0.1816230072828665
+        ],
+        [
+          0.2562825269002317,
+          -1.1577894485197757,
+          0.3131749639032585
+        ]
+      ]
+    },
+    {
+      "name": "rm_tarsus3",
+      "geometry": "lm_tarsus3.stl",
+      "matrix": [
+        0.061594618059556204,
+        -0.5715936610600119,
+        0.8182217240223518,
+        0.0,
+        -0.9680262953990019,
+        -0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.24316906555353981,
+        0.7864827027025489,
+        0.5677268391643224,
+        0.0,
+        0.24330167302882627,
+        -1.2809131716507283,
+        0.21686604143191118,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.21907455902005912,
+          -1.3738829162351829,
+          0.12006349322766449
+        ],
+        [
+          0.2811217468500476,
+          -1.2762465394332871,
+          0.21854881530258308
+        ]
+      ]
+    },
+    {
+      "name": "rm_tarsus4",
+      "geometry": "lm_tarsus4.stl",
+      "matrix": [
+        0.04016665142034323,
+        -0.5008720904986077,
+        0.8645887976797011,
+        0.0,
+        -0.9680262953990019,
+        -0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.24761205853059942,
+        0.8333075686526843,
+        0.4942537450504457,
+        0.0,
+        0.26563150700129945,
+        -1.3524450434558324,
+        0.1650603256486124,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.24244766936667886,
+          -1.4250928486845866,
+          0.09893391673667332
+        ],
+        [
+          0.29235106165816066,
+          -1.3581804375354667,
+          0.1660336488072384
+        ]
+      ]
+    },
+    {
+      "name": "rm_tarsus5",
+      "geometry": "lm_tarsus5.stl",
+      "matrix": [
+        0.018432992310534208,
+        -0.4263385808936721,
+        0.9043758285337183,
+        0.0,
+        -0.9680262953990019,
+        -0.2339351298666072,
+        -0.09055079475287889,
+        0.0,
+        -0.2501705742299924,
+        0.8737904608405058,
+        0.41701908149816425,
+        0.0,
+        0.2812956556448473,
+        -1.4058349266947123,
+        0.13444614362505355,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          0.2575309262403135,
+          -1.5051754377037585,
+          0.06273091577592166
+        ],
+        [
+          0.3264366384844384,
+          -1.4092791426165903,
+          0.1417547902475552
+        ]
+      ]
+    },
+    {
+      "name": "rh_coxa",
+      "geometry": "lh_coxa.stl",
+      "matrix": [
+        -0.6355433650282368,
+        -0.7071067811865475,
+        0.30997521057108,
+        0.0,
+        -0.6645744387245002,
+        0.7053843046066397,
+        0.24652342324538423,
+        0.0,
+        0.3929700326521105,
+        0.049325275616132515,
+        0.9182274068131443,
+        0.0,
+        -0.28800000000000003,
+        -0.087,
+        0.803,
+        1.0
+      ],
+      "color": [
+        0.59,
+        0.39,
+        0.12
+      ],
+      "bounds": [
+        [
+          -0.41637299285593665,
+          -0.16015834023415274,
+          0.5761440381550176
+        ],
+        [
+          -0.25190771671427703,
+          0.018720157673724327,
+          0.8540149715140799
+        ]
+      ]
+    },
+    {
+      "name": "rh_trochanterfemur",
+      "geometry": "lh_trochanterfemur.stl",
+      "matrix": [
+        0.5468206511583052,
+        0.3479291871318926,
+        0.7615329646236907,
+        0.0,
+        -0.7044346866115923,
+        0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.45250298094624153,
+        0.6424644524758902,
+        -0.6184500622844336,
+        0.0,
+        -0.3659376869245696,
+        -0.09685069418448605,
+        0.6201619196148366,
+        1.0
+      ],
+      "color": [
+        0.63,
+        0.43,
+        0.16
+      ],
+      "bounds": [
+        [
+          -0.7925040031285973,
+          -0.6733404790354058,
+          0.5973883167927364
+        ],
+        [
+          -0.34875446806955734,
+          -0.07668411982592194,
+          1.1706589650820272
+        ]
+      ]
+    },
+    {
+      "name": "rh_tibia",
+      "geometry": "lh_tibia.stl",
+      "matrix": [
+        -0.5485275257865954,
+        -0.697048589607968,
+        0.46178005281733264,
+        0.0,
+        -0.7044346866115923,
+        0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.45043237644830064,
+        0.2189487512614484,
+        0.8655472942411574,
+        0.0,
+        -0.7443782261631662,
+        -0.6337126636046296,
+        1.137325416152561,
+        1.0
+      ],
+      "color": [
+        0.67,
+        0.47,
+        0.2
+      ],
+      "bounds": [
+        [
+          -1.0996557592348066,
+          -0.8201454523719207,
+          0.49996071970199274
+        ],
+        [
+          -0.7060962731050104,
+          -0.6057422485932167,
+          1.1544610265370512
+        ]
+      ]
+    },
+    {
+      "name": "rh_tarsus1",
+      "geometry": "lh_tarsus1.stl",
+      "matrix": [
+        -0.5071824446190452,
+        -0.6753134682399229,
+        0.5354602576139669,
+        0.0,
+        -0.7044346866115923,
+        0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.49652566919412827,
+        0.2788673727189533,
+        0.8220068419813495,
+        0.0,
+        -1.0522452444317336,
+        -0.7836942061195821,
+        0.5452278389374062,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.2655718247295449,
+          -0.8943441485806644,
+          0.225904800924852
+        ],
+        [
+          -1.027836166654246,
+          -0.7334810968653002,
+          0.5524998953640138
+        ]
+      ]
+    },
+    {
+      "name": "rh_tarsus2",
+      "geometry": "lh_tarsus2.stl",
+      "matrix": [
+        -0.46197739880281086,
+        -0.6484388036131512,
+        0.6050652865304154,
+        0.0,
+        -0.7044346866115923,
+        0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.5388401017869924,
+        0.33666364508534347,
+        0.7722104213127621,
+        0.0,
+        -1.2279272133263164,
+        -0.8818516101912475,
+        0.25521018547326857,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.3510994235872196,
+          -0.9474089025130565,
+          0.07878984967182612
+        ],
+        [
+          -1.2141353737903668,
+          -0.8483179239680976,
+          0.25855749883878776
+        ]
+      ]
+    },
+    {
+      "name": "rh_tarsus3",
+      "geometry": "lh_tarsus3.stl",
+      "matrix": [
+        -0.41325642603210705,
+        -0.6166291281528288,
+        0.6700654032679585,
+        0.0,
+        -0.7044346866115923,
+        0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.5770536358447084,
+        0.39189770382956735,
+        0.7165370130645837,
+        0.0,
+        -1.322101423514007,
+        -0.9410216142406258,
+        0.1200983469456205,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.4009747968001471,
+          -0.9823809946505101,
+          0.0169043329129913
+        ],
+        [
+          -1.3097752278134913,
+          -0.9080863540754974,
+          0.1231782017646844
+        ]
+      ]
+    },
+    {
+      "name": "rh_tarsus4",
+      "geometry": "lh_tarsus4.stl",
+      "matrix": [
+        -0.3613903223282464,
+        -0.5801265326964158,
+        0.7299659176900799,
+        0.0,
+        -0.7044346866115923,
+        0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.6108754432991342,
+        0.44414918441334483,
+        0.6554103254901061,
+        0.0,
+        -1.3780298843363945,
+        -0.9785342658901606,
+        0.05070185327872603,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.443743294902011,
+          -1.0149340260201865,
+          -0.029867270665734136
+        ],
+        [
+          -1.373015750786273,
+          -0.9500777652404023,
+          0.0555951399072118
+        ]
+      ]
+    },
+    {
+      "name": "rh_tarsus5",
+      "geometry": "lh_tarsus5.stl",
+      "matrix": [
+        -0.30677382005802506,
+        -0.5392088240362054,
+        0.7843109507131077,
+        0.0,
+        -0.7044346866115923,
+        0.6827772023483173,
+        0.19387383591354632,
+        0.0,
+        0.6400481197733762,
+        0.4930204215191268,
+        0.5892955695910741,
+        0.0,
+        -1.4229256717318348,
+        -1.0111745374415981,
+        0.002827850133471463,
+        1.0
+      ],
+      "color": [
+        0.71,
+        0.51,
+        0.24
+      ],
+      "bounds": [
+        [
+          -1.5127371108598935,
+          -1.063385913120271,
+          -0.09190466651555813
+        ],
+        [
+          -1.4170532592846674,
+          -0.9850759436171849,
+          0.006200057076836145
+        ]
+      ]
+    }
+  ],
+  "total_triangles": 447417,
+  "bounds": [
+    [
+      -2.4277954345482287,
+      -1.5051754377037585,
+      -0.09190466651555813
+    ],
+    [
+      1.3752804860538101,
+      1.5051754377037585,
+      1.745470097474754
+    ]
+  ],
+  "head_bounds": [
+    [
+      0.5090888672330649,
+      -0.37689824239350855,
+      1.0233036875661017
+    ],
+    [
+      1.0195328714817762,
+      0.37689824239350855,
+      1.7034188487968893
+    ]
+  ],
+  "neutral_pose_reference_max_error_mm": 4.859930236023047e-10,
+  "processing": "Original triangles retained without decimation; identical positions indexed; area-weighted normals; right-side surfaces mirrored per official rig.",
+  "brain_registration": "ASSUMPTION: different-fly FlyWire neurons fit inside head bounding box; orientation/scale approximate, not a co-registered anatomical atlas."
+}
