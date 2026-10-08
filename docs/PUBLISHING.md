@@ -1,111 +1,72 @@
-# Publishing Cognesia v0.0.1
+# Publishing Cognesia and ParaLimbo
 
-The source folder is prepared locally. Preparation does not create a GitHub
-repository, deploy GitHub Pages, publish a release or get indexed by Google.
+Public repository: [allenwuzhouhan-web/cognesia](https://github.com/allenwuzhouhan-web/cognesia).
+The app and model have separate release tags in the same repository:
 
-## Upload the clean source snapshot
+- `v0.0.2`: Cognesia source preview with personal access key protection.
+- `paralimbo-v0.1.0-alpha.1`: ParaLimbo compiler, pinned acquisition recipe and validation evidence.
 
-From the working repository, run:
+Original code and documentation remain **all rights reserved**. Public source
+availability is not an open-source license. Preserve `LICENSE` and
+`THIRD_PARTY_NOTICES.md`; upstream datasets retain their own artifact-specific terms.
 
-```sh
-python3.12 scripts/prepare_public_release.py --check
-python3.12 scripts/prepare_public_release.py --export
-```
+## Verify and export
 
-The exporter writes `release/Cognesia-v0.0.1/`, a matching ZIP and an external
-SHA-256 manifest. It includes current tracked and unignored source files, so
-uncommitted implementation work is included. It excludes the original `.git`
-history, local environments, downloaded datasets, recordings and caches. It
-refuses to overwrite an existing export. The scan checks common credential
-patterns, machine paths, forbidden filenames, symlinks and large files; it is
-not an exhaustive secret audit.
-
-Use this clean folder for the first public repository. The working repository's
-old commits contain local-machine metadata and paths; changing current files
-and `.gitignore` does not remove those historical values. Do not upload the
-whole working folder through Finder or push its old history by accident.
-
-Create an **empty public repository named `Cognesia`** on GitHub. Do not initialize
-it with a generated README or license. With GitHub Desktop, add the clean folder
-as a new repository and publish it as public. Alternatively, in a terminal:
+Use Python 3.12. Install the locked environment described in
+[reproduction instructions](fly-model/reproduce.md), then run:
 
 ```sh
-cd release/Cognesia-v0.0.1
-git init -b main
-# Set your preferred public name and GitHub-provided noreply email before committing.
-git add .
-git commit -m "Prepare Cognesia v0.0.1"
-git remote add origin https://github.com/YOUR-USERNAME/Cognesia.git
-git push -u origin main
+python -m pytest -q -m 'not integration and not slow'
+node --test tests/test_web_*.mjs macos/test_desktop_bridge.mjs macos/test_research_bridge.mjs
+python scripts/prepare_public_release.py --check
+python scripts/prepare_public_release.py --export
 ```
 
-Replace `YOUR-USERNAME` with the real account. These commands publish the files;
-they are instructions, not actions already performed. For the first release,
-create tag `v0.0.1` and use `CHANGELOG.md` as the release-note basis.
+The exporter writes `release/Cognesia-v0.0.2/`, a matching ZIP and a SHA-256
+manifest. It includes current tracked and unignored source files, including
+uncommitted work. It excludes the original Git history, local environments,
+private credentials, downloaded datasets, recordings and caches. Existing exports
+are never overwritten. The bounded audit checks common credential formats,
+machine paths, symlinks, forbidden filenames and oversized files; it is not an
+exhaustive secret audit.
 
-## Repository About settings
+Build the Python wheel from this exact clean snapshot (`python -m build --wheel`
+after installing `build`, or `uv build --wheel`). Verify package version, license,
+browser assets and CLI entry point. The native macOS app is built locally using
+`python macos/build_app.py`; its bundle is tied to the builder's source checkout.
+Do not distribute that machine-bound bundle as a portable installer.
 
-- **Name:** `Cognesia`
-- **Description:** `Cognesia is an experimental Drosophila connectome and neural simulation workbench with 3D anatomy, visual stimuli and neuromodulation.`
-- **Topics:** `cognesia`, `drosophila`, `neuroscience`, `computational-neuroscience`, `connectomics`, `neural-simulation`, `flywire`, `banc`, `neuromodulation`, `python`
-- **Website:** the real URL returned by the successful GitHub Pages deployment.
+## Update the existing public repository
 
-Topics help discovery within GitHub; they do not guarantee a Google ranking.
-See [GitHub's topic documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics).
+Use a clean clone of the public repository and fetch its current default branch.
+Copy the audited export into that clone while preserving its `.git` directory.
+Review the complete staged diff and run checks from the clean source tree. Commit
+and push only this clean public history. The original research workspace has
+older machine-specific history and must not be pushed wholesale.
 
-## Enable the public project page
+Create the two tags at the tested commit. Publish both as prereleases, with
+separate release notes and explicit assets:
 
-1. In **Settings → Pages → Build and deployment**, select **GitHub Actions**.
-2. Under **Actions**, run **Publish Cognesia project page** from `main`.
-3. Wait for deployment success and open the returned HTTPS URL.
-4. Add that URL to the repository's **About → Website** field.
+- App: source ZIP, source-file/checksum manifest, Python wheel.
+- Model: source/compiler ZIP, model manifest, structural audit, determinism,
+  input-reproduction and runtime reports, plus checksums.
 
-The workflow builds only `site/` into `_site/`; it does not expose the local
-simulation server or datasets. It reads the actual repository and Pages URL to
-set the canonical URL, GitHub links, structured data and `sitemap.xml`. Later
-changes to site files or package metadata on `main` redeploy it. If the first
-push ran before Pages was enabled, rerun the workflow after step 1. If using a
-branch other than `main`, update the workflow's push branch accordingly.
+Model release assets should contain recipes and audit summaries, not the upstream
+raw datasets or unreviewed derived tables. The pinned acquisition script retrieves
+those inputs separately. Preserve their attribution and terms when downloading.
 
-For a local preview, supply your intended public URL:
+Verify both GitHub release URLs, tags, uploaded asset sizes/checksums and the
+public source CI result. Record these independently from local test results.
 
-```sh
-python3.12 scripts/build_public_site.py --repository YOUR-USERNAME/Cognesia --site-url https://YOUR-USERNAME.github.io/Cognesia/
-python3.12 -m http.server 8080 --directory _site --bind 127.0.0.1
-```
+## Website deployment is separate
 
-Visit `http://127.0.0.1:8080`. The template in `site/index.html` should be built
-before publication; do not upload it as an unprocessed Pages document.
-See [GitHub Pages workflow setup](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+The Pages workflow is **manual only**. Pushing source or creating a release does
+not deploy the website. GitHub Pages serves static files; signup, key issuance,
+account sessions and authoritative usage metering require an application service.
+See the [website accounts and admin plan](website-accounts-plan.md),
+[existing deployment design](customer-website.md) and
+[app access setup](app-access.md).
 
-## Help Google find Cognesia
-
-After deployment, add the Pages URL as a URL-prefix property in
-[Google Search Console](https://search.google.com/search-console). Verify ownership
-with Google's supplied verification meta tag: add the exact tag to the `<head>`
-of `site/index.html` and redeploy.
-Do not invent a verification token. Submit the deployed `sitemap.xml` and use
-URL Inspection to request indexing of the homepage. Link the project page from
-relevant public research profiles or project pages you control.
-
-The page uses Cognesia in its title, main heading, visible text and description.
-It supplies a canonical URL and useful static HTML without requiring JavaScript.
-A project site under `/Cognesia/` does not control the host's root `robots.txt`;
-there is no need to add a misleading subdirectory robots file.
-
-Google says crawling may take days to weeks, and requesting indexing does not
-guarantee inclusion or ranking. Check the actual URL in Search Console before
-claiming indexing. See [Google's indexing guidance](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl).
-
-## License and research evidence
-
-**All rights reserved** is the selected license status for original Cognesia
-code and documentation. Keep the root `LICENSE` notice in the repository.
-Public availability does not grant an open-source reuse license.
-Third-party asset licenses and attribution are retained in
-[THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
-
-Historical `REPORT.md` entries point to some locally retained evidence excluded
-from the source package. Do not describe those artifacts as bundled or describe
-old test counts as a new release verification. v0.0.1 labels the public source
-release and does not change the scientific validation status.
+Only after provisioning and verifying the chosen host, HTTPS, email delivery,
+workspaces and account flows should the site describe signup as available. A
+working local gateway or GitHub release does not establish public availability.

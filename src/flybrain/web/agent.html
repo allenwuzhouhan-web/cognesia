@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171a20"><title>Cognesia · Research agent</title><link rel="stylesheet" href="/agent.css"><script defer src="/agent-desktop.js"></script><script defer src="/agent-report.js"></script><script defer src="/agent.js"></script></head>
+<body class="editor-theme">
+<header><a class="brand" href="/">◌ <span>Cognesia <small>Flybrain</small></span></a><a id="workbench-link" href="http://127.0.0.1:8794" target="_blank" rel="noreferrer">Open workbench ↗</a><span class="local-tag">LOCAL GPT-OSS-20B</span></header>
+<main>
+  <nav class="intro" aria-label="Workspace"><h1>Research agent</h1><span>Drosophila studies</span><p>Experimental model · Replicates do not replace biological validation</p></nav>
+  <div id="error-banner" role="alert" hidden></div>
+  <div id="history-error" role="status" hidden></div>
+  <div class="layout">
+    <aside class="sidebar" aria-label="Research chats">
+      <nav class="chat-history" aria-label="Past chats"><div class="history-heading"><h2>Past chats</h2><span id="history-count">0</span></div><button id="new-chat" class="primary full">＋ New chat</button><p id="history-empty" class="muted">Your studies will be saved here.</p><ol id="history-list"></ol><p class="history-note">Saved on this Mac · Reports, figures & traces</p></nav>
+      <details id="connection-panel" class="panel connection" open><summary><span>Model / connection</span><span id="connection-indicator" class="connection-indicator" data-state="offline">Checking</span></summary><div class="connection-content"><p id="connection-state" class="muted" role="status">Checking the local console…</p>
+        <label>Local model endpoint<input id="model-url" type="url" value="http://127.0.0.1:8080/v1" spellcheck="false"></label>
+        <label>Model ID<input id="model-id" value="gpt-oss-20b" spellcheck="false"></label>
+        <label>Cognesia access<select id="mode"><option value="owner">My local workbench</option><option value="gateway">Private API · password</option></select></label>
+        <div id="gateway-fields" hidden><label>API endpoint<input id="gateway-url" type="url" value="http://127.0.0.1:8796" spellcheck="false"></label><label>API password<input id="api-password" type="password" autocomplete="off" placeholder="Held in server memory only"></label><p class="hint">The password grants access to this API's workspace. Tool-call limits bound each study. No payment or credit balance is required.</p></div>
+        <button id="connect" class="primary full">Connect & verify tools</button>
+        <details class="setup"><summary>Set up GPT-OSS-20B</summary><p>Download a GPT-OSS-20B GGUF model and install a current <a href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noreferrer">llama.cpp</a> runtime. Choose their local paths below.</p><p id="launcher-readiness" class="hint" role="status"></p>
+          <label>llama-server executable<input id="llama-executable" placeholder="/opt/homebrew/bin/llama-server" spellcheck="false"></label>
+          <label>Model file<input id="model-file" placeholder="/path/to/gpt-oss-20b.gguf" spellcheck="false"></label>
+          <div class="fields-row"><label>Context tokens<select id="context-size"><option>8192</option><option selected>16384</option><option>32768</option><option>65536</option></select></label><label>CPU threads<input id="model-threads" type="number" min="1" max="256" value="4"></label></div>
+          <div class="actions"><button id="launch-model" class="full">Start local model</button><button id="unload-model" disabled>Unload model</button></div><p class="hint">Weights load in the background; then connect above. Unload releases model memory and stops the agent. Submitted Cognesia experiments may continue. Closing this console service also stops the model it launched.</p>
+          <details><summary>Or start it in your terminal</summary><pre>llama-server --model /path/to/gpt-oss-20b.gguf \
+  --host 127.0.0.1 --port 8080 \
+  --alias gpt-oss-20b --jinja \
+  --ctx-size 16384 --parallel 1 --no-webui \
+  --cors-origins localhost --no-cors-credentials</pre></details>
+          <p class="hint">The runtime must preserve GPT-OSS's Harmony template. The connect check verifies a structured tool call before permitting a study.</p>
+        </details>
+      </div></details>
+    </aside>
+    <section class="workspace" aria-label="Research workspace">
+      <div class="panel summary"><div class="study-status"><p class="eyebrow" id="study-context">NEW CHAT</p><h2 id="run-status" role="status">Ready when you are</h2></div><div class="call-meter"><strong id="calls-used">0 <span>/ ∞</span></strong><small>tool calls</small></div><div class="run-actions"><button id="start" class="primary" disabled>Run study</button><button id="stop" class="stop" disabled>Stop agent</button></div></div>
+      <div class="workspace-scroll" id="workspace-scroll" tabindex="0" role="region" aria-label="Study instructions and paper">
+      <details class="panel saved-prompt" id="saved-prompt" open hidden><summary>Study instructions</summary><p id="saved-prompt-text"></p></details>
+      <section class="panel study" id="study-editor"><div class="panel-heading"><h2>New study</h2><span class="panel-caption">Research instructions</span></div><div class="study-content"><div class="templates" aria-label="Study templates"><button data-template="audit">Audit readiness</button><button data-template="replicates">Replicate study</button><button data-template="chemistry">Chemical comparison</button></div><label class="sr-only" for="prompt">Research instructions</label><textarea id="prompt" rows="5" maxlength="16000" placeholder="What would you like to test? Include a hypothesis, controls, outcome measures and independent seeds."></textarea>
+        <details class="study-options"><summary>Study settings <span id="budget-summary">Unlimited calls · 2,048 tokens</span></summary>
+        <div class="fields-row"><label>Tool-call limit<select id="call-limit"><option value="unlimited" selected>Unlimited (∞)</option><option value="custom">Custom limit</option></select></label><label id="max-calls-field" hidden>Maximum calls<input id="max-calls" type="number" min="1" step="1" value="20"></label><label>Tokens per response<select id="max-tokens"><option>1024</option><option selected>2048</option><option>4096</option><option>8192</option></select></label></div><p class="hint" id="call-limit-hint">Unlimited calls until the study finishes or you stop it.</p>
+        </details><p id="active-chat-note" class="hint" hidden>A study is running. You can draft your next chat while it finishes.</p><p class="hint study-note">Studies save to Past chats. Stop agent ends tool calls; submitted experiments may continue in the workbench.</p></div>
+      </section>
+      <section class="panel result"><div class="panel-heading"><h2>Study / paper</h2><div class="paper-actions"><button id="generate-paper" hidden>Generate paper</button><button id="download-pdf" disabled>Download PDF ↓</button></div></div><p id="report-error" class="hint" role="status" hidden></p><div id="answer" class="answer empty">Your report will appear here with Abstract, Methodology, Data, Analysis and Futures.</div></section>
+      </div>
+      <div class="trace-dock"><details class="panel trace" id="trace-panel"><summary>Experiment trace <span id="trace-count" class="muted">0 events</span></summary><div class="trace-content" tabindex="0" role="region" aria-label="Experiment trace events"><p id="trace-empty" class="muted">Tool names, inputs and returned evidence appear as the study runs.</p><ol id="events" aria-live="polite"></ol></div></details><button id="export" class="trace-export" disabled>Export trace ↓</button></div>
+    </section>
+  </div>
+</main>
+<footer>Cognesia research console · local inference · inspectable evidence</footer>
+</body></html>

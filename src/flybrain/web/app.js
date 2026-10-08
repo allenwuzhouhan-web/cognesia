@@ -30,7 +30,7 @@ import {
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
-const modelDisplayName = id => ({'banc-888':'BANC 888','cognesia-fused-v1':'Cognesia','flywire-783':'FlyWire 783'})[id]||id||'FlyWire 783';
+const modelDisplayName = id => ({'paralimbo-v0-1-0':'ParaLimbo 0.1 · BANC × FlyWire','banc-888':'BANC 888','cognesia-fused-v1':'Cognesia','flywire-783':'FlyWire 783'})[id]||id||'FlyWire 783';
 let stimulusFrameCanvas = document.createElement("canvas");
 const palette = [
   "#65b5ff",
@@ -700,7 +700,7 @@ async function replaceAnatomy(anatomy, isCurrent = () => true) {
   const original=!historical&&(metadata.model_id||'flywire-783')==='flywire-783';
   $("#connection-count").textContent=original?'54.49M':'—';$("#connection-count-label").textContent=original?'Synapses':'Connections';
   $("#model-footer").textContent=historical?`Historical recorded anatomy only · ${metadata.model_hash?.slice(0,12)||'saved source'}`:`Computed locally · ${metadata.model_id||'FlyWire v783'}`;
-  $(".page-heading h1").textContent=historical?`${metadata.model_id} · ${formatNumber(pointCount)} recorded neurons`:metadata.model_id&&metadata.model_id!=='flywire-783'?`${metadata.model_id} · ${formatNumber(pointCount)} neurons`:'FlyWire v783 · whole-brain model';
+  $(".page-heading h1").textContent=historical?`${modelDisplayName(metadata.model_id)} · ${formatNumber(pointCount)} recorded neurons`:metadata.model_id&&metadata.model_id!=='flywire-783'?`${modelDisplayName(metadata.model_id)} · ${formatNumber(pointCount)} neurons`:'FlyWire v783 · whole-brain model';
   layoutWorkbench?.refresh();
   refreshEyeMap();
   return true;

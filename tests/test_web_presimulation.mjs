@@ -76,3 +76,18 @@ test('changing configuration while an estimate is loading cannot display stale c
     assert.equal(await pending,null);assert.deepEqual(f.host.querySelector('.simulation-size-grid').querySelectorAll('output').map(node=>node.textContent),['—','—','—']);
   }finally{f.restore();}
 });
+
+test('a saved ParaLimbo selection survives refresh and uses provider chemistry options',async()=>{
+  const saved={...defaultExperimentDraft(),model_id:'paralimbo-v0-1-0'};
+  const f=fixture({saved});try{
+    await f.controls.ready;
+    assert.equal(f.controls.draft().model_id,'paralimbo-v0-1-0');
+    const picker=f.controls.elements.model.querySelector('select');
+    assert.equal(picker.value,'paralimbo-v0-1-0');
+    assert.equal(picker.options.find(option=>option.value==='paralimbo-v0-1-0').textContent,'ParaLimbo 0.1 · BANC × FlyWire');
+    const options=f.controls.options({duration_ms:300,neuromod:{enabled:true}});
+    assert.equal(options.model_id,'paralimbo-v0-1-0');
+    assert.equal(options.neuromod.plasticity_enabled,false);
+    assert.equal(initialExperimentDraft({...saved,from_checkpoint:'paralimbo-state'}).model_id,'paralimbo-v0-1-0');
+  }finally{f.restore();}
+});

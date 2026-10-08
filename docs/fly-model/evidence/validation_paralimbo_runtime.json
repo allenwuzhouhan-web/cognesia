@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "model_id": "paralimbo-v0-1-0",
+  "model_hash": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c",
+  "status": "PASS",
+  "scope": "300 ms paired dark execution, after fixed 100 ms preparation, repeated twice; no biological or global stability claim",
+  "acceptance": {
+    "numeric_recordings_finite": true,
+    "replay_arrays_exact": true,
+    "candidate_identity_exact": true,
+    "stimulus_and_baseline_clamps": 0,
+    "preparation_clamps": 0,
+    "preparation_nonfinite_derivatives": 0
+  },
+  "simulated_neurons": 175401,
+  "recorded_neurons": 32,
+  "options": {
+    "model_id": "paralimbo-v0-1-0@251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c",
+    "stimulus": "dark",
+    "duration_ms": 300.0,
+    "threads": 4,
+    "record_dt_ms": 20.0,
+    "neural_overrides": {
+      "pre_equilibration": 100.0
+    },
+    "neuromod": {
+      "enabled": true,
+      "plasticity_enabled": false
+    },
+    "recording_selection": {
+      "root_ids": [
+        "720575941633499884",
+        "720575941402532464",
+        "720575941449759354",
+        "720575941434679438",
+        "720575941503579557",
+        "720575941672296103",
+        "720575941433458391",
+        "720575941516673539",
+        "720575941551647037",
+        "720575941442988123",
+        "720575941511098189",
+        "720575941632039394",
+        "720575941527834756",
+        "720575941446203156",
+        "720575941503424706",
+        "720575941500693131",
+        "720575941575338747",
+        "720575941429192276",
+        "720575941658394136",
+        "720575941432053129",
+        "720575941722049850",
+        "720575941526867622",
+        "720575941643317665",
+        "720575941567738727",
+        "720575941558992755",
+        "720575941478354718",
+        "720575941537441818",
+        "720575941543939357",
+        "720575941354045232",
+        "720575941428463956",
+        "720575941518532755",
+        "720575941723219770"
+      ]
+    }
+  },
+  "run_ids": [
+    "20261008T141201Z_visual_dark_d3915b",
+    "20261008T141214Z_visual_dark_d6faba"
+  ],
+  "wall_seconds": [
+    13.420211041986477,
+    13.138431208994007
+  ],
+  "activity_arrays": {
+    "node_indices": {
+      "shape": [
+        32
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "time_ms": {
+      "shape": [
+        15
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "raw_mv": {
+      "shape": [
+        15,
+        32
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_mv": {
+      "shape": [
+        15,
+        32
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "delta_mv": {
+      "shape": [
+        15,
+        32
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "spike_indices": {
+      "shape": [
+        0
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "spike_times_ms": {
+      "shape": [
+        0
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_spike_indices": {
+      "shape": [
+        0
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_spike_times_ms": {
+      "shape": [
+        0
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "raw_clamps": {
+      "shape": [
+        175401
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_clamps": {
+      "shape": [
+        175401
+      ],
+      "equal": true,
+      "finite": true
+    }
+  },
+  "chemistry_arrays": {
+    "time_ms": {
+      "shape": [
+        15
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "node_root_ids": {
+      "shape": [
+        32
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "membership_indptr": {
+      "shape": [
+        33
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "membership_indices": {
+      "shape": [
+        32
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "membership_weights": {
+      "shape": [
+        32
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "concentrations_au": {
+      "shape": [
+        15,
+        8,
+        97
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "state_values": {
+      "shape": [
+        15,
+        5
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "hormones_au": {
+      "shape": [
+        15,
+        0
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "plasticity_change_l1": {
+      "shape": [
+        15
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_concentrations_au": {
+      "shape": [
+        15,
+        8,
+        97
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_state_values": {
+      "shape": [
+        15,
+        5
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_hormones_au": {
+      "shape": [
+        15,
+        0
+      ],
+      "equal": true,
+      "finite": true
+    },
+    "baseline_plasticity_change_l1": {
+      "shape": [
+        15
+      ],
+      "equal": true,
+      "finite": true
+    }
+  },
+  "clamp_counts": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "preparation_clamp_counts": [
+    0,
+    0
+  ],
+  "preparation_diagnostics": [
+    {
+      "stationary": true,
+      "max_abs_dvdt_mV_per_ms": 0.0001938498159142904,
+      "nonfinite_derivatives": 0,
+      "unstable_neurons": 0,
+      "unstable_by_mode": {
+        "graded": 0,
+        "spiking": 0
+      },
+      "clamp_events": 0,
+      "clamped_neurons": 0,
+      "affected_cell_types": []
+    },
+    {
+      "stationary": true,
+      "max_abs_dvdt_mV_per_ms": 0.0001938498159142904,
+      "nonfinite_derivatives": 0,
+      "unstable_neurons": 0,
+      "unstable_by_mode": {
+        "graded": 0,
+        "spiking": 0
+      },
+      "clamp_events": 0,
+      "clamped_neurons": 0,
+      "affected_cell_types": []
+    }
+  ],
+  "input_hashes": {
+    "config/parameters.yaml": "af489b36dbe1c330bbe9e5a772d262c740a62ea1e4a0ba3d551ca3a3e6955bdb",
+    "config/visual_parameters.yaml": "26446454d28ca77598d6cc6abd01c2cec2b8705a4840282dde28abc03873b54d",
+    "src/flybrain/engine.py": "087bc83a4602f12fd349b7a92ce4bdf9ce5e24663198247272cdfe15d45d5dc5",
+    "src/flybrain/hybrid_engine.py": "b70f30337d2da712dbcd31553da3bb2b8d45aaf5711c5b4d642247844fa8b4d2",
+    "src/flybrain/eye.py": "2c4c804f19cd79ca0f662cfc4b34d3441ac3af2327e4dfaf160fe5f2b06a5c36",
+    "src/flybrain/stimuli.py": "ff011f445601d32fb310d743e2d455993cc8eb317533a38a7ebe8edfa004c425",
+    "src/flybrain/stimulation.py": "a5460afb1dc3d357fff615f8edb7e9e77ff5d88962a997ad1a1529a4a6aec4f1",
+    "src/flybrain/visual_experiment.py": "dfb9cd10788d9cd262ffec4c0572a137e335ea34ee24a9ab9e6425bb51514b93",
+    "src/flybrain/experiment_session.py": "711e3b236728740d18022d3ad6d1193494c7bb59531398681b89ff6b893acb22",
+    "src/flybrain/model_registry.py": "32b3a222700b76de0e2c9c2151019b5237f49d603e59c99379d139ede8215832",
+    "src/flybrain/selection.py": "379b3c97a9c0d190cf1e93b4842d4e67cdeed2619c2aff67c08083f8b0d50a43",
+    "src/flybrain/provider_chemistry.py": "ab94eb4505a6fc255dfdc5c61ad702784365844414ceade1ab73e9ff261022c7",
+    "src/flybrain/peripheral.py": "3212318c45057d70c87c5d34628dd0cdc7c7e7908392ae2d1880642d02dced54",
+    "src/flybrain/model_eye.py": "3f5feff8ac85ed1842d312ea233317bdd05e4fff0e81d700a4ed244a9d7ceb78",
+    "src/flybrain/enzymes.py": "7db82adb034a64379ceefeb84db8271cf62026c832bec5cac7ccc5b08f190048",
+    "config/neuromod.yaml": "56d4fd1a1ed8de73398d9b672ffb1851fc7971d82fc5db9923db270ecad75cd8",
+    "config/receptors.csv": "048c94dcca5782c8d982018bdc2984f99b66fd67200e8e956722770db34cde64",
+    "src/flybrain/wholebrain_neuromod.py": "8c252d8170948ed1d81bf27879eaf652f928e85faa0a9f872be066d166de064f",
+    "src/flybrain/neuromod/field.py": "b00d60b5fda3cb4bd1412c25f38cb0600329740016ee4de2c4df7b1d695152f6",
+    "src/flybrain/neuromod/receptors.py": "7ddf753c7a2a52021c26e28a22261916d385f5bf493f9954a40375e33d3c6d7b",
+    "src/flybrain/neuromod/sources.py": "87fa160859fcfdce2476cc281efb57d413b670cf13424befc20fab563bbbcdcd",
+    "src/flybrain/neuromod/state.py": "35956286d5af135cf3394dcd2f15031692c91b5af3a7bb3bf6f0ed3311b13f21",
+    "src/flybrain/neuromod/compartments.py": "72bc1c934c0d13d952940718ff88b751b1eec67e401a011282159e1646fa8521",
+    "src/flybrain/rt/engine_rt.py": "f4519091148f4a7405d71c698f47f93db4605e58744433e73a97625ac647c9b4",
+    "build/visual/eye_assignments.parquet": "8613d261ef199276b5039f2f3679663cc07de4670d751f8de6045b877874baff",
+    "build/visual/eye_columns.csv": "4f6ca9e26930243a05fb57cd1a794850b95400c0a14f0a5f33b287a1d3b81e16"
+  },
+  "source_projection": {
+    "units": "Hz mean over compiled positive chemical annotations",
+    "identity": "compiled positive known_nt; native and inferred evidence remain in the model provenance",
+    "unassigned_sources": {
+      "DA": 0,
+      "OA": 0,
+      "5HT": 0,
+      "NO": 0,
+      "sNPF": 0,
+      "peptide_pool": 0,
+      "TA": 0,
+      "ACh": 0
+    },
+    "source_counts_model": {
+      "DA": 1048,
+      "OA": 89,
+      "5HT": 225,
+      "NO": 3722,
+      "sNPF": 4913,
+      "peptide_pool": 104,
+      "TA": 114,
+      "ACh": 45373
+    },
+    "release_location": "ASSUMPTION: source membership in coarse volume; not measured release sites",
+    "peptide_pool": "ASSUMPTION: equal normalized contributions from positive peptide endocrine cells in hemolymph only",
+    "model_id": "paralimbo-v0-1-0",
+    "model_hash": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c"
+  },
+  "receptor_coverage": [
+    {
+      "id": "DA_Dop2R_gain",
+      "enabled": true,
+      "target_neurons": 308,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "DA_Dop2R_release_prob",
+      "enabled": true,
+      "target_neurons": 308,
+      "target_edges": 14742,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "OA_OAMB_PAM",
+      "enabled": true,
+      "target_neurons": 281,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "OA_Octbeta2R_PAM_requested",
+      "enabled": false,
+      "target_neurons": 281,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "OA_VS_gain",
+      "enabled": true,
+      "target_neurons": 32,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "OA_HS_gain",
+      "enabled": true,
+      "target_neurons": 6,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "OA_HSVS_tau",
+      "enabled": true,
+      "target_neurons": 38,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "ACh_mAChRA_KC",
+      "enabled": true,
+      "target_neurons": 4552,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "ACh_mAChRB_KC_requested",
+      "enabled": false,
+      "target_neurons": 4552,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    },
+    {
+      "id": "5HT_5HT7_GABA_ALLN",
+      "enabled": true,
+      "target_neurons": 11,
+      "target_edges": 0,
+      "target_neurons_without_volume": 0,
+      "target_edges_without_empirical_compartment": 0,
+      "expression_provenance": "ASSUMPTION"
+    }
+  ],
+  "chemical_diagnostics": {
+    "field_clamps": 0,
+    "receptor_guards": 0,
+    "enzymes_enabled": false,
+    "substrate_limited_reactions": 0,
+    "plastic_edges": 0,
+    "weight_change_l1": 0.0,
+    "plasticity_status": "unavailable for this provider"
+  },
+  "biological_improvement": "PENDING",
+  "stationarity_validation": "NOT_ESTABLISHED",
+  "timestep_convergence": "NOT_EVALUATED"
+}

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Build the static Cognesia page with its actual repository and Pages URLs."""
 import argparse
+import base64
+import hashlib
 import html
 import json
 from pathlib import Path
@@ -10,6 +12,15 @@ import tomllib
 from urllib.parse import quote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def content_security_policy(page):
+    """Permit only the exact generated metadata block, never arbitrary inline JS."""
+    scripts = re.findall(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)
+    hashes = ["'sha256-" + base64.b64encode(hashlib.sha256(value.encode()).digest()).decode() + "'" for value in scripts]
+    return ("default-src 'none'; script-src 'self' " + ' '.join(hashes) +
+            "; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; "
+            "base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'")
 
 
 def build(repository, site_url, branch='main', output=None):
@@ -36,8 +47,18 @@ def build(repository, site_url, branch='main', output=None):
     output = Path(output) if output else ROOT / '_site'
     output.mkdir(parents=True, exist_ok=True)
     (output / 'index.html').write_text(page)
-    for name in ('style.css', 'icon.svg'):
+    for name in ('style.css', 'app.js', 'icon.svg'):
         shutil.copy2(ROOT / 'site' / name, output / name)
+    policy = content_security_policy(page)
+    (output / 'security-headers.conf').write_text(
+        '# Generated with this site build. Include in nginx; never serve as an asset.\n'
+        'add_header Content-Security-Policy "' + policy + '" always;\n'
+        'add_header X-Content-Type-Options "nosniff" always;\n'
+        'add_header Referrer-Policy "no-referrer" always;\n'
+        'add_header X-Frame-Options "DENY" always;\n'
+        'add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;\n'
+        'add_header Strict-Transport-Security "max-age=31536000" always;\n'
+        'add_header Cache-Control "no-store" always;\n')
     (output / '.nojekyll').touch()
     (output / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'

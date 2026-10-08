@@ -1,6 +1,6 @@
 # Cognesia
 
-**v0.0.1 · Experimental computational neuroscience workbench**
+**v0.0.2 preview · Experimental computational neuroscience workbench**
 
 Cognesia is a local research workbench for exploring *Drosophila melanogaster*
 (fruit fly) connectomes, neural simulation, visual stimulation and neuromodulation.
@@ -9,12 +9,57 @@ and an optional native macOS window. Supported source pathways include FlyWire
 and BANC, with model assumptions and data provenance documented separately.
 
 The Python package and command remain named `flybrain` for compatibility.
-Cognesia v0.0.1 is an early experimental source release; it does not establish
+Cognesia v0.0.2 is an experimental source release; it does not establish
 biologically validated vision, learning or behavior.
 
 [Installation](#installation) · [Workspace guide](docs/experiment-workspace.md) ·
+[Personal access keys](docs/app-access.md) ·
 [Model sources](docs/model-sources.md) · [Scientific limitations](LIMITATIONS.md) ·
+[ParaLimbo model](docs/fly-model/README.md) ·
+[Website accounts plan](docs/website-accounts-plan.md) ·
 [Release notes](CHANGELOG.md) · [Public GitHub setup](docs/PUBLISHING.md)
+
+## Tool API and local research agent
+
+Cognesia includes a personal-key-protected viewer, authenticated tool gateway,
+and dedicated local GPT-OSS-20B research console. Configure the access service
+and obtain an operator-issued personal key using the
+[access setup guide](docs/app-access.md) before starting. The website's signup,
+self-service key issuance, and usage administrator panel are planned separately.
+From the repository root, with persistent access configuration in place:
+
+```sh
+.venv/bin/flybrain view
+# In a second terminal:
+.venv/bin/flybrain agent --open
+```
+
+On macOS, **Open Cognesia Research.command** opens the workbench service and
+research console together. If this checkout has the prepared, verified local
+model, it also starts llama.cpp. Model weights and machine setup stay outside
+the public source package; see the [local agent guide](docs/local-agent.md).
+
+- [API and deployment](docs/public-api.md): structured tools with bounded requests
+  and idempotent execution. The app requires individual, revocable customer keys
+  with separate workspace bindings. Legacy owner-password mode remains a
+  separate private tool-gateway configuration.
+- [Customer website](docs/customer-website.md): an app-style introduction and
+  same-origin API console, with key issuance, permissions and HTTPS deployment
+  instructions. There is no paywall. Public hosting still needs a domain and host.
+- [Native macOS app](macos/README.md): separate simulation and research windows,
+  keyboard study controls, native model pickers and trace exports. The installed
+  app uses this checkout and its local Python/model installation.
+- [Compute budgets](docs/compute-budgets.md): consent-based hardware inventory,
+  Dummy through Super tiers, enforced thread/RAM ceilings, and a RAM reservation
+  for the local model. Max targets a 64 GB class laptop.
+- [Scientific audit](docs/scientific-audit-2026-10-07.md): 26 messenger entries,
+  including ten source-backed candidate tags. Candidates do not silently enable
+  uncalibrated dynamics. The API drafts reproducible seed schedules while
+  retaining the distinction between numerical repeats and biological replicates.
+
+The API implementation, model download, model inference and biological validation
+have separate verification requirements. Installing this source checkout does
+not establish a publicly hosted service.
 
 ## What you can explore
 
@@ -38,14 +83,18 @@ python3.12 -m venv .venv
 .venv/bin/flybrain fetch
 .venv/bin/flybrain validate --gate V-A
 .venv/bin/flybrain build
-.venv/bin/flybrain view --open
 ```
 
 Run from the repository root and stop if any preparation command fails. A fresh
 checkout has no downloaded connectome or saved experiments. The current viewer
 requires the initial FlyWire fetch, integrity check and build above even when
 you plan to use BANC. Startup also acquires visual-column metadata if missing.
-Once prepared, it opens idle at <http://127.0.0.1:8794>. In
+Next complete [personal access setup](docs/app-access.md), which includes exact
+commands for a private local gateway and manual key issuance. Without a
+configured verification service, sign-in fails closed. With a persistent
+configuration and a prepared model, `.venv/bin/flybrain view --open` opens the
+login page at [127.0.0.1:8794](http://127.0.0.1:8794); a custom port must match
+the registered workspace backend. In
 **Experiment → Model sources**, use **Acquire BANC sources** for the default
 BANC model. The Cognesia composite also requires its documented
 source inputs; see [model sources](docs/model-sources.md). The historical
@@ -54,8 +103,10 @@ Network downloads and model preparation may take time and require additional
 memory. A missing input or failed gate is reported rather than replaced with
 fabricated data.
 
-On macOS, after installation, you can also double-click **Open Cognesia.command**
-or [build the native window](macos/README.md).
+On macOS, after model and access setup, you can also double-click
+**Open Cognesia.command** or [build the native window](macos/README.md).
+Finder-launched apps use the private access configuration described in the
+[access guide](docs/app-access.md#persistent-settings-and-the-native-macos-window).
 
 ## Evidence and release contents
 
@@ -63,7 +114,7 @@ The unmodified original specification is in [BUILD_BRIEF.md](BUILD_BRIEF.md).
 [REPORT.md](REPORT.md) retains historical execution evidence; missing gates are
 explicitly NOT-RUN. Links in that report to `build/`, `runs/` or `data/raw/` refer
 to local artifacts **not bundled in this source release**. The historical counts
-and timings are not a fresh v0.0.1 validation run. Reproduction requires acquiring
+and timings are not a fresh v0.0.2 validation run. Reproduction requires acquiring
 the original inputs and rerunning the relevant checks.
 
 **License: All rights reserved** for original Cognesia code and documentation;

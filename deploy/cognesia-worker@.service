@@ -1,0 +1,35 @@
+# Instance is its port, for example cognesia-worker@18800.
+# Each separate research group needs its own OS user, workspace and disk quota.
+[Unit]
+Description=Cognesia private simulation workspace %i
+After=network.target
+
+[Service]
+Type=simple
+User=cognesia-worker-%i
+Group=cognesia-worker-%i
+WorkingDirectory=/srv/cognesia/workspaces/%i
+Environment=NUMBA_NUM_THREADS=2
+Environment=OMP_NUM_THREADS=2
+Environment=NUMBA_CACHE_DIR=/srv/cognesia/workspaces/%i/build/numba
+ExecStart=/opt/cognesia/.venv/bin/flybrain --root /srv/cognesia/workspaces/%i --mem-limit-gb 7 view --no-watch --port %i
+Restart=on-failure
+RestartSec=5
+# Fail-safe recycle if a worker stops responding to its 15-minute job lease.
+# A hard recycle may interrupt a run; inspect its saved manifest/checkpoint.
+RuntimeMaxSec=1h
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/cognesia/workspaces/%i
+CPUQuota=200%
+MemoryMax=8G
+TasksMax=128
+# This is a per-file bound. A filesystem/project quota is also required.
+LimitFSIZE=4G
+LimitNOFILE=1024
+
+[Install]
+WantedBy=multi-user.target

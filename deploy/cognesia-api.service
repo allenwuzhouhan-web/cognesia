@@ -1,0 +1,33 @@
+# Copy to /etc/systemd/system after following docs/public-api.md.
+[Unit]
+Description=Cognesia customer-key research gateway
+After=network.target
+
+[Service]
+Type=simple
+User=cognesia-api
+Group=cognesia-api
+WorkingDirectory=/opt/cognesia
+EnvironmentFile=/etc/cognesia/api.env
+ExecStart=/opt/cognesia/.venv/bin/python -m flybrain.public_api --registry /var/lib/cognesia-api/customer-keys.sqlite3 --state-file /var/lib/cognesia-api/customer-gateway.sqlite3 serve --auth-mode customer --production
+Restart=on-failure
+RestartSec=5
+UMask=0077
+StateDirectory=cognesia-api
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/cognesia-api
+MemoryMax=1G
+TasksMax=64
+LimitNOFILE=4096
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

@@ -119,7 +119,7 @@ def test_http_restricts_mutation_origin_and_file_routes(tmp_path):
         response.read()
         for path in ['/api/runs/%2E%2E/summary.json', '/%2E%2E/config/parameters.yaml',
                      '/api/runs/a/activity.npz', '/api/anatomy/neurons.parquet']:
-            client.request('GET', path)
+            client.request('GET', path, headers={'X-Cognesia-Internal': state.access.capability})
             response = client.getresponse()
             assert response.status in (400, 404)
             response.read()
@@ -225,13 +225,13 @@ def test_stop_all_terminates_an_uncooperative_worker_within_bounded_time(status)
         worker.join(timeout=1)
 
 
-def test_static_assets_ignore_stale_conditional_cache_headers():
-    state=SimpleNamespace()
+def test_static_assets_ignore_stale_conditional_cache_headers(tmp_path):
+    state=SimpleNamespace(root=tmp_path)
     server=ThreadingHTTPServer(('127.0.0.1',0),make_handler(state))
     thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
     client=HTTPConnection('127.0.0.1',server.server_port)
     try:
-        client.request('GET','/app.js',headers={'If-Modified-Since':'Wed, 01 Jan 2099 00:00:00 GMT'})
+        client.request('GET','/app.js',headers={'If-Modified-Since':'Wed, 01 Jan 2099 00:00:00 GMT', 'X-Cognesia-Internal': state.access.capability})
         response=client.getresponse()
         assert response.status==200
         assert 'no-store' in response.getheader('Cache-Control')

@@ -1,4 +1,4 @@
-"""Loopback-only local visual simulator. One bounded simulation job at a time."""
+"""Personal-key protected loopback simulator. One bounded simulation job at a time."""
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
@@ -124,7 +124,9 @@ def _simulation_worker(root, options, memory_limit_gb, connection, commands=None
 class VisualState:
     def __init__(self, root, memory_limit_gb=40):
         self.root = Path(root).resolve()
-        self.memory_limit_gb = memory_limit_gb
+        from .compute_policy import ComputePolicy
+        self.compute_policy = ComputePolicy(self.root, memory_limit_gb)
+        self.memory_limit_gb = self.compute_policy.snapshot()['memory_gb']
         self.anatomy = prepare_anatomy(self.root)
         from .model_registry import get_model_manifest
         from .inspect_data import atomic_write_json
@@ -240,7 +242,10 @@ class VisualState:
         preferred = next((r["id"] for r in runs if r["stimulus"].get("type") != "dark"), runs[0]["id"] if runs else None)
         from .fetch import checksum
         asset_version='-'.join(checksum(STATIC/name)[:12] for name in ('app.js','index.html','style.css') if (STATIC/name).exists())
+        compute = self.compute_policy.snapshot() if hasattr(self, 'compute_policy') else None
+        thread_limit = min(self.lab['simulation_limits']['max_threads'], compute['threads']) if compute else self.lab['simulation_limits']['max_threads']
         return {**self.lab, "neuron_count": self.anatomy["neuron_count"], "anatomy": self.anatomy,
+                'compute_policy': compute,
                 "groups": self.anatomy["groups"], "runs": runs,
                 "default_running":False,"simulation_scope":"complete released whole-brain model",
                 "asset_version":asset_version,"cache_generation":self.cache_generation,
@@ -249,7 +254,8 @@ class VisualState:
                     "detail": "The original hybrid model failed V-C: 39,945 clamp events in one-second dark equilibration. Visual runs continue explicitly for exploration and keep all warnings.",
                     "data_integrity": "PASS", "reference_engine": "PASS", "hybrid_stability": "FAIL",
                     "reference_rate_correlation": 0.9999959214},
-                "simulation_limits": {**self.lab['simulation_limits'], "memory_limit_gb": self.memory_limit_gb}}
+                "simulation_limits": {**self.lab['simulation_limits'], "memory_limit_gb": self.memory_limit_gb,
+                                      'threads': thread_limit, 'max_threads': thread_limit}}
 
     @staticmethod
     def options(payload, root=None, n_neurons=138639):
@@ -281,8 +287,8 @@ class VisualState:
         canonical = {key: value for key, value in normalized.items() if key in allowed}
         canonical['electrodes'] = payload.get('electrodes', [])
         if 'neuromod' in payload:
-            from .wholebrain_neuromod import normalize_neuromod_options
-            canonical['neuromod']=normalize_neuromod_options(payload['neuromod'])
+            from .visual_experiment import normalize_provider_neuromod
+            canonical['neuromod']=normalize_provider_neuromod(payload['neuromod'],payload.get('model_id','flywire-783'))
         if any(key in payload for key in session_keys):
             from .experiment_session import normalize_session_options
             canonical.update(normalize_session_options({key:payload[key] for key in session_keys if key in payload}))
@@ -293,8 +299,13 @@ class VisualState:
         with self.lock:
             if any(job["status"] in ACTIVE_STATUSES for job in self.jobs.values()):
                 raise RuntimeError("A simulation is already running. Wait for it to finish.")
+            if hasattr(self, 'compute_policy'):
+                from .stimulation import available_threads
+                options = self.compute_policy.apply(options, available_threads())
             job_id = uuid.uuid4().hex
             self.jobs[job_id] = {"id": job_id, "status": "queued", "progress": 0, "message": "Preparing the model", "run_id": None, "error": None, "cancel_requested": False, 'started_at': time.time(), 'model_id':options.get('model_id','flywire-783'), 'options':options}
+            if hasattr(self, 'compute_policy'):
+                self.jobs[job_id]['compute_policy'] = self.compute_policy.snapshot()
         self.futures[job_id]=self.executor.submit(self._run, job_id, options)
         return dict(self.jobs[job_id])
 
@@ -342,6 +353,15 @@ class VisualState:
                 with self.lock:
                     cancelled=self.jobs[job_id].get('cancel_requested')
                 if cancelled:raise SimulationCancelled()
+                if hasattr(self, 'compute_policy'):
+                    # The worker guard covers its own tree; also include the
+                    # viewer's resident model and recording buffers here.
+                    rss = 0
+                    for member in [self.process] + self.process.children(recursive=True):
+                        try: rss += member.memory_info().rss
+                        except (psutil.NoSuchProcess, psutil.AccessDenied): pass
+                    if rss > self.memory_limit_gb * 1e9:
+                        raise RuntimeError(f'Compute budget exceeded: process tree uses {rss / 1e9:.2f} GB; limit {self.memory_limit_gb:g} GB')
                 if reader.poll(.1):
                     try:message=reader.recv()
                     except EOFError:break
@@ -542,10 +562,17 @@ class VisualState:
         return result
 
 
-def make_handler(state):
+def make_handler(state, access=None):
+    from .app_access import AppAccess, AccessError, scope_for_request, LOGIN_HTML, LOGIN_JS, CLIENT_JS
+    access = access or getattr(state, 'access', None) or AppAccess(state.root)
+    state.access = access
     class Handler(SimpleHTTPRequestHandler):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, directory=str(STATIC), **kwargs)
+
+        def setup(self):
+            super().setup()
+            self.connection.settimeout(10)
 
         def log_message(self, fmt, *args):
             if self.path.startswith(("/api/jobs/", "/api/live-reload")):
@@ -554,6 +581,9 @@ def make_handler(state):
 
         def end_headers(self):
             self.send_header('Cache-Control','no-store, max-age=0')
+            self.send_header('X-Content-Type-Options', 'nosniff')
+            self.send_header('Referrer-Policy', 'no-referrer')
+            self.send_header('X-Frame-Options', 'DENY')
             self.send_header('Pragma','no-cache')
             self.send_header('Expires','0')
             super().end_headers()
@@ -565,6 +595,87 @@ def make_handler(state):
                 if name in self.headers:del self.headers[name]
             return super().send_head()
 
+        def trusted_local_request(self):
+            # A loopback bind alone does not protect against DNS rebinding.
+            authorities = {f'127.0.0.1:{self.server.server_port}', f'localhost:{self.server.server_port}'}
+            if self.headers.get('Host', '').lower() not in authorities:
+                self.send_json({'error': 'Only the local Cognesia origin is allowed'}, 403)
+                return False
+            origin = self.headers.get('Origin')
+            if origin and origin not in {f'http://{authority}' for authority in authorities}:
+                self.send_json({'error': 'Cross-origin requests are not allowed'}, 403)
+                return False
+            return True
+
+        def access_response(self):
+            path = unquote(urlparse(self.path).path)
+            if self.command in ('GET', 'HEAD') and path == '/api/health':
+                from .api_credentials import workspace_fingerprint
+                self.send_json({'service': 'flybrain-visual', 'status': 'ready',
+                    'workspace_fingerprint': workspace_fingerprint(state.root), 'access_required': True})
+                return False
+            if self.command in ('GET', 'HEAD') and path in ('/auth/login', '/auth/login.js', '/auth/client.js'):
+                body = {'/auth/login': LOGIN_HTML, '/auth/login.js': LOGIN_JS, '/auth/client.js': CLIENT_JS}[path]
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/html; charset=utf-8' if path == '/auth/login' else 'text/javascript; charset=utf-8')
+                self.send_header('Content-Length', str(len(body.encode())))
+                self.end_headers()
+                if self.command != 'HEAD': self.wfile.write(body.encode())
+                return False
+            try:
+                if self.command == 'POST' and path == '/auth/login':
+                    if (self.headers.get('Origin') != 'http://' + self.headers.get('Host', '')
+                            or self.headers.get('Content-Type', '').split(';')[0] != 'application/json'
+                            or self.headers.get('X-Cognesia-Login') != '1'):
+                        raise AccessError('Sign in from the local Cognesia page', 403)
+                    size = int(self.headers.get('Content-Length', 0))
+                    if not 0 < size <= 1024: raise AccessError('Invalid sign-in request', 400)
+                    payload = json.loads(self.rfile.read(size))
+                    if not isinstance(payload, dict) or set(payload) != {'key'}: raise AccessError('Invalid sign-in request', 400)
+                    token, result = access.login(payload['key'])
+                    body = json.dumps(result).encode()
+                    self.send_response(200)
+                    self.send_header('Set-Cookie', access.cookie(token))
+                    self.send_header('Content-Type', 'application/json')
+                    self.send_header('Content-Length', str(len(body)))
+                    self.end_headers(); self.wfile.write(body)
+                    return False
+                mutation = self.command not in ('GET', 'HEAD')
+                if mutation and not self.headers.get('X-Cognesia-Internal'):
+                    if self.headers.get('Origin') != 'http://' + self.headers.get('Host', ''):
+                        raise AccessError('Cross-origin requests are not allowed', 403)
+                    if self.headers.get('Content-Type', '').split(';')[0] != 'application/json':
+                        raise AccessError('Requests require application/json', 415)
+                self.access_identity = access.authorize(self.headers, scope=scope_for_request(self.command, path), mutation=mutation)
+                if path == '/auth/session' and self.command in ('GET', 'HEAD'):
+                    self.send_json(self.access_identity); return False
+                if path == '/auth/logout' and self.command == 'POST':
+                    access.logout(self.headers)
+                    if 'run' in self.access_identity.get('scopes', []): state.stop_all()
+                    self.send_response(200); self.send_header('Set-Cookie', access.cookie('', clear=True))
+                    self.send_header('Content-Length', '2'); self.end_headers(); self.wfile.write(b'{}')
+                    return False
+                return True
+            except AccessError as error:
+                if error.status == 401 and path in ('/', '/index.html') and self.command in ('GET', 'HEAD'):
+                    self.send_response(302); self.send_header('Location', '/auth/login'); self.send_header('Content-Length', '0'); self.end_headers()
+                else: self.send_json({'error': str(error)}, error.status)
+                return False
+            except (ValueError, TypeError):
+                self.send_json({'error': 'Invalid access request'}, 400); return False
+
+        def access_valid(self):
+            try:
+                access.authorize(self.headers)
+                return True
+            except AccessError:
+                return False
+
+        def do_HEAD(self):
+            if not self.trusted_local_request() or not self.access_response():
+                return
+            return super().do_HEAD()
+
         def send_json(self, data, status=200):
             body = json.dumps(data, allow_nan=False, separators=(",", ":")).encode()
             self.send_response(status)
@@ -572,24 +683,59 @@ def make_handler(state):
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-store")
             self.end_headers()
-            self.wfile.write(body)
+            if self.command != 'HEAD':
+                self.wfile.write(body)
 
         def send_file(self, path, download_name=None):
             if not path.is_file():
                 self.send_json({"error": "File unavailable"}, 404)
                 return
-            self.send_response(200)
+            total = path.stat().st_size
+            start, end = 0, total - 1
+            requested = self.headers.get('Range')
+            if requested:
+                match = re.fullmatch(r'bytes=(\d*)-(\d*)', requested)
+                valid = bool(match and any(match.groups()) and total > 0)
+                if valid:
+                    left, right = match.groups()
+                    if left:
+                        start = int(left)
+                        end = min(int(right), total - 1) if right else total - 1
+                    else:
+                        valid = int(right) > 0
+                        start = max(0, total - int(right))
+                    valid = valid and 0 <= start <= end < total
+                if not valid:
+                    self.send_response(416)
+                    self.send_header('Content-Range', f'bytes */{total}')
+                    self.send_header('Content-Length', '0')
+                    self.end_headers()
+                    return
+            length = max(0, end - start + 1)
+            self.send_response(206 if requested else 200)
             self.send_header("Content-Type", mimetypes.guess_type(path.name)[0] or "application/octet-stream")
-            self.send_header("Content-Length", str(path.stat().st_size))
+            self.send_header('Accept-Ranges', 'bytes')
+            if requested:
+                self.send_header('Content-Range', f'bytes {start}-{end}/{total}')
+            self.send_header("Content-Length", str(length))
             self.send_header("Cache-Control", "no-cache")
             if download_name:
                 self.send_header("Content-Disposition", f'attachment; filename="{download_name}"')
             self.end_headers()
             with path.open("rb") as f:
-                for block in iter(lambda: f.read(1024 * 1024), b""):
+                f.seek(start)
+                while length:
+                    if not self.access_valid():
+                        self.close_connection = True
+                        return
+                    block = f.read(min(length, 1024 * 1024))
+                    if not block: break
                     self.wfile.write(block)
+                    length -= len(block)
 
         def do_GET(self):
+            if not self.trusted_local_request() or not self.access_response():
+                return
             path = unquote(urlparse(self.path).path)
             exempt = path in ('/api/health', '/api/live-reload') or path.startswith('/ws/sessions/')
             operation = getattr(state, 'request_operation', nullcontext)
@@ -602,14 +748,19 @@ def make_handler(state):
         def get_response(self):
             path = unquote(urlparse(self.path).path)
             try:
+                if path == '/api/compute':
+                    return self.send_json(state.compute_policy.snapshot())
+                if path == '/api/messengers':
+                    from .messenger_catalog import catalog_payload
+                    return self.send_json(catalog_payload())
                 if path == '/api/live-reload':
                     return self.send_json(state.live_reload_status())
-                if path in ('/', '/index.html') and getattr(state, 'live_watcher', None):
+                if path in ('/', '/index.html'):
                     # Capture the version before reading HTML. An edit during page
                     # load will then be noticed on the first client poll.
-                    status = json.dumps(state.live_reload_status()).replace('<', '\\u003c')
+                    status = json.dumps(state.live_reload_status() if getattr(state, 'live_watcher', None) else {'enabled': False}).replace('<', '\\u003c')
                     html = (STATIC / 'index.html').read_text()
-                    html = html.replace('<head>', '<head><script>window.__COGNESIA_LIVE_RELOAD__=' + status + ';</script>', 1)
+                    html = html.replace('<head>', '<head><script src="/auth/client.js"></script><script>window.__COGNESIA_LIVE_RELOAD__=' + status + ';</script>', 1)
                     body = html.encode()
                     self.send_response(200)
                     self.send_header('Content-Type', 'text/html; charset=utf-8')
@@ -671,8 +822,10 @@ def make_handler(state):
                         value=dict(value) if value is not None else None
                     return self.send_json(json_safe(value) if value is not None else {'error':'Session or frame unavailable'},200 if value is not None else 404)
                 if path == "/api/health":
+                    from .api_credentials import workspace_fingerprint
                     return self.send_json({"service": "flybrain-visual", "ready": True, "protocol": 2,
-                                           'default_running':False})
+                                           'default_running':False,
+                                           'workspace_fingerprint': workspace_fingerprint(state.root)})
                 if path == "/api/bootstrap":
                     with state.cache_operation():return self.send_json(state.bootstrap())
                 if path == '/api/resources':
@@ -720,6 +873,15 @@ def make_handler(state):
                         return self.send_file(state.root/'runs'/parts[3]/'anatomy'/parts[5])
                     if len(parts) != 5 or not RUN_ID.fullmatch(parts[3]):
                         return self.send_json({"error": "Invalid run path"}, 400)
+                    if parts[4] in ('report-data', 'report-figure'):
+                        from .research_paper import load_recording, recording_evidence, capture_figure
+                        summary, source_hash = load_recording(state.root, parts[3])
+                        if parts[4] == 'report-data':
+                            return self.send_json(recording_evidence(summary, source_hash))
+                        query = parse_qs(urlparse(self.path).query)
+                        return self.send_json(capture_figure(summary, source_hash,
+                            group=query.get('group', ['type'])[0], trace=query.get('trace', [''])[0],
+                            series=query.get('series', ['delta'])[0]))
                     names={'summary.json':'visual_summary.json',**{name:name for name in (
                         'delta.bin','raw.bin','baseline.bin','stimulus.bin','eye_luminance.bin',
                         'chemistry.bin','chemistry_baseline.bin','chemistry_state.bin','chemistry_hormones.bin',
@@ -743,6 +905,8 @@ def make_handler(state):
                 return self.send_json({'error': f'Requested source data unavailable: {error}'}, 503)
 
         def do_POST(self):
+            if not self.trusted_local_request() or not self.access_response():
+                return
             operation = getattr(state, 'request_operation', nullcontext)
             try:
                 with operation():
@@ -755,6 +919,39 @@ def make_handler(state):
             if origin and origin not in {f"http://127.0.0.1:{self.server.server_port}", f"http://localhost:{self.server.server_port}"}:
                 return self.send_json({"error": "Cross-origin requests are not allowed"}, 403)
             path = urlparse(self.path).path
+            if path == '/api/replicates/plan':
+                try:
+                    size = int(self.headers.get('Content-Length', 0))
+                    if not 0 < size <= 131072:
+                        raise ValueError('Replicate plan must be between 1 and 131072 bytes')
+                    from .replication import plan_replicates
+                    return self.send_json(plan_replicates(json.loads(self.rfile.read(size)), root=state.root))
+                except (ValueError, TypeError, KeyError, OSError) as error:
+                    return self.send_json({'error': str(error)}, 400)
+            if path in ('/api/compute/consent', '/api/compute/profile'):
+                try:
+                    size = int(self.headers.get('Content-Length', 0))
+                    if not 0 < size <= 4096:
+                        raise ValueError('Compute request must be between 1 and 4096 bytes')
+                    payload = json.loads(self.rfile.read(size))
+                    if not isinstance(payload, dict):
+                        raise ValueError('Expected a JSON object')
+                    with state.lock:
+                        if state._reload_busy_locked():
+                            raise RuntimeError('Stop all experiments and preparation before changing compute permissions')
+                        if path.endswith('/consent'):
+                            if set(payload) != {'granted'}:
+                                raise ValueError('Expected only granted: true or false')
+                            result = state.compute_policy.consent(payload['granted'])
+                        else:
+                            result = state.compute_policy.select(payload)
+                        state.memory_limit_gb = result['memory_gb']
+                        state.resource_sample = None
+                    return self.send_json(result)
+                except RuntimeError as error:
+                    return self.send_json({'error': str(error)}, 409)
+                except (ValueError, TypeError, KeyError, OSError) as error:
+                    return self.send_json({'error': str(error)}, 400)
             if path in ('/api/workspace-sessions','/api/analysis/interval','/api/connectivity','/api/protocols/import','/api/models/acquire-banc','/api/models/compile-fused','/api/selection/preview') or path == '/api/sessions' or path.startswith('/api/sessions/') or path.startswith('/api/checkpoints/'):
                 try:
                     size=int(self.headers.get('Content-Length',0))
@@ -841,6 +1038,13 @@ def serve(root, port=8794, open_browser=False, memory_limit_gb=40, watcher=None)
     server = ThreadingHTTPServer(("127.0.0.1", port), make_handler(state))
     stopped = threading.Event()
     restart = threading.Event()
+
+    def watch_access():
+        while not stopped.wait(2):
+            if state.access.revalidate_all():
+                state.stop_all()
+    access_monitor = threading.Thread(target=watch_access, name='cognesia-access', daemon=True)
+    access_monitor.start()
 
     def watch_project():
         while not stopped.wait(.5):

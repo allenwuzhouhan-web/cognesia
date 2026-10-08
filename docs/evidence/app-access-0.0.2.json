@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "recorded_at": "2026-10-08T14:12:36.082553+00:00",
+  "scope": "Actual customer-registry CLI, gateway CLI subprocess and viewer HTTP routes on isolated loopback ports. Viewer model catalog and app assets exercised; no biological simulation or public deployment.",
+  "transport": "HTTP on ephemeral loopback ports; HTTPS production transport not exercised",
+  "revocation_wait_seconds": 31.015,
+  "session_max_seconds": 1800,
+  "revalidation_seconds": 30,
+  "checks": [
+    {
+      "name": "missing_access_configuration_fails_closed",
+      "status": "PASS"
+    },
+    {
+      "name": "cli_issue_created_private_key_and_registry",
+      "status": "PASS"
+    },
+    {
+      "name": "private_loopback_configuration_is_accepted",
+      "status": "PASS"
+    },
+    {
+      "name": "protected_viewer_api_rejects_anonymous",
+      "status": "PASS"
+    },
+    {
+      "name": "viewer_document_redirects_to_login",
+      "status": "PASS"
+    },
+    {
+      "name": "login_form_is_available",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid_personal_key_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "real_gateway_authorizes_personal_key",
+      "status": "PASS"
+    },
+    {
+      "name": "customer_workspace_and_scopes_returned",
+      "status": "PASS"
+    },
+    {
+      "name": "session_cookie_is_http_only_strict",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated_viewer_returns_model_catalog",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated_viewer_serves_app_html",
+      "status": "PASS"
+    },
+    {
+      "name": "real_gateway_dispatches_to_bound_protected_viewer",
+      "status": "PASS"
+    },
+    {
+      "name": "cross_origin_request_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "logout_succeeds_and_stops_workspace",
+      "status": "PASS"
+    },
+    {
+      "name": "logged_out_session_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "real_gateway_authorizes_personal_key",
+      "status": "PASS"
+    },
+    {
+      "name": "customer_workspace_and_scopes_returned",
+      "status": "PASS"
+    },
+    {
+      "name": "session_cookie_is_http_only_strict",
+      "status": "PASS"
+    },
+    {
+      "name": "gateway_revocation_is_immediate",
+      "status": "PASS"
+    },
+    {
+      "name": "viewer_rejects_revocation_after_real_revalidation_interval",
+      "status": "PASS"
+    },
+    {
+      "name": "revoked_key_removed_from_session_memory",
+      "status": "PASS"
+    },
+    {
+      "name": "registry_does_not_contain_plaintext_key",
+      "status": "PASS"
+    }
+  ],
+  "credentials_in_report": false,
+  "local_paths_in_report": false,
+  "source_hashes": {
+    "src/flybrain/app_access.py": "533115744b8c018ddeae7643820f5aa75e518f959a0fbcff7931c2174c77d59d",
+    "src/flybrain/public_api.py": "0c12d273dcdc6c64b6fddd98ecf040d1aaa87296b426d0b0127d9bac9e1140a6",
+    "src/flybrain/api_credentials.py": "e470452aa526b78adc091ea3a88a8b7fbd713da63dffa6b860003792a1391217",
+    "src/flybrain/visual_server.py": "680d64bc3b9ee6229a00064c4f3c5379de1d83b0d1d1a85e91664af131b1c0d4"
+  }
+}

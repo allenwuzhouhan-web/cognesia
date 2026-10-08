@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "id": "paralimbo-v0-1-0",
+  "status": "PASS",
+  "model_hash": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c",
+  "scope": "structural invariants and source fidelity",
+  "biological_gate": "PENDING",
+  "checks": [
+    {
+      "name": "artifact:annotation_ledger.parquet",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:compiler.py",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:compiler_hashes.json",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:conflicts.parquet",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:crosswalk.parquet",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:flywire_neurons.parquet",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:graded_data.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:graded_indices.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:graded_indptr.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:input_hashes.json",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:neurons.parquet",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:policy.json",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:spiking_data.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:spiking_indices.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "artifact:spiking_indptr.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "compiler_and_source_selector_hashes",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "pinned_base_identity",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "pinned_donor_bytes",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "policy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "all_unchanged_native_columns_and_order",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "identity_namespace",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "declared_model_dimensions",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "electrical_modes",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "cell_class_alias_only",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "byte_identical_topology_and_signs:graded_data.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "byte_identical_topology_and_signs:graded_indices.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "byte_identical_topology_and_signs:graded_indptr.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "byte_identical_topology_and_signs:spiking_data.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "byte_identical_topology_and_signs:spiking_indices.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "byte_identical_topology_and_signs:spiking_indptr.npy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "complete_crosswalk_and_donor_links",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "complete_property_decisions",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "executable_annotation_resolution",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "complete_rejection_and_conflict_ledger",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "all_native_assertions_preserved",
+      "status": "PASS",
+      "observed": 78766
+    },
+    {
+      "name": "all_uncontested_native_positive_release_tokens_preserved",
+      "status": "PASS",
+      "observed": 0
+    },
+    {
+      "name": "no_type_only_or_ambiguous_transfers",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "actual_positive_mask:DA",
+      "status": "PASS",
+      "observed": 1048
+    },
+    {
+      "name": "actual_positive_mask:OA",
+      "status": "PASS",
+      "observed": 89
+    },
+    {
+      "name": "actual_positive_mask:5HT",
+      "status": "PASS",
+      "observed": 225
+    },
+    {
+      "name": "actual_positive_mask:TA",
+      "status": "PASS",
+      "observed": 114
+    },
+    {
+      "name": "actual_positive_mask:NO",
+      "status": "PASS",
+      "observed": 3722
+    },
+    {
+      "name": "actual_positive_mask:sNPF",
+      "status": "PASS",
+      "observed": 4913
+    },
+    {
+      "name": "actual_positive_mask:ACh",
+      "status": "PASS",
+      "observed": 45373
+    },
+    {
+      "name": "runtime_kc_exclusion:DA",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "runtime_kc_exclusion:OA",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "runtime_kc_exclusion:5HT",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "runtime_kc_exclusion:TA",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reported_positive_source_counts",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reported_baseline_source_counts",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reported_correspondence_counts",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "reported_transfer_counts",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "metrics": {
+    "crosswalk_categories": {
+      "ambiguous": 7811,
+      "curator_supported_individual": 712,
+      "missing_donor": 102,
+      "type_only": 124998,
+      "unresolved": 41778
+    },
+    "native_peptide_annotated_neurons": 7025,
+    "transferred_property_assertions": 59,
+    "neurons_with_transferred_properties": 39,
+    "transferred_positive_assertions": 2,
+    "transferred_negative_assertions": 57,
+    "donor_rejected_assertions": 47780,
+    "source_masks_before": {
+      "DA": 1048,
+      "OA": 87,
+      "5HT": 225,
+      "TA": 114,
+      "NO": 0,
+      "sNPF": 0,
+      "ACh": 45373,
+      "peptide_pool": 0
+    },
+    "source_masks_after": {
+      "DA": 1048,
+      "OA": 89,
+      "5HT": 225,
+      "TA": 114,
+      "NO": 3722,
+      "sNPF": 4913,
+      "ACh": 45373,
+      "peptide_pool": 104
+    },
+    "native_peptide_assertions": 7772,
+    "circuit_replacements": 0
+  },
+  "observed_source_masks": {
+    "DA": 1048,
+    "OA": 89,
+    "5HT": 225,
+    "TA": 114,
+    "NO": 3722,
+    "sNPF": 4913,
+    "ACh": 45373,
+    "peptide_pool": 104
+  }
+}

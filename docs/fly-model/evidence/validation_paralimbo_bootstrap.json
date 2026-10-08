@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "commands": [
+    "python scripts/prepare_paralimbo_inputs.py --root . (fresh inputs)",
+    "python scripts/prepare_paralimbo_inputs.py --root . (repeat)"
+  ],
+  "scope": "Fresh isolated workspace; two FlyWire files downloaded from immutable public URLs; BANC raw files reused from SHA256-verified local cache. Both derived input models rebuilt from raw sources.",
+  "first": {
+    "schema_version": 1,
+    "status": "PASS",
+    "model": "ParaLimbo 0.1",
+    "sources": [
+      {
+        "path": "data/raw/Completeness_783.csv",
+        "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv",
+        "sha256": "bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311",
+        "bytes": 3327347,
+        "downloaded": true
+      },
+      {
+        "path": "data/raw/Supplemental_file1_neuron_annotations.tsv",
+        "url": "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
+        "sha256": "9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be",
+        "bytes": 31718505,
+        "downloaded": true
+      },
+      {
+        "path": "data/raw/models/banc-888/metadata.feather",
+        "url": "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_meta.feather?generation=1787336614757441",
+        "bytes": 57503026,
+        "sha256": "86ccf5df0c67419f8c5f43e93a7ed38d23a080e9f7fde26737290252f3780098",
+        "generation": "1787336614757441",
+        "downloaded": false
+      },
+      {
+        "path": "data/raw/models/banc-888/edgelist.feather",
+        "url": "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_edgelist_simple_v3.feather?generation=1786578377086929",
+        "bytes": 359161658,
+        "sha256": "8c296e946f3c69a8c7222f30ad75fa8a98eeb189124fec6df829c9125f4be64b",
+        "generation": "1786578377086929",
+        "downloaded": false
+      }
+    ],
+    "dependencies": {
+      "path": "requirements.lock",
+      "sha256": "b4e010fbc0b4d02494a8fad2cfcac7aab4d25d589332fa5e352b40aad0303f92",
+      "checked_packages": 48
+    },
+    "mode_config": {
+      "path": "config/neuron_modes.csv",
+      "sha256": "ea0ff19c1b632b357dad7f5c1345c0b3c700eaa279c9a44450db937a175ce2a0"
+    },
+    "flywire_donor": {
+      "path": "build/neurons.parquet",
+      "sha256": "432901d18d2a5b44fd44dd558668589b81103344eeb8f44b2637cbd6b5f8889e",
+      "reused": false
+    },
+    "banc_baseline": {
+      "path": "build/model-versions/60d220182e6f65b98a78b008c764bb13b802d1dc5b85a798cc9028a6557665de",
+      "model_hash": "60d220182e6f65b98a78b008c764bb13b802d1dc5b85a798cc9028a6557665de",
+      "reused": false
+    },
+    "scope": "Pinned source acquisition and byte-identical input reconstruction; no biological validation"
+  },
+  "repeat": {
+    "schema_version": 1,
+    "status": "PASS",
+    "model": "ParaLimbo 0.1",
+    "sources": [
+      {
+        "path": "data/raw/Completeness_783.csv",
+        "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv",
+        "sha256": "bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311",
+        "bytes": 3327347,
+        "downloaded": false
+      },
+      {
+        "path": "data/raw/Supplemental_file1_neuron_annotations.tsv",
+        "url": "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
+        "sha256": "9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be",
+        "bytes": 31718505,
+        "downloaded": false
+      },
+      {
+        "path": "data/raw/models/banc-888/metadata.feather",
+        "url": "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_meta.feather?generation=1787336614757441",
+        "bytes": 57503026,
+        "sha256": "86ccf5df0c67419f8c5f43e93a7ed38d23a080e9f7fde26737290252f3780098",
+        "generation": "1787336614757441",
+        "downloaded": false
+      },
+      {
+        "path": "data/raw/models/banc-888/edgelist.feather",
+        "url": "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_edgelist_simple_v3.feather?generation=1786578377086929",
+        "bytes": 359161658,
+        "sha256": "8c296e946f3c69a8c7222f30ad75fa8a98eeb189124fec6df829c9125f4be64b",
+        "generation": "1786578377086929",
+        "downloaded": false
+      }
+    ],
+    "dependencies": {
+      "path": "requirements.lock",
+      "sha256": "b4e010fbc0b4d02494a8fad2cfcac7aab4d25d589332fa5e352b40aad0303f92",
+      "checked_packages": 48
+    },
+    "mode_config": {
+      "path": "config/neuron_modes.csv",
+      "sha256": "ea0ff19c1b632b357dad7f5c1345c0b3c700eaa279c9a44450db937a175ce2a0"
+    },
+    "flywire_donor": {
+      "path": "build/neurons.parquet",
+      "sha256": "432901d18d2a5b44fd44dd558668589b81103344eeb8f44b2637cbd6b5f8889e",
+      "reused": true
+    },
+    "banc_baseline": {
+      "path": "build/model-versions/60d220182e6f65b98a78b008c764bb13b802d1dc5b85a798cc9028a6557665de",
+      "model_hash": "60d220182e6f65b98a78b008c764bb13b802d1dc5b85a798cc9028a6557665de",
+      "reused": true
+    },
+    "scope": "Pinned source acquisition and byte-identical input reconstruction; no biological validation"
+  },
+  "mode_config_unchanged": true,
+  "flywire_connectivity_downloaded": false,
+  "downloaded_file_count": 2,
+  "repeat_downloaded_file_count": 0,
+  "both_repeat_outputs_reused": true,
+  "script_sha256": "5c395aa67e9704c2fb9299de89b3b1e3e096603db0ae6b7b4e889a205958688d",
+  "wall_seconds": 11.731
+}

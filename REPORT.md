@@ -1,5 +1,102 @@
 # Flybrain execution report
 
+## Research console grid and reachable controls (2026-10-08)
+
+The research console now uses neutral graphite reading surfaces, the simulation
+workspace's familiar blue controls, and a subtle 32 px grid beneath the workspace.
+Past chats, Run/Stop, connection status and the collapsible trace remain reachable
+while instructions and papers scroll. Study settings expand beside the prompt;
+reports use a dark reading surface while PDF rendering remains separate.
+
+**11 JavaScript tests passed** for history, report rendering and native commands.
+Browser checks covered saved papers, settings, full model/trace scrolling and
+1280×720, 880×588 and 390×844 layouts without horizontal overflow. The current
+Mac research window was refreshed and visually checked, with both saved chats
+and its model connection present. No study was started. Evidence is retained in
+`build/research-console-refresh/`.
+
+## Customer website, individual API keys and dark loading panels (2026-10-07)
+
+The app-style customer website and real API console are implemented locally.
+Customer credentials have 256-bit random secrets, verifier-only storage, expiry,
+revocation, rotation and read/run permissions. Customer workspaces have separate
+backend/root bindings, runtime identity checks, replay state and experiment
+leases. Production mode requires customer credentials and HTTPS configuration.
+There is no paywall. [Website and administration guide](docs/customer-website.md).
+
+**118 focused Python tests passed**, covering API, credentials, customer-site
+boundaries, site build/export, live server and local-agent compatibility. Browser
+checks exercised capability tabs, invalid-key rejection, real customer-key sign-in,
+read-only tool discovery, a resource call and disconnect clearing. HTTP checks
+confirmed replay equality and rejection of experiment start with a read-only key.
+The security review corrected native-form credential leakage without JavaScript,
+an expired-lease/new-experiment race, and plaintext credential submission.
+
+Local evidence: `build/customer-website-verification.json`,
+`build/customer-site-api-verified.jpg` and `build/customer-site-desktop.jpg`.
+The local owner preview key is read-only and expires after seven days; it is not
+a customer production credential. No experiment was launched in these checks.
+Public domain, hosting, TLS, worker OS isolation and live deployment checks remain
+pending. This is not an external penetration test or biological validation.
+
+The native simulation window also exposed inherited light backgrounds before UI
+initialization. Dark-theme rules now cover morphology/atlas toolbars, chemical
+plot cards and the compound-eye canvas in their initial positions as well as
+the arranged workspace. The idle native window was refreshed and visually
+verified with BANC anatomy and chemical controls loaded; screenshot retained at
+`build/cognesia-dark-panels-fixed.png`. Simulation equations were not changed.
+
+## Unlimited research tool calls (2026-10-07)
+
+New research chats default to **Unlimited (∞)**, represented by `max_calls: null`.
+Unlimited studies have no call-count or round-count cap; custom positive limits
+remain available, including values above 50. Older complete exchanges roll out of
+model context while the saved evidence trace is retained. Large saved chats can
+reopen beyond the former 8 MiB ceiling.
+
+Focused checks: **58 Python tests and 11 JavaScript tests passed**, including a
+220-call run through actual HTTP mock model/gateway servers, context compaction,
+report generation, persistence/reopen, stop behavior and custom-limit UI handling.
+The 220-call check verifies execution control, not model research quality or
+biological validity. The idle local service was reloaded with both saved chats
+preserved; the connected Mac app shows **Unlimited (∞)** and **0 / ∞** in a new
+chat. No simulation was submitted during this update.
+
+## Research papers and saved chats (2026-10-07)
+
+The local research workspace now formats conclusions through a validated tool call
+into **Abstract, Methodology, Data, Analysis and Futures**, displays large bold
+headings and captured data figures, and exports a native downloadable PDF. A
+**Past chats** sidebar retains instructions, reports, chart snapshots and traces
+across service restarts. Saved chats can be formatted without repeating research
+tool calls.
+
+Focused verification: **112 Python tests and 10 JavaScript tests passed**. Actual
+GPT-OSS-20B tool/report generation, two-chat restart recovery, historical selection
+during an active study and the Mac Save PDF dialog were exercised. The reviewed
+three-page example contains a figure from an existing recording; no simulation was
+submitted. Source review corrected model prose, and its original arguments remain
+in the trace. Future generated scientific interpretations still require review.
+[Verification, artifacts and limits](docs/research-paper-verification-2026-10-07.md).
+
+## Tool API, local agent and compute budgets (2026-10-07)
+
+Implemented the password-protected tool gateway, native macOS GPT-OSS-20B research
+workspace, consent-based compute tiers, reproducible draft schedules and messenger
+catalogue. The later user request removed payments, credits and access-code routes;
+the replacement gateway needs no Stripe setup.
+The existing Cognesia GUI and historical scientific failures remain visible.
+Final software checks: **824 Python tests passed, 9 slow/integration tests
+deselected; 156 JavaScript tests passed**. Live checks verified password rejection,
+51 free authorized calls and removed payment routes. The installed Mac app passed
+native keyboard study execution, JSON export and window switching with real GPT-OSS.
+[Verification and deployment boundaries](docs/api-agent-verification-2026-10-07.md)
+· [API guide](docs/public-api.md) · [Scientific audit](docs/scientific-audit-2026-10-07.md).
+
+This does not establish biological validation, measured simulation speedup,
+public deployment. Model-based chemical and anatomical conclusions retain their
+existing uncertainty.
+
 ## Integrated experiment workspace (2026-10-01)
 
 Final integration checks: **634 Python tests passed, 2 skipped; 58 JavaScript tests passed**. Real API pause/step/stop/partial recovery and two identical restored sibling runs passed. [Acceptance evidence](docs/workspace-ui-verification.md#final-integration-acceptance-2026-10-01).

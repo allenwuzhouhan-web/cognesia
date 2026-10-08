@@ -105,11 +105,11 @@ def test_provider_get_route_returns_selected_mapping_and_rejects_unknown_model(t
     thread = threading.Thread(target=server.serve_forever, daemon=True);thread.start()
     client = HTTPConnection('127.0.0.1', server.server_port, timeout=5)
     try:
-        client.request('GET', '/api/model-eyes?model_id=banc-626')
+        client.request('GET', '/api/model-eyes?model_id=banc-626',headers={'X-Cognesia-Internal':state.access.capability})
         response = client.getresponse();body = json.loads(response.read())
         assert response.status == 200 and body['model_id'] == 'banc-626'
         assert len(body['receptors']) == 2
-        client.request('GET', '/api/model-eyes?model_id=unavailable-source')
+        client.request('GET', '/api/model-eyes?model_id=unavailable-source',headers={'X-Cognesia-Internal':state.access.capability})
         response = client.getresponse();body = json.loads(response.read())
         assert response.status == 400 and body['error'] == 'Unknown model'
     finally:

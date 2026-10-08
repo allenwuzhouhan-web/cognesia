@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/sequence-timeline.css" />
     <link rel="stylesheet" href="/workspace-notes.css" />
     <link rel="stylesheet" href="/workspace-page.css" />
+    <link rel="stylesheet" href="/compute-settings.css" />
     <script type="importmap">
       { "imports": { "three": "/vendor/three.module.min.js" } }
     </script>
@@ -31,6 +32,8 @@
         ><span>Cognesia <small>Flybrain</small></span></a
       >
       <div class="top-right">
+        <a class="research-agent-link" href="http://127.0.0.1:8797" target="_blank" rel="noopener">Research agent ↗</a>
+        <button id="compute-permissions-button">Compute budget</button>
         <button id="stop-all" class="global-stop">■ Stop all</button><button id="clear-cache">Clear cache</button><span id="global-engine-status" role="status">STOPPED</span><span class="local-badge"><i></i> MODEL — NOT A FLY</span
         ><button
           id="about-button"
@@ -778,6 +781,7 @@
             Reset defaults
           </button>
         </div>
+        <details class="messenger-evidence-panel"><summary>Messenger evidence &amp; candidate tags</summary><section id="messenger-catalog">Loading source catalogue…</section></details>
         <div class="workbench-grid">
           <section class="compute-card">
             <div class="card-heading">
@@ -908,6 +912,8 @@
     </dialog>
     <div id="toast" class="toast" role="alert" hidden></div>
     <script type="module" src="/live-reload.js"></script>
+    <script type="module" src="/compute-settings.js"></script>
+    <script type="module" src="/messenger-panel.js"></script>
     <script type="module" src="/app.js?v=neuromod-20260927"></script>
   </body>
 </html>

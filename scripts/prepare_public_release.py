@@ -15,6 +15,8 @@ PRIVATE_DIRS = {'.git', '.venv', '.pytest_cache', '__pycache__', 'data', 'build'
                 'runs', 'sessions', 'checkpoints', 'boundaries', 'release', 'dist', '_site'}
 SECRET = re.compile(rb'(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|'
                     rb'AKIA[A-Z0-9]{16}|sk-[A-Za-z0-9_-]{24,}|'
+                    rb'cg[kc]_[A-Za-z0-9_-]{32,}|'
+                    rb'cgnk_[a-f0-9]{32}\.[A-Za-z0-9_-]{43}|'
                     rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----)')
 LOCAL_PATH = re.compile(rb'(?:/Users/|/home/)[A-Za-z0-9_.-]+/')
 

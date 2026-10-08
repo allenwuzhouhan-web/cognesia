@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 data/raw/
+data/models/
 build/
 runs/
 sessions/
@@ -30,3 +31,7 @@ htmlcov/
 dist/
 release/
 _site/
+
+# Generated research-paper previews and PDF layout checks
+output/pdf/
+tmp/pdfs/

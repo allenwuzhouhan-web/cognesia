@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "id": "paralimbo-v0-1-0",
+  "name": "ParaLimbo",
+  "version": "0.1.0-alpha.1",
+  "identity_namespace": "banc:888",
+  "base_model": "banc-888",
+  "base_model_hash": "60d220182e6f65b98a78b008c764bb13b802d1dc5b85a798cc9028a6557665de",
+  "species": "Drosophila melanogaster",
+  "sex": "female",
+  "stage": "adult",
+  "neurons": 175401,
+  "edges": 13542180,
+  "input_hashes": {
+    "banc_model_hash": "60d220182e6f65b98a78b008c764bb13b802d1dc5b85a798cc9028a6557665de",
+    "banc_artifacts": {
+      "graded_data.npy": "9691165e0a9cf709434d1d3c10fa1ea393b8d953464e7b168d53f1afaebe0f06",
+      "graded_indices.npy": "a1b952a1bad69392430dbe25ccfe68de821d4678cc05e4f94092bc474d369a19",
+      "graded_indptr.npy": "c0559681210ab41b5edbed52c7fd34b21c5031bd3c15144d747e79e1e7cdfe77",
+      "neurons.parquet": "f53968efcb956388861d85d4c4136c20344cd0630ac639f396085da79c88b1e0",
+      "spiking_data.npy": "47f64acc391b2451c08119e72665e180be77c92123a0e45a94460478a1dfd28b",
+      "spiking_indices.npy": "be527ef04fa7fafb83f13ad03f655dcadcd89dd249ef74cf02d42bfbeba67c00",
+      "spiking_indptr.npy": "06214cd4767416f8b04024d7b880c9d4b90e2036186edcb6634d71c48ac90dcb"
+    },
+    "banc_original_source_artifacts": {
+      "metadata.feather": {
+        "url": "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_meta.feather?generation=1787336614757441",
+        "generation": "1787336614757441",
+        "bytes": 57503026,
+        "sha256": "86ccf5df0c67419f8c5f43e93a7ed38d23a080e9f7fde26737290252f3780098"
+      },
+      "edgelist.feather": {
+        "url": "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_edgelist_simple_v3.feather?generation=1786578377086929",
+        "generation": "1786578377086929",
+        "bytes": 359161658,
+        "sha256": "8c296e946f3c69a8c7222f30ad75fa8a98eeb189124fec6df829c9125f4be64b"
+      }
+    },
+    "flywire_original_source_artifacts": {
+      "Completeness_783.csv": {
+        "url": "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv",
+        "sha256": "bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311",
+        "bytes": 3327347
+      },
+      "Supplemental_file1_neuron_annotations.tsv": {
+        "url": "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
+        "sha256": "9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be",
+        "bytes": 31718505
+      }
+    },
+    "flywire_neuron_modes_config_sha256": "ea0ff19c1b632b357dad7f5c1345c0b3c700eaa279c9a44450db937a175ce2a0",
+    "flywire_neurons_sha256": "432901d18d2a5b44fd44dd558668589b81103344eeb8f44b2637cbd6b5f8889e"
+  },
+  "compiler_hashes": {
+    "paralimbo.py": "c5d9de187a2fdcf6f8681eab7bc5668b0039b547a1187ae2c7842e5ef0c173d8",
+    "model_registry.py": "32b3a222700b76de0e2c9c2151019b5237f49d603e59c99379d139ede8215832",
+    "neuromod/sources.py": "87fa160859fcfdce2476cc281efb57d413b670cf13424befc20fab563bbbcdcd",
+    "neuromod/field.py": "b00d60b5fda3cb4bd1412c25f38cb0600329740016ee4de2c4df7b1d695152f6"
+  },
+  "policy_hash": "b470cce55d6e770135b942fa64ea7c32da51094f07b8ff7efb7a22b496ab77c7",
+  "build_dependencies": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "pyarrow": "25.0.1",
+    "scipy": "1.18.1"
+  },
+  "output_hashes": {
+    "annotation_ledger.parquet": "de321662b97decaafcfde5fa7b7b1ef26ca2acd480e6d9951e781b32390ccb29",
+    "compiler.py": "c5d9de187a2fdcf6f8681eab7bc5668b0039b547a1187ae2c7842e5ef0c173d8",
+    "compiler_hashes.json": "1054fba8eba8e2f914b7fd506abfe85621a3188b0437fe760e53e95437d54b50",
+    "conflicts.parquet": "03996e81c2d76e23805ed2b3c52f5debe3ca2655aaf610bc7cfb4308d4b314bb",
+    "crosswalk.parquet": "ffca8d5e7fdb47799af26c8c53b1a4069c82f91aef1617449c2b58ce22e1b47b",
+    "flywire_neurons.parquet": "432901d18d2a5b44fd44dd558668589b81103344eeb8f44b2637cbd6b5f8889e",
+    "graded_data.npy": "9691165e0a9cf709434d1d3c10fa1ea393b8d953464e7b168d53f1afaebe0f06",
+    "graded_indices.npy": "a1b952a1bad69392430dbe25ccfe68de821d4678cc05e4f94092bc474d369a19",
+    "graded_indptr.npy": "c0559681210ab41b5edbed52c7fd34b21c5031bd3c15144d747e79e1e7cdfe77",
+    "input_hashes.json": "2a289817b8486cdd149a4c39eb954ed8487b251d6b8e9b98533e1e5ee867213a",
+    "neurons.parquet": "b90b2df5e5351638fddb3c2ec45ee2b8e31d1aee3fc32cc6bb928aa95c1e306a",
+    "policy.json": "5df1609c2f7e173f336fcb9022d0b56fb2d59404fc37970643d15bcbfd6b71e8",
+    "spiking_data.npy": "47f64acc391b2451c08119e72665e180be77c92123a0e45a94460478a1dfd28b",
+    "spiking_indices.npy": "be527ef04fa7fafb83f13ad03f655dcadcd89dd249ef74cf02d42bfbeba67c00",
+    "spiking_indptr.npy": "06214cd4767416f8b04024d7b880c9d4b90e2036186edcb6634d71c48ac90dcb"
+  },
+  "metrics": {
+    "crosswalk_categories": {
+      "ambiguous": 7811,
+      "curator_supported_individual": 712,
+      "missing_donor": 102,
+      "type_only": 124998,
+      "unresolved": 41778
+    },
+    "native_peptide_annotated_neurons": 7025,
+    "transferred_property_assertions": 59,
+    "neurons_with_transferred_properties": 39,
+    "transferred_positive_assertions": 2,
+    "transferred_negative_assertions": 57,
+    "donor_rejected_assertions": 47780,
+    "source_masks_before": {
+      "DA": 1048,
+      "OA": 87,
+      "5HT": 225,
+      "TA": 114,
+      "NO": 0,
+      "sNPF": 0,
+      "ACh": 45373,
+      "peptide_pool": 0
+    },
+    "source_masks_after": {
+      "DA": 1048,
+      "OA": 89,
+      "5HT": 225,
+      "TA": 114,
+      "NO": 3722,
+      "sNPF": 4913,
+      "ACh": 45373,
+      "peptide_pool": 104
+    },
+    "native_peptide_assertions": 7772,
+    "circuit_replacements": 0
+  },
+  "optical_mapping_supported": false,
+  "status": "ASSEMBLED",
+  "biological_gate": "PENDING",
+  "warnings": [
+    "BANC native synapses with Cognesia point-neuron dynamics: not a validated whole-animal simulation.",
+    "Glutamate/GABA/histamine inhibitory and other/unknown fast signs excitatory are explicit model assumptions.",
+    "Native latest root_id was not used: all graph identities use banc_888_id.",
+    "Source proofreading/problem flags retained; morphology and optical registration require source-specific assets.",
+    "ParaLimbo integrates cross-specimen evidence; it is not a single measured fly.",
+    "Coverage and source fidelity are not evidence of improved biological predictions.",
+    "Peptide annotations are retained even where the runtime has no corresponding dynamics.",
+    "Electrical modes and signed connectivity retain BANC's existing model assumptions."
+  ],
+  "model_hash": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c"
+}

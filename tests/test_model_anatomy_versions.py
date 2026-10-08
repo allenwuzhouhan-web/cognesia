@@ -67,7 +67,8 @@ def endpoint(root):
     def request(path, payload=None):
         client.request('GET' if payload is None else 'POST', path,
                        body=None if payload is None else json.dumps(payload),
-                       headers={} if payload is None else {'Content-Type': 'application/json'})
+                       headers={'X-Cognesia-Internal': state.access.capability,
+                                **({} if payload is None else {'Content-Type': 'application/json'})})
         response = client.getresponse()
         return response.status, response.read()
     try:

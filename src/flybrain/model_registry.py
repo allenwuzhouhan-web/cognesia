@@ -25,6 +25,7 @@ from .inspect_data import atomic_write_json
 
 BANC_ID = "banc-888"
 FUSED_ID = "cognesia-fused-v1"
+PARALIMBO_ID = "paralimbo-v0-1-0"
 BANC_SOURCE = "https://www.nature.com/articles/s41586-026-10735-w"
 BANC_BUCKET = "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/"
 # Immutable GCS object generations inspected in the authors' public mirror.
@@ -49,7 +50,8 @@ def catalog(root):
     result = []
     for model_id, label in (("flywire-783", "FlyWire 783 · historical brain"),
                             (BANC_ID, "BANC 888 · brain and nerve cord"),
-                            (FUSED_ID, "Cognesia · fused adult female model")):
+                            (FUSED_ID, "Cognesia · fused adult female model"),
+                            (PARALIMBO_ID, "ParaLimbo 0.1 · BANC × FlyWire")):
         path = _folder(root, model_id) / "manifest.json"
         available = path.exists() if model_id != "flywire-783" else (Path(root)/"build/build_summary.json").exists()
         entry = {"id": model_id, "label": label, "available": available,

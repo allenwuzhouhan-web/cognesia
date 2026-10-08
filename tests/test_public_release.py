@@ -33,6 +33,24 @@ def test_export_rejects_credentials_without_echoing_value(tmp_path):
     assert issues and token not in str(issues)
 
 
+def test_export_rejects_cognesia_credentials_without_echoing(tmp_path):
+    audit = module('prepare_public_release').audit_file
+    path = tmp_path / 'file'
+    for prefix in ('cgk_', 'cgc_'):
+        token = prefix + 'A' * 43
+        path.write_text(token)
+        issues = audit(Path('notes.txt'), path)
+        assert issues and token not in str(issues)
+
+
+def test_export_rejects_customer_api_keys_without_echoing(tmp_path):
+    path = tmp_path / 'file'
+    token = 'cgnk_' + 'a' * 32 + '.' + 'B' * 43
+    path.write_text(token)
+    issues = module('prepare_public_release').audit_file(Path('notes.txt'), path)
+    assert issues and token not in str(issues)
+
+
 def test_export_rejects_symlinks(tmp_path):
     source = tmp_path / 'source'
     source.write_text('private')
@@ -52,3 +70,5 @@ def test_page_uses_real_project_subpath_and_version(tmp_path):
     assert '<loc>https://example.github.io/Cognesia/</loc>' in (tmp_path / 'sitemap.xml').read_text()
     assert (tmp_path / 'style.css').is_file()
     assert (tmp_path / 'icon.svg').is_file()
+    assert (tmp_path / 'app.js').is_file()
+    assert "frame-ancestors 'none'" in (tmp_path / 'security-headers.conf').read_text()

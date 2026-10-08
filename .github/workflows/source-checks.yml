@@ -13,12 +13,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: python -m pip install pytest build
+      - run: python -m pip install -e '.[test]' build
       - name: Audit source upload boundaries
         run: python scripts/prepare_public_release.py --check
       - name: Check release tools
         run: python -m pytest -q tests/test_public_release.py
+      - name: Check model and application regressions
+        run: python -m pytest -q -m 'not integration and not slow'
       - name: Check browser modules and desktop bridge
-        run: node --test tests/test_web_*.mjs macos/test_desktop_bridge.mjs
+        run: node --test tests/test_web_*.mjs macos/test_desktop_bridge.mjs macos/test_research_bridge.mjs
       - name: Build source package wheel
         run: python -m build --wheel

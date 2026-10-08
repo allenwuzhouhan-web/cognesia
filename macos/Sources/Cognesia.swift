@@ -45,6 +45,10 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
     private var desktopCommandChecked: [DesktopCommand: Bool] = [:]
     private var pendingEmergencyCommands = Set<UUID>()
     private var renderingDiagnosticRunning = false
+    private var research: ResearchWorkspaceController?
+    private var researchPort: Int {
+        (Bundle.main.object(forInfoDictionaryKey: "CognesiaResearchPort") as? NSNumber)?.intValue ?? 8797
+    }
     private struct ExportDestination { let temporary: URL; let final: URL }
     private var downloads: [ObjectIdentifier: ExportDestination] = [:]
     private let session: URLSession = {
@@ -57,12 +61,14 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
     }()
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        let initialWorkspace = UserDefaults.standard.string(forKey: "CognesiaLastWorkspace")
         NSApp.setActivationPolicy(.regular)
         createMenus()
         createWindow()
         window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
         connect()
+        if initialWorkspace != "workbench" { openResearch() }
     }
 
     private func menuItem(_ title: String, _ action: Selector?, _ key: String = "", target: AnyObject? = nil) -> NSMenuItem {
@@ -105,6 +111,7 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
         let file = NSMenu(title: "File")
         file.addItem(commandItem("New Note", .newNote, "n"))
         file.addItem(commandItem("Save Session…", .saveSession, "s"))
+        file.addItem(menuItem("Open Study Instructions…", #selector(openStudyInstructions), "o", target: self))
         file.addItem(.separator())
         file.addItem(menuItem("Open in Browser", #selector(openInBrowser), target: self))
         file.addItem(menuItem("Show Project in Finder", #selector(showProject), target: self))
@@ -127,6 +134,7 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
         let view = NSMenu(title: "View")
         view.addItem(commandItem("Simulate", .simulate, "1"))
         view.addItem(commandItem("Parameters", .parameters, "2"))
+        view.addItem(menuItem("Research Agent", #selector(openResearch), "3", target: self))
         view.addItem(commandItem("Hide Notes", .toggleNotes, "n", modifiers: [.command, .shift]))
         view.addItem(.separator())
         view.addItem(commandItem("Layout…", .layout))
@@ -154,9 +162,34 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
         simulation.addItem(commandItem("Stop All — Emergency", .stopAll, ".", modifiers: [.command, .option]))
         addMenu(simulation, to: main)
 
+        let researchMenu = NSMenu(title: "Research")
+        researchMenu.addItem(menuItem("Open Research Workspace", #selector(openResearch), "3", target: self))
+        for (title, command, key) in [("Connect & Verify Tools", ResearchCommand.connect, "k"),
+                                      ("Run Study", .run, "\r"), ("Stop Agent", .stop, "."),
+                                      ("Export Trace…", .export, "e"), ("Download Paper PDF…", .exportPDF, ""), ("Focus Instructions", .focusPrompt, "l")] {
+            researchMenu.addItem(researchItem(title, command, key))
+        }
+        researchMenu.addItem(.separator())
+        for (title, command) in [("Start Local Model", ResearchCommand.startModel),
+                                 ("Unload Local Model", .unloadModel), ("Model Setup…", .modelSetup)] {
+            researchMenu.addItem(researchItem(title, command))
+        }
+        researchMenu.addItem(menuItem("Choose Model File…", #selector(chooseModel), target: self))
+        researchMenu.addItem(menuItem("Choose Runtime…", #selector(chooseRuntime), target: self))
+        researchMenu.addItem(.separator())
+        for (title, command) in [("Readiness Audit Template", ResearchCommand.audit),
+                                 ("Replicate Study Template", .replicates), ("Chemical Comparison Template", .chemistry)] {
+            researchMenu.addItem(researchItem(title, command))
+        }
+        researchMenu.addItem(.separator())
+        researchMenu.addItem(menuItem("Show Research Logs", #selector(showResearchLogs), target: self))
+        addMenu(researchMenu, to: main)
+
         let windowMenu = NSMenu(title: "Window")
         windowMenu.addItem(menuItem("Minimize", #selector(NSWindow.performMiniaturize(_:)), "m"))
         windowMenu.addItem(menuItem("Zoom", #selector(NSWindow.performZoom(_:))))
+        windowMenu.addItem(menuItem("Simulation Workbench", #selector(openWorkbench), target: self))
+        windowMenu.addItem(menuItem("Research Workspace", #selector(openResearch), target: self))
         windowMenu.addItem(.separator())
         windowMenu.addItem(menuItem("Bring All to Front", #selector(NSApplication.arrangeInFront(_:))))
         addMenu(windowMenu, to: main)
@@ -164,6 +197,7 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
 
         let help = NSMenu(title: "Help")
         help.addItem(menuItem("Cognesia User Guide", #selector(showGuide), target: self))
+        help.addItem(menuItem("Research Agent Guide", #selector(showResearchGuide), target: self))
         help.addItem(menuItem("Show Logs", #selector(showLogs), target: self))
         help.addItem(menuItem("Rendering Diagnostics…", #selector(showRenderingDiagnostics), target: self))
         addMenu(help, to: main)
@@ -175,6 +209,43 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
         let item = NSMenuItem(title: menu.title, action: nil, keyEquivalent: "")
         item.submenu = menu
         main.addItem(item)
+    }
+
+    private func researchItem(_ title: String, _ command: ResearchCommand, _ key: String = "") -> NSMenuItem {
+        let item = menuItem(title, #selector(performResearchCommand(_:)), key, target: self)
+        item.representedObject = "research:" + command.rawValue
+        return item
+    }
+    @objc private func openResearch() {
+        do {
+            if research == nil {
+                research = ResearchWorkspaceController(root: try projectRoot(), viewerURL: serviceURL, port: researchPort,
+                    openWorkbench: { [weak self] in self?.openWorkbench() },
+                    focused: { UserDefaults.standard.set("research", forKey: "CognesiaLastWorkspace") })
+            }
+            research?.present()
+        } catch { showAlert("Could not open research workspace", error.localizedDescription) }
+    }
+    @objc private func openWorkbench() {
+        window.makeKeyAndOrderFront(nil)
+        UserDefaults.standard.set("workbench", forKey: "CognesiaLastWorkspace")
+    }
+    func windowDidBecomeKey(_ notification: Notification) {
+        if notification.object as? NSWindow === window { UserDefaults.standard.set("workbench", forKey: "CognesiaLastWorkspace") }
+    }
+    @objc private func performResearchCommand(_ sender: NSMenuItem) {
+        guard let raw = sender.representedObject as? String,
+              let command = ResearchCommand(rawValue: String(raw.dropFirst("research:".count))) else { return }
+        openResearch(); research?.perform(command)
+    }
+    @objc private func chooseModel() { openResearch(); research?.chooseLocalFile(model: true) }
+    @objc private func chooseRuntime() { openResearch(); research?.chooseLocalFile(model: false) }
+    @objc private func openStudyInstructions() { openResearch(); research?.openInstructions() }
+    @objc private func showResearchLogs() {
+        if let root = try? projectRoot() { NSWorkspace.shared.open(root.appendingPathComponent("build/runtime", isDirectory: true)) }
+    }
+    @objc private func showResearchGuide() {
+        if let root = try? projectRoot() { NSWorkspace.shared.open(root.appendingPathComponent("docs/local-agent.md")) }
     }
 
     private func createWindow() {
@@ -310,6 +381,9 @@ final class CognesiaDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate,
                   json["service"] as? String == "flybrain-visual" else {
                 return .occupied("Another service is answering on port \(servicePort). Cognesia has left it running. Close that service, then try again.")
             }
+            guard json["access_required"] as? Bool == true else {
+                return .occupied("An older unprotected viewer is running. Stop it and restart the current Cognesia release.")
+            }
             return .ready
         } catch let error as URLError {
             if error.code == .cancelled { return .unavailable }
@@ -381,7 +455,10 @@ with (logs / 'launcher.lock').open('a') as lock:
     fcntl.flock(lock, fcntl.LOCK_EX)
     try:
         with urllib.request.urlopen(f'http://127.0.0.1:{port}/api/health', timeout=2) as response:
-            if json.load(response).get('service') == 'flybrain-visual':
+            health = json.load(response)
+            if health.get('service') == 'flybrain-visual' and health.get('access_required') is not True:
+                raise RuntimeError('An older unprotected viewer is running; stop it and restart the current release.')
+            if health.get('service') == 'flybrain-visual':
                 print(json.dumps({'ready': True}))
                 sys.exit(0)
             raise RuntimeError(f'Port {port} is already serving another application.')
@@ -437,8 +514,17 @@ with (logs / 'launcher.lock').open('a') as lock:
     }
 
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        if let raw = menuItem.representedObject as? String, raw.hasPrefix("research:"),
+           let command = ResearchCommand(rawValue: String(raw.dropFirst("research:".count))) {
+            return research?.canPerform(command) ?? false
+        }
         guard let raw = menuItem.representedObject as? String,
               let command = DesktopCommand(rawValue: raw) else { return true }
+        if command == .saveSession {
+            menuItem.title = research?.isKey == true ? "Export Research Trace…" : "Save Session…"
+            if research?.isKey == true { return research?.canPerform(.export) ?? false }
+        }
+        if command == .settings && research?.isKey == true { return research?.canPerform(.modelSetup) ?? false }
         if command == .toggleNotes {
             let visible = desktopCommandChecked[command] ?? true
             menuItem.title = visible ? "Hide Notes" : "Show Notes"
@@ -469,6 +555,10 @@ with (logs / 'launcher.lock').open('a') as lock:
     @objc private func performDesktopCommand(_ sender: NSMenuItem) {
         guard let raw = sender.representedObject as? String,
               let command = DesktopCommand(rawValue: raw) else { return }
+        if research?.isKey == true {
+            if command == .saveSession { research?.perform(.export); return }
+            if command == .settings { research?.perform(.modelSetup); return }
+        }
         window.makeKeyAndOrderFront(nil)
         guard didLoadWorkspace, let url = webView.url, isLocal(url) else {
             if command == .stopAll { emergencyStopAll() }
@@ -501,39 +591,33 @@ with (logs / 'launcher.lock').open('a') as lock:
     }
 
     private func emergencyStopAll() {
-        // This bounded HTTP fallback remains usable when WebKit is loading or
-        // unresponsive. It targets only the visualizer's managed simulations.
-        Task { [weak self] in
+        let script = """
+        const session = await fetch('/auth/session');
+        if (!session.ok) throw new Error('Sign in to Cognesia before stopping simulations.');
+        const access = await session.json();
+        const response = await fetch('/api/stop-all', {method:'POST', headers:{'Content-Type':'application/json','X-Cognesia-CSRF':access.csrf}, body:'{}'});
+        if (!response.ok) throw new Error('The authenticated stop request was rejected.');
+        return await response.json();
+        """
+        webView.callAsyncJavaScript(script, arguments: [:], in: nil, in: .page) { [weak self] result in
             guard let self else { return }
-            do {
-                guard case .ready = await health() else {
-                    throw LaunchError.message("The local simulator is not responding. Stop All could not be confirmed. Open Show Logs to inspect the service.")
-                }
-                var request = URLRequest(url: serviceURL.appendingPathComponent("api/stop-all"))
-                request.httpMethod = "POST"
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                request.httpBody = Data("{}".utf8)
-                let configuration = URLSessionConfiguration.ephemeral
-                configuration.timeoutIntervalForRequest = 15
-                configuration.timeoutIntervalForResource = 20
-                let emergencySession = URLSession(configuration: configuration)
-                defer { emergencySession.finishTasksAndInvalidate() }
-                let (data, response) = try await emergencySession.data(for: request)
-                guard let http = response as? HTTPURLResponse, http.statusCode == 200,
-                      let result = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                      let status = result["status"] as? String, ["stopped", "stopping"].contains(status) else {
-                    throw LaunchError.message("The simulator did not confirm the stop request. Open Show Logs to inspect the service.")
+            switch result {
+            case .success(let value):
+                guard let payload = value as? [String: Any], let status = payload["status"] as? String,
+                      ["stopped", "stopping"].contains(status) else {
+                    showAlert("Stop All could not be confirmed", "Reload the workspace to inspect the simulations.")
+                    return
                 }
                 window.subtitle = status == "stopped" ? "Managed simulations stopped" : "Stop requested"
-                showAlert(status == "stopped" ? "Simulations stopped" : "Stop requested",
-                          status == "stopped" ? "The local visualizer confirmed its managed simulations have stopped. Saved recordings are preserved." : "The local visualizer accepted the stop request and is finishing shutdown. Saved recordings are preserved; reload to inspect final status.")
-            } catch { showAlert("Stop All could not be confirmed", error.localizedDescription) }
+            case .failure(let error):
+                showAlert("Stop All could not be confirmed", error.localizedDescription)
+            }
         }
     }
 
     @objc private func retryConnection() { connect() }
-    @objc private func reloadWorkspace() { connect() }
-    @objc private func openInBrowser() { NSWorkspace.shared.open(serviceURL) }
+    @objc private func reloadWorkspace() { if research?.isKey == true { research?.reload() } else { connect() } }
+    @objc private func openInBrowser() { NSWorkspace.shared.open(research?.isKey == true ? research!.serviceURL : serviceURL) }
     @objc private func showLogs() {
         try? FileManager.default.createDirectory(at: logDirectory, withIntermediateDirectories: true)
         NSWorkspace.shared.open(logDirectory)
@@ -546,9 +630,9 @@ with (logs / 'launcher.lock').open('a') as lock:
         do { NSWorkspace.shared.open(try projectRoot().appendingPathComponent("VISUAL_SIMULATOR.md")) }
         catch { showAlert("User guide unavailable", error.localizedDescription) }
     }
-    @objc private func zoomIn() { webView.pageZoom = min(1.6, webView.pageZoom + 0.1) }
-    @objc private func zoomOut() { webView.pageZoom = max(0.7, webView.pageZoom - 0.1) }
-    @objc private func resetZoom() { webView.pageZoom = 1 }
+    @objc private func zoomIn() { if research?.isKey == true { research?.zoom(0.1) } else { webView.pageZoom = min(1.6, webView.pageZoom + 0.1) } }
+    @objc private func zoomOut() { if research?.isKey == true { research?.zoom(-0.1) } else { webView.pageZoom = max(0.7, webView.pageZoom - 0.1) } }
+    @objc private func resetZoom() { if research?.isKey == true { research?.zoom(nil) } else { webView.pageZoom = 1 } }
     private func nativeRenderingSnapshot() -> [String: Any] {
         var ancestry: [[String: Any]] = []
         var view: NSView? = webView
@@ -644,12 +728,14 @@ with (logs / 'launcher.lock').open('a') as lock:
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if UserDefaults.standard.string(forKey: "CognesiaLastWorkspace") == "research" { openResearch(); return true }
         window.makeKeyAndOrderFront(nil)
         if !didLoadWorkspace && connectTask == nil { connect() }
         return true
     }
     func applicationWillTerminate(_ notification: Notification) {
         connectTask?.cancel()
+        research?.closeUI()
         // Deliberately do not signal the detached simulator or its experiment.
     }
 
@@ -657,6 +743,7 @@ with (logs / 'launcher.lock').open('a') as lock:
         url.scheme == "http" && ["127.0.0.1", "localhost"].contains(url.host ?? "") && url.port == servicePort
     }
     private func openExternal(_ url: URL) {
+        if url.scheme == "http", ["127.0.0.1", "localhost"].contains(url.host ?? ""), url.port == researchPort { openResearch(); return }
         if ["http", "https", "mailto"].contains(url.scheme?.lowercased() ?? "") { NSWorkspace.shared.open(url) }
     }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {

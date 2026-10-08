@@ -55,6 +55,8 @@ def serve_stream(handler, state, session_id):
     last_sequence = -1; last_status = None; pending = bytearray()
     try:
         while True:
+            if hasattr(handler, 'access_valid') and not handler.access_valid():
+                sock.sendall(websocket_frame(struct.pack('!H', 1008), 8)); return
             with state.lock:
                 job = dict(state.jobs[session_id])
                 frame = state.frames.get(session_id)

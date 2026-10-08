@@ -14,7 +14,10 @@ def start(root, port=8794, *, open_browser=True):
     def running():
         try:
             with urllib.request.urlopen(url + '/api/health', timeout=1) as response:
-                return json.load(response).get('service') == 'flybrain-visual'
+                health = json.load(response)
+                if health.get('service') == 'flybrain-visual' and health.get('access_required') is not True:
+                    raise RuntimeError('An older unprotected viewer is running; stop it and restart the current Cognesia release.')
+                return health.get('service') == 'flybrain-visual'
         except (OSError, ValueError):
             return False
 

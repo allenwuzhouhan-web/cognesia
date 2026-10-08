@@ -44,6 +44,14 @@ class ProviderChemistry:
         self.tick_steps = engine._steps(1., "chemical_tick_ms")
         parameters = FieldParameters.from_root(root)
         projection = build_source_projection(source_neurons,self.mapping)
+        # Provider annotations can include evidence transferred between specimens.
+        # A successful source projection does not turn that inference into a measurement.
+        projection.metadata.update({
+            "units": "Hz mean over compiled positive chemical annotations",
+            "identity": "compiled positive known_nt; native and inferred evidence remain in the model provenance",
+            "model_id": network.get("model_id"),
+            "model_hash": network.get("manifest", {}).get("model_hash"),
+        })
         if self.source_population_size != len(self.neurons):
             from .selection import slice_source_projection
             projection = slice_source_projection(projection, self.model_indices)
@@ -82,7 +90,8 @@ class ProviderChemistry:
         self.rates_hz += -np.expm1(-1/20.)*(targets-self.rates_hz)
         source_rates = self.rates_hz.copy()
         source_rates[~self.engine.output_enabled] = 0.
-        self.last_source_rates = source_rates.copy()
+        # Already a private, freshly allocated tick snapshot; projection is read-only.
+        self.last_source_rates = source_rates
         drive = self.field.projection.mean_rates_hz(source_rates)/self.field.parameters.max_source_rate_hz[:,None]
         if self.boundary is not None: drive += self.boundary.chemical_tick(self.engine.step)["source_drive"]
         if self.enzymes.enabled: self.enzymes.step(self.field,drive,1.)

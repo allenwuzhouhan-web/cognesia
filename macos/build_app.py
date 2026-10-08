@@ -27,9 +27,12 @@ def main() -> None:
     parser.add_argument("--install", action="store_true", help="Install Cognesia.app in Applications")
     parser.add_argument("--destination", type=Path, help="Applications folder override")
     parser.add_argument("--port", type=int, default=8794, help="Local server port (default: 8794)")
+    parser.add_argument("--research-port", type=int, default=8797, help="Local research console port (default: 8797)")
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         parser.error("port must be between 1 and 65535")
+    if not 1024 <= args.research_port <= 65535 or args.research_port == args.port:
+        parser.error("research-port must be 1024–65535 and different from the viewer port")
     BUILD.mkdir(parents=True, exist_ok=True)
     bundle = BUILD / "Cognesia.app"
     contents = bundle / "Contents"
@@ -39,8 +42,8 @@ def main() -> None:
     resources.mkdir(parents=True, exist_ok=True)
     architecture = os.uname().machine
     run("/usr/bin/swiftc", "-O", "-warnings-as-errors", "-parse-as-library", "-swift-version", "5", "-target", f"{architecture}-apple-macosx13.0",
-        "-framework", "AppKit", "-framework", "WebKit",
-        ROOT / "macos/Sources/Cognesia.swift", "-o", executables / "Cognesia")
+        "-framework", "AppKit", "-framework", "WebKit", "-framework", "UniformTypeIdentifiers",
+        ROOT / "macos/Sources/Cognesia.swift", ROOT / "macos/Sources/ResearchWorkspace.swift", "-o", executables / "Cognesia")
     run("/usr/bin/swift", ROOT / "macos/Tools/GenerateIcon.swift", BUILD / "artwork")
     run("/usr/bin/iconutil", "-c", "icns", BUILD / "artwork/Cognesia.iconset", "-o", resources / "Cognesia.icns")
     shutil.copy2(BUILD / "artwork/Cognesia.png", resources / "Cognesia.png")
@@ -51,7 +54,7 @@ def main() -> None:
         "CFBundleIdentifier": IDENTIFIER,
         "CFBundlePackageType": "APPL",
         "CFBundleShortVersionString": tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["version"],
-        "CFBundleVersion": "1",
+        "CFBundleVersion": "2",
         "CFBundleIconFile": "Cognesia",
         "NSPrincipalClass": "NSApplication",
         "NSHighResolutionCapable": True,
@@ -61,6 +64,7 @@ def main() -> None:
         "NSHumanReadableCopyright": "Cognesia — local experimental neuroscience workbench",
         "CognesiaProjectRoot": str(ROOT),
         "CognesiaServerPort": args.port,
+        "CognesiaResearchPort": args.research_port,
         "NSAppTransportSecurity": {"NSAllowsLocalNetworking": True},
     }
     with (contents / "Info.plist").open("wb") as output:

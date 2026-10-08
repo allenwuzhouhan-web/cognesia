@@ -31,7 +31,7 @@ export function simulationProgress(value) {
   const phase=['complete','failed','cancelled'].includes(value?.status)?value.status:value?.phase||value?.status||'ready';
   return {fraction,label:names[phase]||phase.replaceAll('_',' '),modelTime:Number.isFinite(value?.model_time_ms)?value.model_time_ms:null,active:!!value&&!['complete','failed','cancelled'].includes(value.status)};
 }
-const modelNames={'banc-888':'BANC','cognesia-fused-v1':'Cognesia','flywire-783':'FlyWire'};
+const modelNames={'paralimbo-v0-1-0':'ParaLimbo 0.1 · BANC × FlyWire','banc-888':'BANC','cognesia-fused-v1':'Cognesia','flywire-783':'FlyWire'};
 function element(tag, text, className) {
   const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;
 }
@@ -124,7 +124,7 @@ export function initializeExperimentControls({host,requestJSON,onStatus,onLiveFr
   }
 
   const modelSection=element('section',undefined,'experiment-model-settings');modelSection.id='experiment-model-settings';
-  const models=select([['banc-888','BANC'],['cognesia-fused-v1','Cognesia'],['flywire-783','FlyWire']],draft.model_id,value=>{draft.model_id=value;save();onModelChanged?.(value);loadCatalogs();});
+  const models=select([['paralimbo-v0-1-0','ParaLimbo 0.1 · BANC × FlyWire'],['banc-888','BANC'],['cognesia-fused-v1','Cognesia'],['flywire-783','FlyWire']],draft.model_id,value=>{draft.model_id=value;save();onModelChanged?.(value);loadCatalogs();});
   models.id='experiment-model';models.setAttribute('aria-label','Connectome model');
   const modelDescription=element('p','','model-description');
   const sourceTools=element('details',undefined,'model-source-tools');sourceTools.append(element('summary','Model sources'),modelDescription,button('Refresh models',loadCatalogs),button('Acquire BANC sources',()=>modelAction('acquire-banc')),button('Build Cognesia model',()=>modelAction('compile-fused')));
@@ -354,7 +354,7 @@ export function initializeExperimentControls({host,requestJSON,onStatus,onLiveFr
     if(requestedModel!==draft.model_id)return;
     if(results[0].status==='fulfilled') {
       modelCatalog=results[0].value;const list=Array.isArray(modelCatalog)?modelCatalog:modelCatalog.models||modelCatalog.providers||[];
-      const ordered=[...list].sort((a,b)=>['banc-888','cognesia-fused-v1','flywire-783'].indexOf(a.id)-['banc-888','cognesia-fused-v1','flywire-783'].indexOf(b.id));
+      const ordered=[...list].sort((a,b)=>['paralimbo-v0-1-0','banc-888','cognesia-fused-v1','flywire-783'].indexOf(a.id)-['paralimbo-v0-1-0','banc-888','cognesia-fused-v1','flywire-783'].indexOf(b.id));
       models.replaceChildren(...ordered.map(item=>new Option(`${modelNames[item.id||item.model_id]||item.label||item.name||item.id}${item.available===false?' · not installed':''}`,item.id||item.model_id)));
       if(![...models.options].some(option=>option.value===draft.model_id))models.add(new Option(modelNames[draft.model_id]||draft.model_id,draft.model_id));models.value=draft.model_id;
       const selected=list.find(item=>(item.id||item.model_id)===draft.model_id);

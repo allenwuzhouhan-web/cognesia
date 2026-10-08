@@ -99,11 +99,13 @@ def test_checkpoint_branch_draft_is_a_valid_session_request(monkeypatch):
     context={'session_options':{'model_id':'cognesia-fused-v1','recording_selection':{'root_ids':['11']},
         'timeline':protocol},'resolved_interventions':[{'kind':'silence','indices':[0]}],'input_origin_ms':100.}
     monkeypatch.setattr('flybrain.experiment_session.read_checkpoint',lambda root,identifier:(checkpoint,{'context':context}))
-    server=ThreadingHTTPServer(('127.0.0.1',0),make_handler(SimpleNamespace(root=ROOT)))
+    state=SimpleNamespace(root=ROOT)
+    server=ThreadingHTTPServer(('127.0.0.1',0),make_handler(state))
     thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
     client=HTTPConnection('127.0.0.1',server.server_port)
     try:
-        client.request('POST','/api/checkpoints/'+checkpoint['id']+'/branches',body='{}',headers={'Content-Type':'application/json'})
+        client.request('POST','/api/checkpoints/'+checkpoint['id']+'/branches',body='{}',
+                       headers={'Content-Type':'application/json','X-Cognesia-Internal':state.access.capability})
         response=client.getresponse();draft=json.loads(response.read())
         assert response.status==200 and draft['status']=='draft'
         assert set(draft['options'])<=REQUEST_OPTION_KEYS

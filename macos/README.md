@@ -1,8 +1,49 @@
 # Cognesia for macOS
 
-The native app opens the existing Cognesia workbench in a dedicated Mac window.
-It reconnects to the local server or starts it automatically. No terminal needs
-to stay open. A new experiment starts only when you select **Run simulation**.
+Cognesia 0.0.2 requires a personal access key and a configured verification
+service. Complete [access setup](../docs/app-access.md), including the private
+Finder configuration, before launching. The public release supplies source;
+the native app is built for your own checkout.
+
+The native app provides separate simulation and GPT-OSS research windows in
+Cognesia's compact editor style. It reconnects to existing local services or
+starts them automatically. No terminal needs to stay open. A study or simulation
+starts only through its explicit run command. Remote API access uses a workspace
+password; there is no paywall or Stripe setup.
+
+## Research workspace
+
+Use **⌘3** to open Research and **⌘1** to return to Simulate. Each window remembers
+its size and position; reopening the app restores the last focused workspace.
+The first launch defaults to Research. Existing workbench menus remain available.
+
+| Action | Shortcut / menu |
+| --- | --- |
+| Connect and verify GPT-OSS tools | **⌘K** |
+| Run the current study | **⌘Return** |
+| Stop the agent | **⌘.** |
+| Export the trace with a native Save dialog | **⌘E**, or **⌘S** in Research |
+| Open text/Markdown instructions or a saved trace's prompt | **⌘O** |
+| Focus study instructions | **⌘L** |
+| Model setup | **⌘,** in Research |
+| Start/unload model; choose GGUF/runtime files | **Research** menu |
+
+Imports fill the instructions without executing them. Native commands use the
+same enabled states as the page controls. Selecting a model file does not load
+it until you choose **Start Local Model**. The prepared verified model starts
+when the research service is first launched; use **Unload Local Model** to reclaim
+its memory. Research **Stop Agent** cancels inference and future tool calls;
+**Simulation → Stop All — Emergency** stops submitted experiments separately.
+
+Quitting closes the windows and leaves local services, model and any active
+study/simulation running. Export a trace before starting a replacement study.
+Unload the model and stop the agent before quitting when you want to release
+their resources. This preserves work across app restarts.
+
+Research logs and the launcher lock/PID live under the checkout's `build/runtime`.
+The builder's `--research-port` selects a custom console port; `--port` selects the
+viewer port. The native launcher verifies both service identity and the matching
+viewer URL and does not replace an occupied or unrelated service.
 
 ## Build and install
 

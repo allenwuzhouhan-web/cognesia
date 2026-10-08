@@ -211,7 +211,8 @@ class WholeBrainChemistry:
         mask=self.state_output['endocrine_mask'][self.model_indices]
         source_rates[mask]=self.state_output['endocrine_drive'][self.model_indices][mask]*self.state_output['source_max_rate_hz']
         source_rates[~self.engine.output_enabled] = 0.
-        self.last_source_rates = source_rates.copy()
+        # Multiplication above allocated this tick's snapshot; never aliases rates_hz.
+        self.last_source_rates = source_rates
         drive = self.field.projection.mean_rates_hz(source_rates)/self.field.parameters.max_source_rate_hz[:,None]
         if boundary_tick is not None: drive += boundary_tick['source_drive']
         if self.enzymes.enabled: self.enzymes.step(self.field, drive, 1.)

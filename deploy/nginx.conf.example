@@ -1,0 +1,62 @@
+# Template only: install TLS certificates and replace cognesia.example.com.
+# Build website into /var/www/cognesia; frontend and API share one HTTPS origin.
+worker_processes auto;
+events { worker_connections 1024; }
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    limit_req_zone $binary_remote_addr zone=cognesia_per_ip:10m rate=2r/s;
+    limit_conn_zone $binary_remote_addr zone=cognesia_connections:10m;
+    server {
+        listen 80;
+        server_name cognesia.example.com;
+        # API credentials must be sent to HTTPS directly, never via a redirect.
+        if ($http_authorization != "") { return 403; }
+        location ~ ^/(v1(/|$)|health$) { return 403; }
+        location / { return 301 https://cognesia.example.com$request_uri; }
+    }
+    server {
+        listen 443 ssl;
+        server_name cognesia.example.com;
+        if ($host != cognesia.example.com) { return 444; }
+        ssl_certificate /etc/letsencrypt/live/cognesia.example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/cognesia.example.com/privkey.pem;
+        ssl_protocols TLSv1.2 TLSv1.3;
+        server_tokens off;
+        client_max_body_size 1m;
+        client_body_timeout 10s;
+        limit_conn cognesia_connections 10;
+        root /var/www/cognesia;
+        # Rebuild/copy this include with every website update: it contains the
+        # precise metadata-script hash, CSP, HSTS and other browser protections.
+        include /var/www/cognesia/security-headers.conf;
+        # Do not log bearer passwords, request bodies or query strings.
+        access_log off;
+        location ~ ^/(health|v1/access|v1/tools|v1/tools/call)$ {
+            if ($args != "") { return 400; }
+            limit_req zone=cognesia_per_ip burst=20 nodelay;
+            limit_req_status 429;
+            proxy_pass http://127.0.0.1:8796;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-Proto https;
+            proxy_set_header Cookie "";
+            proxy_set_header X-Forwarded-For "";
+            # The server-level generated headers replace gateway headers here.
+            proxy_hide_header Content-Security-Policy;
+            proxy_hide_header Strict-Transport-Security;
+            proxy_hide_header Cache-Control;
+            proxy_hide_header X-Content-Type-Options;
+            proxy_hide_header Referrer-Policy;
+            proxy_connect_timeout 5s;
+            proxy_read_timeout 65s;
+        }
+        location = / { try_files /index.html =404; }
+        location ~ ^/(index\.html|style\.css|app\.js|icon\.svg|sitemap\.xml)$ {
+            limit_except GET { deny all; }
+            try_files $uri =404;
+        }
+        # Only these built assets are public. No source tree, key files, viewer,
+        # model workers, websocket, directory listings or arbitrary API routes.
+        location / { return 404; }
+    }
+}

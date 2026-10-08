@@ -3,7 +3,7 @@ import {SEQUENCE_KINDS,SEQUENCE_LABELS,checkedTimeline,expandTimeline,editTimeli
 import {regionLabel} from './brain-region-names.js';
 
 const LABEL_WIDTH=172;
-const MODEL_NAMES={'banc-888':'BANC','cognesia-fused-v1':'Cognesia','flywire-783':'FlyWire'};
+const MODEL_NAMES={'paralimbo-v0-1-0':'ParaLimbo 0.1 · BANC × FlyWire','banc-888':'BANC','cognesia-fused-v1':'Cognesia','flywire-783':'FlyWire'};
 const recordedModelName=summary=>{const id=summary?.model_id||summary?.metadata?.model_id||summary?.anatomy?.model_id;return MODEL_NAMES[id]||id||'Model unspecified';};
 const COLORS=['#64d9e6','#b7a5f7','#efbb76','#8bd7a6','#ee9bbf','#86b6ff'];
 const element=(tag,text,className)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;};

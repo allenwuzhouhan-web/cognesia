@@ -1,44 +1,55 @@
-# Cognesia v0.0.1 preparation checks
+# Cognesia 0.0.2 and ParaLimbo 0.1 alpha verification
 
-Checked on 2026-10-07. This records local source-release preparation, not a
-published release or new biological validation.
+Release verification performed on 2026-10-08. This document distinguishes software
+checks, model construction and biological evidence. Publication is verified
+separately through the GitHub release pages and Actions run.
 
-| Check | Result |
-| --- | --- |
-| Clean source copy, Python tests excluding `integration` and `slow` | 707 passed, 9 deselected in 81.26 seconds |
-| Browser modules and native desktop JavaScript bridge | 150 passed |
-| Public release tools | 4 tests passed; included in the Python total |
-| Python wheel | `flybrain-0.0.1-py3-none-any.whl` built successfully |
-| Wheel contents | Version metadata, root license, browser UI, Three.js notice and fly geometry present |
-| Package and source version | Both 0.0.1; native bundle reads package version |
-| Public documentation links | New relative file links resolve |
-| GitHub Actions files | Both workflow files parse as YAML; cloud execution not yet run |
-| Static project page | Built with a test repository URL; template substitution, canonical URL, JSON-LD and sitemap checked |
-| Local browser preview | Rendered and inspected; Cognesia branding, v0.0.1 and scientific status visible |
-| Upload scan | No configured credential-pattern, home-path, forbidden-path or oversized-file findings |
-| Historical credential-pattern scan | No configured pattern matches; old Git history is excluded from the upload snapshot regardless |
+## Full model
 
-Python checks ran from a disposable source copy without the working project's
-cached datasets, recordings or build artifacts, using the existing Python 3.12
-environment. This is not a fresh dependency installation or a new full dataset
-acquisition test. No model simulation or scientific validation gate was rerun.
-The existing numerical and biological limitations remain unchanged.
+Frozen ParaLimbo identity:
+`251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c`.
 
-Commands:
+- 52 structural and source-fidelity checks passed.
+- Two full compilations produced identical hashes and every manifest field.
+- Isolated assembly reproduced both the exact BANC baseline model hash and the
+  pinned FlyWire donor-neuron table checksum.
+- All 175,401 neurons were simulated in two repeats of a paired 300 ms dark
+  experiment after 100 ms fixed preparation. Every saved numeric activity and
+  chemistry array was finite and identical across repeats. The recording sampled
+  32 specified neuron IDs; it is not a saved voltage trace for every neuron.
+- Preparation, experimental arms and paired baselines had zero clamp events;
+  preparation had zero nonfinite endpoint derivatives. The short preparation
+  endpoint was stationary under the configured tolerance. Long-term stability,
+  timestep convergence and biological predictive improvement remain unestablished.
 
-```sh
-python -m pytest -q -m 'not integration and not slow'
-node --test tests/test_web_*.mjs macos/test_desktop_bridge.mjs
-uv build --wheel --out-dir build/public-release-dist
-python scripts/prepare_public_release.py --check
-```
+See the [model results](fly-model/results.md), [protocol](fly-model/validation-protocol.md)
+and [reproduction recipe](fly-model/reproduce.md) for scope, source counts and
+acceptance criteria. Release JSON assets retain the actual checks and hashes.
 
-A bounded pattern scan cannot establish the absence of every possible secret.
-The source export omits `.git`, virtual environments, datasets, recordings,
-checkpoints and generated build outputs. The exporter writes a separate file
-manifest and archive SHA-256 alongside the clean folder and ZIP.
+## App and package
 
-The project remains local. Repository visibility, GitHub Pages deployment,
-v0.0.1 tag/release creation and Google indexing have not been performed or
-verified. Follow [publishing instructions](PUBLISHING.md) after choosing the
-real GitHub repository.
+- Personal-key tests exercise fail-closed access, identity binding, scope checks,
+  session expiry/revalidation, CSRF, origin checks and private internal transport.
+- Browser modules and both native JavaScript bridges: 167 tests passed.
+- Native macOS app: optimized Swift build with warnings treated as errors,
+  Info.plist validation and ad-hoc code-signature verification passed. The built
+  bundle references its own local checkout and is not a portable release asset.
+- Python wheel version 0.0.2 builds successfully. Source ZIP and wheel are the app
+  preview distribution; native users build the shell from the source checkout.
+- Original code retains its all-rights-reserved notice. Third-party notices remain
+  included. No upstream raw datasets or private access state are bundled.
+
+Final clean-source check: **928 Python tests passed, 9 integration/slow tests
+excluded**, in 96.46 seconds. The separate full-data construction, reproduction
+and runtime checks above cover their documented scope. The clean source tree
+contained no cached models, recordings or private state; tests reused the
+installed release dependency environment, rather than reinstalling dependencies.
+The clean-tree wheel contains 193 files; version metadata, compiler, access gate,
+browser UI and third-party licenses were checked. This tested snapshot defines
+the release boundary; later concurrent workspace changes remain local.
+
+The [real access report](evidence/app-access-0.0.2.json) records 23 passing
+checks using actual registry/CLI and loopback HTTP transport, including revocation
+after 31.015 seconds without altering the clock. Website signup, automatic customer-key issuance,
+admin usage reports and public HTTPS deployment are planned separately; this
+release does not make those services live.

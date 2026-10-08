@@ -117,6 +117,7 @@ def http_client(state):
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     client = HTTPConnection("127.0.0.1", server.server_port, timeout=5)
+    client.cognesia_internal_capability = state.access.capability
     try:
         yield client
     finally:
@@ -127,7 +128,8 @@ def http_client(state):
 
 
 def request(client, method, path, body=None, headers=None):
-    client.request(method, path, body=body, headers=headers or {})
+    client.request(method, path, body=body,
+                   headers={'X-Cognesia-Internal':client.cognesia_internal_capability, **(headers or {})})
     response = client.getresponse()
     return response.status, response.headers, response.read()
 
@@ -179,7 +181,16 @@ def test_draining_server_keeps_health_and_reload_status_available(state):
     assert state.active_requests == 0
 
 
-def test_http_no_watch_serves_disabled_status_and_plain_html(state, monkeypatch, tmp_path):
+def test_health_identifies_the_dedicated_workspace_without_disclosing_its_path(state):
+    from flybrain.api_credentials import workspace_fingerprint
+    with http_client(state) as client:
+        status, _, body = request(client, 'GET', '/api/health')
+        assert status == 200
+        assert json.loads(body)['workspace_fingerprint'] == workspace_fingerprint(state.root)
+        assert str(state.root).encode() not in body
+
+
+def test_http_no_watch_serves_disabled_status_and_protected_html(state, monkeypatch, tmp_path):
     (tmp_path / "index.html").write_text("<html><head></head><body>plain</body></html>")
     monkeypatch.setattr(visual_server, "STATIC", tmp_path)
     with http_client(state) as client:
@@ -188,7 +199,11 @@ def test_http_no_watch_serves_disabled_status_and_plain_html(state, monkeypatch,
         assert json.loads(body)["enabled"] is False
         status, _, body = request(client, "GET", "/")
         assert status == 200
-        assert "__COGNESIA_LIVE_RELOAD__" not in body.decode()
+        html = body.decode()
+        injected = html.split("window.__COGNESIA_LIVE_RELOAD__=", 1)[1].split(";</script>", 1)[0]
+        assert json.loads(injected) == {'enabled': False}
+        assert '<script src="/auth/client.js"></script>' in html
+        assert '<body>plain</body>' in html
 
 
 def test_clear_bytecode_preserves_source_and_non_python_cache(tmp_path):

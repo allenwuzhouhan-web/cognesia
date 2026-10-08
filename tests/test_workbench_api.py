@@ -118,6 +118,7 @@ def test_live_stream_origin_handshake_and_disconnect_do_not_cancel_session(tmp_p
         response.read()
         stream = socket.create_connection(('127.0.0.1', server.server_port), timeout=2)
         stream.sendall((f'GET /ws/sessions/example HTTP/1.1\r\nHost: 127.0.0.1:{server.server_port}\r\n'
+                        f'X-Cognesia-Internal: {state.access.capability}\r\n'
                         'Upgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Version: 13\r\n'
                         'Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==\r\n\r\n').encode())
         data = b''

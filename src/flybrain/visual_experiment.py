@@ -29,9 +29,43 @@ from .stimulation import (normalize_lab_options, resolve_electrodes, input_layou
                           combined_drive, electrode_waveform)
 
 INPUT_FILES = ('config/parameters.yaml','config/visual_parameters.yaml',
-               'data/raw/codex/column_assignment.csv','src/flybrain/engine.py',
+               'src/flybrain/engine.py',
                'src/flybrain/hybrid_engine.py','src/flybrain/eye.py',
                'src/flybrain/stimuli.py','src/flybrain/stimulation.py','src/flybrain/visual_experiment.py')
+
+PROVIDER_CHEMICAL_INPUT_FILES = ('config/neuromod.yaml', 'config/receptors.csv',
+    'src/flybrain/wholebrain_neuromod.py', 'src/flybrain/neuromod/field.py',
+    'src/flybrain/neuromod/receptors.py', 'src/flybrain/neuromod/sources.py',
+    'src/flybrain/neuromod/state.py', 'src/flybrain/neuromod/compartments.py',
+    'src/flybrain/rt/engine_rt.py', 'src/flybrain/enzymes.py')
+
+
+def runtime_input_hashes(root, names):
+    """Hash required configuration and the package code actually being executed.
+
+    Installed wheels need no source checkout at the experiment root. Data and
+    configuration remain required; only code resolves to the imported package.
+    """
+    root = Path(root)
+    hashes = {}
+    for name in names:
+        path = Path(__file__).parent/name.removeprefix('src/flybrain/') if name.startswith('src/flybrain/') else root/name
+        # Logical names keep identical code portable across installations and
+        # keep local package paths out of exported scientific provenance.
+        hashes[name] = checksum(path)
+    return hashes
+
+
+def normalize_provider_neuromod(value, model_id):
+    from .wholebrain_neuromod import normalize_neuromod_options
+    model_id = model_id or 'flywire-783'
+    if isinstance(value, dict) and model_id.split('@', 1)[0] != 'flywire-783':
+        value = dict(value)
+        value.setdefault('plasticity_enabled', False)
+    result = normalize_neuromod_options(value)
+    if result['enabled'] and result['plasticity_enabled'] and model_id.split('@', 1)[0] != 'flywire-783':
+        raise ValueError('This provider lacks a verified MB plasticity-compartment transfer; set neuromod.plasticity_enabled=false')
+    return result
 
 
 from .experiment_session import (STATE_ARRAYS, SESSION_KEYS, snapshot_state, restore_state,
@@ -155,8 +189,9 @@ def check_optics_convergence(mapping, options, frame_times, light, visual_params
 
 
 def assert_sources_unchanged(root, hashes):
+    actual = runtime_input_hashes(root, hashes)
     for name, expected in hashes.items():
-        if checksum(Path(root)/name) != expected:
+        if actual[name] != expected:
             raise ValueError('Source changed during visual simulation; result not finalized: '+name)
 
 
@@ -214,15 +249,12 @@ def run_visual_experiment(root, options=None, progress=None, *, frame=None, cont
     delta_mv, and full spike trains. All displayed activity comes from these runs.
     """
     root = Path(root).resolve()
-    input_hashes = {name:checksum(root/name) for name in INPUT_FILES}
+    input_hashes = runtime_input_hashes(root, INPUT_FILES)
     # These adapters participate even when chemistry is disabled. Fixture roots
     # may use the installed package; record the actual imported source then.
-    for name in ('experiment_session.py','model_registry.py','selection.py','provider_chemistry.py','peripheral.py','model_eye.py','enzymes.py'):
-        path=root/'src/flybrain'/name
-        key='src/flybrain/'+name if path.exists() else str(Path(__file__).parent/name)
-        input_hashes[key]=checksum(root/key)
-    from .wholebrain_neuromod import (normalize_neuromod_options, WholeBrainNeuromodEngine,
-                                      CHEMICAL_INPUT_FILES)
+    input_hashes.update(runtime_input_hashes(root, ('src/flybrain/'+name for name in
+        ('experiment_session.py','model_registry.py','selection.py','provider_chemistry.py','peripheral.py','model_eye.py','enzymes.py'))))
+    from .wholebrain_neuromod import WholeBrainNeuromodEngine, CHEMICAL_INPUT_FILES
     supplied_options=dict(options or {})
     session_options=normalize_session_options({key:supplied_options.pop(key) for key in list(supplied_options) if key in SESSION_KEYS})
     fork = None
@@ -268,9 +300,7 @@ def run_visual_experiment(root, options=None, progress=None, *, frame=None, cont
             for key in ('timeline','interventions'):
                 if key not in session_options and key in fork['context'].get('session_options',{}):
                     session_options[key]=fork['context']['session_options'][key]
-    chemical_options=normalize_neuromod_options(supplied_options.pop('neuromod',None))
-    if chemical_options['enabled']:
-        input_hashes.update({name:checksum(root/name) for name in CHEMICAL_INPUT_FILES})
+    chemical_options=normalize_provider_neuromod(supplied_options.pop('neuromod',None),session_options.get('model_id','flywire-783'))
     base_params,base_visual = parameters(root),read_visual_parameters(root)
     requested_duration=supplied_options.get('duration_ms')
     if fork is not None and requested_duration is not None and requested_duration<300:
@@ -298,6 +328,9 @@ def run_visual_experiment(root, options=None, progress=None, *, frame=None, cont
     else:
         built = load_network(root)
     model_id=built.get('model_id','flywire-783')
+    if chemical_options['enabled']:
+        chemical_inputs = CHEMICAL_INPUT_FILES if model_id == 'flywire-783' else PROVIDER_CHEMICAL_INPUT_FILES
+        input_hashes.update(runtime_input_hashes(root, chemical_inputs))
     if 'manifest' not in built:
         from .model_registry import stable_hash
         built['manifest']={'id':model_id,'model_hash':stable_hash({'id':model_id,
@@ -307,11 +340,17 @@ def run_visual_experiment(root, options=None, progress=None, *, frame=None, cont
     built['summary'].setdefault('n_edges_released',built['graded'].nnz+built['spiking'].nnz)
     built['summary'].setdefault('output_hashes',{})
     if built.get('manifest',{}).get('optical_mapping_supported',True):
+        optical_inputs = ('data/raw/codex/column_assignment.csv',)
+        input_hashes.update(runtime_input_hashes(root, optical_inputs))
         mapping = build_eye_mapping(root, built['neurons'], built['reference'], spacing_deg=params['eye_spacing'],
                                     eye_center_deg=visual['eye_center_azimuth_deg'])
     else:
+        optical_inputs = ('build/visual/eye_assignments.parquet','build/visual/eye_columns.csv')
+        optical_inputs = optical_inputs if 'fafb_match' in built['neurons'] and all((root/name).exists() for name in optical_inputs) else ()
+        input_hashes.update(runtime_input_hashes(root, optical_inputs))
         from .model_eye import build_model_eye_mapping
         mapping=build_model_eye_mapping(root,built,spacing_deg=params['eye_spacing'],eye_center_deg=visual['eye_center_azimuth_deg'])
+    mapping.audit['runtime_input_files'] = list(optical_inputs)
     full_network=built
     full_mapping=mapping
     boundary=None;baseline_boundary=None;automatic_reference=False
@@ -674,7 +713,7 @@ def run_visual_experiment(root, options=None, progress=None, *, frame=None, cont
         'input_origin_ms':input_origin_ms,
         'neuron_table_path':str(neuron_path),'neuron_table_sha256':checksum(neuron_path),
         'n_edges_released':built['summary']['n_edges_released'],'synthetic_edges':0,'lamina_mode':'connectome',
-        'engine':('WholeBrainNeuromodEngine; original graded/spiking network with compartment fields, receptor parameters, KC-to-MBON plasticity and endocrine state' if chemical_options['enabled'] else 'HybridEngine; graded/spiking equations with explicit additive virtual-electrode input'), 'integration_dt_ms':engine.dt,
+        'engine':(('WholeBrainNeuromodEngine; original graded/spiking network with compartment fields, receptor parameters, KC-to-MBON plasticity and endocrine state' if model_id == 'flywire-783' else 'WholeBrainNeuromodEngine; provider graded/spiking network with coarse region fields and assumed receptor effects; MB plasticity unavailable') if chemical_options['enabled'] else 'HybridEngine; graded/spiking equations with explicit additive virtual-electrode input'), 'integration_dt_ms':engine.dt,
         'sample_interval_ms':visual['display_sample_ms'],'render_frame_rate_hz':params['frame_rate'],
         'stimulus_definition':{'grating_waveform':options['grating_waveform'],
             'apparent_motion':'Two bright circular point flashes, each one stimulus frame, on mean-luminance background; simultaneous spots use logical OR.',

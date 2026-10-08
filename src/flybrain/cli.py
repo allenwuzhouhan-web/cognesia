@@ -45,11 +45,21 @@ def print_result(result, root, as_json=False):
 
 
 def main(argv=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
+    # These independently configured services retain their own help/options.
+    if argv and argv[0] in ('api', 'agent'):
+        if argv[0] == 'api':
+            from .public_api import main as service_main
+        else:
+            from .local_agent import main as service_main
+        return service_main(argv[1:])
     parser = argparse.ArgumentParser(prog="flybrain")
     parser.add_argument("--root", type=Path, default=Path.cwd())
     parser.add_argument("--mem-limit-gb", type=float, default=40)
     parser.add_argument("--json", action="store_true", help="Print complete result JSON")
     sub = parser.add_subparsers(dest="command", required=True)
+    sub.add_parser('api', help='Authenticated public tool gateway (flybrain api --help)')
+    sub.add_parser('agent', help='Dedicated local GPT-OSS-20B research console (flybrain agent --help)')
     f = sub.add_parser("fetch", help="Fetch and inspect real release files")
     f.add_argument("--core-only", action="store_true")
     f.add_argument("--synapses", action="store_true")
@@ -68,6 +78,11 @@ def main(argv=None):
     run.add_argument("--threads", type=int, default=16)
     run.add_argument("--integrator", choices=("exponential_euler", "exact_linear"), default="exponential_euler")
     sub.add_parser("report", help="Regenerate the evidence report")
+    models = sub.add_parser('models', help='List, compile and validate versioned model providers')
+    models_sub = models.add_subparsers(dest='models_command', required=True)
+    models_sub.add_parser('list', help='List installed and available model providers')
+    models_sub.add_parser('compile-paralimbo', help='Compile ParaLimbo from pinned local BANC and FlyWire assets')
+    models_sub.add_parser('validate-paralimbo', help='Audit ParaLimbo construction and source fidelity')
     neuromod = sub.add_parser("neuromod", help="Build and validate the neuromodulation extension")
     neuromod_sub = neuromod.add_subparsers(dest="neuromod_command", required=True)
     neuromod_sub.add_parser("build", help="Build and validate the headless extension prerequisites")
@@ -106,7 +121,21 @@ def main(argv=None):
             serve(args.root, port=args.port, seed=args.seed)
             return 0
         with MemoryGuard(args.mem_limit_gb):
-            if args.command == 'train':
+            if args.command == 'models':
+                if args.models_command == 'list':
+                    from .model_registry import catalog
+                    result = {'models': catalog(args.root)}
+                elif args.models_command == 'compile-paralimbo':
+                    from .paralimbo import compile_paralimbo
+                    result = compile_paralimbo(args.root)
+                else:
+                    from .paralimbo import validate_paralimbo
+                    result = validate_paralimbo(args.root)
+                print(json.dumps(result, indent=2))
+                if args.models_command == 'validate-paralimbo':
+                    return 0 if result.get('status') == 'PASS' else 1
+                return 1 if result.get('status') == 'FAIL' else 0
+            elif args.command == 'train':
                 from .rt.protocol import train
                 result = train(args.root, args.protocol)
                 print_result(result, args.root, args.json)

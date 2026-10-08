@@ -1,5 +1,6 @@
 """Cooperative RSS ceiling for this process and its descendants."""
 import threading
+import math
 import psutil
 
 _active_guard = None
@@ -16,8 +17,10 @@ class MemoryLimitExceeded(RuntimeError):
 
 class MemoryGuard:
     def __init__(self, limit_gb=40, interval=0.1):
-        if not 0 < limit_gb <= 40:
-            raise ValueError("Memory limit must be in (0, 40] GB")
+        if isinstance(limit_gb, bool) or not math.isfinite(limit_gb) or not 0 < limit_gb <= 1024:
+            raise ValueError("Memory limit must be finite and in (0, 1024] GB")
+        if limit_gb > 40 and limit_gb * 1e9 > psutil.virtual_memory().total * .8:
+            raise ValueError('Memory limits above 40 GB cannot exceed 80% of installed RAM')
         self.limit = int(limit_gb * 1_000_000_000)
         self.interval = interval
         self.peak_rss = 0

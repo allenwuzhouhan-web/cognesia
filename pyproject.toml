@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "flybrain"
-version = "0.0.1"
+version = "0.0.2"
 description = "Cognesia: an experimental Drosophila connectome and neural simulation workbench"
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords = ["cognesia", "drosophila", "connectomics", "neuroscience", "neural-simulation", "flywire", "banc"]
 requires-python = ">=3.12,<3.13"
-dependencies = ["numpy>=2,<3", "scipy>=1.14", "numba>=0.61", "pandas>=2.2", "pyarrow>=18", "PyYAML>=6", "psutil>=6", "matplotlib>=3.9", "zarr>=3", "brian2>=2.8", "joblib>=1.4", "aiohttp>=3.12,<4"]
+dependencies = ["numpy>=2,<3", "scipy>=1.14", "numba>=0.61", "pandas>=2.2", "pyarrow>=18", "PyYAML>=6", "psutil>=6", "matplotlib>=3.9", "zarr>=3", "brian2>=2.8", "joblib>=1.4", "aiohttp>=3.12,<4", "reportlab>=4,<5"]
 
 [project.optional-dependencies]
 test = ["pytest>=8"]

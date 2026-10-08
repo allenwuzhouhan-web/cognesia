@@ -280,3 +280,26 @@ body.editor-theme .seq-toolbar>select { flex:0 0 116px;width:116px; }
 body.editor-theme .inspector-run-footer .session-toolbar>button:not(#run-button):disabled { display:none; }
 body.editor-theme .inspector-run-footer #simulation-emergency #stop-all { background:#542730;color:#ffd5d9;border-color:#9a4e5c; }
 body.editor-theme .inspector-run-footer #simulation-emergency #stop-all:hover { background:#74313f; }
+
+/* Keep original and loading-state panels dark before the workspace moves them. */
+body.editor-theme :is(.morphology-toolbar, .morphology-controls, .region-atlas-controls) {
+  background:#1b2028;
+  color:#b9c6d9;
+  border-color:#353f50;
+}
+body.editor-theme .chemical-charts>div,
+body.editor-theme .eye-section canvas {
+  background:#151a22;
+  border-color:#353f50;
+  color:#b9c6d9;
+}
+body.editor-theme .chemical-charts :is(output, .state-chip) {
+  color:#b9c6d9;
+  background:#202936;
+  border-color:#3c495d;
+}
+body.editor-theme .editor-inspector :is(.morphology-toolbar, .morphology-controls, .region-atlas-controls),
+body.editor-theme .workspace-tool-dialog .region-atlas-controls {
+  background:transparent;
+  border:0;
+}

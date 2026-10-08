@@ -334,6 +334,12 @@ function applyPreset(preset) {
   loadEditor();
   changed();
 }
+window.addEventListener('cognesia-compute-policy', event => {
+  if (!lab.configured) return;
+  const values = event.detail;
+  $('#compute-threads').max = values.threads;
+  applyPreset({id: 'compute-budget', ...values});
+});
 function changed() {
   lab.recordingCurrent = false;
   saveEditor();
