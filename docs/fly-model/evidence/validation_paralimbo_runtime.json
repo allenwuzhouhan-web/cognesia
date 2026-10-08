@@ -65,12 +65,12 @@
     }
   },
   "run_ids": [
-    "20261008T141201Z_visual_dark_d3915b",
-    "20261008T141214Z_visual_dark_d6faba"
+    "20261008T142535Z_visual_dark_cfc00e",
+    "20261008T142549Z_visual_dark_c27390"
   ],
   "wall_seconds": [
-    13.420211041986477,
-    13.138431208994007
+    18.92794654102181,
+    14.098873167007696
   ],
   "activity_arrays": {
     "node_indices": {
@@ -299,7 +299,7 @@
     "src/flybrain/engine.py": "087bc83a4602f12fd349b7a92ce4bdf9ce5e24663198247272cdfe15d45d5dc5",
     "src/flybrain/hybrid_engine.py": "b70f30337d2da712dbcd31553da3bb2b8d45aaf5711c5b4d642247844fa8b4d2",
     "src/flybrain/eye.py": "2c4c804f19cd79ca0f662cfc4b34d3441ac3af2327e4dfaf160fe5f2b06a5c36",
-    "src/flybrain/stimuli.py": "ff011f445601d32fb310d743e2d455993cc8eb317533a38a7ebe8edfa004c425",
+    "src/flybrain/stimuli.py": "e2955120286e3a7fa08858caa27c7802c8756645b05425e42022f015364703fd",
     "src/flybrain/stimulation.py": "a5460afb1dc3d357fff615f8edb7e9e77ff5d88962a997ad1a1529a4a6aec4f1",
     "src/flybrain/visual_experiment.py": "dfb9cd10788d9cd262ffec4c0572a137e335ea34ee24a9ab9e6425bb51514b93",
     "src/flybrain/experiment_session.py": "711e3b236728740d18022d3ad6d1193494c7bb59531398681b89ff6b893acb22",

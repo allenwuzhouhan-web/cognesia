@@ -158,3 +158,12 @@ def test_source_snapshot_rejects_changes(tmp_path):
     p.write_text('after')
     with pytest.raises(ValueError,match='Source changed'):
         assert_sources_unchanged(tmp_path,hashes)
+
+
+@pytest.mark.parametrize("capacity", [1, 4, 64])
+def test_default_threads_respect_available_capacity_and_explicit_limits(monkeypatch, capacity):
+    monkeypatch.setattr("flybrain.stimuli.available_threads", lambda: capacity)
+    assert normalize_options()["threads"] == min(16, capacity)
+    assert normalize_options({"threads": 1})["threads"] == 1
+    with pytest.raises(ValueError, match="threads"):
+        normalize_options({"threads": capacity + 1})

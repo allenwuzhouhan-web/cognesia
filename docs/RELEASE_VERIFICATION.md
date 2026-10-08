@@ -39,8 +39,8 @@ acceptance criteria. Release JSON assets retain the actual checks and hashes.
 - Original code retains its all-rights-reserved notice. Third-party notices remain
   included. No upstream raw datasets or private access state are bundled.
 
-Final clean-source check: **928 Python tests passed, 9 integration/slow tests
-excluded**, in 96.46 seconds. The separate full-data construction, reproduction
+Final clean-source check: **931 Python tests passed, 9 integration/slow tests
+excluded**, in 100.82 seconds. The separate full-data construction, reproduction
 and runtime checks above cover their documented scope. The clean source tree
 contained no cached models, recordings or private state; tests reused the
 installed release dependency environment, rather than reinstalling dependencies.
@@ -53,3 +53,7 @@ checks using actual registry/CLI and loopback HTTP transport, including revocati
 after 31.015 seconds without altering the clock. Website signup, automatic customer-key issuance,
 admin usage reports and public HTTPS deployment are planned separately; this
 release does not make those services live.
+
+The release also corrects the visual-stimulus default to use at most the
+available thread capacity. Regression cases cover one, four and 64 available
+threads while retaining rejection of explicit requests above capacity.

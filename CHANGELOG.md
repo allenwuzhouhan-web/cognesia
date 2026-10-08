@@ -2,6 +2,8 @@
 
 ## v0.0.2 — Protected application preview
 
+- Default visual-stimulus threads respect available capacity on smaller machines.
+
 - Personal access key sign-in for the official viewer, APIs, downloads,
   WebSocket streams, and local research console.
 - Configurable trusted HTTPS verification, with an explicit loopback exception

@@ -12,7 +12,7 @@ def normalize_options(options=None, frame_rate=240., *, eye_spacing_deg=5.1,
     out = {'stimulus': 'grating', 'duration_ms': 600., 'speed_deg_s': 90.,
            'direction_deg': 0., 'contrast': .8, 'mean_luminance': .5,
            'spatial_period_deg': 30., 'grating_waveform':'square', 'apparent_interval_ms':1000./240.*4,
-           'apparent_separation_columns':1., 'threads': 16}
+           'apparent_separation_columns':1., 'threads': min(16, available_threads())}
     unknown = set(supplied) - set(out) - {'node_indices'}
     if unknown:
         raise ValueError('Unknown experiment options: '+', '.join(sorted(unknown)))

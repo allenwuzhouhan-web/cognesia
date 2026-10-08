@@ -72,8 +72,8 @@ a 300 ms paired dark protocol twice after a fixed 100 ms preparation. All 11
 activity arrays and 13 chemistry arrays match exactly between repeats; every
 saved numeric array is finite. All four stimulus/baseline arms and both
 preparations report zero voltage-clamp events. Chemical field clamps and
-receptor guards are also zero. Measured wall times are **13.42 s** and
-**13.14 s** on the release machine, including each paired run's work; these
+receptor guards are also zero. Measured wall times are **18.93 s** and
+**14.10 s** on the release machine, including each paired run's work; these
 are observations rather than a hardware performance guarantee.
 
 Both preparation endpoints report maximum absolute voltage derivative
