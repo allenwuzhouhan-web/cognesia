@@ -10,6 +10,17 @@ await copyFile(path.join(site, 'icon.svg'), path.join(root, 'public/icon.svg'));
 const css = await readFile(path.join(site, 'account.css'), 'utf8');
 await writeFile(path.join(root, 'public/account.css'), css + '\n.methods{display:flex;gap:8px}.methods [aria-pressed=true]{border-color:var(--blue)}.submit{width:100%;margin:20px 0 8px}#recaptcha{margin-top:18px}.footnote{line-height:1.65}#welcome{font-size:18px;overflow-wrap:anywhere}\n');
 const emulator = process.argv.includes('--emulator');
+const netlify = process.argv.includes('--netlify');
+if (emulator && netlify) throw new Error('Emulator and public Netlify builds must be separate.');
+let publicConfig = {emulator:false};
+if (netlify) {
+  const firebase = JSON.parse(process.env.COGNESIA_FIREBASE_WEB_CONFIG || await readFile(path.join(root,'firebase-config.json'),'utf8'));
+  const allowed = ['apiKey','authDomain','projectId','appId','messagingSenderId','storageBucket','measurementId','databaseURL'];
+  if (Object.keys(firebase).some(key=>!allowed.includes(key)) || firebase.projectId !== 'cognesia-accounts'
+      || firebase.authDomain !== 'cognesia-accounts.firebaseapp.com' || typeof firebase.apiKey !== 'string'
+      || typeof firebase.appId !== 'string') throw new Error('Expected the public Cognesia Firebase web configuration.');
+  publicConfig = {emulator:false,firebase:Object.fromEntries(['apiKey','authDomain','projectId','appId'].map(key=>[key,firebase[key]]))};
+}
 if (emulator) {
   const settings = JSON.parse(await readFile(path.join(root, 'firebase.json'), 'utf8'));
   const policy = settings.hosting.headers[0].headers.find(h => h.key === 'Content-Security-Policy');
@@ -19,6 +30,6 @@ if (emulator) {
 }
 await writeFile(path.join(root, 'public/portal-config.json'), JSON.stringify(emulator ? {
   emulator: true, firebase: {apiKey: 'demo-cognesia-key', projectId: 'demo-cognesia-accounts', appId: 'demo-cognesia-app'}
-} : {emulator: false}) + '\n');
+} : publicConfig) + '\n');
 await build({entryPoints: [path.join(root, 'web/account.js')], outfile: path.join(root, 'public/account.js'), bundle: true, minify: true, target: 'es2022', legalComments: 'eof'});
-console.log('Built Cognesia account portal (' + (emulator ? 'loopback emulator' : 'production Firebase Hosting') + ').');
+console.log('Built Cognesia account portal (' + (emulator ? 'loopback emulator' : netlify ? 'production Netlify' : 'production Firebase Hosting') + ').');

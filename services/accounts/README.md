@@ -1,56 +1,70 @@
 # Public Cognesia accounts
 
-Status on 2026-10-09: implemented and verified against local Firebase emulators.
-**Not deployed.** No real verification email or SMS has been sent. The live
-GitHub Pages site intentionally does not link to this portal until deployment
-and real delivery checks pass.
+The launch backend uses **Netlify Free** with **Firebase Authentication and
+Firestore on Spark**. Billing remains disabled. Email/password signup with email
+verification and Google sign-in are supported. Phone signup is disabled because
+Firebase's production SMS verification requires billing.
 
-The portal supports email/password signup with email-link verification and
-phone signup/sign-in with a six-digit SMS code. Only a verified, enabled Firebase
-user can enroll. Enrollment issues a personal Cognesia access key once. Subsequent
-sign-ins show its status; users can replace or revoke it. Keys use 256-bit random
-secrets, are stored only as SHA-256 verifiers, expire after 90 days and retain the
-existing app's `cgnk_…` and `/v1/access` contracts. These are bearer access keys,
-not Touch ID/WebAuthn credentials.
+Status on 2026-10-09: local production build, five unit checks and eleven emulator
+integration checks pass. The Netlify function bundles successfully. The existing
+Netlify team is Free, with 300 monthly credits and no saved payment method.
+Public deployment and real signup verification remain pending CLI authorization.
+The GitHub Pages overview is already public; its signup link remains gated until
+the account service is verified live.
 
-Each account has a separate stable local-workspace identity. This service grants
-local app access; it does not expose the owner's Mac or provision hosted compute.
-Existing local account/workspace bindings are preserved and cannot be reassigned
-by signing in as another user.
+## Accounts and access
 
-## Provisioned cloud resources (2026-10-09)
+Only a verified, enabled Firebase user can enroll. Enrollment issues one personal
+Cognesia access key. Subsequent sign-ins show its status; users can replace or
+revoke it. Keys have 256-bit random secrets, SHA-256 verifier-only storage and a
+90-day expiry. They retain the existing app's `cgnk_…` and `/v1/access` contracts.
+These are bearer access keys, not Touch ID/WebAuthn credentials.
 
-- Project: `cognesia-accounts`, project number `1008135294118`; billing remains disabled.
-- Web app: `1:1008135294118:web:7b26982fe59c9b870a3867`, linked to the
-  `cognesia-accounts` Hosting site. No Hosting release has been deployed.
-- Email/password Auth is enabled, with a 12-character minimum and email-enumeration
-  protection. Phone and anonymous providers remain disabled. This is Firebase
-  Authentication, without an Identity Platform upgrade.
-- Standard Firestore `(default)` exists in `asia-southeast1`, on the free tier,
-  with deletion protection enabled. The repository's deny-all browser rules and
-  empty indexes are deployed. A live unauthenticated document read returned 403.
-- Firebase CLI login is authorized; credentials stay in the CLI-managed store.
-  The local project selection and function environment file are ignored by Git.
-- No real verification messages or customer keys have been issued. Backend
-  functions and portal deployment remain pending billing and country policy.
+Each account has a separate stable local-workspace identity. This grants local
+app access; it does not expose the owner's Mac or provision hosted compute.
+Existing local account/workspace bindings cannot be reassigned by another login.
 
-## Implementation
+The confirmed location policy blocks mainland China, Cuba, Laos, North Korea and
+Vietnam (`CN,CU,LA,KP,VN`). Every account API and native-key verification request
+is checked using Netlify's trusted `context.geo.country.code`; unknown locations
+are denied. Client-supplied country headers are ignored. This controls Cognesia
+access, not the Firebase identity provider's public endpoints. Connection
+geolocation is approximate and can reflect a VPN or proxy exit location.
 
-- `web/`: signup, verification, sign-in, password-reset and key-management UI.
-- `functions/`: trusted Firebase Admin identity checks, transactional key
-  issuance/replacement, revocation and the app's HTTPS verifier.
-- `firestore.rules`: browser access is denied; only the backend owns key records.
-- `scripts/build.mjs`: bundles the browser SDK locally; production configuration
-  comes from Firebase Hosting's reserved initialization endpoint.
-- `test/integration.test.mjs`: actual Auth/Firestore emulator requests, database
-  rules, transaction races, and a login through Python `AppAccess`.
+## Provisioned resources
+
+- Firebase project `cognesia-accounts`, number `1008135294118`; billing disabled.
+- Web app `1:1008135294118:web:7b26982fe59c9b870a3867`. The reserved Firebase
+  Hosting site exists but has no release; Netlify will host the account portal.
+- Email/password and Google Auth enabled. Password minimum: 12 characters.
+  Email-enumeration protection enabled; phone and anonymous providers disabled.
+  This uses Firebase Authentication without an Identity Platform upgrade.
+- Standard Firestore `(default)` in `asia-southeast1`, free tier, deletion
+  protection enabled. Deny-all browser rules and empty indexes are deployed;
+  a live unauthenticated read returned 403.
+- Existing Netlify team `allenwuzhouhan-web`, display name Cognesia Limited Co. Ltd,
+  on Free. The free credit limit can pause the service when exhausted; it does
+  not make this an unlimited-availability service.
+
+## Implementation and security
+
+- `web/`: signup, verified sign-in, reset and key-management UI.
+- `functions/app.js`, `service.js`: provider identity checks and transactional
+  key enrollment, replacement, revocation and native-app verification.
+- `netlify/`: modern Request/Context adapter, trusted location/IP checks,
+  bounded request bodies and server-only Firebase credentials.
+- `firestore.rules`: all browser database access denied.
+- `scripts/build.mjs`: locally bundled browser SDK and whitelisted public Firebase
+  configuration. An emulator build cannot pass the production guard.
+- `test/`: real Auth/Firestore emulator requests, transaction races, denial rules,
+  Netlify adapter requests and Python `AppAccess` login.
 
 Key mutations require a sign-in within ten minutes, same-origin JSON requests,
 a 30-second replacement interval and a persistent five-keys-per-day limit.
-Replacement revokes the old key in the same transaction. Disabled/deleted accounts,
-revoked keys, expiry and provider token-revocation timestamps are checked by the
-public verifier. Browser sessions are memory-only; keys are never written to
-browser storage, URLs or analytics. Do not log request bodies or credentials.
+Replacement revokes the old key atomically. Disabled/deleted users, revocation,
+expiry and provider token-revocation timestamps are checked on access. Sessions
+are memory-only; keys never enter browser storage, URLs or analytics. Do not log
+request bodies or credentials.
 
 ## Local validation
 
@@ -66,70 +80,45 @@ npm run test:integration
 npm run preview
 ```
 
-The preview uses the `demo-cognesia-accounts` project and binds to loopback on
-ports 15000 (website), 15001 (function), 18080 (database) and 19099 (identity).
-The build creates an ignored local Firebase config and `.env.local` for this
-emulator only. It never enables test verification in production. Emulator email
-links and SMS codes are printed locally; no real messages are delivered.
-Set `COGNESIA_PYTHON` if the Python interpreter is not at the workspace `.venv`.
+The preview uses `demo-cognesia-accounts` on loopback ports 15000 (web), 15001
+(function), 18080 (database) and 19099 (Auth). Local email links and SMS codes are
+emulated, not delivered. `COGNESIA_PYTHON` can override the workspace `.venv`.
+The Firebase Functions entry remains for emulator use; do not deploy it on Spark.
 
-## Production activation
+## Free production deployment
 
-1. Sign in to the Google account that should own the service and create/select a
-   Firebase project. The owner created `cognesia-accounts` (project number
-   `1008135294118`) on the Spark plan. CLI authorization is complete; no
-   production account portal is deployed yet.
-2. Enable the Blaze billing plan only after the owner approves the billing setup.
-   Configure the agreed SMS destination countries and quotas. Cloud Functions
-   and production SMS require Blaze. Provider budgets send alerts; they are not
-   guaranteed spending caps. `maxInstances: 1` also is not a spending cap.
-3. Enable email/password authentication, enforce a minimum 12-character password
-   policy, enable email-enumeration protection and verify the email templates.
-   Enable phone authentication only after billing, destination-country policy,
-   reCAPTCHA and delivery testing are ready. Keep it disabled otherwise.
-4. Register a Firebase web app, create Firestore in locked production mode, and
-   choose the desired data region (the prepared function uses Singapore,
-   `asia-southeast1`). Authorize the actual Firebase Hosting domain for Auth.
-5. Run `npx firebase login` in this directory. Keep the CLI credential in its
-   provider-managed storage. Do not put a service-account private key in the
-   repository, browser bundle, GitHub variables or website build.
-6. Create an ignored `functions/.env.PROJECT_ID` from `.env.example`. Set
-   `ACCOUNT_ORIGIN` to the exact HTTPS Hosting origin and leave
-   `PHONE_SIGNUP_ENABLED=false` until real SMS verification is ready.
-7. From this directory, run `npm run build` (without `--emulator`) and
-   `npx firebase deploy --project PROJECT_ID --only firestore:rules,firestore:indexes,functions:accounts,hosting`.
-   Replace `PROJECT_ID` with the actual selected project ID. The deployment uses
-   this separate project, not any existing research-service project.
-8. On the public address, verify email delivery, SMS delivery for approved
-   countries, signup, repeat sign-in, key display once, replacement, revocation,
-   wrong-key rejection and a real app login. Do not use fictional test identities
-   as evidence of real message delivery.
-9. After those checks pass, set the GitHub repository variable
-   `COGNESIA_ACCOUNTS_URL` to the verified portal origin, then run `pages.yml`.
-   The website builder accepts only an explicit HTTPS account-portal origin.
-10. Ship the actual public `/v1/access` endpoint in
-    `src/flybrain/public_access.json` as `{"access_url":"https://ACTUAL_HOST/v1/access"}`
-    with the next source release. This optional release-owned default is used
-    only when no explicit environment/private operator configuration exists.
-    The file is deliberately absent until the verifier is live. Existing 0.0.2
-    installations need the documented private access configuration or an update.
+1. Reuse the existing Netlify Free team. Do not add a payment method, enable
+   recharge, upgrade Firebase or enable phone authentication.
+2. Put only the Firebase **public web SDK config** in ignored
+   `firebase-config.json`, or the build environment variable
+   `COGNESIA_FIREBASE_WEB_CONFIG`. The build accepts only expected public fields.
+3. Give a dedicated service account only the required Firebase-user lookup and
+   Firestore entity/transaction permissions in `cognesia-accounts`. Never deploy
+   the owner's CLI OAuth token. Store its private credential in the Netlify
+   function environment, never the public directory, repository or client build.
+4. Configure the production function environment: `ACCOUNT_ORIGIN` is the exact
+   HTTPS Netlify origin; `BLOCKED_COUNTRIES=CN,CU,LA,KP,VN`;
+   `COGNESIA_FIREBASE_SERVICE_ACCOUNT` contains the dedicated credential JSON.
+   Authorize the exact Netlify hostname in Firebase Auth.
+5. Run `npm run build:netlify`, then deploy `public/` and `netlify/functions/`
+   using `netlify.toml`. Local deployment avoids connecting unrelated research
+   files or owner data to a remote build. Do not upload an entire research checkout.
+6. Check public HTTPS, provider sign-in, key issuance, native verification,
+   replacement/revocation, invalid-key denial and location enforcement. Real
+   delivery and emulated verification are distinct evidence.
+7. After live verification, set repository variable `COGNESIA_ACCOUNTS_URL` to
+   the portal origin and run the manual Pages workflow. Ship
+   `src/flybrain/public_access.json` as `{"access_url":"https://ACTUAL_HOST/v1/access"}`
+   in the next app source release. Existing installations need that update or
+   the documented private endpoint configuration; explicit operator settings win.
 
-## Remaining live requirements
+Administrative deletion is handled through the provider console. Self-service
+account deletion, hosted workers, usage accounting and an admin dashboard remain
+separate work. Free provider quotas can make signup temporarily unavailable.
 
-Billing approval, explicit country restrictions and SMS limits, production
-email/SMS delivery, function/portal deployment and a release with
-the real verifier endpoint remain outstanding. The public website stays usable
-while this activation is pending. No billing has been enabled.
-
-Email and phone are alternative accounts unless the owner later adds an explicit
-verified account-linking flow; this implementation never merges identities by
-unverified contact strings. Administrative account deletion is currently handled
-through the provider console. Self-service deletion and broader usage/admin UI
-are separate work.
-
-Provider references:
+References: [Netlify Free limits](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/),
+[Netlify function context](https://docs.netlify.com/build/functions/api/),
 [email authentication](https://firebase.google.com/docs/auth/web/password-auth),
-[phone verification](https://firebase.google.com/docs/auth/web/phone-auth),
-[quotas and SMS billing](https://firebase.google.com/docs/auth/limits),
-[Cloud Functions deployment](https://firebase.google.com/docs/functions/get-started),
+[Google sign-in](https://firebase.google.com/docs/auth/web/google-signin),
+[Firebase quotas and SMS billing](https://firebase.google.com/docs/auth/limits),
 [ID-token verification](https://firebase.google.com/docs/auth/admin/verify-id-tokens).

@@ -7,16 +7,17 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import {makeApp} from '../functions/app.js';
 import {identity} from '../functions/service.js';
+import {makeNetlifyHandler,countryPolicy} from '../netlify/adapter.mjs';
 const require = createRequire(new URL('../functions/package.json', import.meta.url));
 const {initializeApp, deleteApp} = require('firebase-admin/app');
 const {getAuth} = require('firebase-admin/auth');
-const {getFirestore} = require('firebase-admin/firestore');
+const {initializeFirestore} = require('firebase-admin/firestore');
 
 const projectId='demo-cognesia-accounts';
 assert.equal(process.env.FIREBASE_AUTH_EMULATOR_HOST,'127.0.0.1:19099');
 assert.equal(process.env.FIRESTORE_EMULATOR_HOST,'127.0.0.1:18080');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../..');
-const firebase=initializeApp({projectId}), auth=getAuth(firebase), db=getFirestore(firebase);
+const firebase=initializeApp({projectId}), auth=getAuth(firebase), db=initializeFirestore(firebase,{preferRest:true});
 let now=Date.now();
 const origin='http://127.0.0.1:15000';
 const server=makeApp({db,auth,origin,phoneEnabled:true,clock:()=>now}).listen(0,'127.0.0.1');
@@ -135,6 +136,25 @@ test('verified public accounts issue revocable keys accepted by the actual Pytho
     assert.equal((await request('/v1/access',result.data.issued_key.api_key)).status,401);
     assert.equal((await request('/api/replace',bob.idToken,{})).status,401);
   });
+});
+
+test('Netlify routes verify identity, issue keys, enforce location and revoke against real emulators',async()=>{
+  const accountOrigin='https://accounts.example.test';
+  const invoke=makeNetlifyHandler(makeApp({db,auth,origin:accountOrigin,googleEnabled:true}),
+    {origin:accountOrigin,blockedCountries:countryPolicy('CN,CU,LA,KP,VN')});
+  const context={ip:'192.0.2.9',geo:{country:{code:'US'}}};
+  const user=await emailUser('netlify-'+Date.now());
+  const headers={'Content-Type':'application/json',Origin:accountOrigin,'X-Cognesia-Account':'1',Authorization:'Bearer '+user.idToken};
+  const config=await invoke(new Request(accountOrigin+'/api/config'),context);
+  assert.deepEqual(await config.json(),{available:true,phone_enabled:false,google_enabled:true});
+  const enrolled=await invoke(new Request(accountOrigin+'/api/enroll',{method:'POST',headers,body:'{}'}),context);
+  assert.equal(enrolled.status,201); const {issued_key:key}=await enrolled.json();
+  const access=()=>new Request(accountOrigin+'/v1/access',{headers:{Authorization:'Bearer '+key.api_key,'X-Country-Code':'US'}});
+  assert.equal((await invoke(access(),context)).status,200);
+  assert.equal((await invoke(access(),{...context,geo:{country:{code:'CN'}}})).status,403);
+  const revoked=await invoke(new Request(accountOrigin+'/api/revoke',{method:'POST',headers,body:JSON.stringify({key_id:key.key_id})}),context);
+  assert.equal(revoked.status,200);
+  assert.equal((await invoke(access(),context)).status,401);
 });
 
 test.after(async()=>{await new Promise(resolve=>server.close(resolve)); await db.terminate(); await deleteApp(firebase);});

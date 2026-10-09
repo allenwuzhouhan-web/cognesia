@@ -16,6 +16,7 @@
     <section id="auth-panel" hidden>
       <div class="tabs" aria-label="Account action"><button type="button" id="signup-tab" aria-pressed="true">Create account</button><button type="button" id="signin-tab" aria-pressed="false">Sign in</button></div>
       <div class="methods" aria-label="Verification method"><button type="button" id="email-tab" aria-pressed="true">Email</button><button type="button" id="phone-tab" aria-pressed="false" disabled>Phone number</button></div>
+      <button type="button" id="google-signin" class="submit" hidden disabled>Continue with Google</button>
       <form id="email-form" method="post">
         <label for="email">Email address</label><input id="email" type="email" autocomplete="email" maxlength="254" required disabled>
         <label for="password">Password</label><input id="password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required disabled>
@@ -29,7 +30,7 @@
         <div id="recaptcha"></div><button id="phone-submit" class="primary submit" type="submit" disabled>Send verification code →</button>
       </form>
       <form id="code-form" method="post" hidden><label for="code">SMS verification code</label><input id="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required><button class="primary submit" type="submit">Verify &amp; continue →</button><button id="change-phone" class="quiet" type="button">Use a different number</button></form>
-      <p id="phone-note" class="hint">Phone signup will appear when SMS verification is available.</p>
+      <p id="phone-note" class="hint">Phone signup is currently unavailable. Use email or Google to get your key.</p>
       <p class="footnote">Continuing creates or accesses your Cognesia account. Read <a href="/privacy">how your account information is used</a>. This account enables local app access; simulations run on your computer.</p>
     </section>
     <section id="verification-panel" hidden><p class="eyebrow">CHECK YOUR INBOX</p><h2>Verify your email address.</h2><p>Open the verification link in your email, then return here.</p><p id="verification-email" class="hint"></p><div class="actions"><button id="check-email" class="primary" type="button">I’ve verified my email</button><button id="resend-email" type="button">Resend email</button><button id="verification-signout" class="quiet" type="button">Use another account</button></div></section>

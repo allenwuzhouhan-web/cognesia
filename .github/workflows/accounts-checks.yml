@@ -28,3 +28,7 @@ jobs:
         working-directory: services/accounts
         env:
           COGNESIA_PYTHON: python
+      - run: npm run build:netlify && npx netlify functions:build --src netlify/functions --functions .netlify/functions
+        working-directory: services/accounts
+        env:
+          COGNESIA_FIREBASE_WEB_CONFIG: '{"apiKey":"ci-public-config-placeholder","authDomain":"cognesia-accounts.firebaseapp.com","projectId":"cognesia-accounts","appId":"ci-public-app-placeholder"}'

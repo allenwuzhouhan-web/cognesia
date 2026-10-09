@@ -10,3 +10,5 @@ functions/.env*
 .firebaserc
 firebase-config.json
 firebase.emulator.json
+.netlify/
+service-account*.json

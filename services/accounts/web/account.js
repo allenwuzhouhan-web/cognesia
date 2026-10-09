@@ -1,7 +1,8 @@
 import {initializeApp} from 'firebase/app';
 import {initializeAuth, inMemoryPersistence, connectAuthEmulator, onAuthStateChanged,
   createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification,
-  sendPasswordResetEmail, signOut, reload, RecaptchaVerifier, signInWithPhoneNumber} from 'firebase/auth';
+  sendPasswordResetEmail, signOut, reload, RecaptchaVerifier, signInWithPhoneNumber,
+  browserPopupRedirectResolver, GoogleAuthProvider, signInWithPopup} from 'firebase/auth';
 
 const $ = id => document.getElementById(id);
 let auth, config, state, mode = 'signup', method = 'email', busy = false, recaptcha, confirmation;
@@ -12,6 +13,7 @@ const validPhone = value => /^\+[1-9]\d{7,14}$/.test(value);
 function buttons() {
   document.querySelectorAll('button').forEach(button => { button.disabled = busy; });
   $('phone-tab').disabled = busy || !config?.phone_enabled;
+  $('google-signin').disabled = busy || !config?.google_enabled;
   if (state) $('revoke-key').disabled = busy || state.key?.status !== 'active';
 }
 function setMode(value) {
@@ -46,6 +48,9 @@ async function run(work) {
       'auth/operation-not-allowed': 'This sign-in method is not available yet.',
       'auth/quota-exceeded': 'Verification is temporarily unavailable. Please try email.',
       'auth/network-request-failed': 'The verification service could not be reached. Check your connection.',
+      'auth/popup-closed-by-user': 'The Google sign-in window was closed. You can try again.',
+      'auth/popup-blocked': 'Allow the Google sign-in popup, then try again.',
+      'auth/account-exists-with-different-credential': 'Use your existing sign-in method for this email address.',
     };
     status(messages[error.code] || (error.publicMessage ? error.message : 'This request could not be completed. Please try again.'), true);
   } finally { busy = false; buttons(); }
@@ -104,6 +109,11 @@ $('email-form').addEventListener('submit', event => { event.preventDefault(); ru
   } else await signInWithEmailAndPassword(auth, email, password);
   $('password').value = ''; $('password-confirm').value = '';
 }); });
+$('google-signin').addEventListener('click', () => run(async () => {
+  if (!config.google_enabled) throw userError('Google sign-in is not available.');
+  const provider = new GoogleAuthProvider(); provider.setCustomParameters({prompt:'select_account'});
+  await signInWithPopup(auth, provider);
+}));
 $('check-email').addEventListener('click', () => run(async () => {
   const user = auth.currentUser; if (!user) throw userError('Sign in again.');
   await reload(user); await user.getIdToken(true); await afterSignIn(user);
@@ -150,8 +160,9 @@ async function start() {
   const appConfigResponse = await fetch('/portal-config.json', {cache: 'no-store'});
   const appConfig = await appConfigResponse.json();
   if (appConfig.emulator && !local) throw userError('The account service is not configured for public use.');
-  const firebaseConfig = appConfig.emulator ? appConfig.firebase : await (await fetch('/__/firebase/init.json', {cache: 'no-store'})).json();
-  auth = initializeAuth(initializeApp({...firebaseConfig, authDomain: location.host}), {persistence: inMemoryPersistence});
+  const firebaseConfig = appConfig.firebase || await (await fetch('/__/firebase/init.json', {cache: 'no-store'})).json();
+  auth = initializeAuth(initializeApp({...firebaseConfig, authDomain: firebaseConfig.authDomain || location.host}),
+    {persistence: inMemoryPersistence, popupRedirectResolver:browserPopupRedirectResolver});
   if (appConfig.emulator) {
     document.querySelector('.local-badge').textContent = 'LOCAL TEST PREVIEW';
     $('preview-note').hidden = false;
@@ -160,8 +171,13 @@ async function start() {
   }
   const response = await fetch('/api/config', {cache: 'no-store'});
   config = await response.json();
-  if (!response.ok || !config.available) throw userError('Account signup is not available yet. Please return later.');
+  if (!response.ok || !config.available) throw userError(config.error?.message || 'Account signup is not available yet. Please return later.');
   $('phone-note').hidden = config.phone_enabled;
+  $('phone-tab').hidden = !config.phone_enabled;
+  $('google-signin').hidden = !config.google_enabled;
+  $('description').textContent = config.phone_enabled
+    ? 'Verify your email address or phone number, then use your key to open Cognesia on your computer. Access is free.'
+    : 'Verify your email address or continue with Google, then use your personal key to open Cognesia on your computer. Access is free.';
   document.querySelectorAll('input').forEach(input => { input.disabled = false; }); buttons();
   onAuthStateChanged(auth, user => afterSignIn(user).catch(error => status(error.publicMessage ? error.message : 'Account service is temporarily unavailable.', true)));
 }

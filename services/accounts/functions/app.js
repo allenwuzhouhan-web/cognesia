@@ -1,7 +1,7 @@
 import express from 'express';
 import {AccountError, AccountService, digest} from './service.js';
 
-export function makeApp({db, auth, origin, phoneEnabled = false, clock = Date.now}) {
+export function makeApp({db, auth, origin, phoneEnabled = false, googleEnabled = false, clock = Date.now}) {
   const app = express(), service = new AccountService(db, auth, {clock});
   app.disable('x-powered-by');
   app.use((req, res, next) => {
@@ -10,7 +10,7 @@ export function makeApp({db, auth, origin, phoneEnabled = false, clock = Date.no
     next();
   });
   // Bounded per-instance limits complement Firebase Auth's delivery controls.
-  // maxInstances is deliberately capped in index.js; this is not a billing cap.
+  // Provider quotas remain separate from this per-instance abuse limit.
   const requests = new Map();
   app.use((req, res, next) => {
     const now = clock(), bucket = Math.floor(now / 60_000);
@@ -36,7 +36,7 @@ export function makeApp({db, auth, origin, phoneEnabled = false, clock = Date.no
     if (!req.is('application/json')) throw new AccountError('Expected JSON.', 415);
     if (Object.keys(req.query).length) throw new AccountError('Unexpected query parameters.');
   };
-  app.get('/api/config', (req, res) => res.json({available: Boolean(origin), phone_enabled: phoneEnabled}));
+  app.get('/api/config', (req, res) => res.json({available: Boolean(origin), phone_enabled: phoneEnabled, google_enabled: googleEnabled}));
   app.get('/api/account', async (req, res) => res.json(await service.state(await service.authenticate(bearer(req)))));
   app.post('/api/:action', async (req, res) => {
     sameOrigin(req);

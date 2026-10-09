@@ -1,5 +1,13 @@
 # Cognesia accounts and usage administration plan
 
+**2026-10-09 public-signup implementation:** The personal-key service is moving
+to Netlify Free with Firebase Spark for verified email and Google sign-in.
+Billing stays disabled and phone signup stays off. The confirmed connection
+location policy blocks CN, CU, LA, KP and VN. The Netlify adapter and real-emulator
+flow pass; public deployment and real signup verification are pending Netlify
+CLI authorization. See [`services/accounts`](../services/accounts/README.md).
+The usage/admin milestones below remain separate work.
+
 The website will let users create an account, obtain their own personal access
 key, and see their usage. The owner will have a separate administrator panel
 for account status, key revocation, quotas and measured hosted usage. Signup
