@@ -5,6 +5,16 @@ repository and GitHub Pages. No new account or paid plan is needed.
 
 Public address: https://allenwuzhouhan-web.github.io/cognesia/
 
+Account signup: https://cognesia-accounts.netlify.app/
+
+The account portal is now live on Netlify Free with Firebase Spark. Verified
+email and Google sign-in issue personal keys. SMS is disabled and billing stays
+off. [Pages deployment 37925998204](https://github.com/allenwuzhouhan-web/cognesia/actions/runs/37925998204)
+published the signup link; the public HTML matches the local production build.
+[Account checks](https://github.com/allenwuzhouhan-web/cognesia/actions/runs/37925940904)
+passed, alongside live key issuance, native login and revocation.
+See [account deployment and limits](../services/accounts/README.md).
+
 Launch verified: [deployment 37910033473](https://github.com/allenwuzhouhan-web/cognesia/actions/runs/37910033473)
 succeeded for commit `c9b35f2afd0ed44b8e4d793c7adfdd4020b436c3`.
 Unauthenticated HTTPS requests returned the exact built HTML, JavaScript, CSS,
@@ -18,7 +28,7 @@ Ten focused public-build/customer-site tests passed in both source checkouts.
 | Option | What it can host | Fit for Cognesia |
 | --- | --- | --- |
 | GitHub Pages | Static HTML, CSS and JavaScript; HTTPS; a project address or custom domain | Selected for the public overview, documentation and source-download links. The account and manual workflow already exist. |
-| An application host with persistent storage | Account service, key verification and Python gateway | Next stage for public accounts. Use a paid persistent service or an external durable database; an ephemeral SQLite file is not suitable. Hosted simulations need separately sized and isolated workers. |
+| Netlify Free and Firebase Spark | HTTPS signup and key verification with durable Firestore records | Selected for email and Google signup. Firebase billing and SMS remain off. Free quotas can pause service. Hosted simulations need separate workers. |
 | Cloudflare Tunnel to an existing server | Routes a public hostname to a private origin | Useful for a controlled pilot. Uptime still depends on the origin computer and its network. A tunnel does not supply compute, customer isolation or account recovery. |
 
 [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
@@ -35,15 +45,17 @@ connects Cloudflare to an origin through an outbound connector.
 ## Launch boundary
 
 The public site offers the interactive capability illustration, scientific status,
-documentation and source preview. It does not run simulations, host GPT-OSS,
-create accounts or verify personal keys. The static build replaces the API form
-with installation/access instructions, excludes local account assets and nginx
-configuration, and prevents page-initiated API connections with a static CSP.
-Existing local account and simulation services remain independent.
+documentation, source preview and a link to the separate account portal. The
+Netlify portal issues and verifies personal keys. Simulations and GPT-OSS run
+locally. The Pages build replaces the API form with installation/signup links,
+excludes local account assets and nginx configuration, and prevents page-initiated
+API connections with a static CSP. Existing local services remain independent.
 
 The source download is a preview that requires local installation and dataset
-preparation. It is not a portable macOS installer. Personal app access still
-requires a configured local account service or administrator-issued key.
+preparation. It is not a portable macOS installer. The current main-branch source
+includes the verified public key endpoint. Older tagged downloads and installed
+copies need an update or the explicit HTTPS configuration in the
+[access guide](app-access.md); existing operator configuration takes priority.
 
 ## Publish an update
 
@@ -54,28 +66,30 @@ Review and push only the intended public files. Validate with:
 python -m pytest -q tests/test_public_release.py tests/test_customer_site.py
 node --check site/app.js
 python scripts/build_public_site.py --repository allenwuzhouhan-web/cognesia \
-  --site-url https://allenwuzhouhan-web.github.io/cognesia/ --mode static
+  --site-url https://allenwuzhouhan-web.github.io/cognesia/ --mode static \
+  --accounts-url https://cognesia-accounts.netlify.app
 ```
 
 Pages must use the GitHub Actions build source. Run the existing manual workflow:
 
 ```sh
+gh variable set COGNESIA_ACCOUNTS_URL --repo allenwuzhouhan-web/cognesia \
+  --body https://cognesia-accounts.netlify.app
 gh workflow run pages.yml --repo allenwuzhouhan-web/cognesia --ref main
 ```
 
 Confirm that the deployment workflow succeeded, HTTPS is enforced, and an
 unauthenticated request returns the expected page and assets. Check the rendered
-site, capability tabs, documentation links and absence of credential forms.
-Do not describe signup or hosted compute as live until those services are
-implemented and verified separately.
+site, capability tabs, signup/documentation links and absence of credential forms
+on the static overview. Signup and hosted-compute verification are separate;
+public signup is live, while hosted simulation remains unprovisioned.
 
 ## Next hosting stage
 
-Public account signup can be hosted independently of heavy simulations while the
-native app continues to compute locally. It needs durable account/key storage,
-recovery, appropriate abuse limits and the account/admin work described in
-[the accounts plan](website-accounts-plan.md). The current local signup service
-is limited to one owner and must not be exposed as public multi-user enrollment.
+Public signup is hosted independently while the native app computes locally.
+The [accounts plan](website-accounts-plan.md) still describes future measured
+usage and administration work. The separate local signup service is limited to
+one owner and must not be exposed as public multi-user enrollment.
 
 If hosted simulations are desired, provision separate workers and storage with
 measured memory/thread requirements and quotas. A custom domain can be attached

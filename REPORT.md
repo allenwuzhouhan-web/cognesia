@@ -25,7 +25,9 @@ VPN exits can change the reported location.
 The source release now includes the verified HTTPS default in
 `src/flybrain/public_access.json`; explicit operator configuration takes priority.
 Existing installed apps need this update or explicit endpoint configuration.
-The public overview can link directly to signup through its Pages configuration.
+The public overview now links directly to signup. Pages deployment `37925998204`
+succeeded and the public HTML matches the local build. Account-service CI
+`37925940904` and source CI `37925940912` passed at `05ecf9d`.
 Hosted simulation, usage accounting and an administrator dashboard remain
 separate work. See [the account-service setup](services/accounts/README.md).
 
