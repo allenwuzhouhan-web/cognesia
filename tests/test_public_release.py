@@ -86,7 +86,7 @@ def test_static_page_has_no_credentials_or_gateway_assets(tmp_path):
     assert '@@' not in page
     assert '<form' not in page
     assert 'Get API access' not in page
-    assert 'Public account signup and hosted simulations are not available' in page
+    assert 'Ask your workspace administrator' in page and 'Sign up' not in page
     assert 'https://github.com/example/Cognesia/releases/tag/v' in page
     assert 'Content-Security-Policy' in page
     assert 'connect-src &#x27;none&#x27;' in page
@@ -108,5 +108,5 @@ def test_static_accounts_entry_requires_explicit_https_portal(tmp_path):
     page = (tmp_path / 'index.html').read_text()
     assert 'href="https://accounts.example/"' in page
     assert 'Sign up or sign in' in page
-    assert 'Public account signup and hosted simulations are not available' not in page
+    assert 'Ask your workspace administrator' not in page
     assert '<form' not in page and '@@' not in page

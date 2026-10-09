@@ -6,10 +6,10 @@
   const capabilityLink = $('capability-docs');
   const docsBase = capabilityLink.getAttribute('href').replace(/docs\/model-sources\.md$/, 'docs/');
   const capabilities = {
-    anatomy: { kicker: 'ANATOMICAL CONTEXT', title: 'See where a question begins.', copy: 'Explore 3D anatomy, regions and source pathways across FlyWire and BANC-based models. Keep measured connections distinguishable from inferred relationships.', features: ['Region and neuron inspection', 'Source-linked model identity', 'Connectivity and morphology views'], document: 'model-sources.md', link: 'Read the anatomy guide', panel: 'Brain / connectivity', stage: 'Anatomy in context', subtitle: 'Explore sources, regions and connections', readout: 'Keep the source attached.', evidence: 'Inspect model identity and anatomical context before interpreting a signal.' },
-    chemistry: { kicker: 'MESSENGERS & MODEL ASSUMPTIONS', title: 'Put chemistry in context.', copy: 'Inspect chemical fields, receptor assumptions and the evidence behind each messenger. Keep implemented dynamics separate from candidates that are currently annotations.', features: ['Evidence-tagged messenger catalog', 'Chemical fields and interventions', 'Receptor and enzyme assumptions'], document: 'wholebrain_chemistry.md', link: 'Explore chemical modeling', panel: 'Brain / chemical fields', stage: 'Chemistry with provenance', subtitle: 'Implemented dynamics and research candidates', readout: 'An annotation is not a simulation.', evidence: 'Chemical messenger evidence and modeled receptor effects remain distinct layers.' },
-    experiments: { kicker: 'CONTROLLED & RECORDED', title: 'Make every run inspectable.', copy: 'Configure visual stimuli, virtual electrodes and timeline interventions. Use matched controls, independent seeds and supported checkpoints to keep comparisons reproducible.', features: ['Paired stimulus and control', 'Pause and checkpoint branches', 'Recorded signals and run identity'], document: 'experiment-workspace.md', link: 'Open the experiment guide', panel: 'Experiment / selected model', stage: 'A controlled comparison', subtitle: 'Stimulus, controls and interventions', readout: 'Keep the failures, too.', evidence: 'Preserve the options, seeds, warnings and numerical diagnostics for every experiment.' },
-    research: { kicker: 'LOCAL GPT-OSS-20B', title: 'Delegate the work. Inspect the evidence.', copy: 'Use a dedicated local research app to coordinate Cognesia tools. Review the calls, reopen saved research chats and export structured reports with their recorded evidence.', features: ['Local GPT-OSS-20B inference', 'Visible tools and saved chats', 'Research reports and PDF export'], document: 'local-agent.md', link: 'Meet the research workspace', panel: 'Research / evidence context', stage: 'Tools connected to the workbench', subtitle: 'Local inference with an inspectable tool record', readout: 'A conclusion needs a record.', evidence: 'Generated interpretations still need scientific review. More model runs do not establish biological validity.' }
+    anatomy: { title: 'See where a question begins.', copy: 'Explore FlyWire- and BANC-based models in 3D. Measured connections stay distinct from inferred ones.', features: ['Regions and neurons', 'Connectivity and morphology', 'Source-linked model identity'], document: 'model-sources.md', link: 'Anatomy guide', panel: 'Brain / connectivity', stage: 'Anatomy in context', subtitle: 'Explore sources, regions and connections', readout: 'Keep the source attached.', evidence: 'Check model identity and anatomy before reading a signal.' },
+    chemistry: { title: 'Put chemistry in context.', copy: 'Implemented chemical dynamics stay separate from candidates that are only annotations.', features: ['Evidence-tagged messenger catalog', 'Chemical fields and interventions', 'Receptor and enzyme assumptions'], document: 'wholebrain_chemistry.md', link: 'Chemical modeling guide', panel: 'Brain / chemical fields', stage: 'Chemistry with provenance', subtitle: 'Implemented dynamics and research candidates', readout: 'An annotation is not a simulation.', evidence: 'Messenger evidence and modeled receptor effects stay separate.' },
+    experiments: { title: 'Make every run inspectable.', copy: 'Configure visual stimuli, virtual electrodes and timeline interventions.', features: ['Paired stimulus and control', 'Pause and checkpoint branches', 'Recorded signals and run identity'], document: 'experiment-workspace.md', link: 'Experiment guide', panel: 'Experiment / selected model', stage: 'A controlled comparison', subtitle: 'Stimulus, controls and interventions', readout: 'Keep the failures, too.', evidence: 'Options, seeds, warnings and diagnostics are saved with every run.' },
+    research: { title: 'Delegate the work. Inspect the evidence.', copy: 'A local GPT-OSS-20B agent runs Cognesia tools for you, and every call stays visible.', features: ['Saved research chats', 'Reports with recorded evidence', 'PDF export'], document: 'local-agent.md', link: 'Research agent guide', panel: 'Research / evidence context', stage: 'Tools connected to the workbench', subtitle: 'Local inference with an inspectable tool record', readout: 'A conclusion needs a record.', evidence: 'Generated interpretations need scientific review. More runs do not establish biological validity.' }
   };
 
   function chooseCapability(name, focus = false) {
@@ -22,7 +22,7 @@
       if (selected && focus) button.focus();
     }
     $('capability-panel').setAttribute('aria-labelledby', `tab-${name}`);
-    for (const [id, value] of [['capability-kicker', item.kicker], ['capability-title', item.title], ['capability-copy', item.copy], ['demo-panel-title', item.panel], ['demo-stage-title', item.stage], ['demo-stage-subtitle', item.subtitle], ['demo-readout-title', item.readout], ['demo-readout-copy', item.evidence]]) $(id).textContent = value;
+    for (const [id, value] of [['capability-title', item.title], ['capability-copy', item.copy], ['demo-panel-title', item.panel], ['demo-stage-title', item.stage], ['demo-stage-subtitle', item.subtitle], ['demo-readout-title', item.readout], ['demo-readout-copy', item.evidence]]) $(id).textContent = value;
     $('capability-features').replaceChildren(...item.features.map(text => {
       const li = document.createElement('li'); li.textContent = text; return li;
     }));
@@ -117,7 +117,7 @@
     $('tool-select').disabled = value || !tools.length;
     $('tool-arguments').disabled = value || !tools.length;
   }
-  function disconnect(message = 'Disconnected. Your key and the displayed response have been cleared.') {
+  function disconnect(message = 'Disconnected. Key and response cleared.') {
     generation++;
     for (const controller of controllers) controller.abort();
     controllers.clear();
@@ -133,7 +133,7 @@
 
   async function api(path, credential, epoch, payload) {
     if (!ENDPOINTS.has(path)) throw new PortalError('This console only calls its own Cognesia API routes.');
-    if (window.location.protocol !== 'https:' && !(window.location.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname))) throw new PortalError('Open this workspace over HTTPS before entering an API access key. Localhost previews are also supported.');
+    if (window.location.protocol !== 'https:' && !(window.location.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname))) throw new PortalError('Open this site over HTTPS or localhost before entering a key.');
     if (epoch !== generation) throw new DOMException('Connection changed', 'AbortError');
     if (payload !== undefined && !crypto.randomUUID) throw new PortalError('Use HTTPS or localhost to make authenticated tool calls.');
     const controller = new AbortController(); controllers.add(controller);
@@ -145,7 +145,7 @@
     }
     try {
       const response = await fetch(path, { method: payload === undefined ? 'GET' : 'POST', headers, body: payload === undefined ? undefined : JSON.stringify(payload), signal: controller.signal, credentials: 'omit', cache: 'no-store', redirect: 'error', mode: 'same-origin', referrerPolicy: 'no-referrer' });
-      if (!response.headers.get('Content-Type')?.toLowerCase().includes('application/json')) throw new PortalError('This address is serving a website without the expected API. Open the API-enabled website provided by your workspace administrator.');
+      if (!response.headers.get('Content-Type')?.toLowerCase().includes('application/json')) throw new PortalError('No Cognesia API at this address. Open the address your administrator gave you.');
       const advertised = Number(response.headers.get('Content-Length'));
       if (advertised > MAX_RESPONSE_BYTES) throw new PortalError('The response is too large for this console. Use a smaller selection or an API client.');
       const reader = response.body.getReader(), decoder = new TextDecoder();
@@ -163,14 +163,14 @@
       try { result = scrub(JSON.parse(raw), credential); } catch { throw new PortalError('The API returned an unreadable response. Contact your workspace administrator.'); }
       if (!response.ok) {
         const detail = typeof result?.error === 'string' ? result.error : result?.error?.message;
-        const fallback = response.status === 401 ? 'Your key was not accepted. Check it with your workspace administrator.' : response.status === 403 ? 'Your key does not allow this operation.' : response.status === 429 ? 'The workspace is receiving too many requests. Try again shortly.' : `The API returned an error (${response.status}).`;
+        const fallback = response.status === 401 ? 'Key not accepted. Check it with your workspace administrator.' : response.status === 403 ? 'Your key does not allow this operation.' : response.status === 429 ? 'The workspace is receiving too many requests. Try again shortly.' : `The API returned an error (${response.status}).`;
         throw new PortalError(detail ? String(detail).slice(0, 400) : fallback, response.status);
       }
       return result;
     } catch (error) {
       if (timedOut) throw new PortalError('The request timed out after 30 seconds. Its outcome is unknown; inspect the workspace before retrying.');
       if (error instanceof PortalError || error.name === 'AbortError') throw error;
-      throw new PortalError('The API could not be reached. Check this website and your connection; no request will be retried automatically.');
+      throw new PortalError('The API could not be reached. Check your connection; nothing is retried automatically.');
     } finally {
       clearTimeout(timeout); controllers.delete(controller);
     }
@@ -196,14 +196,14 @@
     event.preventDefault();
     if (busy) return;
     let candidate = $('access-key').value.trim();
-    if (!candidate) { setStatus('Enter the personal API access key issued for your workspace.', 'error'); return; }
-    if (candidate.length > 1024 || /[\r\n]/.test(candidate)) { $('access-key').value = ''; setStatus('The key format is invalid. Paste only the key provided by your administrator.', 'error'); return; }
-    disconnect('Checking your key and workspace permissions…');
+    if (!candidate) { setStatus('Paste your personal access key.', 'error'); return; }
+    if (candidate.length > 1024 || /[\r\n]/.test(candidate)) { $('access-key').value = ''; setStatus('That is not a valid key. Paste only the key itself.', 'error'); return; }
+    disconnect('Checking your key…');
     const epoch = generation;
     setBusy(true); badge('Connecting', 'loading');
     try {
       const identity = await api('/v1/access', candidate, epoch);
-      if (identity?.authenticated !== true || identity?.authentication !== 'customer_key' || typeof identity?.customer?.id !== 'string') throw new PortalError('This connection did not confirm a personal customer key. Ask your administrator for a personal API access key.');
+      if (identity?.authenticated !== true || identity?.authentication !== 'customer_key' || typeof identity?.customer?.id !== 'string') throw new PortalError('This is not a personal key. Ask your administrator for one.');
       const discovery = await api('/v1/tools', candidate, epoch);
       if (!Array.isArray(discovery?.tools)) throw new PortalError('The API did not return a valid tool catalog.');
       if (epoch !== generation) return;
@@ -214,7 +214,7 @@
       $('tool-select').replaceChildren(...tools.map(tool => { const option = document.createElement('option'); option.value = tool.function.name; option.textContent = tool.function.name; return option; }));
       $('access-panel').hidden = true; $('connected-panel').hidden = false;
       badge('Connected', 'connected'); selectTool();
-      setStatus(tools.length ? `${tools.length} inspection tools available. The key is held only in this page's memory and is cleared after 15 minutes of inactivity.` : 'Connected, but this key exposes no inspection tools supported by the website console.', 'success');
+      setStatus(tools.length ? `${tools.length} inspection tools available. Your key stays in this page and clears after 15 idle minutes.` : 'Connected, but this key has no inspection tools available here.', 'success');
     } catch (error) {
       if (epoch !== generation) return;
       disconnect();
@@ -240,15 +240,15 @@
     const epoch = generation;
     setBusy(true); $('response-status').textContent = 'Waiting…';
     $('tool-response').textContent = 'Calling the selected inspection tool…';
-    setStatus('Request sent. Nothing will be retried automatically.');
+    setStatus('Request sent.');
     try {
       const response = await api('/v1/tools/call', accessKey, epoch, { name: tool.function.name, arguments: args });
       if (epoch !== generation) return;
       $('tool-response').textContent = JSON.stringify(response.result ?? response, null, 2);
-      $('response-status').textContent = 'Received'; setStatus('Inspection response received from your workspace.', 'success');
+      $('response-status').textContent = 'Received'; setStatus('Response received.', 'success');
     } catch (error) {
       if (epoch !== generation) return;
-      if (error.status === 401) { disconnect('The key is no longer accepted. Reconnect with a valid key.'); return; }
+      if (error.status === 401) { disconnect('Key no longer accepted. Reconnect with a valid key.'); return; }
       $('response-status').textContent = 'Request failed'; $('tool-response').textContent = error.message;
       setStatus(error.name === 'AbortError' ? 'Request cancelled.' : error.message, 'error');
     } finally { if (epoch === generation) setBusy(false); }
@@ -258,11 +258,11 @@
     try { await navigator.clipboard.writeText(value); $(destination).textContent = success; }
     catch { $(destination).textContent = 'Clipboard access was unavailable. Select and copy the text manually.'; }
   }
-  $('copy-sample').addEventListener('click', () => copyText($('request-example').textContent, 'copy-status', 'Example copied. It contains placeholders, not your personal key.'));
-  $('copy-access-request').addEventListener('click', () => copyText('Please issue a personal Cognesia API access key for my research workspace and share its API-enabled website address, allowed permissions and expiry.', 'api-status', 'Access-request text copied. Send it to your workspace administrator through your usual contact channel.'));
+  $('copy-sample').addEventListener('click', () => copyText($('request-example').textContent, 'copy-status', 'Example copied.'));
+  $('copy-access-request').addEventListener('click', () => copyText('Please issue a personal Cognesia API access key for my research workspace and share its API-enabled website address, allowed permissions and expiry.', 'api-status', 'Request copied. Send it to your workspace administrator.'));
   for (const type of ['pointerdown', 'keydown', 'touchstart']) document.addEventListener(type, () => { if (accessKey) lastActivity = Date.now(); }, { passive: true });
-  setInterval(() => { if (accessKey && Date.now() - lastActivity >= IDLE_LIMIT) disconnect('Disconnected after 15 minutes of inactivity. Your key and displayed response have been cleared.'); }, 30000);
-  window.addEventListener('pagehide', () => disconnect('Connection cleared when leaving this page.'));
+  setInterval(() => { if (accessKey && Date.now() - lastActivity >= IDLE_LIMIT) disconnect('Disconnected after 15 idle minutes. Key and response cleared.'); }, 30000);
+  window.addEventListener('pagehide', () => disconnect('Disconnected when you left this page.'));
   // Authentication stays disabled until the complete script has initialized.
   setBusy(false);
 })();
