@@ -42,6 +42,9 @@ geolocation is approximate and can reflect a VPN or proxy exit location.
 - Standard Firestore `(default)` in `asia-southeast1`, free tier, deletion
   protection enabled. Deny-all browser rules and empty indexes are deployed;
   a live unauthenticated read returned 403.
+- Dedicated service account `netlify-accounts@cognesia-accounts.iam.gserviceaccount.com`
+  has only Firebase user lookup plus Firestore entity read/create/update and
+  transaction permissions. No private credential has been created yet.
 - Existing Netlify team `allenwuzhouhan-web`, display name Cognesia Limited Co. Ltd,
   on Free. The free credit limit can pause the service when exhausted; it does
   not make this an unlimited-availability service.
@@ -68,7 +71,7 @@ request bodies or credentials.
 
 ## Local validation
 
-Use Node 22, Java 21 and the project's Python 3.12 environment:
+Use Node 24.12 or newer, npm 11.11, Java 21 and the project's Python 3.12 environment:
 
 ```sh
 cd services/accounts

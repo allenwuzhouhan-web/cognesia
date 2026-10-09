@@ -11,13 +11,13 @@ import {makeNetlifyHandler,countryPolicy} from '../netlify/adapter.mjs';
 const require = createRequire(new URL('../functions/package.json', import.meta.url));
 const {initializeApp, deleteApp} = require('firebase-admin/app');
 const {getAuth} = require('firebase-admin/auth');
-const {initializeFirestore} = require('firebase-admin/firestore');
+const {getFirestore} = require('firebase-admin/firestore');
 
 const projectId='demo-cognesia-accounts';
 assert.equal(process.env.FIREBASE_AUTH_EMULATOR_HOST,'127.0.0.1:19099');
 assert.equal(process.env.FIRESTORE_EMULATOR_HOST,'127.0.0.1:18080');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../../..');
-const firebase=initializeApp({projectId}), auth=getAuth(firebase), db=initializeFirestore(firebase,{preferRest:true});
+const firebase=initializeApp({projectId}), auth=getAuth(firebase), db=getFirestore(firebase);
 let now=Date.now();
 const origin='http://127.0.0.1:15000';
 const server=makeApp({db,auth,origin,phoneEnabled:true,clock:()=>now}).listen(0,'127.0.0.1');
