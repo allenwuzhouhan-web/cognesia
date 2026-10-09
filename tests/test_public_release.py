@@ -72,3 +72,24 @@ def test_page_uses_real_project_subpath_and_version(tmp_path):
     assert (tmp_path / 'icon.svg').is_file()
     assert (tmp_path / 'app.js').is_file()
     assert "frame-ancestors 'none'" in (tmp_path / 'security-headers.conf').read_text()
+
+
+def test_static_page_has_no_credentials_or_gateway_assets(tmp_path):
+    builder = module('build_public_site')
+    # Reusing a local preview directory must not publish stale account forms.
+    builder.build('example/Cognesia', 'https://example.github.io/Cognesia', output=tmp_path)
+    for name in ('account.html', 'account.js', 'account.css'):
+        (tmp_path / name).write_text('stale account asset')
+    builder.build('example/Cognesia', 'https://example.github.io/Cognesia', output=tmp_path, mode='static')
+    page = (tmp_path / 'index.html').read_text()
+    assert '@@' not in page
+    assert '<form' not in page
+    assert 'Get API access' not in page
+    assert 'Public account signup and hosted simulations are not available' in page
+    assert 'https://github.com/example/Cognesia/releases/tag/v' in page
+    assert 'Content-Security-Policy' in page
+    assert 'connect-src &#x27;none&#x27;' in page
+    assert 'form-action &#x27;none&#x27;' in page
+    assert {p.name for p in tmp_path.iterdir()} == {
+        'index.html', 'app.js', 'style.css', 'icon.svg', 'sitemap.xml', '.nojekyll',
+    }

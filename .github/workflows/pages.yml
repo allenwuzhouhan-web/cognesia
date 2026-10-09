@@ -22,7 +22,7 @@ jobs:
           REPOSITORY: ${{ github.repository }}
           SITE_URL: ${{ steps.pages.outputs.base_url }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-        run: python scripts/build_public_site.py --repository "$REPOSITORY" --site-url "$SITE_URL" --branch "$DEFAULT_BRANCH"
+        run: python scripts/build_public_site.py --repository "$REPOSITORY" --site-url "$SITE_URL" --branch "$DEFAULT_BRANCH" --mode static
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

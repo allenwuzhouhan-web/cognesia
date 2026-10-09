@@ -85,6 +85,9 @@
   });
   $('brain-links').append(links); $('brain-nodes').append(dots);
 
+  // The public static site offers installation links and never accepts keys.
+  if (!$('access-form')) return;
+
   const READ_TOOLS = new Set(['cognesia_bootstrap', 'cognesia_models', 'cognesia_model', 'cognesia_messengers', 'cognesia_resources', 'cognesia_neuron', 'cognesia_region', 'cognesia_peripheral', 'cognesia_eyes', 'cognesia_connectivity', 'cognesia_preview', 'cognesia_sessions', 'cognesia_session', 'cognesia_frame', 'cognesia_checkpoints', 'cognesia_runs', 'cognesia_run_summary', 'cognesia_analyze_interval', 'cognesia_morphology_status', 'cognesia_morphology_neuron', 'cognesia_morphology_overview', 'cognesia_read_asset']);
   const ENDPOINTS = new Set(['/v1/access', '/v1/tools', '/v1/tools/call']);
   const MAX_RESPONSE_BYTES = 2 * 1024 * 1024;

@@ -23,7 +23,9 @@ def content_security_policy(page):
             "base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'")
 
 
-def build(repository, site_url, branch='main', output=None):
+def build(repository, site_url, branch='main', output=None, mode='gateway'):
+    if mode not in ('gateway', 'static'):
+        raise ValueError('Site mode must be gateway or static')
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository):
         raise ValueError('Repository must be OWNER/REPOSITORY')
     parsed = urlsplit(site_url)
@@ -40,12 +42,24 @@ def build(repository, site_url, branch='main', output=None):
                     'REPO_URL': repo_url, 'BRANCH': quote(branch, safe=''), 'VERSION': version,
                     'STRUCTURED_DATA': json.dumps(structured).replace('<', '\\u003c')}
     page = (ROOT / 'site/index.html').read_text()
+    if mode == 'static':
+        # Static hosting has no account service or simulation gateway.
+        section = (ROOT / 'site/static-access.html').read_text()
+        page, count = re.subn(r'<section id="api"\s.*?</section>', lambda _: section, page, flags=re.S)
+        if count != 1:
+            raise ValueError('Expected exactly one API section in the site template')
+        page = page.replace('Get API access', 'Get Cognesia')
+        page = page.replace('illustration and API console', 'illustration')
     for key, value in replacements.items():
         page = page.replace('@@' + key + '@@', value)
     if re.search(r'@@[A-Z_]+@@', page):
         raise ValueError('Unresolved public-site template variable')
     output = Path(output) if output else ROOT / '_site'
     output.mkdir(parents=True, exist_ok=True)
+    if mode == 'static':
+        policy = content_security_policy(page).replace("; frame-ancestors 'none'", '')
+        policy = policy.replace("connect-src 'self'", "connect-src 'none'").replace("form-action 'self'", "form-action 'none'")
+        page = page.replace('<head>', '<head>\n  <meta http-equiv="Content-Security-Policy" content="' + html.escape(policy, quote=True) + '">', 1)
     (output / 'index.html').write_text(page)
     for name in ('style.css', 'app.js', 'icon.svg'):
         shutil.copy2(ROOT / 'site' / name, output / name)
@@ -60,6 +74,10 @@ def build(repository, site_url, branch='main', output=None):
         'add_header Strict-Transport-Security "max-age=31536000" always;\n'
         'add_header Cache-Control "no-store" always;\n')
     (output / '.nojekyll').touch()
+    if mode == 'static':
+        # A reused gateway output must not carry account forms/config into Pages.
+        for name in ('account.html', 'account.js', 'account.css', 'security-headers.conf'):
+            (output / name).unlink(missing_ok=True)
     (output / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         '<url><loc>' + html.escape(site_url) + '</loc></url></urlset>\n')
@@ -74,5 +92,7 @@ if __name__ == '__main__':
     parser.add_argument('--site-url', required=True)
     parser.add_argument('--branch', default='main')
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--mode', choices=('gateway', 'static'), default='gateway',
+                        help='Use static for public pages without a same-origin API')
     args = parser.parse_args()
-    build(args.repository, args.site_url, args.branch, args.output)
+    build(args.repository, args.site_url, args.branch, args.output, args.mode)
