@@ -1,5 +1,25 @@
 # Flybrain execution report
 
+## Public website launch (2026-10-09)
+
+The Cognesia overview is live at
+[https://allenwuzhouhan-web.github.io/cognesia/](https://allenwuzhouhan-web.github.io/cognesia/).
+The existing GitHub account and manual Pages workflow were used; no additional
+account, domain purchase or paid hosting was needed. HTTPS is enforced and HTTP
+redirects to HTTPS. [Deployment 37910033473](https://github.com/allenwuzhouhan-web/cognesia/actions/runs/37910033473)
+succeeded at `c9b35f2afd0ed44b8e4d793c7adfdd4020b436c3`.
+
+The static build keeps the illustrated workbench and adds source-download/access
+instructions. It omits credential forms, local account assets and nginx config;
+the local gateway build remains available. **10 focused tests passed** in the
+research checkout and clean public clone. Public HTML, JS, CSS, icon and sitemap
+matched the build byte-for-byte; omitted assets returned 404. Browser checks
+confirmed rendering and capability interactions without console errors.
+
+This verifies the public website only. Public signup, hosted API access,
+simulation workers and a custom domain remain separate work. The hosting
+comparison and deployment procedure are in [public hosting](docs/public-hosting.md).
+
 ## Research console grid and reachable controls (2026-10-08)
 
 The research console now uses neutral graphite reading surfaces, the simulation

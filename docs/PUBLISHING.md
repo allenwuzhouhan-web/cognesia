@@ -60,6 +60,12 @@ public source CI result. Record these independently from local test results.
 
 ## Website deployment is separate
 
+The public overview launched on 2026-10-09 at
+[allenwuzhouhan-web.github.io/cognesia](https://allenwuzhouhan-web.github.io/cognesia/)
+using the existing Pages workflow with `--mode static`. HTTPS and the deployed
+assets were verified. See the [hosting guide](public-hosting.md) for updates and
+the separate plan for public accounts and simulation services.
+
 The Pages workflow is **manual only**. Pushing source or creating a release does
 not deploy the website. GitHub Pages serves static files; signup, key issuance,
 account sessions and authoritative usage metering require an application service.

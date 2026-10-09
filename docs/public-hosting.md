@@ -5,6 +5,14 @@ repository and GitHub Pages. No new account or paid plan is needed.
 
 Public address: https://allenwuzhouhan-web.github.io/cognesia/
 
+Launch verified: [deployment 37910033473](https://github.com/allenwuzhouhan-web/cognesia/actions/runs/37910033473)
+succeeded for commit `c9b35f2afd0ed44b8e4d793c7adfdd4020b436c3`.
+Unauthenticated HTTPS requests returned the exact built HTML, JavaScript, CSS,
+icon and sitemap. HTTP redirects to HTTPS; HTTPS enforcement is enabled.
+Local account assets and nginx configuration return 404. Browser inspection
+confirmed the page and interactive capability tabs with no console errors.
+Ten focused public-build/customer-site tests passed in both source checkouts.
+
 ## Options and decision
 
 | Option | What it can host | Fit for Cognesia |

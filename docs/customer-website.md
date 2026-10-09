@@ -3,7 +3,12 @@
 The site in `site/` presents the workbench, model anatomy, chemical messengers,
 experiment controls and local research agent. Its illustrative workbench is
 explicitly a demo. Its API console connects to a real same-origin gateway.
-There is no payment requirement. Public hosting and a domain are still unselected.
+There is no payment requirement. The public overview is now hosted at
+[Cognesia on GitHub Pages](https://allenwuzhouhan-web.github.io/cognesia/).
+That static deployment offers documentation and source downloads; the same-origin
+API console described below still requires a separate application host.
+Public accounts, hosted compute and a custom domain remain pending.
+See the [hosting decision and launch boundary](public-hosting.md).
 
 ## Customer journey
 
