@@ -12,3 +12,4 @@ firebase-config.json
 firebase.emulator.json
 .netlify/
 service-account*.json
+netlify/accounts-runtime.cjs

@@ -22,11 +22,13 @@ biologically validated vision, learning or behavior.
 ## Tool API and local research agent
 
 Cognesia includes a personal-key-protected viewer, authenticated tool gateway,
-and dedicated local GPT-OSS-20B research console. Configure the access service
-and obtain an operator-issued personal key using the
-[access setup guide](docs/app-access.md) before starting. The website's signup,
-self-service key issuance, and usage administrator panel are planned separately.
-From the repository root, with persistent access configuration in place:
+and dedicated local GPT-OSS-20B research console.
+[Create a free account](https://cognesia-accounts.netlify.app/) using verified
+email or Google sign-in to receive a personal access key. The current source
+includes the live verifier; existing installations and operator-managed workspaces
+should follow the [access setup guide](docs/app-access.md). Phone signup is off
+while billing remains disabled. Hosted usage administration remains planned.
+From the repository root, after preparing the model:
 
 ```sh
 .venv/bin/flybrain view
@@ -89,10 +91,11 @@ Run from the repository root and stop if any preparation command fails. A fresh
 checkout has no downloaded connectome or saved experiments. The current viewer
 requires the initial FlyWire fetch, integrity check and build above even when
 you plan to use BANC. Startup also acquires visual-column metadata if missing.
-Next complete [personal access setup](docs/app-access.md), which includes exact
-commands for a private local gateway and manual key issuance. Without a
-configured verification service, sign-in fails closed. With a persistent
-configuration and a prepared model, `.venv/bin/flybrain view --open` opens the
+Next obtain a key through [public signup](https://cognesia-accounts.netlify.app/)
+or complete [operator-managed access setup](docs/app-access.md). The current
+source uses the public HTTPS verifier unless an operator explicitly configures
+another endpoint. An unavailable verifier fails closed. With a key and a
+prepared model, `.venv/bin/flybrain view --open` opens the
 login page at [127.0.0.1:8794](http://127.0.0.1:8794); a custom port must match
 the registered workspace backend. In
 **Experiment → Model sources**, use **Acquire BANC sources** for the default
@@ -105,7 +108,7 @@ fabricated data.
 
 On macOS, after model and access setup, you can also double-click
 **Open Cognesia.command** or [build the native window](macos/README.md).
-Finder-launched apps use the private access configuration described in the
+Existing Finder-launched apps can use the private access configuration in the
 [access guide](docs/app-access.md#persistent-settings-and-the-native-macos-window).
 
 ## Evidence and release contents

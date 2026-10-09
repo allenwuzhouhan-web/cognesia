@@ -2,14 +2,15 @@
 
 Cognesia 0.0.2 protects the official viewer, its APIs and downloads, live
 WebSocket connections, and the local research console. A personal access key is
-a bearer credential issued by an operator. It is not a Touch ID or WebAuthn
-passkey. The app requires a configured customer-key verification service; a
-fresh checkout does not include a credential or a public account service.
+a bearer credential issued after account verification. It is not a Touch ID or
+WebAuthn passkey. The current source includes the live account verifier; it does
+not include a personal credential.
 
-Website signup, self-service key issuance, and the usage administration panel
-are planned in [the website additions plan](website-accounts-plan.md). They are
-not live features of this release. Until that service is deployed, an operator
-issues keys with the existing command below.
+[Public signup is live](https://cognesia-accounts.netlify.app/) with verified email
+or Google sign-in. It issues a personal key for local app access. Phone signup
+is disabled while billing remains off. Usage administration remains planned in
+[the website additions plan](website-accounts-plan.md). Operator-managed
+installations can still use the setup below.
 
 ## Before starting
 
@@ -73,6 +74,14 @@ a private filesystem capability to access that worker. That capability is an
 operator credential, not a second browser sign-in method.
 
 ## Trusted HTTPS verification
+
+The current source includes `src/flybrain/public_access.json` with
+`https://cognesia-accounts.netlify.app/v1/access`. This verified HTTPS default
+applies only when the installation has no explicit environment or private
+operator setting. Existing installed copies need a source update or the endpoint
+configuration below; publishing the portal does not update an installed app.
+The email and Google portal is documented in
+[the account service](../services/accounts/README.md).
 
 For an operator-deployed service, configure its actual HTTPS `/v1/access`
 endpoint before launching the viewer:

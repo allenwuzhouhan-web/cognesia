@@ -2,27 +2,32 @@
 
 ## Public signup and free hosting integration (2026-10-09)
 
-The account service now targets Netlify Free with Firebase Authentication and
-Firestore Spark. Email/password verification and Google sign-in issue personal
-Cognesia keys; production SMS stays disabled and provider billing stays off.
-The owner confirmed connection-location restrictions for CN, CU, LA, KP and VN.
-Netlify's trusted context enforces these on account APIs and key verification;
-unknown locations are denied and caller-supplied location headers are ignored.
+The personal-key portal is live at [cognesia-accounts.netlify.app](https://cognesia-accounts.netlify.app/)
+on Netlify Free with Firebase Authentication and Firestore Spark. Verified email
+and Google sign-in issue personal Cognesia access keys; production SMS remains
+disabled and Firebase billing remains off. Netlify is Free with no payment method.
+A real verified Google account was confirmed after the owner tested signup.
 
-**Five unit checks and eleven emulator integration checks passed**, including
-Netlify request adaptation, real Auth/Firestore transactions, issue-once keys,
-replacement/revocation, disabled users, cross-account denial, browser database
-rules and actual Python AppAccess login. The production browser build and
-Netlify function bundle succeed. These checks do not establish real message
-delivery or live deployment.
+A live synthetic verified-email fixture passed issuance, issue-once behavior,
+valid/invalid key checks, actual Python `AppAccess` login and revocation. Its Auth
+and database records were removed. This establishes live backend operation, not
+real email delivery. Five unit checks and eleven emulator integration checks
+cover transaction races, replacement, disabled users, cross-account denial,
+browser database rules and location policy. The exact function archive was
+import-tested under Lambda module restrictions before production deployment.
 
-**Not live yet:** Firebase email/password and Google Auth are enabled. The
-Singapore Firestore database has deny-all browser rules and deletion protection.
-Firebase billing is disabled. The existing Netlify team is Free with 300 credits
-and no saved payment method. Netlify CLI authorization, public deployment, real
-signup verification and the release verifier URL remain pending. The public
-GitHub Pages overview remains available.
-See [the account-service setup](services/accounts/README.md).
+The confirmed connection-location restrictions for CN, CU, LA, KP and VN apply
+to Cognesia account APIs and native-key verification using trusted Netlify geo
+context. Unknown locations are denied and caller-supplied headers are ignored.
+The policy has simulated-context coverage, not live probes from each country;
+VPN exits can change the reported location.
+
+The source release now includes the verified HTTPS default in
+`src/flybrain/public_access.json`; explicit operator configuration takes priority.
+Existing installed apps need this update or explicit endpoint configuration.
+The public overview can link directly to signup through its Pages configuration.
+Hosted simulation, usage accounting and an administrator dashboard remain
+separate work. See [the account-service setup](services/accounts/README.md).
 
 ## Public website launch (2026-10-09)
 

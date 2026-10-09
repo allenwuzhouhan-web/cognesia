@@ -6,10 +6,6 @@
 [build.environment]
   NODE_VERSION = "24"
 
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["firebase-admin"]
-
 [[headers]]
   for = "/*"
   [headers.values]

@@ -5,12 +5,15 @@ Firestore on Spark**. Billing remains disabled. Email/password signup with email
 verification and Google sign-in are supported. Phone signup is disabled because
 Firebase's production SMS verification requires billing.
 
-Status on 2026-10-09: local production build, five unit checks and eleven emulator
-integration checks pass. The Netlify function bundles successfully. The existing
-Netlify team is Free, with 300 monthly credits and no saved payment method.
-Public deployment and real signup verification remain pending CLI authorization.
-The GitHub Pages overview is already public; its signup link remains gated until
-the account service is verified live.
+Live on 2026-10-09: [sign up or sign in](https://cognesia-accounts.netlify.app/).
+The HTTPS verifier is `https://cognesia-accounts.netlify.app/v1/access`.
+A real Google signup has been confirmed. A temporary synthetic verified-email
+fixture passed live issuance, issue-once behavior, invalid-key denial, native
+Python `AppAccess` login and revocation; its records were removed afterwards.
+This test does not establish delivery of a real verification email.
+Five unit checks and eleven emulator integration checks also pass. The packaged
+Netlify function was tested under Lambda module restrictions before deployment.
+The Netlify team is Free, with 300 monthly credits and no saved payment method.
 
 ## Accounts and access
 
@@ -35,7 +38,7 @@ geolocation is approximate and can reflect a VPN or proxy exit location.
 
 - Firebase project `cognesia-accounts`, number `1008135294118`; billing disabled.
 - Web app `1:1008135294118:web:7b26982fe59c9b870a3867`. The reserved Firebase
-  Hosting site exists but has no release; Netlify will host the account portal.
+  Hosting site exists but has no release; Netlify hosts the account portal.
 - Email/password and Google Auth enabled. Password minimum: 12 characters.
   Email-enumeration protection enabled; phone and anonymous providers disabled.
   This uses Firebase Authentication without an Identity Platform upgrade.
@@ -44,7 +47,11 @@ geolocation is approximate and can reflect a VPN or proxy exit location.
   a live unauthenticated read returned 403.
 - Dedicated service account `netlify-accounts@cognesia-accounts.iam.gserviceaccount.com`
   has only Firebase user lookup plus Firestore entity read/create/update and
-  transaction permissions. No private credential has been created yet.
+  transaction permissions. Its private credential is stored in Netlify site
+  environment variables, never in the repository or public browser bundle.
+- Netlify project `cognesia-accounts` is publicly accessible over HTTPS. Its
+  hostname is authorized in Firebase Authentication. The optional Netlify badge
+  is disabled.
 - Existing Netlify team `allenwuzhouhan-web`, display name Cognesia Limited Co. Ltd,
   on Free. The free credit limit can pause the service when exhausted; it does
   not make this an unlimited-availability service.
@@ -57,6 +64,9 @@ geolocation is approximate and can reflect a VPN or proxy exit location.
 - `netlify/`: modern Request/Context adapter, trusted location/IP checks,
   bounded request bodies and server-only Firebase credentials.
 - `firestore.rules`: all browser database access denied.
+- `scripts/build-server.mjs`: bundles the Admin Auth ESM boundary for Lambda.
+  `scripts/assert-function-bundle.mjs` imports the extracted deployment ZIP away
+  from workspace dependencies, with Lambda module restrictions enabled.
 - `scripts/build.mjs`: locally bundled browser SDK and whitelisted public Firebase
   configuration. An emulator build cannot pass the production guard.
 - `test/`: real Auth/Firestore emulator requests, transaction races, denial rules,
@@ -97,23 +107,36 @@ The Firebase Functions entry remains for emulator use; do not deploy it on Spark
    `COGNESIA_FIREBASE_WEB_CONFIG`. The build accepts only expected public fields.
 3. Give a dedicated service account only the required Firebase-user lookup and
    Firestore entity/transaction permissions in `cognesia-accounts`. Never deploy
-   the owner's CLI OAuth token. Store its private credential in the Netlify
-   function environment, never the public directory, repository or client build.
-4. Configure the production function environment: `ACCOUNT_ORIGIN` is the exact
-   HTTPS Netlify origin; `BLOCKED_COUNTRIES=CN,CU,LA,KP,VN`;
-   `COGNESIA_FIREBASE_SERVICE_ACCOUNT` contains the dedicated credential JSON.
-   Authorize the exact Netlify hostname in Firebase Auth.
-5. Run `npm run build:netlify`, then deploy `public/` and `netlify/functions/`
-   using `netlify.toml`. Local deployment avoids connecting unrelated research
-   files or owner data to a remote build. Do not upload an entire research checkout.
+   the owner's CLI OAuth token. Store only its `project_id`, `client_email` and
+   `private_key` fields as JSON in `COGNESIA_FIREBASE_SERVICE_ACCOUNT` to fit the
+   Lambda environment limit. Never copy this into the public directory or source.
+4. Configure `ACCOUNT_ORIGIN=https://cognesia-accounts.netlify.app`,
+   `BLOCKED_COUNTRIES=CN,CU,LA,KP,VN`, and `AWS_LAMBDA_JS_RUNTIME=nodejs24.x`.
+   Authorize `cognesia-accounts.netlify.app` in Firebase Auth. Netlify Free uses
+   private site variables across all scopes and contexts; choosing function-only
+   scopes requires a paid plan. This site has no Git-connected builds or untrusted
+   previews. Its browser build accepts only whitelisted public Firebase fields.
+5. Build, inspect the exact deployment archive, then deploy that tested archive:
+
+   ```sh
+   npm run build:netlify
+   npx netlify functions:build --src netlify/functions --functions .netlify/functions
+   node scripts/assert-function-bundle.mjs
+   npx netlify deploy --prod --no-build --dir public --functions .netlify/functions
+   ```
+
+   `netlify/accounts-runtime.cjs` and `.netlify/` are generated and ignored.
+   Local deployment avoids connecting unrelated research files or owner data to
+   a remote build. Do not upload an entire research checkout.
 6. Check public HTTPS, provider sign-in, key issuance, native verification,
    replacement/revocation, invalid-key denial and location enforcement. Real
-   delivery and emulated verification are distinct evidence.
-7. After live verification, set repository variable `COGNESIA_ACCOUNTS_URL` to
-   the portal origin and run the manual Pages workflow. Ship
-   `src/flybrain/public_access.json` as `{"access_url":"https://ACTUAL_HOST/v1/access"}`
-   in the next app source release. Existing installations need that update or
-   the documented private endpoint configuration; explicit operator settings win.
+   delivery and emulated verification are distinct evidence. Location-policy
+   tests simulate trusted Netlify context; they are not five-country live probes.
+7. Set repository variable `COGNESIA_ACCOUNTS_URL` to the verified portal origin
+   and run the manual Pages workflow. The source now ships
+   `src/flybrain/public_access.json` with the live `/v1/access` endpoint. Existing
+   installations need the source update or the documented private endpoint
+   configuration; explicit operator settings win.
 
 Administrative deletion is handled through the provider console. Self-service
 account deletion, hosted workers, usage accounting and an admin dashboard remain

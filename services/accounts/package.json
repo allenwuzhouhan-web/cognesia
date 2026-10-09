@@ -2,16 +2,30 @@
   "name": "cognesia-accounts",
   "private": true,
   "type": "module",
-  "engines": {"node": ">=24.12.0"},
+  "engines": {
+    "node": ">=24.12.0"
+  },
   "packageManager": "npm@11.11.0",
-  "overrides": {"@grpc/grpc-js": "1.14.6"},
+  "overrides": {
+    "@grpc/grpc-js": "1.14.6"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "test": "npm --prefix functions test && node --test test/netlify.test.mjs",
-    "build:netlify": "node scripts/build.mjs --netlify && node scripts/assert-production.mjs",
+    "build:netlify": "node scripts/build.mjs --netlify && node scripts/assert-production.mjs && node scripts/build-server.mjs",
     "test:integration": "firebase emulators:exec --project demo-cognesia-accounts --only auth,firestore 'node --test test/integration.test.mjs'",
     "preview": "node scripts/build.mjs --emulator && firebase emulators:start --project demo-cognesia-accounts --config firebase.emulator.json"
   },
-  "dependencies": {"firebase": "13.0.0", "firebase-admin": "14.5.0", "express": "5.1.0", "serverless-http": "4.0.0"},
-  "devDependencies": {"esbuild": "0.27.3", "firebase-tools": "15.33.0", "netlify-cli": "27.12.0"}
+  "dependencies": {
+    "firebase": "13.0.0",
+    "firebase-admin": "14.5.0",
+    "express": "5.1.0",
+    "serverless-http": "4.0.0",
+    "@google-cloud/firestore": "9.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.27.3",
+    "firebase-tools": "15.33.0",
+    "netlify-cli": "27.12.0"
+  }
 }
