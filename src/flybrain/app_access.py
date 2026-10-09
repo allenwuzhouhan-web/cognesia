@@ -26,6 +26,7 @@ import urllib.request
 SESSION_SECONDS = 1800
 REVALIDATE_SECONDS = 30
 MAX_RESPONSE_BYTES = 16384
+PUBLIC_ACCESS_CONFIG = Path(__file__).with_name('public_access.json')
 
 
 class AccessError(Exception):
@@ -37,6 +38,20 @@ class AccessError(Exception):
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *args, **kwargs):
         return None
+
+
+def public_access_default():
+    """Optional release-owned HTTPS verifier; never supplied by a browser/key."""
+    try:
+        raw = PUBLIC_ACCESS_CONFIG.read_text()
+    except FileNotFoundError:
+        return ''
+    if len(raw) > 2048:
+        raise ValueError('Invalid bundled public access configuration')
+    config = json.loads(raw)
+    if not isinstance(config, dict) or set(config) != {'access_url'}:
+        raise ValueError('Invalid bundled public access configuration')
+    return access_url(config['access_url'])
 
 
 def access_url(value, *, allow_loopback_http=False):
@@ -164,6 +179,8 @@ class AppAccess:
                     or not isinstance(config.get('allow_loopback_http', False), bool)):
                 raise ValueError('Invalid private app access configuration')
         configured = os.environ.get('COGNESIA_ACCESS_URL', config.get('access_url', '')) if endpoint is None else endpoint
+        if endpoint is None and not configured and not config and 'COGNESIA_ACCESS_URL' not in os.environ:
+            configured = public_access_default()
         allow_http = os.environ.get('COGNESIA_ACCESS_ALLOW_LOOPBACK_HTTP') == '1' or config.get('allow_loopback_http') is True
         self.endpoint = access_url(configured, allow_loopback_http=allow_http) if configured else None
         self.verifier = verifier

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+  <title>Your Cognesia account</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/account.css">
+  <script src="/account.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="https://allenwuzhouhan-web.github.io/cognesia/">COGNESIA <span>Research workbench</span></a><span class="local-badge">PERSONAL ACCESS</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">YOUR COGNESIA ACCOUNT</p><h1 id="heading">Get your personal key.</h1><p id="description">Verify your email address or phone number, then use your key to open Cognesia on your computer. Access is free.</p></div>
+    <p id="preview-note" class="hint" hidden>Local test preview. Verification messages stay in the emulator; no real email or SMS is sent. Use fictional contact details.</p>
+    <p id="status" role="status" aria-live="polite">Connecting to the account service…</p>
+    <section id="auth-panel" hidden>
+      <div class="tabs" aria-label="Account action"><button type="button" id="signup-tab" aria-pressed="true">Create account</button><button type="button" id="signin-tab" aria-pressed="false">Sign in</button></div>
+      <div class="methods" aria-label="Verification method"><button type="button" id="email-tab" aria-pressed="true">Email</button><button type="button" id="phone-tab" aria-pressed="false" disabled>Phone number</button></div>
+      <form id="email-form" method="post">
+        <label for="email">Email address</label><input id="email" type="email" autocomplete="email" maxlength="254" required disabled>
+        <label for="password">Password</label><input id="password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required disabled>
+        <div id="confirm-row"><label for="password-confirm">Confirm password</label><input id="password-confirm" type="password" autocomplete="new-password" minlength="12" maxlength="128" required disabled></div>
+        <p class="hint">Use at least 12 characters. Your password and your Cognesia access key are separate.</p>
+        <button id="email-submit" class="primary submit" type="submit" disabled>Create account →</button><button id="reset-password" class="quiet" type="button" hidden>Forgot password?</button>
+      </form>
+      <form id="phone-form" method="post" hidden>
+        <label for="phone">Phone number</label><input id="phone" type="tel" autocomplete="tel" placeholder="+1 555 123 4567" maxlength="24" required disabled>
+        <p class="hint">Include your country code. Google processes the number for verification and abuse prevention.</p>
+        <div id="recaptcha"></div><button id="phone-submit" class="primary submit" type="submit" disabled>Send verification code →</button>
+      </form>
+      <form id="code-form" method="post" hidden><label for="code">SMS verification code</label><input id="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required><button class="primary submit" type="submit">Verify &amp; continue →</button><button id="change-phone" class="quiet" type="button">Use a different number</button></form>
+      <p id="phone-note" class="hint">Phone signup will appear when SMS verification is available.</p>
+      <p class="footnote">Continuing creates or accesses your Cognesia account. Read <a href="/privacy">how your account information is used</a>. This account enables local app access; simulations run on your computer.</p>
+    </section>
+    <section id="verification-panel" hidden><p class="eyebrow">CHECK YOUR INBOX</p><h2>Verify your email address.</h2><p>Open the verification link in your email, then return here.</p><p id="verification-email" class="hint"></p><div class="actions"><button id="check-email" class="primary" type="button">I’ve verified my email</button><button id="resend-email" type="button">Resend email</button><button id="verification-signout" class="quiet" type="button">Use another account</button></div></section>
+    <section id="dashboard" hidden>
+      <div class="panel-heading"><div><p class="eyebrow">YOUR ACCOUNT</p><h2 id="welcome"></h2></div><button id="signout" class="quiet" type="button">Sign out</button></div>
+      <div id="issued" class="issued" hidden><p class="eyebrow">YOUR PERSONAL ACCESS KEY</p><h3>Copy it before leaving.</h3><p>This secret is shown once. Open Cognesia and paste it into the personal access key field. Keep it private.</p><label for="new-key">Cognesia key</label><textarea id="new-key" rows="3" readonly spellcheck="false" autocomplete="off"></textarea><div class="actions"><button id="copy-key" class="primary" type="button">Copy key</button><button id="hide-key" type="button">I’ve saved it</button></div></div>
+      <h3 class="key-heading">Access key</h3><p id="key-summary" class="hint"></p>
+      <div class="actions"><button id="replace-key" type="button">Create replacement key</button><button id="revoke-key" type="button">Revoke key</button></div>
+      <p class="hint">Replacing a key immediately revokes the previous one. Keys expire after 90 days. Sign in again if asked before changing a key.</p>
+      <p class="footnote">Your account does not upload your simulations or give other users access to your local workspace. <a href="https://github.com/allenwuzhouhan-web/cognesia/blob/main/docs/app-access.md">App setup and access guide ↗</a></p>
+    </section>
+    <footer><a href="https://allenwuzhouhan-web.github.io/cognesia/">← Back to Cognesia</a><a href="/privacy">Account privacy</a></footer>
+    <noscript><p>Enable JavaScript to verify your contact information and manage your access key.</p></noscript>
+  </main>
+</body>
+</html>

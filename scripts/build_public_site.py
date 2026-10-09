@@ -23,7 +23,7 @@ def content_security_policy(page):
             "base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'")
 
 
-def build(repository, site_url, branch='main', output=None, mode='gateway'):
+def build(repository, site_url, branch='main', output=None, mode='gateway', accounts_url=None):
     if mode not in ('gateway', 'static'):
         raise ValueError('Site mode must be gateway or static')
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository):
@@ -32,6 +32,14 @@ def build(repository, site_url, branch='main', output=None, mode='gateway'):
     if parsed.scheme != 'https' or not parsed.netloc or parsed.query or parsed.fragment or parsed.username:
         raise ValueError('Site URL must be a public HTTPS URL without credentials, query or fragment')
     site_url = site_url.rstrip('/') + '/'
+    if accounts_url:
+        account_origin = urlsplit(accounts_url)
+        if (mode != 'static' or account_origin.scheme != 'https' or not account_origin.hostname
+                or account_origin.username or account_origin.password or account_origin.query
+                or account_origin.fragment or account_origin.path not in ('', '/')
+                or account_origin.hostname in ('localhost', '127.0.0.1', '::1')):
+            raise ValueError('Accounts URL must be a public HTTPS origin for a static site')
+        accounts_url = accounts_url.rstrip('/') + '/'
     version = tomllib.loads((ROOT / 'pyproject.toml').read_text())['project']['version']
     repo_url = 'https://github.com/' + repository
     structured = {'@context': 'https://schema.org', '@type': 'SoftwareSourceCode',
@@ -45,6 +53,11 @@ def build(repository, site_url, branch='main', output=None, mode='gateway'):
     if mode == 'static':
         # Static hosting has no account service or simulation gateway.
         section = (ROOT / 'site/static-access.html').read_text()
+        if accounts_url:
+            entry = (ROOT / 'site/hosted-access.html').read_text().replace('@@ACCOUNTS_URL@@', html.escape(accounts_url, quote=True))
+            section, entries = re.subn(r'<!-- accounts-start -->.*?<!-- accounts-end -->', lambda _: entry, section, flags=re.S)
+            if entries != 1:
+                raise ValueError('Expected exactly one public accounts entry')
         page, count = re.subn(r'<section id="api"\s.*?</section>', lambda _: section, page, flags=re.S)
         if count != 1:
             raise ValueError('Expected exactly one API section in the site template')
@@ -94,5 +107,6 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path)
     parser.add_argument('--mode', choices=('gateway', 'static'), default='gateway',
                         help='Use static for public pages without a same-origin API')
+    parser.add_argument('--accounts-url', help='Verified public account portal origin; omit until deployed')
     args = parser.parse_args()
-    build(args.repository, args.site_url, args.branch, args.output, args.mode)
+    build(args.repository, args.site_url, args.branch, args.output, args.mode, args.accounts_url)

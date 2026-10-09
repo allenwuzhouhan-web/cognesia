@@ -1,0 +1,12 @@
+node_modules/
+functions/node_modules/
+public/
+.firebase/
+*-debug.log
+.env*
+functions/.env*
+!.env.example
+!functions/.env.example
+.firebaserc
+firebase-config.json
+firebase.emulator.json

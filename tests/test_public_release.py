@@ -3,6 +3,7 @@ import importlib.util
 import json
 from pathlib import Path
 import re
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -93,3 +94,19 @@ def test_static_page_has_no_credentials_or_gateway_assets(tmp_path):
     assert {p.name for p in tmp_path.iterdir()} == {
         'index.html', 'app.js', 'style.css', 'icon.svg', 'sitemap.xml', '.nojekyll',
     }
+
+
+def test_static_accounts_entry_requires_explicit_https_portal(tmp_path):
+    builder = module('build_public_site')
+    for origin in ['http://accounts.example', 'https://user:password@accounts.example',
+                   'https://accounts.example/?key=secret', 'https://accounts.example/other', 'https://localhost']:
+        with pytest.raises(ValueError):
+            builder.build('example/Cognesia', 'https://example.github.io/Cognesia', output=tmp_path,
+                          mode='static', accounts_url=origin)
+    builder.build('example/Cognesia', 'https://example.github.io/Cognesia', output=tmp_path,
+                  mode='static', accounts_url='https://accounts.example')
+    page = (tmp_path / 'index.html').read_text()
+    assert 'href="https://accounts.example/"' in page
+    assert 'Sign up or sign in' in page
+    assert 'Public account signup and hosted simulations are not available' not in page
+    assert '<form' not in page and '@@' not in page

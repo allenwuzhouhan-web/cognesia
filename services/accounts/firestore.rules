@@ -1,0 +1,8 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Only the trusted account service uses this database. Browser SDKs cannot
+    // read verifiers, write account identities or grant themselves app access.
+    match /{document=**} { allow read, write: if false; }
+  }
+}
