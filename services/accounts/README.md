@@ -18,6 +18,22 @@ local app access; it does not expose the owner's Mac or provision hosted compute
 Existing local account/workspace bindings are preserved and cannot be reassigned
 by signing in as another user.
 
+## Provisioned cloud resources (2026-10-09)
+
+- Project: `cognesia-accounts`, project number `1008135294118`; billing remains disabled.
+- Web app: `1:1008135294118:web:7b26982fe59c9b870a3867`, linked to the
+  `cognesia-accounts` Hosting site. No Hosting release has been deployed.
+- Email/password Auth is enabled, with a 12-character minimum and email-enumeration
+  protection. Phone and anonymous providers remain disabled. This is Firebase
+  Authentication, without an Identity Platform upgrade.
+- Standard Firestore `(default)` exists in `asia-southeast1`, on the free tier,
+  with deletion protection enabled. The repository's deny-all browser rules and
+  empty indexes are deployed. A live unauthenticated document read returned 403.
+- Firebase CLI login is authorized; credentials stay in the CLI-managed store.
+  The local project selection and function environment file are ignored by Git.
+- No real verification messages or customer keys have been issued. Backend
+  functions and portal deployment remain pending billing and country policy.
+
 ## Implementation
 
 - `web/`: signup, verification, sign-in, password-reset and key-management UI.
@@ -60,8 +76,9 @@ Set `COGNESIA_PYTHON` if the Python interpreter is not at the workspace `.venv`.
 ## Production activation
 
 1. Sign in to the Google account that should own the service and create/select a
-   Firebase project. Owner sign-in is confirmed; project creation is awaiting
-   acceptance of the Firebase terms. No production project exists yet.
+   Firebase project. The owner created `cognesia-accounts` (project number
+   `1008135294118`) on the Spark plan. CLI authorization is complete; no
+   production account portal is deployed yet.
 2. Enable the Blaze billing plan only after the owner approves the billing setup.
    Configure the agreed SMS destination countries and quotas. Cloud Functions
    and production SMS require Blaze. Provider budgets send alerts; they are not
@@ -99,8 +116,8 @@ Set `COGNESIA_PYTHON` if the Python interpreter is not at the workspace `.venv`.
 
 ## Remaining live requirements
 
-Firebase terms acceptance, selected project, billing approval, explicit country
-restrictions and SMS limits, production email/SMS delivery, deployment and a release with
+Billing approval, explicit country restrictions and SMS limits, production
+email/SMS delivery, function/portal deployment and a release with
 the real verifier endpoint remain outstanding. The public website stays usable
 while this activation is pending. No billing has been enabled.
 
