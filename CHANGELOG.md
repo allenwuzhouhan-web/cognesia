@@ -1,5 +1,15 @@
 # Cognesia release notes
 
+## Licensing and status clarification — 11 October 2026
+
+- Retain **All rights reserved** and explicitly permit free scientific, educational
+  and personal hobby use, modification and sharing reproduction materials under
+  [LICENSE](LICENSE), including original Cognesia portions of earlier releases.
+- Preserve the Shiu and Spiller reference implementation's full MIT license and
+  copyright notice, and include the umbrella notices in wheel distributions.
+- Keep model biological validation **PENDING**. Permissions and software checks
+  do not establish biological accuracy; recorded benchmark outcomes are unchanged.
+
 ## v0.0.2 — Protected application preview
 
 - Default visual-stimulus threads respect available capacity on smaller machines.
@@ -18,7 +28,8 @@
 
 Website signup, self-service keys, public HTTPS hosting, and an administrator
 usage panel remain planned. Local source modifications are not a trusted central
-usage meter. Original code and documentation remain all rights reserved.
+usage meter. Original material remains **All rights reserved** except for the
+scientific, educational and personal-use grant above.
 This preview does not establish improved biological prediction accuracy or
 resolve the historical scientific validation failures.
 

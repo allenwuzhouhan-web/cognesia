@@ -190,9 +190,13 @@ automatically measured by a central service; they require the planned telemetry
 or hosted execution design. Changes made to locally available source cannot be
 treated as a trusted enforcement or metering boundary.
 
-The public repository remains **all rights reserved** for original Cognesia code
-and documentation. Source availability does not grant an open-source license.
-Third-party data and components retain their own terms.
+Original Cognesia material remains **All rights reserved** except for the free
+scientific, educational and personal-use permissions in [LICENSE](../LICENSE).
+Those permissions include installation, execution, modification and sharing
+reproduction materials under its terms; no separate use permission is required.
+Authentication governs access to services, not the scope of the software license.
+Third-party data and components retain their own terms. The purpose-limited
+Cognesia license is not an open-source license.
 
 The isolated release acceptance report is generated locally at
 `build/validation_app_access_release.json`. It exercises real registry issuance,

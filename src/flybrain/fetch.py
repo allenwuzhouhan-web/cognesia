@@ -10,7 +10,13 @@ from .inspect_data import inspect_table, atomic_write_json, stat_signature
 from .memguard import check_memory
 
 BASE = "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/"
+SHIU_LICENSE_NAME = "shiu-drosophila-brain-model-LICENSE.txt"
+SHIU_LICENSE_URL = "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/LICENSE"
+SOURCE_INTEGRITY = {
+    SHIU_LICENSE_NAME: {"size": 1085, "checksum": "sha256:3621f6d6476189190e2960fa43f11b275ba4eca848fdac50a1ba2925de6223e8"},
+}
 SOURCES = {
+    SHIU_LICENSE_NAME: SHIU_LICENSE_URL,
     "Completeness_783.csv": BASE + "Completeness_783.csv",
     "Connectivity_783.parquet": BASE + "Connectivity_783.parquet",
     "Supplemental_file1_neuron_annotations.tsv": "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/main/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
@@ -29,7 +35,7 @@ def checksum(path, algorithm="sha256"):
     return digest.hexdigest()
 
 
-def download(url, target):
+def download(url, target, *, expected=None):
     target = Path(target)
     target.parent.mkdir(parents=True, exist_ok=True)
     partial = target.with_suffix(target.suffix + ".part")
@@ -39,6 +45,12 @@ def download(url, target):
             for chunk in iter(lambda: response.read(1024 * 1024), b""):
                 check_memory()
                 f.write(chunk)
+        if expected is not None:
+            if partial.stat().st_size != expected["size"]:
+                raise ValueError(f"Wrong byte count for {target.name}")
+            algorithm, digest = expected["checksum"].split(":", 1)
+            if checksum(partial, algorithm) != digest:
+                raise ValueError(f"Publisher checksum failed for {target.name}")
         os.replace(partial, target)
     except Exception:
         partial.unlink(missing_ok=True)
@@ -66,7 +78,10 @@ def fetch(root: Path, *, neuropils=True, synapses=False):
         try:
             if not path.exists():
                 print(f"Downloading {name}", flush=True)
-                download(url, path)
+                if name in SOURCE_INTEGRITY:
+                    download(url, path, expected=SOURCE_INTEGRITY[name])
+                else:
+                    download(url, path)
             signature = stat_signature(path)
             digest = checksum(path)
             if name in records and records[name]["sha256"] != digest:
@@ -100,7 +115,7 @@ def fetch(root: Path, *, neuropils=True, synapses=False):
     # Save each completed file before requesting the next, so failures preserve
     # the schema and checksum evidence already collected in this attempt.
     for name, url in SOURCES.items():
-        process(name, url)
+        process(name, url, SOURCE_INTEGRITY.get(name))
     zenodo = json.loads((raw / "zenodo_record_10676866.json").read_text())
     entries = {f["key"]: f for f in zenodo["files"]}
     wanted = (NEUROPIL_FILES if neuropils else []) + (["flywire_synapses_783.feather"] if synapses else [])

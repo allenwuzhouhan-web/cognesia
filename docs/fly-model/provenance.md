@@ -68,4 +68,7 @@ than treating every FlyWire product as uniformly licensed.
 The GitHub source release does not bundle raw datasets or generated neuron and
 edge tables. The acquisition script downloads upstream inputs separately.
 ParaLimbo does not relicense those inputs. Original Cognesia material remains
-[all rights reserved](../../LICENSE).
+**All rights reserved** except for the scientific, educational and personal-use
+permissions in [LICENSE](../../LICENSE), including modification and sharing
+reproduction materials under its terms. Upstream attribution and licenses remain
+applicable independently of this grant.

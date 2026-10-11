@@ -1,5 +1,9 @@
 # ParaLimbo release specification
 
+**Biological validation: PENDING.** ParaLimbo's biological predictive accuracy
+has not yet been established. Construction and numerical checks do not establish
+biological superiority.
+
 ParaLimbo, the next Cognesia fly model, must demonstrate improved predictive accuracy on
 specified biological experiments before it is released as a more accurate
 model. The intended implementation combines BANC anatomy with supported
@@ -12,6 +16,12 @@ are reported in [results](results.md). Independent biological improvement remain
 pending; this preview is not a more-accurate biological model release.
 
 Execution follows the [ParaLimbo implementation and release plan](PLAN.md).
+
+**All rights reserved except the scientific, educational and personal-use
+permissions in [LICENSE](../../LICENSE).** Those permissions include institutional
+and company research and sharing reproduction code or model modifications under
+the same grant with the required notices. Upstream data and components retain
+their own terms.
 
 ## What accuracy means
 

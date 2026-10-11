@@ -1,5 +1,8 @@
 # ParaLimbo 0.1.0-alpha.1
 
+**Biological validation: PENDING.** Biological predictive accuracy has not yet
+been established for this model.
+
 ParaLimbo is a reproducible BANC–FlyWire annotation integration for Cognesia.
 It recovers omitted native chemical evidence and records conservative
 cross-specimen transfers. Improved biological prediction is **not established**.
@@ -44,6 +47,6 @@ remain relevant and are not superseded by a construction audit.
 
 See [results](results.md), [provenance](provenance.md),
 [validation protocol](validation-protocol.md), and [reproduction](reproduce.md).
-Original Cognesia code and documentation remain all rights reserved; upstream
-data and components retain their own terms. See [LICENSE](../../LICENSE) and
-[third-party notices](../../THIRD_PARTY_NOTICES.md).
+**All rights reserved except the scientific, educational and personal-use
+permissions in [LICENSE](../../LICENSE).** Upstream data and components retain
+their own terms; see [third-party notices](../../THIRD_PARTY_NOTICES.md).

@@ -16,6 +16,9 @@ Keep measured anatomy separate from modeled links. Preserve failed gates and
 provenance rather than weakening checks to obtain a passing result. Avoid
 committing datasets, sessions, local environments or generated model artifacts.
 
-Original Cognesia code and documentation are **All rights reserved**; see
-`LICENSE`. Contact the repository owner about permission before proposing code
-contributions. Bug reports and reproducibility feedback are welcome.
+**All rights reserved except the scientific, educational and personal-use
+permissions in [LICENSE](LICENSE).** You may prepare and submit bug fixes and
+other contributions within those permissions without requesting prior approval.
+Preserve the required copyright and third-party notices, and submit contributions
+under the same grant. Include only material you have the right to contribute.
+Bug reports and reproducibility feedback are welcome.

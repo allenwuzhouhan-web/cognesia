@@ -12,9 +12,11 @@ requested GitHub releases and keeps the website additions as a separate plan.
 | Cognesia 0.0.2 preview | Current source application with personal access key protection, installation instructions and tested release assets on GitHub |
 | Website additions plan | Signup, individual access key issuance, account recovery, per-user usage and administrator dashboard architecture, milestones and acceptance checks |
 
-Original Cognesia code remains all rights reserved, as requested. Third-party
-data and components retain their own terms. Public source availability does
-not itself grant modification or redistribution rights.
+Original Cognesia material remains **All rights reserved** except for the
+scientific, educational and personal-use permissions in [LICENSE](../../LICENSE).
+That license permits use, modification and sharing reproduction materials under
+its terms, including for earlier releases. Third-party data and components retain
+their own terms. Biological validation remains **PENDING**.
 
 The preview must distinguish recovered source information from demonstrated
 biological prediction improvements. The requirements in the

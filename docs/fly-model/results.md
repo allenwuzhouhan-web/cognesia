@@ -1,5 +1,10 @@
 # ParaLimbo preview results
 
+**Biological validation: PENDING.** ParaLimbo's biological predictive accuracy
+has not yet been established.
+
+The dated preview results below retain their original model identity and scope.
+
 Recorded on 2026-10-08 for model
 `251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c`.
 The demonstrated improvement is recovery and traceability of source

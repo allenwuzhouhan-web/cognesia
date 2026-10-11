@@ -39,8 +39,11 @@ Cognesia app versions are separate from model versions.
 The source release and aggregate evidence support local reproduction. Raw
 datasets and generated neuron/edge tables are not bundled. Fetch pinned inputs
 using the [reproduction guide](reproduce.md), retaining [upstream attribution](provenance.md).
-Original Cognesia code/documentation remain all rights reserved; public source
-availability does not grant additional modification or redistribution rights.
+Original Cognesia material remains **All rights reserved** except for the free
+scientific, educational and personal-use permissions in [LICENSE](../../LICENSE).
+The grant permits modification and sharing reproduction materials under its terms
+and also applies to original Cognesia portions of earlier releases. Third-party
+licenses remain separate. Biological validation remains **PENDING**.
 
 Read the [model card](model-card.md), [validation protocol](validation-protocol.md),
 [results](results.md) and [implementation plan](PLAN.md).

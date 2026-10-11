@@ -6,9 +6,20 @@ The app and model have separate release tags in the same repository:
 - `v0.0.2`: Cognesia source preview with personal access key protection.
 - `paralimbo-v0.1.0-alpha.1`: ParaLimbo compiler, pinned acquisition recipe and validation evidence.
 
-Original code and documentation remain **all rights reserved**. Public source
-availability is not an open-source license. Preserve `LICENSE` and
+**All rights reserved except the scientific, educational and personal-use
+permissions in [LICENSE](../LICENSE).** These permissions allow free use,
+installation, execution, copying and modification for scientific research,
+education and personal hobbies, including institutional and company research.
+Results may be published, and reproduction code or model modifications may be
+shared under the same grant with the required notices. Sale, relicensing and
+paid hosted products require separate permission. Preserve `LICENSE` and
 `THIRD_PARTY_NOTICES.md`; upstream datasets retain their own artifact-specific terms.
+Describe the granted permissions directly; do not label this an open-source license.
+
+Public descriptions must retain **Biological validation: PENDING**, meaning
+biological predictive accuracy has not yet been established. Report scoped
+software and numerical results separately, and preserve historical benchmark
+failures and unresolved results.
 
 ## Verify and export
 

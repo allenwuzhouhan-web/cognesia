@@ -2,6 +2,10 @@
 
 **v0.0.2 preview · Experimental computational neuroscience workbench**
 
+**Biological validation: PENDING.** Biological predictive accuracy has not yet
+been established. Software checks and numerical reproducibility do not establish
+biologically validated vision, learning or behavior.
+
 Cognesia is a local research workbench for exploring *Drosophila melanogaster*
 (fruit fly) connectomes, neural simulation, visual stimulation and neuromodulation.
 It combines a Python simulation engine with an interactive 3D browser interface
@@ -120,9 +124,15 @@ to local artifacts **not bundled in this source release**. The historical counts
 and timings are not a fresh v0.0.2 validation run. Reproduction requires acquiring
 the original inputs and rerunning the relevant checks.
 
-**License: All rights reserved** for original Cognesia code and documentation;
-see [LICENSE](LICENSE). Third-party assets retain their licenses and attribution; see
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+**All rights reserved except the scientific, educational and personal-use
+permissions in [LICENSE](LICENSE).** Scientists, educators and personal hobbyists
+may use, install, run, copy and modify Cognesia free of charge, including for
+institutional and company research. You may publish results and share reproduction
+code or model modifications under the same grant, preserving the required notices.
+Selling or relicensing Cognesia, or offering it as a paid hosted product, requires
+separate permission. Third-party material retains its own terms; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The full license controls these
+permissions.
 
 ## Current workbench and scientific status
 
