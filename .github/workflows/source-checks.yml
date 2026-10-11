@@ -24,3 +24,8 @@ jobs:
         run: node --test tests/test_web_*.mjs macos/test_desktop_bridge.mjs macos/test_research_bridge.mjs
       - name: Build source package wheel
         run: python -m build --wheel
+      - name: Verify packaged licenses and notices
+        run: |
+          for license_wheel in dist/*.whl; do
+            COGNESIA_LICENSE_WHEEL="$license_wheel" python -m pytest -q tests/test_third_party_licenses.py
+          done
