@@ -40,3 +40,27 @@ is in `flybrain/licenses/`, Three.js in `flybrain/web/vendor/`, and fly-asset
 licenses and notices in `flybrain/web/assets/fly/`. The license README records
 upstream source links and checksums. Data acquired separately retain their own
 artifact-specific terms.
+
+
+## ParaLimbo 1 benchmark recordings
+
+The selected T4 voltage traces and their processed derivatives in
+`docs/paralimbo-1/results.json` and the interactive benchmark are adapted from
+Gruntman, Romani and Reiser (2018), *Simple integration of fast excitation and
+offset, delayed inhibition computes directional selectivity in Drosophila*,
+[Nature Neuroscience](https://doi.org/10.1038/s41593-017-0046-4). Dataset:
+[Gruntman_2017_Data.zip, version 1](https://doi.org/10.25378/janelia.5576101.v1),
+licensed under [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/).
+
+Changes: selected one recorded T4 cell and nine condition/trial pairs; converted
+and filtered voltage samples, subtracted baselines, aligned onset grids and
+plotted paired model predictions. The released derived recordings retain
+CC BY-NC 4.0; Cognesia's research and personal-use license does not replace or
+extend those source-data permissions. No endorsement by the authors is implied.
+Model predictions and original code retain their separately stated terms.
+
+BANC anatomy is credited to Bates et al. and The BANC-FlyWire Consortium;
+FlyWire annotations retain their original attribution. The ParaLimbo 1 source
+release does not include compiled connectomes, raw graph tables or optical
+assignment tables. Those inputs require separate acquisition and review of
+the original providers' terms.

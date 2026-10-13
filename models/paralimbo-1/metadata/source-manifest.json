@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "source_snapshot": "paralimbo-upgrade-native-retrospective-20261012-v3/source-snapshot",
+  "protocol_sha256": "a78a968b766014514657269da41cf1402489ca7936a497b00b4ef847e437baef",
+  "files": {
+    "src/flybrain/__init__.py": {
+      "sha256": "1516966b7b57cf9eddaf749a8b42b3a050e7ea5d6c18bce921a8083741494620",
+      "frozen_path": "src/flybrain/__init__.py",
+      "bytes": 95
+    },
+    "src/flybrain/build.py": {
+      "sha256": "a4fa6593c73cd730a80844648acf2aa72ff08c54a0d896513bbf254dbc286c89",
+      "frozen_path": "src/flybrain/build.py",
+      "bytes": 16348
+    },
+    "src/flybrain/config.py": {
+      "sha256": "3cc004ae05710f7048b01a966a2176d0a055def44f44902cae036f2362c80270",
+      "frozen_path": "src/flybrain/config.py",
+      "bytes": 634
+    },
+    "src/flybrain/engine.py": {
+      "sha256": "087bc83a4602f12fd349b7a92ce4bdf9ce5e24663198247272cdfe15d45d5dc5",
+      "frozen_path": "src/flybrain/engine.py",
+      "bytes": 15220
+    },
+    "src/flybrain/eye.py": {
+      "sha256": "a4115b9dddee77c703309d69126ab40f248711488ed43d547ea8c86d32f3a84a",
+      "frozen_path": "src/flybrain/eye.py",
+      "bytes": 12009
+    },
+    "src/flybrain/fetch.py": {
+      "sha256": "5de49b94671a62d40bc95c64180fcf89de68f858f429ea450737f3c6490808f9",
+      "frozen_path": "src/flybrain/fetch.py",
+      "bytes": 6194
+    },
+    "src/flybrain/hybrid_engine.py": {
+      "sha256": "888a10b5c4f10fd3d0ba9b39adf4aeb9ec07706e1eac0d23852855906ba69baa",
+      "frozen_path": "src/flybrain/hybrid_engine.py",
+      "bytes": 19505
+    },
+    "src/flybrain/inspect_data.py": {
+      "sha256": "8b46c6a52dfb158541284fc1a6544a99a51836490f08228cafd862305701c2d9",
+      "frozen_path": "src/flybrain/inspect_data.py",
+      "bytes": 2710
+    },
+    "src/flybrain/memguard.py": {
+      "sha256": "7bc6cd1da628c540b5997eb228c0f019104a7424e3285a890b826f4ddc81c372",
+      "frozen_path": "src/flybrain/memguard.py",
+      "bytes": 2066
+    },
+    "src/flybrain/model_registry.py": {
+      "sha256": "f664f8de04d5353a5884c79b3ebbe9d33d42221907938b61a0ef5f23cd19aea6",
+      "frozen_path": "src/flybrain/model_registry.py",
+      "bytes": 25344
+    },
+    "src/flybrain/neural_baseline.py": {
+      "sha256": "70431507186f0f76031d881875ec8939af5c874b488ffd6d4643be7d460db601",
+      "frozen_path": "src/flybrain/neural_baseline.py",
+      "bytes": 12915
+    },
+    "src/flybrain/neuromod/__init__.py": {
+      "sha256": "a8f26292bb574857fe638ed943d584efaabcf5ed5ab33775dd26beafc8f9727b",
+      "frozen_path": "src/flybrain/neuromod/__init__.py",
+      "bytes": 226
+    },
+    "src/flybrain/neuromod/compartments.py": {
+      "sha256": "72bc1c934c0d13d952940718ff88b751b1eec67e401a011282159e1646fa8521",
+      "frozen_path": "src/flybrain/neuromod/compartments.py",
+      "bytes": 27586
+    },
+    "src/flybrain/neuromod/field.py": {
+      "sha256": "b00d60b5fda3cb4bd1412c25f38cb0600329740016ee4de2c4df7b1d695152f6",
+      "frozen_path": "src/flybrain/neuromod/field.py",
+      "bytes": 25850
+    },
+    "src/flybrain/neuromod/sources.py": {
+      "sha256": "87fa160859fcfdce2476cc281efb57d413b670cf13424befc20fab563bbbcdcd",
+      "frozen_path": "src/flybrain/neuromod/sources.py",
+      "bytes": 28300
+    },
+    "src/flybrain/paralimbo.py": {
+      "sha256": "c5d9de187a2fdcf6f8681eab7bc5668b0039b547a1187ae2c7842e5ef0c173d8",
+      "frozen_path": "src/flybrain/paralimbo.py",
+      "bytes": 32684
+    },
+    "src/flybrain/phototransduction.py": {
+      "sha256": "6051417672ee86ff5afc9e78f7588eaabebb13df4119eeaa129c1cb936d16e6d",
+      "frozen_path": "src/flybrain/phototransduction.py",
+      "bytes": 2256
+    },
+    "src/flybrain/validate_data.py": {
+      "sha256": "c91599fd295578765926314a1cbee15657a9cce70e15c166596b4fa3584a6d13",
+      "frozen_path": "src/flybrain/validate_data.py",
+      "bytes": 13463
+    },
+    "src/flybrain/visual_neuropils.py": {
+      "sha256": "cd79d42c25db84fc325181f3b2da56379bbce501154e2a9bfa7808d41fb46f0a",
+      "frozen_path": "src/flybrain/visual_neuropils.py",
+      "bytes": 12750
+    },
+    "src/paralimbo1/config/parameters.yaml": {
+      "sha256": "af489b36dbe1c330bbe9e5a772d262c740a62ea1e4a0ba3d551ca3a3e6955bdb",
+      "frozen_path": "config/parameters.yaml",
+      "bytes": 2831
+    }
+  },
+  "scope": "Byte-identical extracted scientific modules and parameter configuration; publication wrapper and packaging are separately authored."
+}

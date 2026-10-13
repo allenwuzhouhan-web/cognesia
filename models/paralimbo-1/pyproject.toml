@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "paralimbo-1"
+version = "1.0.0"
+description = "ParaLimbo 1 experimental graded visual electrical model: frozen headless core"
+readme = "README.md"
+license = {file = "LICENSE"}
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy>=2,<3", "scipy>=1.14", "numba>=0.61", "pandas>=2.2", "pyarrow>=18", "PyYAML>=6", "psutil>=6"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+paralimbo1 = "paralimbo1.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/flybrain", "src/paralimbo1"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "scripts", "metadata", "README.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

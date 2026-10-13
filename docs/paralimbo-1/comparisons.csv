@@ -1,0 +1,11 @@
+endpoint,model_id,model_name,banc_score_mv,candidate_score_mv,banc_minus_candidate_mv,error_reduction_percent,numerical_separation_mv,verdict
+flash_spatial_peak_rmse,paralimbo-v0-1-0,Original ParaLimbo 0.1,15.50487038861134,15.50487038861134,0.0,0.0,0.002,WITHIN_NUMERICAL_SEPARATION
+flash_spatial_peak_rmse,paralimbo-visual-graded-v1,ParaLimbo 1,15.50487038861134,15.482602188458323,0.022268200153018114,0.14362067914720902,0.002,PARALIMBO_LOWER_ERROR
+flash_duration_peak_rmse,paralimbo-v0-1-0,Original ParaLimbo 0.1,17.12117702313677,17.12117702313677,0.0,0.0,0.002,WITHIN_NUMERICAL_SEPARATION
+flash_duration_peak_rmse,paralimbo-visual-graded-v1,ParaLimbo 1,17.12117702313677,17.095630230543893,0.025546792592876955,0.1492116608475819,0.002,PARALIMBO_LOWER_ERROR
+motion_waveform_rmse,paralimbo-v0-1-0,Original ParaLimbo 0.1,2.996528866537493,2.996528866537493,0.0,0.0,0.002,WITHIN_NUMERICAL_SEPARATION
+motion_waveform_rmse,paralimbo-visual-graded-v1,ParaLimbo 1,2.996528866537493,2.988036843376241,0.008492023161251971,0.28339533972401054,0.002,PARALIMBO_LOWER_ERROR
+direction_contrast_rmse,paralimbo-v0-1-0,Original ParaLimbo 0.1,7.971811893476491,7.971811893476491,0.0,0.0,0.004,WITHIN_NUMERICAL_SEPARATION
+direction_contrast_rmse,paralimbo-visual-graded-v1,ParaLimbo 1,7.971811893476491,7.9700144467717795,0.0017974467047112697,0.0225475303322468,0.004,WITHIN_NUMERICAL_SEPARATION
+speed_contrast_rmse,paralimbo-v0-1-0,Original ParaLimbo 0.1,0.8171120840016765,0.8171120840016765,0.0,0.0,0.004,WITHIN_NUMERICAL_SEPARATION
+speed_contrast_rmse,paralimbo-visual-graded-v1,ParaLimbo 1,0.8171120840016765,0.812141668746454,0.00497041525522246,0.608290509042608,0.004,PARALIMBO_LOWER_ERROR

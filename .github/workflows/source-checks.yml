@@ -20,6 +20,13 @@ jobs:
         run: python -m pytest -q tests/test_public_release.py
       - name: Check model and application regressions
         run: python -m pytest -q -m 'not integration and not slow'
+      - name: Verify ParaLimbo 1 published benchmark arithmetic
+        run: python scripts/verify_paralimbo_1_publication.py
+      - name: Verify ParaLimbo 1 frozen model source
+        run: |
+          python models/paralimbo-1/scripts/check_source.py
+          PYTHONPATH=models/paralimbo-1/src python -m pytest -c models/paralimbo-1/pyproject.toml models/paralimbo-1/tests -q
+          python -m build models/paralimbo-1 --outdir /tmp/paralimbo-1-dist
       - name: Check browser modules and desktop bridge
         run: node --test tests/test_web_*.mjs macos/test_desktop_bridge.mjs macos/test_research_bridge.mjs
       - name: Build source package wheel

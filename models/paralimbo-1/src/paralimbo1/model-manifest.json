@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "id": "paralimbo-visual-graded-v1",
+  "source": "BANC with declared visual electrical assumptions",
+  "materialization": 888,
+  "identity_namespace": "banc:888",
+  "species": "Drosophila melanogaster",
+  "sex": "female",
+  "stage": "adult",
+  "base_model": "paralimbo-v0-1-0",
+  "base_model_hash": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c",
+  "neurons": 175401,
+  "edges": 13542180,
+  "anatomical_edges_changed": 0,
+  "graded_neurons": 26597,
+  "reclassified_neurons": 24751,
+  "graded_types": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "Mi1",
+    "Mi4",
+    "Mi9",
+    "Tm1",
+    "Tm2",
+    "Tm3",
+    "Tm4",
+    "Tm9",
+    "C3",
+    "T4a",
+    "T4b",
+    "T4c",
+    "T4d",
+    "T5a",
+    "T5b",
+    "T5c",
+    "T5d"
+  ],
+  "runtime_profile": {
+    "schema_version": 1,
+    "initialization": "constant_background_equilibrium_v1",
+    "graded_input_cap": 0.8,
+    "chemistry_supported": false,
+    "assumption": "Cap absolute incoming graded DC gain at 0.8 per target; weak rows remain unchanged."
+  },
+  "sources": {
+    "voltage_and_passive_T4": "https://doi.org/10.1038/s41586-022-04428-3",
+    "voltage_imaging_lamina_medulla": "https://doi.org/10.1016/j.cell.2016.05.031",
+    "graded_L1_pathway": "https://doi.org/10.7554/eLife.49373",
+    "visual_network_modeling_precedent": "https://doi.org/10.1038/s41586-024-07939-3"
+  },
+  "eye_snapshot": {
+    "historical_run": "20261008T142805Z_visual_edge_feef0d",
+    "original_model_hash": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c",
+    "columns_sha256": "60c215d9dee1c882482c89bb13cda3a7b3f6e9f64a19a5cacfbc4febaf94ab97",
+    "assignments_sha256": "b6d28e19f2505d8a4f80ee5d88a7ead7ae2274a7ec485bfcfd5221164f88069b",
+    "audit": {
+      "status": "MODELED_PROVIDER_OPTICS",
+      "source_model_hash": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c",
+      "photoreceptors_total": 1846,
+      "photoreceptors_mapped": 216,
+      "photoreceptors_unassigned": 1630,
+      "curated_transferred_photoreceptors": 4,
+      "modeled_photoreceptors": 212,
+      "anchors": 216,
+      "anchors_by_side": {
+        "right": 111,
+        "left": 105
+      },
+      "all_unassigned_count": 175185,
+      "unassigned_photoreceptors_by_type": {
+        "R7": 816,
+        "R8": 814
+      },
+      "synthetic_edges": 0,
+      "retinotopy_assumptions": [
+        "Only annotated photoreceptors receive optical input.",
+        "Unique curator-checked FAFB matches can transfer source columns as cross-specimen inference.",
+        "Remaining known-side receptors use a deterministic position-ranked axial grid and assumed spherical orientation.",
+        "Unknown sides receive no optical input. This adapter does not establish measured retinotopy or visual selectivity."
+      ],
+      "assignment_policy": "curated homology first; explicitly modeled known-side columns otherwise",
+      "runtime_input_files": [
+        "build/visual/eye_assignments.parquet",
+        "build/visual/eye_columns.csv"
+      ]
+    },
+    "mapping_hash": "4379932b107bf9d36afef5fd1a90d60e85d5bf0dcd1f6d7656dbb043a9dc499f"
+  },
+  "implementation_hash": "f9277aa03e126a8acc6340445345d905dcfc0a84e83203e4a8b4595762d4eeca",
+  "output_hashes": {
+    "electrical_modes.parquet": "04c27d27db86239367fabb27074c81faae34650d76bc0bb58039c6c236186d8c",
+    "eye_assignments.parquet": "b6d28e19f2505d8a4f80ee5d88a7ead7ae2274a7ec485bfcfd5221164f88069b",
+    "eye_columns.parquet": "60c215d9dee1c882482c89bb13cda3a7b3f6e9f64a19a5cacfbc4febaf94ab97",
+    "graded_data.npy": "dfa79c0187e01f90482ef61019158e5397e8e5bbd4cc9cacd26355d14bad58b5",
+    "graded_indices.npy": "55ec429eab36ed4788953ca6b3e0ed710e78d4da82bb43460e5c5803dbfdb2bc",
+    "graded_indptr.npy": "7ef995a355269aa546c031f19dfde46f3f3a1074147f904e35e3538f1303e340",
+    "neurons.parquet": "09317e07c40930cc9cab41666df9cd151b97a9674779fd6b74f72bb44383e9ad",
+    "spiking_data.npy": "ae4f2502ea1ec1f440a62b7ecada5a95e7221666b3ca5d218ff47a5868b4dfef",
+    "spiking_indices.npy": "61574658d61a4bed796c0628a2f7319f845567ccad41a235e392de30b62b4b9d",
+    "spiking_indptr.npy": "9a1891703b620634a70fd941c0ba2e41a2c6b053995ef2f5950d15ba880c8279"
+  },
+  "optical_mapping_supported": false,
+  "status": "EXPERIMENTAL_NUMERICAL_CANDIDATE",
+  "warnings": [
+    "Electrical modes and gain normalization are model assumptions.",
+    "Historical optical mapping is incomplete; biological accuracy remains unvalidated."
+  ],
+  "model_hash": "229f9970e0b67cfa14658142dbc3adae8614d49887cd131521bf02e4d86cd884"
+}

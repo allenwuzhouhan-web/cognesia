@@ -1,0 +1,34 @@
+{
+  "canonical_encoding": "JSON sorted keys, separators comma and colon, allow_nan false; omit only that document's declared identity field. Full-file SHA-256 hashes the exact UTF-8 bytes including formatting and newline.",
+  "files": [
+    {
+      "byte_identical_to_source": true,
+      "bytes": 401083,
+      "canonical_identity_key": "protocol_sha256",
+      "canonical_identity_sha256": "a78a968b766014514657269da41cf1402489ca7936a497b00b4ef847e437baef",
+      "file_sha256": "ed9a5d37321ec61a153c195952186debd0f6b22a2ddb7b79a425704efc116bf8",
+      "path": "evidence/protocol.json"
+    },
+    {
+      "byte_identical_to_source": true,
+      "bytes": 46322,
+      "canonical_identity_key": "prediction_seal_sha256",
+      "canonical_identity_sha256": "c429ebf38aff0d133bfad1c9c0b9c331279f7c9d819c5fd80afa8b017c6508eb",
+      "file_sha256": "09469317dd549ea5cecbcbda9b36b6c3943f270c3d6dd1445276df19f392ac43",
+      "path": "evidence/prediction-seal.json"
+    },
+    {
+      "byte_identical_to_source": true,
+      "bytes": 7307,
+      "canonical_identity_key": "annex_sha256",
+      "canonical_identity_sha256": "94cae0f918443ca4d563c04d261a7fecdbc0502c33a840b5e56f146cdc99f33d",
+      "file_sha256": "8765aa3caf9632d1ed7c7e3f3a062b70d43a10cc2d09902f0b8625a586f05c27",
+      "path": "evidence/resource-annex/v1/manifest.json"
+    }
+  ],
+  "public_results_canonical_sha256": "84a77f46ea60798b905723caecac83666c1f13a0f60428484078b3efde0d86ab",
+  "public_results_file_sha256": "0e0b0a85b0809a157380b29ec8da8e09a7da5a130d2e13ece3565f0ee6bcd5be",
+  "schema": "paralimbo-1-evidence-identities-v1",
+  "source_scores_canonical_sha256": "37c9ac9606feed579a626c5586ca1150333d0d157d57e08f52eaaaa2b3da39d3",
+  "source_scores_file_sha256": "77ff18cb31e329de905bfde83bdc9e74c28556ef12367ddbfe88f3ec2946db17"
+}

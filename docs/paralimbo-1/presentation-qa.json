@@ -1,0 +1,105 @@
+{
+  "schema": "paralimbo-1-presentation-qa-v1",
+  "data_status": "PASS",
+  "five_panels": [
+    "flash_spatial_peak_rmse",
+    "flash_duration_peak_rmse",
+    "motion_waveform_rmse",
+    "direction_contrast_rmse",
+    "speed_contrast_rmse"
+  ],
+  "all_directions_lower_is_better": true,
+  "native_score_count": 15,
+  "zero_reference_score_count": 5,
+  "comparison_count": 10,
+  "trace_count": 27,
+  "case_count": 9,
+  "embedded_data_exact_match": true,
+  "public_redactions": 9,
+  "static_figure_visual_review": "PASS; corrected bottom annotation/footer overlap and re-rendered",
+  "standalone_export": "PASS: offline standalone wrapper with D3 and Floating UI inlined under included ISC/MIT licenses. Zero external script dependencies; unused Lucide load removed. Verified in the browser after final export.",
+  "link_targets_not_yet_present": [],
+  "files": {
+    "benchmark-overview.png": "53c4e4b2f66ebf1cb42c1ed64873c67ba2bc1d17fd0b019daf8801d01d91ebb3",
+    "DATA_LICENSE.md": "d81b4214c04e3a4a6a47d0728c75ddb534114318b4e41b941cb3e7ad834a096c",
+    "MODEL_CARD.md": "4a83b308c8285f06d317277c5c6ea9906e56a92158ac68b2c49c47e496c6e453",
+    "benchmark-scores.csv": "d1aef8b90a47655a4d5d3af483a698e25f0afbf775a3b1106b17ef156cfa271a",
+    "EVIDENCE.md": "716db2287f2ffb2657ea35572f088c9ce5c99ee66371346fcfd81f5cecb77e97",
+    "results.json": "0e0b0a85b0809a157380b29ec8da8e09a7da5a130d2e13ece3565f0ee6bcd5be",
+    "THIRD_PARTY_LIBRARIES.md": "5d9f4dc0c2ff34ce317850737da0c4e1e398f892cee505c7529ffe399f327759",
+    "benchmark-overview.svg": "d18cbe1ec0ecda38b1b8bc33d5f50299f13379b4813444e8a2cd4af5d63df849",
+    "README.md": "67e6d35917d6ec8484f43541f56c0388ccb1190c66636d7b0bd0a7e43b8f492a",
+    "METHODS.md": "3b1cdf39e0949600e9b01ff1eddd69339187bd1658fc09b4bab21db3531e0fc2",
+    "comparisons.csv": "8a414a7d7adca4cc1c02b02ae0aad51a72c6b2d0f23239f0169b15501310d996",
+    "build_figures.py": "55634321dab4be8bb581a3c8ffd9b61f06715a8cea3631c418396d14119cbdfc",
+    "benchmarks.fragment.html": "54b7b34f70c50f9deb3806eeef59f234ead9746a10b540f857713e974761b88d",
+    "benchmarks.html": "61aa4b0c3d43b86db4947ecd7d59199098954395a2551e9c478a66d07c948802",
+    "evidence/audit-summary.json": "864871bdf7c026b9fd1153034c5292a40f722e61266a1c7f0aae6a753ebaf97e",
+    "evidence/identities.json": "3db82ec5f535c461949b0186ab55b4ec129c621cae4fff9f53de431c0e8abb35",
+    "evidence/prediction-seal.json": "09469317dd549ea5cecbcbda9b36b6c3943f270c3d6dd1445276df19f392ac43",
+    "evidence/protocol.json": "ed9a5d37321ec61a153c195952186debd0f6b22a2ddb7b79a425704efc116bf8",
+    "licenses/D3-7.9.0-LICENSE.txt": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4",
+    "licenses/Floating-UI-LICENSE.txt": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce",
+    "evidence/resource-annex/v1/manifest.json": "8765aa3caf9632d1ed7c7e3f3a062b70d43a10cc2d09902f0b8625a586f05c27"
+  },
+  "total_bytes_excluding_qa": 2257805,
+  "standalone_bundled_libraries": [
+    {
+      "name": "d3-7.9.0",
+      "source_script": "https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js",
+      "bytes": 279706,
+      "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539",
+      "license": "ISC",
+      "license_sha256": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4"
+    },
+    {
+      "name": "floating-ui-core-1.7.3",
+      "source_script": "https://cdn.jsdelivr.net/npm/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js",
+      "bytes": 12529,
+      "sha256": "6985ce661153c01d97f6be9babb6a9566f923c716c2b7fbead48fbb09f419ba8",
+      "license": "MIT",
+      "license_sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+    },
+    {
+      "name": "floating-ui-dom-1.7.4",
+      "source_script": "https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js",
+      "bytes": 10251,
+      "sha256": "b8199f76adccb9b17b3ab57124c42585dc19197127d1a5d19307d1983f80bd89",
+      "license": "MIT",
+      "license_sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+    }
+  ],
+  "standalone_script_syntax_checks": 9,
+  "standalone_embedded_score_data_exact_match": true,
+  "coordinator_browser_qa": {
+    "panels": 5,
+    "exact_table_rows": 20,
+    "visible_trace_paths": 5,
+    "toggle_sequence": [
+      5,
+      4,
+      5
+    ],
+    "pinned_values": "PASS",
+    "console_warnings": 0,
+    "console_errors": 0,
+    "narrow_issue": "Resolved and rechecked: code hashes wrap without horizontal overflow at 320 px.",
+    "status": "PASS",
+    "viewport_widths_tested": [
+      "default",
+      320
+    ],
+    "narrow_root_client_width": 288,
+    "narrow_root_scroll_width": 288,
+    "condition_selector": "PASS: motion trial 4 to flash position -1 trial 25",
+    "pinned_40_ms_values_mV": {
+      "observed": 1.846438859,
+      "banc": 0,
+      "original_paralimbo": 0,
+      "paralimbo_1": 0.004975307,
+      "zero_reference": 0
+    },
+    "viewport_reset": true
+  },
+  "publication_whitespace_normalization": "SVG trailing whitespace and CSV newlines normalized; parsed SVG paths and CSV cell values unchanged."
+}

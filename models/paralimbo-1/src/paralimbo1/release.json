@@ -1,0 +1,12 @@
+{
+  "public_name": "ParaLimbo 1",
+  "distribution": "paralimbo-1",
+  "distribution_version": "1.0.0",
+  "canonical_model_id": "paralimbo-visual-graded-v1",
+  "model_hash": "229f9970e0b67cfa14658142dbc3adae8614d49887cd131521bf02e4d86cd884",
+  "status": "EXPERIMENTAL_NUMERICAL_CANDIDATE",
+  "biological_superiority": "NOT_ESTABLISHED",
+  "archived_model_compiler_sha256": "f9277aa03e126a8acc6340445345d905dcfc0a84e83203e4a8b4595762d4eeca",
+  "study_neural_baseline_sha256": "70431507186f0f76031d881875ec8939af5c874b488ffd6d4643be7d460db601",
+  "identity_note": "The model hash identifies the archived compiled graph manifest, not this distribution or the later frozen study source. A rebuild may have a different identity."
+}

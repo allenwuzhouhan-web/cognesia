@@ -1,0 +1,21 @@
+endpoint,endpoint_label,model_id,model_name,score_mv,better,contributing_conditions_or_pairs,status
+flash_spatial_peak_rmse,Flash spatial peak,banc-888,BANC,15.50487038861134,lower,3 positions,SCORED
+flash_spatial_peak_rmse,Flash spatial peak,paralimbo-v0-1-0,Original ParaLimbo 0.1,15.50487038861134,lower,3 positions,SCORED
+flash_spatial_peak_rmse,Flash spatial peak,paralimbo-visual-graded-v1,ParaLimbo 1,15.482602188458323,lower,3 positions,SCORED
+flash_spatial_peak_rmse,Flash spatial peak,zero-response,Zero-response reference,15.50487038861134,lower,3 positions,SCORED
+flash_duration_peak_rmse,Flash duration peak,banc-888,BANC,17.12117702313677,lower,3 durations,SCORED
+flash_duration_peak_rmse,Flash duration peak,paralimbo-v0-1-0,Original ParaLimbo 0.1,17.12117702313677,lower,3 durations,SCORED
+flash_duration_peak_rmse,Flash duration peak,paralimbo-visual-graded-v1,ParaLimbo 1,17.095630230543893,lower,3 durations,SCORED
+flash_duration_peak_rmse,Flash duration peak,zero-response,Zero-response reference,17.12117702313677,lower,3 durations,SCORED
+motion_waveform_rmse,Motion waveform,banc-888,BANC,2.996528866537493,lower,4 motion conditions,SCORED
+motion_waveform_rmse,Motion waveform,paralimbo-v0-1-0,Original ParaLimbo 0.1,2.996528866537493,lower,4 motion conditions,SCORED
+motion_waveform_rmse,Motion waveform,paralimbo-visual-graded-v1,ParaLimbo 1,2.988036843376241,lower,4 motion conditions,SCORED
+motion_waveform_rmse,Motion waveform,zero-response,Zero-response reference,2.996528866537493,lower,4 motion conditions,SCORED
+direction_contrast_rmse,Direction contrast,banc-888,BANC,7.971811893476491,lower,2 direction pairs,SCORED
+direction_contrast_rmse,Direction contrast,paralimbo-v0-1-0,Original ParaLimbo 0.1,7.971811893476491,lower,2 direction pairs,SCORED
+direction_contrast_rmse,Direction contrast,paralimbo-visual-graded-v1,ParaLimbo 1,7.9700144467717795,lower,2 direction pairs,SCORED
+direction_contrast_rmse,Direction contrast,zero-response,Zero-response reference,7.971811893476491,lower,2 direction pairs,SCORED
+speed_contrast_rmse,Speed contrast,banc-888,BANC,0.8171120840016765,lower,2 speed pairs,SCORED
+speed_contrast_rmse,Speed contrast,paralimbo-v0-1-0,Original ParaLimbo 0.1,0.8171120840016765,lower,2 speed pairs,SCORED
+speed_contrast_rmse,Speed contrast,paralimbo-visual-graded-v1,ParaLimbo 1,0.812141668746454,lower,2 speed pairs,SCORED
+speed_contrast_rmse,Speed contrast,zero-response,Zero-response reference,0.8171120840016765,lower,2 speed pairs,SCORED

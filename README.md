@@ -23,6 +23,21 @@ biologically validated vision, learning or behavior.
 [Website accounts plan](docs/website-accounts-plan.md) ·
 [Release notes](CHANGELOG.md) · [Public GitHub setup](docs/PUBLISHING.md)
 
+## ParaLimbo 1 — model and benchmark release
+
+**[ParaLimbo 1](docs/paralimbo-1/README.md)** is the graded visual model previously
+identified as `paralimbo-visual-graded-v1`. Its canonical model identity is
+preserved. [Model source](models/paralimbo-1/README.md) ·
+[Exact results and interactive comparison](docs/paralimbo-1/README.md)
+
+![Five related native benchmark endpoints; lower error is better](docs/paralimbo-1/benchmark-overview.png)
+
+27 native prediction requests completed. ParaLimbo 1 has four small numerical
+advantages over BANC across five related endpoints; original ParaLimbo 0.1
+ties BANC on all five. The four reductions range from 0.14% to 0.61%.
+This retrospective study uses one recorded cell and a fixed input boundary
+under which BANC is silent. **Biological validation: PENDING.**
+
 ## Tool API and local research agent
 
 Cognesia includes a personal-key-protected viewer, authenticated tool gateway,

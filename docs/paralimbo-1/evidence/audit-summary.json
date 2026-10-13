@@ -1,0 +1,77 @@
+{
+  "all_endpoints_scored": true,
+  "auditor_script_sha256": "d6d825a7ce290a7779e7d5de7519f388161615eb5588a3a7c550b26027a75acc",
+  "checks": 23583,
+  "complete_condition_groups": 27,
+  "complete_state_receipts": 0,
+  "executed_correspondences": [
+    "primary"
+  ],
+  "expected_requests": 27,
+  "failed_requests": 0,
+  "findings": [],
+  "hashed_files": 974,
+  "limitations": [
+    "One recorded cell/date group/dataset; five overlapping endpoints, not five independent experiments.",
+    "Historical outcomes had been exposed. The current prediction seal does not restore a held-out claim.",
+    "Pairwise refinement discrepancies are measured differences, not rigorous unknown true-error bounds.",
+    "The fixed shared boundary and executed correspondence hypotheses do not establish biological superiority.",
+    "Original acquisition-origin filtering/interpolation and native physical-grid filtering are approximate operators.",
+    "Boundary audit archives retain per-target worst samples and optical error summaries, not all input intervals.",
+    "No original response NPZ was opened; retained values are bound through original member hashes.",
+    "No native producer, fit, or simulation was rerun by this audit.",
+    "One predeclared paired recording trial per condition is scored; three retained source repeats do not supply SEM or replication.",
+    "Only primary T4c is executed. Alternate correspondence and sensory gain sensitivity are unexecuted.",
+    "V3 full-state checkpoint bytes were temporary. Typed state digests and execution receipts cannot independently reconstruct omitted numeric state or prove offline V3 replay.",
+    "Permanent full-population fault/clamp arrays, selected-root replay and refinement arrays are independently recomputed; V2 full-state samples remain separate evidence."
+  ],
+  "max_actual_discrepancy_mv": {
+    "input": 1.9250886211352736e-05,
+    "observation": 6.681887043669121e-09,
+    "optical": 0,
+    "timestep": 1.9250886211352736e-05
+  },
+  "model_pins": {
+    "banc-888": {
+      "graph_sha256": "6f0f261f32467efbb94bc1b304beac0a127edd148aa2f5f9f9edfb0f1f2d6c03",
+      "model_sha256": "60d220182e6f65b98a78b008c764bb13b802d1dc5b85a798cc9028a6557665de",
+      "population_root_order_identity": "74ca9800c581ca90674c2917025382f2de9e99b1a802efbb6410517c1c5dfd46"
+    },
+    "paralimbo-v0-1-0": {
+      "graph_sha256": "c6ca33fcea64ed5443fb96a27ab9d379c142b95e76a270845c8f497c2a5a1a49",
+      "model_sha256": "251615940b84dad843d0cf85138c936e118b0890274231bb8e5720b5b381bb5c",
+      "population_root_order_identity": "74ca9800c581ca90674c2917025382f2de9e99b1a802efbb6410517c1c5dfd46"
+    },
+    "paralimbo-visual-graded-v1": {
+      "graph_sha256": "e0b1b03936e9cdd3959b68aa445356bce9cac7e95cdd666024ad4fc7bb5710da",
+      "model_sha256": "229f9970e0b67cfa14658142dbc3adae8614d49887cd131521bf02e4d86cd884",
+      "population_root_order_identity": "74ca9800c581ca90674c2917025382f2de9e99b1a802efbb6410517c1c5dfd46"
+    }
+  },
+  "native_aggregate_scores": 15,
+  "paired_comparisons": 10,
+  "prediction_seal_sha256": "c429ebf38aff0d133bfad1c9c0b9c331279f7c9d819c5fd80afa8b017c6508eb",
+  "protocol_sha256": "a78a968b766014514657269da41cf1402489ca7936a497b00b4ef847e437baef",
+  "publication_note": "Selected fields from the completed local independent audit; this summary is not the full retained study or a new public full-graph replay.",
+  "qualified_predictions": 27,
+  "retention_mode": "transient_full_state_replay",
+  "schema": "independent-native-retrospective-audit-v1",
+  "score_file_sha256": "77ff18cb31e329de905bfde83bdc9e74c28556ef12367ddbfe88f3ec2946db17",
+  "scores_sha256": "37c9ac9606feed579a626c5586ca1150333d0d157d57e08f52eaaaa2b3da39d3",
+  "selected_trials_per_condition": {
+    "T4-01-2602ac761b2f5902": 1,
+    "T4-01-4b1df4fe36ea6a3c": 1,
+    "T4-01-51fa5db4acd09248": 1,
+    "T4-01-59209913440bed0c": 1,
+    "T4-01-6c9ee7e0c8cd8003": 1,
+    "T4-01-6d76cbbe65f026d5": 1,
+    "T4-01-a93bc8d103abecbd": 1,
+    "T4-01-b93f1fb51e92ee02": 1,
+    "T4-01-ce1c1a4de64ba9ec": 1
+  },
+  "source_audit_file_sha256": "739e86cd43972e3d5eaf11cb12a4aebe0e0428314a44c394e85dc544510618fd",
+  "status": "PASS",
+  "transient_state_receipts": 135,
+  "unique_numeric_archives": 280,
+  "zero_baseline_scores": 5
+}
