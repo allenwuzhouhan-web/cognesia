@@ -25,13 +25,52 @@ biologically validated vision, learning or behavior.
 
 ## ParaLimbo transmission v1 — completed finite campaign
 
-**[Results, exact candidate and reproducible benchmarks](docs/paralimbo-transmission-v1/README.md).**
-The campaign finished with 1,105 completed jobs and four retained sensitivity
-failures. ParaLimbo passed final numerical qualification in nine conditions;
-BANC passed in five. All five aggregate comparisons remain **incomplete**.
-The overall result is **inconclusive**, with single-cell retrospective evidence
-and **Biological validation: PENDING**. Both correspondence reports, failures,
-source references and an offline arithmetic verifier are included.
+**ParaLimbo qualified in 9/9 conditions versus BANC's 5/9, and had
+1.01–1.88% lower waveform error in all five jointly qualified conditions.**
+This is a limited numerical advantage; **overall predictive superiority is
+not established**. Four conditions lack a qualified BANC comparison. The
+scorecard below uses the registered **primary T4c correspondence**.
+
+| Result in this campaign | ParaLimbo | BANC |
+|---|---:|---:|
+| Final numerical qualification — higher is better | 9/9 | 5/9 |
+| Qualified motion conditions — higher is better | 4/4 | 2/4 |
+| Scorable registered endpoints | 5/5 | 0/5 |
+
+The two comparable evaluation conditions below were held out from this
+campaign's calibration. Errors are waveform RMSE in mV; **lower is better**.
+
+| Motion condition | ParaLimbo | BANC | ParaLimbo error reduction |
+|---|---:|---:|---:|
+| Direction −1, 20 ms dwell | 4.092524 | 4.171087 | 1.88% |
+| Direction +1, 20 ms dwell | 1.454030 | 1.473308 | 1.31% |
+| Direction −1, 80 ms dwell | 4.544060 | Unqualified | Unavailable |
+| Direction +1, 80 ms dwell | 1.649740 | Unqualified | Unavailable |
+
+All five registered primary endpoints are shown here. Calibration results
+are not held-out evaluation. Endpoint errors are in mV; **lower is better**.
+
+| Endpoint | Phase | ParaLimbo | BANC |
+|---|---|---:|---|
+| Flash spatial peak RMSE | Calibration | 15.335799 | Incomplete |
+| Flash duration peak RMSE | Calibration | 16.933521 | Incomplete |
+| Motion waveform RMSE | Evaluation | 2.935088 | Incomplete |
+| Direction contrast RMSE | Evaluation | 7.962120 | Incomplete |
+| Speed contrast RMSE | Evaluation | 0.788249 | Incomplete |
+
+BANC's four rejected conditions exceeded the frozen 0.001 mV timestep
+refinement limit. Missing scores are not zero. ParaLimbo's predicted peaks
+were only 0.062–0.254 mV versus measured peaks of 3.756–23.404 mV; its
+response magnitude remains poor. This is a retrospective comparison of one
+previously exposed recorded cell, with one selected trial per condition,
+no confidence interval and a fixed assumed input/mapping.
+BANC was silent in the five scoreable conditions.
+
+**Campaign complete. Overall comparison inconclusive. Biological validation:
+PENDING.** The ledger retains 1,105 completed jobs and four sensitivity failures.
+[Full results, both mappings, exact parameters and every failure](docs/paralimbo-transmission-v1/README.md)
+· [What needs fixing for a decisive comparison](docs/transmission-next-steps.md)
+· [Download evidence and offline verifier](https://github.com/allenwuzhouhan-web/cognesia/releases/tag/paralimbo-transmission-v1).
 
 ## ParaLimbo 1 — model and benchmark release
 
