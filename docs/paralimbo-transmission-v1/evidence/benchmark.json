@@ -1,0 +1,1940 @@
+{
+  "automatic_fallback_authorized": true,
+  "benchmark_id": "native_t4",
+  "dn_metadata": {
+    "aDN2": "UNSUPPORTED_TARGET_CORRESPONDENCE",
+    "compressed_starter_bytes": 2882130206,
+    "doi": "doi:10.7910/DVN/INYAYV",
+    "metadata_file_id": 7363021,
+    "metadata_md5": "ab2aa172172f1a0f797db9ef9649c818",
+    "metadata_sha256": "1860ee7fc09d29380f023aea5f9859d68f5fda04e2fa1cab960192856addca0f",
+    "minimum_selected_pulses": 10,
+    "missing_dnp09_animal_archives": [
+      "15",
+      "18"
+    ],
+    "records": [
+      {
+        "animal_id": "44",
+        "group": "DNp09",
+        "outcomes_acquired": false,
+        "recording_file_id": 7352005,
+        "roi_file_id": 7351988
+      },
+      {
+        "animal_id": "46",
+        "group": "DNp09",
+        "outcomes_acquired": false,
+        "recording_file_id": 7351979,
+        "roi_file_id": 7351969
+      },
+      {
+        "animal_id": "61",
+        "group": "DNp09",
+        "outcomes_acquired": false,
+        "recording_file_id": 7352015,
+        "roi_file_id": 7351987
+      },
+      {
+        "animal_id": "34",
+        "group": "MDN3",
+        "outcomes_acquired": false,
+        "recording_file_id": 7351993,
+        "roi_file_id": 7351972
+      },
+      {
+        "animal_id": "42",
+        "group": "MDN3",
+        "outcomes_acquired": false,
+        "recording_file_id": 7351966,
+        "roi_file_id": 7352004
+      },
+      {
+        "animal_id": "50",
+        "group": "MDN3",
+        "outcomes_acquired": false,
+        "recording_file_id": 7352014,
+        "roi_file_id": 7351977
+      },
+      {
+        "animal_id": "51",
+        "group": "MDN3",
+        "outcomes_acquired": false,
+        "recording_file_id": 7351975,
+        "roi_file_id": 7351995
+      },
+      {
+        "animal_id": "62",
+        "group": "MDN3",
+        "outcomes_acquired": false,
+        "recording_file_id": 7351997,
+        "roi_file_id": 7351992
+      },
+      {
+        "animal_id": "11",
+        "group": "PR",
+        "outcomes_acquired": false,
+        "recording_file_id": 7352073,
+        "roi_file_id": 7352072
+      },
+      {
+        "animal_id": "65",
+        "group": "PR",
+        "outcomes_acquired": false,
+        "recording_file_id": 7351996,
+        "roi_file_id": 7351963
+      }
+    ],
+    "roi_identity": "anonymous; pixel alignment does not identify connectome neurons",
+    "schema": "transmission-dn-metadata-v1",
+    "selection": "first available pre-CO2 ball/xz laser recording with ROI companion per animal",
+    "source_commit": "b9e66203ab825187e5d9bd651a63e46c2d5f0ab0",
+    "targets": {
+      "DNp09": [
+        "720575941566493282",
+        "720575941433155799"
+      ],
+      "MDN3": [
+        "720575941491012809",
+        "720575941499708745",
+        "720575941491065653",
+        "720575941614906387"
+      ]
+    },
+    "trial_count_eligibility": "UNVERIFIED_UNTIL_STIMULUS_ONLY_IMPORT",
+    "version": "1.0",
+    "windows_seconds": [
+      -5.0,
+      0.0,
+      5.0,
+      10.0
+    ]
+  },
+  "fallback_reason": [
+    "UNSUPPORTED_OBSERVATION_MAPPING"
+  ],
+  "primary_gate": {
+    "fallback": "native_t4",
+    "gate_sha256": "be3ff1b324968e7252258d415a3ebf312c2db89818069f5acc7ddcc29f25dc37",
+    "metadata_sha256": "1860ee7fc09d29380f023aea5f9859d68f5fda04e2fa1cab960192856addca0f",
+    "outcome_access": false,
+    "reasons": [
+      "UNSUPPORTED_OBSERVATION_MAPPING"
+    ],
+    "registration_sha256": null,
+    "schema": "transmission-dn-gate-v1",
+    "status": "UNSUPPORTED"
+  },
+  "t4_protocol": {
+    "biological_superiority": "NOT_ESTABLISHED",
+    "development_case_ids": [
+      "T4-01-59209913440bed0c",
+      "T4-01-6c9ee7e0c8cd8003",
+      "T4-01-6d76cbbe65f026d5",
+      "T4-01-b93f1fb51e92ee02",
+      "T4-01-ce1c1a4de64ba9ec"
+    ],
+    "evaluation_case_ids": [
+      "T4-01-2602ac761b2f5902",
+      "T4-01-4b1df4fe36ea6a3c",
+      "T4-01-51fa5db4acd09248",
+      "T4-01-a93bc8d103abecbd"
+    ],
+    "historical_outcome_exposure": true,
+    "input_root": "[local-workspace]/build/biological-benchmark/t4-fit-v1",
+    "limits": [
+      "One previously exposed recorded cell; not whole-brain biological validation.",
+      "Native connectivity and source-assumed T4 assignment retained; no fitted response surrogate."
+    ],
+    "native_contract": {
+      "absolute_rmse_reporting_threshold_mv": 0.05,
+      "calibration": {
+        "fitting_runs": 0,
+        "free_scalars": 0,
+        "proposals": 1,
+        "rule": "Identical fixed boundary for all providers; neither arm is optimized on recordings."
+      },
+      "case_ids": [
+        "T4-01-2602ac761b2f5902",
+        "T4-01-4b1df4fe36ea6a3c",
+        "T4-01-51fa5db4acd09248",
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-a93bc8d103abecbd",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "cases": [
+        {
+          "case_id": "T4-01-2602ac761b2f5902",
+          "cell_id": "T4-01",
+          "cohort": "primary",
+          "duration_ms": 20.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            4,
+            37,
+            72
+          ],
+          "family": "moving",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-2602ac761b2f5902.npz",
+          "input_sha256": "5270a1a085ee210089b6ca12c8e189a23c2eb9d97c9beb18376a14adc1d703b6",
+          "motion_position_sign": -1,
+          "position": null,
+          "primary_axis_sign": -1,
+          "primary_motion": true,
+          "relative_direction_code": 4,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "c9697ba4dbad70c05b1bfeea0ce6c22d7f0fd1688a4884fa333435e6a88771a8",
+            "time_ms.npy": "b118d96f19eb8c7ce2d27a818e5987bd04116333bf09d6080e3906f049a4c4f1",
+            "trial_37_frame_events.npy": "bead77f02c1cd959fd7b0ae9a545f098e7ac0225c4ab80313ab8104055791020",
+            "trial_4_frame_events.npy": "6f9fc23de570d03a7232aed1f8c4f63bc8cefda71f8e72a463962fd8a0293a71",
+            "trial_72_frame_events.npy": "683737b9fe24bbb940b161bbb34a00989acbd7f3936ed4842df0bb106e2a7309"
+          },
+          "source_trace_path": "traces/T4-01-2602ac761b2f5902.npz",
+          "source_trace_sha256": "2d8fb4e3304c219107710d79cf1d28b38979ef18af2a84672e59a7c77e5c5415",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 6,
+              "pos": [
+                -4,
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "sqDim": 9,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 7,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 9,
+              "barWid": 1,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "randomize": 1,
+              "repeats": 3,
+              "stepDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ],
+              "stimBar": 1
+            },
+            "movie_sha256": "77d0dd342fa5aa874d44a4d01e3b9de9642585631b38571eaa7d60e2c9e6bbfe",
+            "nominal_duration_ms": 180.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 29,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 6,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "rel_indices": [
+              7,
+              7,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 20.0
+          }
+        },
+        {
+          "case_id": "T4-01-4b1df4fe36ea6a3c",
+          "cell_id": "T4-01",
+          "cohort": "primary",
+          "duration_ms": 80.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            24,
+            47,
+            79
+          ],
+          "family": "moving",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-4b1df4fe36ea6a3c.npz",
+          "input_sha256": "5657135e9b984e8cf682310f4f38cfc0548c0a618a50e98aa13078414f4f1524",
+          "motion_position_sign": 1,
+          "position": null,
+          "primary_axis_sign": 1,
+          "primary_motion": true,
+          "relative_direction_code": 0,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "f3987ddf4c8e05f4f528f552f56792f305f3f54c2cd7e9b35aa337a5213052ea",
+            "time_ms.npy": "1c0105a000dff1cd032af72aaed10f3dbe7492ef94f04d3efa48ba0ba658527d",
+            "trial_24_frame_events.npy": "f382cf8abd45875ec7e76043aa20ea3b249cfb59827941306b68f1e2db15790d",
+            "trial_47_frame_events.npy": "c558b2fa322ebddfdff43dd5faa04aa4d86a0182619bd160a4045137890d118d",
+            "trial_79_frame_events.npy": "d2cea4fb264c55917d2679afd648c0882caf41965d6ab6bd938069e9a877ab2b"
+          },
+          "source_trace_path": "traces/T4-01-4b1df4fe36ea6a3c.npz",
+          "source_trace_sha256": "4e770522e3cb2b01835cd9e79079a918160ada2c24cf0bb1f3801717f4a882d7",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 2,
+              "pos": [
+                -4,
+                -4,
+                -4,
+                -4,
+                -3,
+                -3,
+                -3,
+                -3,
+                -2,
+                -2,
+                -2,
+                -2,
+                -1,
+                -1,
+                -1,
+                -1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4
+              ],
+              "sqDim": 9,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 19,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 9,
+              "barWid": 1,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "randomize": 1,
+              "repeats": 3,
+              "stepDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ],
+              "stimBar": 1
+            },
+            "movie_sha256": "5b63a679c8379eaf3c08cbfe7c5b52d14ef196a8d049f630bd52bd27c0265d73",
+            "nominal_duration_ms": 720.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 56,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 2,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              -4,
+              -4,
+              -4,
+              -4,
+              -3,
+              -3,
+              -3,
+              -3,
+              -2,
+              -2,
+              -2,
+              -2,
+              -1,
+              -1,
+              -1,
+              -1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4
+            ],
+            "rel_indices": [
+              19,
+              19,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 80.0
+          }
+        },
+        {
+          "case_id": "T4-01-51fa5db4acd09248",
+          "cell_id": "T4-01",
+          "cohort": "primary",
+          "duration_ms": 20.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            17,
+            46,
+            65
+          ],
+          "family": "moving",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-51fa5db4acd09248.npz",
+          "input_sha256": "c6c4744294ae839d5cadb6f8916e10523e176cf836266a842ae62d7621c09ad6",
+          "motion_position_sign": 1,
+          "position": null,
+          "primary_axis_sign": 1,
+          "primary_motion": true,
+          "relative_direction_code": 0,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "8d8954218ce1156317b38e47239ff58c116516242bdd7e1b8b5d344c804aa12d",
+            "time_ms.npy": "b118d96f19eb8c7ce2d27a818e5987bd04116333bf09d6080e3906f049a4c4f1",
+            "trial_17_frame_events.npy": "803762fdd7ba79dccfee9f431bc159ab7d941d0e96b4a55ecbcfe1bd8e0b9f05",
+            "trial_46_frame_events.npy": "f22cf9f7136be9e229c3f12ed70efd8849dccd1bf593a9eed21558501f451157",
+            "trial_65_frame_events.npy": "9929893cfe9a50d5a1063b5288b7d3e33b57200639a1922243ff463a59daf727"
+          },
+          "source_trace_path": "traces/T4-01-51fa5db4acd09248.npz",
+          "source_trace_sha256": "557a98102a8f53076b18fc61f23ab34b7791d41863034aa5c9ce1b3d1eb31ae4",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 2,
+              "pos": [
+                -4,
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3,
+                4
+              ],
+              "sqDim": 9,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 3,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 9,
+              "barWid": 1,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "randomize": 1,
+              "repeats": 3,
+              "stepDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ],
+              "stimBar": 1
+            },
+            "movie_sha256": "ed5b5460362140568ddd7477d5d582bf54aabe60b869f8705c57aedc1667771f",
+            "nominal_duration_ms": 180.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 29,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 2,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "rel_indices": [
+              3,
+              3,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 20.0
+          }
+        },
+        {
+          "case_id": "T4-01-59209913440bed0c",
+          "cell_id": "T4-01",
+          "cohort": "calibration",
+          "duration_ms": 80.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            25,
+            49,
+            117
+          ],
+          "family": "flash",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-59209913440bed0c.npz",
+          "input_sha256": "fc2d14b221a93f15e65af1510f27d79e2cdd7ebeb31e49516b871e586f9e2212",
+          "position": -1.0,
+          "primary_motion": false,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "4cd4cc9e0bca944a056ca28b987b7d58ce12237239651da8efc8ed0d17384ff3",
+            "time_ms.npy": "a2207ac6ddbbc8df231f13e3e70b9166f67738ab7771c3404e56bfd5ade95c39",
+            "trial_117_frame_events.npy": "ced685edd37492e9b6447f25a5daaa7b83df0939b8d1edce0322a8429c548f14",
+            "trial_25_frame_events.npy": "a37b414711d36a6b4dcc8d6394b5a316faa86ff56b8ec356a3c2d09decd8bf90",
+            "trial_49_frame_events.npy": "6fed6fbb19ef4d93acaa1acd6392932c3b51d86b429027e25337603d9f9bddcc"
+          },
+          "source_trace_path": "traces/T4-01-59209913440bed0c.npz",
+          "source_trace_sha256": "0a013d11f17f19eb291da1ff79a34f4fb1cd6afa5efc2ad574329ab115295278",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 2,
+              "pos": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "sqDim": 11,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 27,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 11,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gridOverlap": 0,
+              "gridSize": [
+                1,
+                1
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": 2,
+              "randomize": 1,
+              "repeats": 3,
+              "stimBar": 1,
+              "stimDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ]
+            },
+            "movie_sha256": "9bca9a8eed46aea09f46b5f78ddbd418b57a8ef307fe6b0463b43159e90b9620",
+            "nominal_duration_ms": 80.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 24,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 2,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "rel_indices": [
+              27,
+              27,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 80.0
+          }
+        },
+        {
+          "case_id": "T4-01-6c9ee7e0c8cd8003",
+          "cell_id": "T4-01",
+          "cohort": "calibration",
+          "duration_ms": 20.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            8,
+            86,
+            116
+          ],
+          "family": "flash",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-6c9ee7e0c8cd8003.npz",
+          "input_sha256": "bd6ccd41fc94c044be364836df5734060005225b594fe3e1d4832194b4801934",
+          "position": 0.0,
+          "primary_motion": false,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "f2763d434f3c055471d91922212e12f1f7a8fb208ec40dbb382b32083336916a",
+            "time_ms.npy": "e9ad68c7c79954c40c00121e04d759d1709b6ab3a741adec88a55bd774ed5ac2",
+            "trial_116_frame_events.npy": "f9fca5735400d2707c7a9319566373bfcb2113dd422cc5a0b1df397e5a1e2b4c",
+            "trial_86_frame_events.npy": "e77f0836c6382ad2eb3e4aef9afb31ccf25b7b9b8c98cf458942e33140b12caa",
+            "trial_8_frame_events.npy": "a6b992ee27095c3a0dcdc58627c16b584efe7bb0d9d653ba73e31f4839aa067d"
+          },
+          "source_trace_path": "traces/T4-01-6c9ee7e0c8cd8003.npz",
+          "source_trace_sha256": "9cb30dcfb4a0efea1f9fd9ba4e19c4d6a2d6f44b7e205ef590c983ef9cfe2f5d",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 2,
+              "pos": 0,
+              "sqDim": 11,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 6,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 11,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gridOverlap": 0,
+              "gridSize": [
+                1,
+                1
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": 2,
+              "randomize": 1,
+              "repeats": 3,
+              "stimBar": 1,
+              "stimDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ]
+            },
+            "movie_sha256": "d87336733fc18083fe60accac6eb3244eba4aa7a1fb1459f04921743049ac30a",
+            "nominal_duration_ms": 20.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 21,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 2,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              0
+            ],
+            "rel_indices": [
+              6,
+              6,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 20.0
+          }
+        },
+        {
+          "case_id": "T4-01-6d76cbbe65f026d5",
+          "cell_id": "T4-01",
+          "cohort": "calibration",
+          "duration_ms": 80.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            35,
+            82,
+            132
+          ],
+          "family": "flash",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-6d76cbbe65f026d5.npz",
+          "input_sha256": "86a8499eb9db4663c024a86f337fbf6643ae795be4d4a0bd37e66f5a529ecbf7",
+          "position": 1.0,
+          "primary_motion": false,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "d14f97f7f8a4d069aba991910c5d59ff94dcaca792276b0ec9a41eeb0f09810c",
+            "time_ms.npy": "a2207ac6ddbbc8df231f13e3e70b9166f67738ab7771c3404e56bfd5ade95c39",
+            "trial_132_frame_events.npy": "33aee3f72e48e30dc52fdeade220e5a1f25823e79d74dab69efd175eca89f979",
+            "trial_35_frame_events.npy": "a18c46a5ba6d70366e1eae81e976d598017056dd892ca76566f9af2a45a00380",
+            "trial_82_frame_events.npy": "b8743b5ba20429ece036a3a17baf25cd7390f6929c29fbaefab5400dca8171bd"
+          },
+          "source_trace_path": "traces/T4-01-6d76cbbe65f026d5.npz",
+          "source_trace_sha256": "9ca4991a2e2d13eb57b7215e5fa0e27c67b394befe318609ac9064212ec648c0",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 2,
+              "pos": [
+                1,
+                1,
+                1,
+                1
+              ],
+              "sqDim": 11,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 29,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 11,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gridOverlap": 0,
+              "gridSize": [
+                1,
+                1
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": 2,
+              "randomize": 1,
+              "repeats": 3,
+              "stimBar": 1,
+              "stimDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ]
+            },
+            "movie_sha256": "ac226d4e376338f69659ad90a50784d4cb88485f56b637a7ec9b69089a271254",
+            "nominal_duration_ms": 80.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 24,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 2,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "rel_indices": [
+              29,
+              29,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 80.0
+          }
+        },
+        {
+          "case_id": "T4-01-a93bc8d103abecbd",
+          "cell_id": "T4-01",
+          "cohort": "primary",
+          "duration_ms": 80.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            22,
+            49,
+            93
+          ],
+          "family": "moving",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-a93bc8d103abecbd.npz",
+          "input_sha256": "54af2d4b8d59a20cea5fc3372f1ebdd3a1c201715aa650374a3bccc0fd903775",
+          "motion_position_sign": -1,
+          "position": null,
+          "primary_axis_sign": -1,
+          "primary_motion": true,
+          "relative_direction_code": 4,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "0222b0dbacc25fb2cfa45f6732213dcc5147bf67768b86ecb2c97a12fcf34d12",
+            "time_ms.npy": "1c0105a000dff1cd032af72aaed10f3dbe7492ef94f04d3efa48ba0ba658527d",
+            "trial_22_frame_events.npy": "0e829b6649949469f39909db264f5801ecc0d164f2779474280e4bafcc827348",
+            "trial_49_frame_events.npy": "2837d502e0300678ec359a873928b2a0412a93dd5f1167e37b00eea24c81d54f",
+            "trial_93_frame_events.npy": "765d06391182e6e4748e807521dfd69191ff81a252a1024d34a114d13464085f"
+          },
+          "source_trace_path": "traces/T4-01-a93bc8d103abecbd.npz",
+          "source_trace_sha256": "3f926ac9cfd1c1ac5da0a1a5ae3193514bb9165f9f2c103ab795e7f8e634f0a3",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 6,
+              "pos": [
+                -4,
+                -4,
+                -4,
+                -4,
+                -3,
+                -3,
+                -3,
+                -3,
+                -2,
+                -2,
+                -2,
+                -2,
+                -1,
+                -1,
+                -1,
+                -1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                2,
+                2,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3,
+                4,
+                4,
+                4,
+                4
+              ],
+              "sqDim": 9,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 23,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 9,
+              "barWid": 1,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "randomize": 1,
+              "repeats": 3,
+              "stepDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ],
+              "stimBar": 1
+            },
+            "movie_sha256": "46815e63bda405b13809550baeb85c1da463975146218e341150acb04ff05738",
+            "nominal_duration_ms": 720.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 56,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 6,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              -4,
+              -4,
+              -4,
+              -4,
+              -3,
+              -3,
+              -3,
+              -3,
+              -2,
+              -2,
+              -2,
+              -2,
+              -1,
+              -1,
+              -1,
+              -1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              3,
+              3,
+              3,
+              3,
+              4,
+              4,
+              4,
+              4
+            ],
+            "rel_indices": [
+              23,
+              23,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 80.0
+          }
+        },
+        {
+          "case_id": "T4-01-b93f1fb51e92ee02",
+          "cell_id": "T4-01",
+          "cohort": "calibration",
+          "duration_ms": 80.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            28,
+            68,
+            89
+          ],
+          "family": "flash",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-b93f1fb51e92ee02.npz",
+          "input_sha256": "3a11bf0db731685bd4738d851669c6b8478177eb651fcf0838e146309791ddf2",
+          "position": 0.0,
+          "primary_motion": false,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "b26fb4ae5aa8e8c9454ce2f628e3e173d547f3490c94a1a900203e92583e6a9b",
+            "time_ms.npy": "a2207ac6ddbbc8df231f13e3e70b9166f67738ab7771c3404e56bfd5ade95c39",
+            "trial_28_frame_events.npy": "6424e31d68615f89c9d577c219b81381d0f211c5c997a618810bea4cce02c6cf",
+            "trial_68_frame_events.npy": "9d0459ee239620bc0592ab41d503d086074b8014c9ca8e2bc5da3d57f336f99e",
+            "trial_89_frame_events.npy": "3d3cbbff1757a13c358454fb86543b901fe457f935c949eb9e3f205589654e7c"
+          },
+          "source_trace_path": "traces/T4-01-b93f1fb51e92ee02.npz",
+          "source_trace_sha256": "d0842e4cff09bc37720d877dcde7276f31a6df0c4f2812c135a02993982aac02",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 2,
+              "pos": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "sqDim": 11,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 28,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 11,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gridOverlap": 0,
+              "gridSize": [
+                1,
+                1
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": 2,
+              "randomize": 1,
+              "repeats": 3,
+              "stimBar": 1,
+              "stimDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ]
+            },
+            "movie_sha256": "d4d181704f5d20663bb32fc16d0346a4aff249afe554ee9e541552bf11dde271",
+            "nominal_duration_ms": 80.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 24,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 2,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "rel_indices": [
+              28,
+              28,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 80.0
+          }
+        },
+        {
+          "case_id": "T4-01-ce1c1a4de64ba9ec",
+          "cell_id": "T4-01",
+          "cohort": "calibration",
+          "duration_ms": 160.0,
+          "eligible": true,
+          "eligible_repeats": 3,
+          "eligible_trial_indices": [
+            41,
+            88,
+            107
+          ],
+          "family": "flash",
+          "geometry": {
+            "axis_unit_xy": [
+              -0.0,
+              1.0
+            ],
+            "axis_xy": [
+              -0.0,
+              1.0
+            ],
+            "center_pixel_xy": [
+              42.0,
+              18.0
+            ],
+            "coordinate_unit": "acquisition source position (pixel-index sum for diagonals)",
+            "flash_orientation": 2,
+            "flash_orientation_code": 2,
+            "geometry_evidence": "native flash masks and acquisition metadata; no outcomes",
+            "grid_center_source_xy": [
+              43.0,
+              14.0
+            ],
+            "group_id": "20160420",
+            "positions": [
+              -5.0,
+              -4.0,
+              -3.0,
+              -2.0,
+              -1.0,
+              0.0,
+              1.0,
+              2.0,
+              3.0,
+              4.0,
+              5.0
+            ],
+            "radius_pixels": 5.0,
+            "registration_limitation": "experimentally selected gridCenter and flash axis; not independent anatomy",
+            "source_position_scale_per_pixel": 1.0
+          },
+          "group_id": "20160420",
+          "input_path": "inputs/cases/T4-01-ce1c1a4de64ba9ec.npz",
+          "input_sha256": "41f3c939a015664807fd992d6efed52a50b42ed8615af4dd1792879d7d27ba76",
+          "position": 0.0,
+          "primary_motion": false,
+          "source_input_member_sha256": {
+            "stimulus_frames.npy": "697ab37f26efe2192111bef405a20c7005c7d3423320aa3c88df4b0786df86c9",
+            "time_ms.npy": "3b8c3a08cc92f87b3e759ffc48c6ddba24fdb3dda07a511cdc0ce73be8b85666",
+            "trial_107_frame_events.npy": "c2d8e71c870c802dddd46ee7c4773afb66dc903ed151def95c6309cede0b8d9f",
+            "trial_41_frame_events.npy": "87071158095d86f40b03cc3b5109e5e8ac02f6472fc6ce4cb2ffb2d1d14992e5",
+            "trial_88_frame_events.npy": "40674310db3781b7025aee321075dbfdad12bdc7cbe74d06f39c84ac8dc10bf3"
+          },
+          "source_trace_path": "traces/T4-01-ce1c1a4de64ba9ec.npz",
+          "source_trace_sha256": "4cb4ca11142f3709642e4c71e412bf628d50ee7e4a7dff9ba2b4b9775ae07c2a",
+          "split": "test",
+          "stimulus": {
+            "arena_pixels": [
+              96,
+              32
+            ],
+            "arena_registration_to_model": "UNRESOLVED",
+            "background_cd_m2_approx": 31.0,
+            "bright_cd_m2_approx": 72.0,
+            "display_latency_correction_ms": null,
+            "grating": {
+              "bkgdVal": 0.49,
+              "gsLevel": 3,
+              "matSize": 225,
+              "ori": 2,
+              "pos": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sqDim": 11,
+              "val": 1,
+              "wid": 1
+            },
+            "grating_index_one_based": 39,
+            "grating_mapping": "contiguous source labels to array order; duration and moving step times verified against movie",
+            "input_parameters": {
+              "barHeight": 9,
+              "barSpan": 11,
+              "gratingMidVal": 0.49,
+              "gridCenter": [
+                43,
+                14
+              ],
+              "gridOverlap": 0,
+              "gridSize": [
+                1,
+                1
+              ],
+              "gsLevel": 3,
+              "intFrames": null,
+              "orientations": 2,
+              "randomize": 1,
+              "repeats": 3,
+              "stimBar": 1,
+              "stimDur": [
+                0.02,
+                0.04,
+                0.08,
+                0.16
+              ]
+            },
+            "movie_sha256": "390fe3f1c36c292c9f2ffa2e03bb490cb79679305128e0a9b5836b7de75688ae",
+            "nominal_duration_ms": 160.0,
+            "nominal_frame_ms": 20.0,
+            "offset_frame_zero_based": 28,
+            "onset_frame_zero_based": 20,
+            "orientation_code": 2,
+            "pixel_angle_deg_approx": 2.25,
+            "position_pixels": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "rel_indices": [
+              39,
+              39,
+              1,
+              1
+            ],
+            "rf_localizer_in_archive": false,
+            "source_grating_label_offset": 0,
+            "spectral_peak_nm": 565,
+            "step_or_flash_duration_ms": 160.0
+          }
+        }
+      ],
+      "execution": {
+        "block_ms": 10.0,
+        "first_copy_bytes": 20000000,
+        "memory_limit_gb": 4.0,
+        "retained_bytes": 20000000,
+        "retention_mode": "transient_full_state_replay",
+        "temporary_bytes": 28000000,
+        "threads": 16
+      },
+      "failure_policy": "retain_all_declared_cases",
+      "historical_outcome_exposure": true,
+      "historical_outcomes_previously_exposed": true,
+      "input_manifest_sha256": "1c740f3bc229d8d561e97c314f669f79a0e52fb82dcf05e76848facb63927752",
+      "limits": [
+        "One recorded cell, one date group, one experimental dataset; five related endpoints are not five independent experiments.",
+        "Acquisition RF center and axis were experimentally selected; no independently measured BANC correspondence.",
+        "Right hemisphere mirrors the left-eye recording; original wiring is retained for every arm.",
+        "Recorded traces retain legacy acquisition-origin resample_poly plus onset-grid interpolation. Predictions use a centered FIR on physical output times; unavailable acquisition phase makes these approximate, not identical observation operators.",
+        "The three-sigma circular RF cutoff is an additional frozen implementation assumption beyond the donor finite-arena blur; both providers and numerical refinements use identical support.",
+        "The fixed boundary is not an optimized strong BANC baseline. Gain uncertainty is not exhausted.",
+        "Biological superiority is unestablished; any win is conditional on this retrospective boundary and cell assignment.",
+        "Single selected recording trial per condition; no repeat averaging, SEM, confidence interval or replication claim.",
+        "Every request undergoes actual complete-state disk checkpoint restore and exact replay. Campaign checkpoint files are temporary and removed after checking; retained digests and selected-root traces do not permit offline full-state replay.",
+        "T4c primary and T4d alternate are separately reported assumed correspondences; identical selected parameters and input multiplier are used for both."
+      ],
+      "metric_window": "Post-onset 0 through nominal stimulus duration +200ms, inclusive. Peak is maximum signed voltage on this window. Waveform RMSE is per-condition then equal-condition mean. Direction contrast=positive-source-axis peak minus negative; speed contrast=20ms-dwell peak minus80ms-dwell peak.",
+      "metrics": {
+        "direction_contrast_rmse": {
+          "direction": "lower",
+          "pairs": 2,
+          "unit": "mV"
+        },
+        "flash_duration_peak_rmse": {
+          "cases": 3,
+          "direction": "lower",
+          "unit": "mV"
+        },
+        "flash_spatial_peak_rmse": {
+          "cases": 3,
+          "direction": "lower",
+          "unit": "mV"
+        },
+        "motion_waveform_rmse": {
+          "cases": 4,
+          "direction": "lower",
+          "unit": "mV"
+        },
+        "speed_contrast_rmse": {
+          "direction": "lower",
+          "pairs": 2,
+          "unit": "mV"
+        }
+      },
+      "models": [
+        "banc-888",
+        "paralimbo-v0-1-0",
+        "paralimbo-visual-graded-v1"
+      ],
+      "numerical_separation_mv": {
+        "direction_contrast_rmse": 0.004,
+        "flash_duration_peak_rmse": 0.002,
+        "flash_spatial_peak_rmse": 0.002,
+        "motion_waveform_rmse": 0.002,
+        "speed_contrast_rmse": 0.004
+      },
+      "numerics": {
+        "dt_ms": 0.1,
+        "filter_step_ms": 0.1,
+        "max_abs_mv": 0.001,
+        "record_dt_ms": 0.1,
+        "refinement_dt_ms": [
+          0.05
+        ]
+      },
+      "resource_amendment": {
+        "basis": "Measured native runtime and evidence storage only; no experimental response values read for this amendment.",
+        "preserved_endpoints": [
+          "flash_spatial_peak_rmse",
+          "flash_duration_peak_rmse",
+          "motion_waveform_rmse",
+          "direction_contrast_rmse",
+          "speed_contrast_rmse"
+        ],
+        "prior_forecast_seconds": 10904.560345029806,
+        "prior_native_pilots_passed": 3,
+        "prior_packages_preserved": true,
+        "prior_projected_retained_bytes": 2616906243,
+        "prior_protocol_sha256": "4d0e627c12316e0ff7c4c06e81dd799c3c9444ed448b61c83da00ebdf6b0822e"
+      },
+      "retrospective": true,
+      "schema": "native-retrospective-comparison-v1",
+      "scope": "retrospective_restricted_hypothesis",
+      "scoring_observation": {
+        "operation": "Use the already filtered and baseline-subtracted recorded voltage of exactly the selected trial; no repeat averaging and no second filter.",
+        "selected_trial_ids_by_case": {
+          "T4-01-2602ac761b2f5902": [
+            "trial_4"
+          ],
+          "T4-01-4b1df4fe36ea6a3c": [
+            "trial_24"
+          ],
+          "T4-01-51fa5db4acd09248": [
+            "trial_17"
+          ],
+          "T4-01-59209913440bed0c": [
+            "trial_25"
+          ],
+          "T4-01-6c9ee7e0c8cd8003": [
+            "trial_8"
+          ],
+          "T4-01-6d76cbbe65f026d5": [
+            "trial_35"
+          ],
+          "T4-01-a93bc8d103abecbd": [
+            "trial_22"
+          ],
+          "T4-01-b93f1fb51e92ee02": [
+            "trial_28"
+          ],
+          "T4-01-ce1c1a4de64ba9ec": [
+            "trial_41"
+          ]
+        },
+        "trial_policy": "first_eligible_single_trial"
+      },
+      "selection": "Lexically first eligible recorded cell; flashes at positions -1,0,+1 for 80ms plus center20/160ms; both acquisition-axis motion signs at dwell20/80ms; all eligible repeats. Resource amendment: choose the minimum eligible trial index per condition and primary T4c only, before any renewed observation access.",
+      "sensitivity_ids": [
+        "primary",
+        "alternate_vertical_subtype"
+      ],
+      "sensory_boundary": {
+        "background_code": 3,
+        "classification": "assumed",
+        "deg_per_pixel": 2.25,
+        "delay_ms": 0.0,
+        "fwhm_deg": 5.7,
+        "gain_mv_per_contrast": {
+          "Mi1": 10.0,
+          "Mi4": 10.0,
+          "Mi9": -10.0,
+          "Tm3": 10.0
+        },
+        "holding_mv": 0.0,
+        "luminance_cd_m2": {
+          "3": 31.0,
+          "7": 72.0
+        },
+        "sources": [
+          {
+            "sha256": "3671fe52850c050a4c42d3e879e89ca60987cd1551e48f26b04f937a8f19d297",
+            "url": "https://raw.githubusercontent.com/ClarkLabCode/TimingModels/100bb2f52cb9628477c3883e4b17774b0b244e67/BLM/BarlowLevickModelLowpassWithSpatialFilterPeriodicBarResponses.m",
+            "use": "Toy first-order timing values, not measurements."
+          },
+          {
+            "sha256": "aa4a14c766aa36356bbdfdc6e470a41494c8959b1108270e7699103e3665329b",
+            "url": "https://raw.githubusercontent.com/ClarkLabCode/TimingModels/100bb2f52cb9628477c3883e4b17774b0b244e67/CircuitModel/SetModelParameters.m",
+            "use": "5.7degree FWHM donor circuit-model blur, transferred to isotropic2D."
+          },
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9474608/",
+            "use": "First-order 40/100 ms toy-model timescales; not measured BANC kernels."
+          },
+          {
+            "url": "https://www.nature.com/articles/s41593-017-0046-4",
+            "use": "Acquisition luminance, visual geometry and recorded T4 stimuli."
+          }
+        ],
+        "tau_ms": {
+          "Mi1": 40.0,
+          "Mi4": 100.0,
+          "Mi9": 100.0,
+          "Tm3": 40.0
+        },
+        "truncate_sigma": 3.0,
+        "uncertainty": "Fixed shared boundary; no fit. Gain scale, first-order kernels, holding and RF shape are assumptions. Native relay-specific gains are unavailable."
+      },
+      "templates": {
+        "alternate_vertical_subtype": "right_mirror_proxy|T4d|primary",
+        "primary": "right_mirror_proxy|T4c|primary"
+      },
+      "trial_ids_by_case": {
+        "T4-01-2602ac761b2f5902": [
+          "trial_4"
+        ],
+        "T4-01-4b1df4fe36ea6a3c": [
+          "trial_24"
+        ],
+        "T4-01-51fa5db4acd09248": [
+          "trial_17"
+        ],
+        "T4-01-59209913440bed0c": [
+          "trial_25"
+        ],
+        "T4-01-6c9ee7e0c8cd8003": [
+          "trial_8"
+        ],
+        "T4-01-6d76cbbe65f026d5": [
+          "trial_35"
+        ],
+        "T4-01-a93bc8d103abecbd": [
+          "trial_22"
+        ],
+        "T4-01-b93f1fb51e92ee02": [
+          "trial_28"
+        ],
+        "T4-01-ce1c1a4de64ba9ec": [
+          "trial_41"
+        ]
+      },
+      "win_rule": "Descriptive signed difference; no inferential significance with one recorded cell. Endpoint-specific conservative numerical separation thresholds are not biological improvement margins."
+    },
+    "observation_sources": {
+      "T4-01-2602ac761b2f5902": {
+        "metadata_path": "observations/motion/T4-01-2602ac761b2f5902.json",
+        "metadata_sha256": "9b074e39f6617b9a4149c34ff73385152828fa342f40f8cfe0f2b7126c4ab272",
+        "observation_identity": "53f3c24b5bd41db0b55d4c5028d1a4ffbc68116cb2a11048f0cba68b4c7149cb",
+        "response_path": "observations/motion/T4-01-2602ac761b2f5902.npz",
+        "response_sha256": "4afcd40e70cb86aabd5e38c47320dc766ef031df7dc7b394f925e14da9422ff0"
+      },
+      "T4-01-4b1df4fe36ea6a3c": {
+        "metadata_path": "observations/motion/T4-01-4b1df4fe36ea6a3c.json",
+        "metadata_sha256": "d64970e7e9ef24d2a5717f43a4843bbafad48e459ed4a9fc99dce776a18e56fe",
+        "observation_identity": "6f34858fd58b3950ca8d47ee46bdc1ce80670179a3f92dcbc220a0e08e067626",
+        "response_path": "observations/motion/T4-01-4b1df4fe36ea6a3c.npz",
+        "response_sha256": "2febf1ef855741b6faddbff0e2c8e8d405516a84f331a8c25e5d5eac6015da8f"
+      },
+      "T4-01-51fa5db4acd09248": {
+        "metadata_path": "observations/motion/T4-01-51fa5db4acd09248.json",
+        "metadata_sha256": "4299a8909944e069b9d9b5027a586c07324512c8a77f8fac785da249e451ef25",
+        "observation_identity": "9cbf748abc0a0902d63ab2680d216974e545a44ce8ca92b2a5ec67324c9970a9",
+        "response_path": "observations/motion/T4-01-51fa5db4acd09248.npz",
+        "response_sha256": "e6d934eff7ce57a081a34acf9801766376e607283781a317bd5e4aca0087eb91"
+      },
+      "T4-01-59209913440bed0c": {
+        "metadata_path": "observations/flash/T4-01-59209913440bed0c.json",
+        "metadata_sha256": "91d10499262d202c97b42fbe6da9f108f15a42cba70c4f5c14d27f202ada8763",
+        "observation_identity": "8279b1ba48fa6c3067c4d2e629fd1b64e2e97b590513f9359e4fbb80af0c1ee4",
+        "response_path": "observations/flash/T4-01-59209913440bed0c.npz",
+        "response_sha256": "47f15fefff930a7793d8dc57341eeceaf8ef147e39bf22df5ea12a489448b5e8"
+      },
+      "T4-01-6c9ee7e0c8cd8003": {
+        "metadata_path": "observations/flash/T4-01-6c9ee7e0c8cd8003.json",
+        "metadata_sha256": "e3cddda98977802e8a2ea43c7d81634c5502cb38ddc8ce415b97a061ba7a1052",
+        "observation_identity": "542efc68141b2e1b15d48cd8b9a334e2400140c9e9de06638d0042c57f3eca5a",
+        "response_path": "observations/flash/T4-01-6c9ee7e0c8cd8003.npz",
+        "response_sha256": "5bd29c3b5dd8c96aac2141aa719096b312f0ac2b0def122f0dc86305a2d0cf44"
+      },
+      "T4-01-6d76cbbe65f026d5": {
+        "metadata_path": "observations/flash/T4-01-6d76cbbe65f026d5.json",
+        "metadata_sha256": "e8ec39b20b936f5315e144eef91f1a01696e0fdf046c7bf60c7c90eafcd69afd",
+        "observation_identity": "c9688563bbdd2ae22ede9932e2b48db4412b652692ad395f3c66b8bbd0082093",
+        "response_path": "observations/flash/T4-01-6d76cbbe65f026d5.npz",
+        "response_sha256": "a5e2344dca1ff3ce757ff2fb142b63dc70e10dbf025b79e514bd52e173449b71"
+      },
+      "T4-01-a93bc8d103abecbd": {
+        "metadata_path": "observations/motion/T4-01-a93bc8d103abecbd.json",
+        "metadata_sha256": "945e4c50a7404ca76ebd38eec6cba607c98ff469a880b6fee3cc4de98af4c454",
+        "observation_identity": "b41fce40bc4dda5d013cc3fa128dfce487752102a101e8f1e31787bc9e64b917",
+        "response_path": "observations/motion/T4-01-a93bc8d103abecbd.npz",
+        "response_sha256": "5401e0d1804d925aa84d8fd32d03d21b044a103d15dc6b95ce24e61133b4be64"
+      },
+      "T4-01-b93f1fb51e92ee02": {
+        "metadata_path": "observations/flash/T4-01-b93f1fb51e92ee02.json",
+        "metadata_sha256": "66a76267edc112c19a9c5dc9fd1e75cb86af11d64e25530e63df50b6ba46f44a",
+        "observation_identity": "e511d511e6a343da08609260c24d80e4c45074e1f13dd96c4118913a99162cf9",
+        "response_path": "observations/flash/T4-01-b93f1fb51e92ee02.npz",
+        "response_sha256": "24756e46ad91f6bcd4a9010024b70908a57ef1023e9e81064fb297335cd7879d"
+      },
+      "T4-01-ce1c1a4de64ba9ec": {
+        "metadata_path": "observations/flash/T4-01-ce1c1a4de64ba9ec.json",
+        "metadata_sha256": "a8bfba5e695d0761ea46606698306337314879e709e482ee77e5bf3440cb9baa",
+        "observation_identity": "aefbb7679941f8ece3b2794f61e4532d3b732626e1d074ace6cceab5b9f176c0",
+        "response_path": "observations/flash/T4-01-ce1c1a4de64ba9ec.npz",
+        "response_sha256": "e0824609c16a6c1ab3238cd0e77c2348b7b92dab7874d4335afe0ba56835884d"
+      }
+    },
+    "original_protocol_sha256": "a78a968b766014514657269da41cf1402489ca7936a497b00b4ef847e437baef",
+    "protocol_sha256": "3b14457a56e6aab653c4cf60cef122b971584d6a035269bcdf5b44eef30b4550",
+    "root": "[local-workspace]",
+    "schema": "transmission-t4-protocol-v1",
+    "scope": "retrospective_restricted_native_t4_hypothesis",
+    "source_files": [
+      "src/flybrain/transmission_campaign/data.py",
+      "src/flybrain/transmission_campaign/calibration.py",
+      "src/flybrain/transmission_campaign/scoring.py",
+      "src/flybrain/paralimbo_upgrade/retrospective_contract.py",
+      "src/flybrain/paralimbo_upgrade/retrospective_scoring.py",
+      "src/flybrain/paralimbo_upgrade/native_factory.py",
+      "src/flybrain/paralimbo_upgrade/registrations/factories.py",
+      "src/flybrain/paralimbo_upgrade/registrations/adapter_bridge.py",
+      "src/flybrain/t4_fit_project/data.py"
+    ],
+    "source_protocol_path": "build/biological-benchmark/paralimbo-upgrade-native-retrospective-20261012-v3/protocol.json"
+  }
+}

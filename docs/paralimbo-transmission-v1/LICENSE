@@ -1,0 +1,66 @@
+Cognesia — All rights reserved
+
+Cognesia Research and Personal Use License
+Effective 11 October 2026
+
+All rights reserved for original Cognesia code, model definitions and
+documentation, except for the permissions expressly granted below.
+
+1. Free scientific, educational and personal use
+
+The copyright holders grant every person and organization a worldwide,
+non-exclusive, royalty-free license to obtain, install, run, study, copy and
+modify original Cognesia material for scientific research, education and
+personal hobby use. No separate permission or license fee is required for
+these purposes. Researchers are eligible regardless of institutional affiliation,
+employment, sponsorship or research funding, including research within companies.
+
+You may share original or modified copies for these purposes, including code,
+model definitions and reproduction materials accompanying scientific work,
+provided you retain this license and all applicable copyright and third-party
+notices, identify your modifications, and give recipients the same permissions.
+Recipients receive these permissions directly under this license; you may not
+relicense original Cognesia material under different terms.
+
+You may publish and share your research findings, figures, measurements and
+other independently created results. This license does not claim ownership of
+those results. Any original Cognesia material or third-party material included
+in an output remains subject to its applicable terms.
+
+2. Reserved rights
+
+Selling original or modified Cognesia material, incorporating it into a product
+for sale, or offering it as a paid hosted service requires separate written
+permission from the relevant copyright holders. Research funding, salaries and
+publication of research results do not by themselves require that permission.
+All rights not expressly granted remain reserved. No trademark or endorsement
+rights are granted. This is a purpose-limited license, not an open-source license.
+
+3. Third-party material and service access
+
+Third-party code, datasets, models and assets are excluded from this license and
+retain their own licenses, permissions and attribution requirements. This license
+neither restricts their existing permissions nor grants rights the Cognesia
+copyright holders do not possess. See THIRD_PARTY_NOTICES.md and the license and
+notice files accompanying those components.
+
+Permission to use the software does not promise a hosted account, computing
+resources or service availability. Separately operated services may require
+authentication and have their own service terms. This license does not limit
+rights granted by applicable law or the hosting platform's applicable terms.
+
+4. Earlier releases
+
+These permissions also apply to the original Cognesia portions of previously
+published Cognesia and ParaLimbo releases. For those portions, this grant replaces
+an earlier statement that no additional use, modification or redistribution
+license was granted. Third-party terms and historical scientific results are
+unaffected.
+
+5. No warranty
+
+THE MATERIAL IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDERS
+ARE NOT LIABLE FOR CLAIMS, DAMAGES OR OTHER LIABILITY ARISING FROM THE MATERIAL
+OR ITS USE. Permission to use the model does not establish biological validity.

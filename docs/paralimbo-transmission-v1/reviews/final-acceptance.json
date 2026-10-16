@@ -1,0 +1,44 @@
+{
+  "acceptance": "PASS_FOR_HONEST_INCONCLUSIVE_COMPLETION",
+  "accepted_at": "2026-10-15T15:47:59.590582+00:00",
+  "accepted_at_swiss": "2026-10-15T17:47:59.590582+02:00",
+  "additional_simulation_after_terminal": false,
+  "attempt": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0003",
+  "banc_final_failed_conditions_per_correspondence": 4,
+  "biological_evidence": "ONE_CELL_RETROSPECTIVE_FALLBACK_NO_SUPERIORITY",
+  "completed_jobs": 1105,
+  "defaults_or_published_claims_changed": false,
+  "engineering_correctness": "INCOMPLETE",
+  "failed_sensitivity_jobs": 4,
+  "independent_reviews": {
+    "RESULTS.md": {
+      "bytes": 11775,
+      "sha256": "de93daadaa91906e41b939542caf9cdd4403a56fc3d4fae8d2695179d1ad7745"
+    },
+    "engineering-review.md": {
+      "bytes": 7455,
+      "sha256": "535b7e0137b7b1ce09f4f6c8e06c3d6fd25049ac4c8baa1d0587f7b3cad3ebd1"
+    },
+    "pinned-sensitivity-review.md": {
+      "bytes": 4986,
+      "sha256": "7b4af4f14253092e9318a8d57828303da4885bc0e5168ea2e33e2e9a8f81733d"
+    },
+    "review-document-reconciliation.json": {
+      "bytes": 2856,
+      "sha256": "31317bd4ec2af6211bdae34f9f1b5d812090c723c3d47c6033d92081752fb9ec"
+    },
+    "scientific-review.md": {
+      "bytes": 12781,
+      "sha256": "f3ab38ea8ce4ace90445880e30c5ba56f5e123cc40af684e02f72470ac149b0b"
+    },
+    "scientific-verification.json": {
+      "bytes": 21557,
+      "sha256": "ceae32a70c85289bb10f9a0e520498c053b2bd22c116a26bfcf4c0bb39bbc0f3"
+    }
+  },
+  "paralimbo_final_failed_conditions_per_correspondence": 0,
+  "predictive_comparison": "INCONCLUSIVE_ALL_FIVE_AGGREGATES_INCOMPLETE",
+  "remaining_jobs": 0,
+  "schema": "transmission-final-acceptance-v1",
+  "source_identity": "d8e027ebb3b71bfb32fbaa43b958ae641a103010f06f90d8b7a37012274b0671"
+}

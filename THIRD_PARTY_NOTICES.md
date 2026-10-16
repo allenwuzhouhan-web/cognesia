@@ -64,3 +64,10 @@ FlyWire annotations retain their original attribution. The ParaLimbo 1 source
 release does not include compiled connectomes, raw graph tables or optical
 assignment tables. Those inputs require separate acquisition and review of
 the original providers' terms.
+
+## ParaLimbo transmission v1 evidence
+
+The T4 observations in `docs/paralimbo-transmission-v1/evidence/observations/`
+are derived from the same Gruntman dataset identified above and retain
+CC BY-NC 4.0. See that release folder’s `ATTRIBUTION.md` for selection,
+transformations, exclusions and the separate terms for software/predictions.

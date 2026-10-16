@@ -23,6 +23,16 @@ biologically validated vision, learning or behavior.
 [Website accounts plan](docs/website-accounts-plan.md) ·
 [Release notes](CHANGELOG.md) · [Public GitHub setup](docs/PUBLISHING.md)
 
+## ParaLimbo transmission v1 — completed finite campaign
+
+**[Results, exact candidate and reproducible benchmarks](docs/paralimbo-transmission-v1/README.md).**
+The campaign finished with 1,105 completed jobs and four retained sensitivity
+failures. ParaLimbo passed final numerical qualification in nine conditions;
+BANC passed in five. All five aggregate comparisons remain **incomplete**.
+The overall result is **inconclusive**, with single-cell retrospective evidence
+and **Biological validation: PENDING**. Both correspondence reports, failures,
+source references and an offline arithmetic verifier are included.
+
 ## ParaLimbo 1 — model and benchmark release
 
 **[ParaLimbo 1](docs/paralimbo-1/README.md)** is the graded visual model previously

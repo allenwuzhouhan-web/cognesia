@@ -1,0 +1,312 @@
+{
+  "active_seconds_per_simulated_second": 79.46765979198972,
+  "checkpoint_peak_bytes": 19766424,
+  "direct_retained_bytes": 13434328,
+  "instrumented": true,
+  "maximum_case_seconds": 2.0,
+  "native_t4_input_only_pilots": [
+    {
+      "arm": "banc",
+      "case_id": "T4-01-59209913440bed0c",
+      "optical": {
+        "arrays": {
+          "bytes": 248722,
+          "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/7043d2e86a85b50f222109761b1402b9abcc3c903f6d091d86c3da970703cc3d.npz",
+          "sha256": "0fd8de94c199066c7e244f84b655d3975789877942793d14dfe2dc87f79b8d60"
+        },
+        "checkpoint_path": "active/7043d2e86a85b50f222109761b1402b9abcc3c903f6d091d86c3da970703cc3d.npz",
+        "checkpoint_peak_bytes": 9316206,
+        "checkpoint_seconds": 17.071739250037353,
+        "dt_ms": 0.1,
+        "numerics": {
+          "clamps": 0,
+          "endpoint_finite": true,
+          "first_failure_step": null,
+          "invalid_delayed_spikes": 0,
+          "nonfinite_release_updates": 0,
+          "nonfinite_synaptic_updates": 0,
+          "nonfinite_voltage_updates": 0,
+          "pass": true,
+          "simulated_population": 175401
+        },
+        "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+        "physical_duration_ms": 717.0,
+        "population": 175401,
+        "request_sha256": "e1f83f684d747a6d0e911aa182dead17460343aeb0abc9e7c4a88d1499c4df58",
+        "runtime_identity": "e638f179310ab687059022ebfe8cc259cda9b7e67a28a32d03d06c0c25e9beac",
+        "serialized_checkpoint_replay_exact": null,
+        "startup_seconds": 2.6216560000320897,
+        "status": "PASS",
+        "wall_seconds": 36.41196416702587
+      },
+      "qualification": {
+        "observation_mv": 7.105427357601002e-15,
+        "optical_mv": 0.0,
+        "timestep_mv": 0.0
+      },
+      "refined": {
+        "arrays": {
+          "bytes": 248731,
+          "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/a1b9f2413935714cce2874602ccb6c330087ed103afe6e1afcdbd4a9d43b4d49.npz",
+          "sha256": "7e593917fe3930f461ce4a2a7924513a5c8019785f0ebf92a329e500782d02a6"
+        },
+        "checkpoint_path": "active/a1b9f2413935714cce2874602ccb6c330087ed103afe6e1afcdbd4a9d43b4d49.npz",
+        "checkpoint_peak_bytes": 9436157,
+        "checkpoint_seconds": 17.21171395800775,
+        "dt_ms": 0.05,
+        "numerics": {
+          "clamps": 0,
+          "endpoint_finite": true,
+          "first_failure_step": null,
+          "invalid_delayed_spikes": 0,
+          "nonfinite_release_updates": 0,
+          "nonfinite_synaptic_updates": 0,
+          "nonfinite_voltage_updates": 0,
+          "pass": true,
+          "simulated_population": 175401
+        },
+        "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+        "physical_duration_ms": 717.0,
+        "population": 175401,
+        "request_sha256": "4b45cc20cac44231ebe0c0425389a11a4c269dabbd95c05f21fef6b6f433e266",
+        "runtime_identity": "def2447efdb30e853169f07eb0e7a02eb721c981dd26a9eb875c12c4f4ce15a9",
+        "serialized_checkpoint_replay_exact": null,
+        "startup_seconds": 2.6404883340001106,
+        "status": "PASS",
+        "wall_seconds": 48.59232520801015
+      },
+      "result": {
+        "arrays": {
+          "bytes": 248722,
+          "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/7381986cb9aa20c17a5f4ee3e0ff0551334f24700f59d947efd18fb1bcf9f6bf.npz",
+          "sha256": "0fd8de94c199066c7e244f84b655d3975789877942793d14dfe2dc87f79b8d60"
+        },
+        "checkpoint_path": "active/7381986cb9aa20c17a5f4ee3e0ff0551334f24700f59d947efd18fb1bcf9f6bf.npz",
+        "checkpoint_peak_bytes": 9316153,
+        "checkpoint_seconds": 16.741682874970138,
+        "dt_ms": 0.1,
+        "numerics": {
+          "clamps": 0,
+          "endpoint_finite": true,
+          "first_failure_step": null,
+          "invalid_delayed_spikes": 0,
+          "nonfinite_release_updates": 0,
+          "nonfinite_synaptic_updates": 0,
+          "nonfinite_voltage_updates": 0,
+          "pass": true,
+          "simulated_population": 175401
+        },
+        "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+        "physical_duration_ms": 717.0,
+        "population": 175401,
+        "request_sha256": "b98a0920f9dca07479ff1d458f6cf2f23a3f1c057c6cabea68c835efc0ce712b",
+        "runtime_identity": "f64e35883db5f2f3520a15f543c37a827716037f3a9288a7a86177ad457794f3",
+        "serialized_checkpoint_replay_exact": null,
+        "startup_seconds": 2.597202125005424,
+        "status": "PASS",
+        "wall_seconds": 35.743850417027716
+      }
+    },
+    {
+      "arm": "paralimbo",
+      "case_id": "T4-01-59209913440bed0c",
+      "optical": {
+        "arrays": {
+          "bytes": 1332336,
+          "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/e02bf8eb2b9a548251bb6c7b180e6e40043cba7d3fa41321c018f6fbddaddfa7.npz",
+          "sha256": "809dd2d6932812aefab29ea37a38d78f8dd362af7184370f7f825ca80a3b8d90"
+        },
+        "checkpoint_path": "active/e02bf8eb2b9a548251bb6c7b180e6e40043cba7d3fa41321c018f6fbddaddfa7.npz",
+        "checkpoint_peak_bytes": 18019663,
+        "checkpoint_seconds": 18.707898292923346,
+        "dt_ms": 0.1,
+        "numerics": {
+          "clamps": 0,
+          "endpoint_finite": true,
+          "first_failure_step": null,
+          "invalid_delayed_spikes": 0,
+          "nonfinite_release_updates": 0,
+          "nonfinite_synaptic_updates": 0,
+          "nonfinite_voltage_updates": 0,
+          "pass": true,
+          "simulated_population": 175401
+        },
+        "observation_refinement_max_abs_mv": 6.316078327017749e-09,
+        "physical_duration_ms": 717.0,
+        "population": 175401,
+        "request_sha256": "b5ae04bacb94a48133c25eaed7cfb77eb657655792e2225ba7947536a425e873",
+        "runtime_identity": "011430106402a22d26b522c86def7a73f9e1b36b4303ec109e763fd9069014ec",
+        "serialized_checkpoint_replay_exact": null,
+        "startup_seconds": 2.7111045829951763,
+        "status": "PASS",
+        "wall_seconds": 49.23553241597256
+      },
+      "qualification": {
+        "observation_mv": 6.316078327017749e-09,
+        "optical_mv": 0.0,
+        "timestep_mv": 1.7674007267487468e-05
+      },
+      "refined": {
+        "arrays": {
+          "bytes": 1331898,
+          "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/650b8c37132e9fe6388559d8bf0fce7bd6b47c572dfe68df0e0003a97f26214a.npz",
+          "sha256": "014b50e5f4a6525bda536fec6f789e15e7291da046fe7008bdd12f7d4c5d9e90"
+        },
+        "checkpoint_path": "active/650b8c37132e9fe6388559d8bf0fce7bd6b47c572dfe68df0e0003a97f26214a.npz",
+        "checkpoint_peak_bytes": 21439793,
+        "checkpoint_seconds": 19.67493912606733,
+        "dt_ms": 0.05,
+        "numerics": {
+          "clamps": 0,
+          "endpoint_finite": true,
+          "first_failure_step": null,
+          "invalid_delayed_spikes": 0,
+          "nonfinite_release_updates": 0,
+          "nonfinite_synaptic_updates": 0,
+          "nonfinite_voltage_updates": 0,
+          "pass": true,
+          "simulated_population": 175401
+        },
+        "observation_refinement_max_abs_mv": 6.31737862022419e-09,
+        "physical_duration_ms": 717.0,
+        "population": 175401,
+        "request_sha256": "3cbb0a93d13ae865512fcf8496da3de7ac04039ba3b748e8f1d3b0c2a5cee12e",
+        "runtime_identity": "4f9f7c5e65c86283871ef9e15f0d2b1624abe45ef4aacb0d0ac5a272f4f61fa3",
+        "serialized_checkpoint_replay_exact": null,
+        "startup_seconds": 2.7881487910053693,
+        "status": "PASS",
+        "wall_seconds": 75.26859495905228
+      },
+      "result": {
+        "arrays": {
+          "bytes": 1332339,
+          "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/32660c2fce067bcea75fbf217919a4ef12dd9a98f457818fcfc4f3ae6e76590e.npz",
+          "sha256": "8e37c8b89f9a67734f3e1dcc484b5e6be66d49ec864914f5bc144409fbb64d91"
+        },
+        "checkpoint_path": "active/32660c2fce067bcea75fbf217919a4ef12dd9a98f457818fcfc4f3ae6e76590e.npz",
+        "checkpoint_peak_bytes": 18019890,
+        "checkpoint_seconds": 18.646831874968484,
+        "dt_ms": 0.1,
+        "numerics": {
+          "clamps": 0,
+          "endpoint_finite": true,
+          "first_failure_step": null,
+          "invalid_delayed_spikes": 0,
+          "nonfinite_release_updates": 0,
+          "nonfinite_synaptic_updates": 0,
+          "nonfinite_voltage_updates": 0,
+          "pass": true,
+          "simulated_population": 175401
+        },
+        "observation_refinement_max_abs_mv": 6.316078327017749e-09,
+        "physical_duration_ms": 717.0,
+        "population": 175401,
+        "request_sha256": "db4636d46412ab1141eb4857d1652ef74163ddb15a638682ec4b59e2a7d24237",
+        "runtime_identity": "2e86add85514f85e3c0abcd0dc751aca53d01dbafda50c17b633b85838e7bb27",
+        "serialized_checkpoint_replay_exact": null,
+        "startup_seconds": 2.667668625013903,
+        "status": "PASS",
+        "wall_seconds": 49.18270766601199
+      }
+    }
+  ],
+  "population": 175401,
+  "quiet_seconds_per_simulated_second": 78.80633516702801,
+  "records": [
+    {
+      "arm": "banc",
+      "arrays": {
+        "bytes": 6151673,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/082ca3e7913fc1a5c33228b2d94f31b15b3aab3fffd2cf1b4d373d474ec8b5c8.npz",
+        "sha256": "a08ddc5eb2b993b063377579cc797321b7c76cdcd3be38ba25b8b4c4c6cc50f1"
+      },
+      "checkpoint_path": "active/082ca3e7913fc1a5c33228b2d94f31b15b3aab3fffd2cf1b4d373d474ec8b5c8.npz",
+      "checkpoint_peak_bytes": 9307477,
+      "checkpoint_seconds": 21.254869334050454,
+      "condition": "quiet",
+      "population": 175401,
+      "runtime_identity": "c4d7b1993dbb58b52b44a376d6753e60dad334fd92a45ee61029d5ad16329868",
+      "serialized_checkpoint_replay_exact": true,
+      "startup_seconds": 3.1346775830024853,
+      "status": "PASS",
+      "summary": {
+        "bytes": 2392026,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/diagnostics/082ca3e7913fc1a5c33228b2d94f31b15b3aab3fffd2cf1b4d373d474ec8b5c8.json",
+        "sha256": "07ea2475547d550b30e6ccdaf58d7337af792a4323f659aa51bf52aaa1e4c8e3"
+      },
+      "wall_seconds": 59.00846620800439
+    },
+    {
+      "arm": "banc",
+      "arrays": {
+        "bytes": 6491542,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/ab95d460547197703af207b417b27a417ea711a9fdb78d3c30234f6688d649ef.npz",
+        "sha256": "6fc2b4b32bb364a4d08141d61144e3bb616f19e59230d211523bc976cd4d7cfc"
+      },
+      "checkpoint_path": "active/ab95d460547197703af207b417b27a417ea711a9fdb78d3c30234f6688d649ef.npz",
+      "checkpoint_peak_bytes": 9684204,
+      "checkpoint_seconds": 21.1666942499578,
+      "condition": "active",
+      "population": 175401,
+      "runtime_identity": "c961274c10162a524180d1f156227d85c759ea105bf2c8222b4a90481491ba08",
+      "serialized_checkpoint_replay_exact": true,
+      "startup_seconds": 2.0971423750161193,
+      "status": "PASS",
+      "summary": {
+        "bytes": 2478084,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/diagnostics/ab95d460547197703af207b417b27a417ea711a9fdb78d3c30234f6688d649ef.json",
+        "sha256": "89c8c2134d886d4f481bed61eeaf3dd8b030c19e6a6fc7ed6ba6af275295dda6"
+      },
+      "wall_seconds": 57.86745016701752
+    },
+    {
+      "arm": "paralimbo",
+      "arrays": {
+        "bytes": 8694261,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/20d976a32aab1202415d734fe8c30b8b102f8af3306096d557cedeee1be25b60.npz",
+        "sha256": "d49cb34f54404877061895ba7846aaed02fc41ad9552798df81b5e9e9c9a6304"
+      },
+      "checkpoint_path": "active/20d976a32aab1202415d734fe8c30b8b102f8af3306096d557cedeee1be25b60.npz",
+      "checkpoint_peak_bytes": 17892509,
+      "checkpoint_seconds": 23.16430608299561,
+      "condition": "quiet",
+      "population": 175401,
+      "runtime_identity": "d0fab7be6a2e7f6afff25d24c3741b8ec258b8c778178e06bdc2c529bc205d12",
+      "serialized_checkpoint_replay_exact": true,
+      "startup_seconds": 2.1236965419957414,
+      "status": "PASS",
+      "summary": {
+        "bytes": 2406973,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/diagnostics/20d976a32aab1202415d734fe8c30b8b102f8af3306096d557cedeee1be25b60.json",
+        "sha256": "52b5e202288ce4cefd72290aceae10b5b979accc8e5d840e783e818a9a88a39d"
+      },
+      "wall_seconds": 78.80633516702801
+    },
+    {
+      "arm": "paralimbo",
+      "arrays": {
+        "bytes": 10943966,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/a4670ae5a6a76de36eef3cec486104519a7065d3c1ce51ec8bd6c91f3b083344.npz",
+        "sha256": "0b466533bcaf58ef5fc48b6f854b13bb41ef867c79d2b75e4091af8aa9005b8b"
+      },
+      "checkpoint_path": "active/a4670ae5a6a76de36eef3cec486104519a7065d3c1ce51ec8bd6c91f3b083344.npz",
+      "checkpoint_peak_bytes": 19766424,
+      "checkpoint_seconds": 23.724507291044574,
+      "condition": "active",
+      "population": 175401,
+      "runtime_identity": "5065ea4db81d12123bd17f287050a4adf3db20e25fdaa5d265728e0e548ba8fa",
+      "serialized_checkpoint_replay_exact": true,
+      "startup_seconds": 2.2079738749889657,
+      "status": "PASS",
+      "summary": {
+        "bytes": 2490362,
+        "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/diagnostics/a4670ae5a6a76de36eef3cec486104519a7065d3c1ce51ec8bd6c91f3b083344.json",
+        "sha256": "87b740b60d47745ed341871732bbbe12bfe7892042dbf0f37691667e1ddcd923"
+      },
+      "wall_seconds": 79.46765979198972
+    }
+  ],
+  "startup_seconds": 3.1346775830024853,
+  "t4_retained_bytes_bound": 8000000,
+  "threads": 16
+}

@@ -1,0 +1,240 @@
+{
+  "campaign_source_identity": "d8e027ebb3b71bfb32fbaa43b958ae641a103010f06f90d8b7a37012274b0671",
+  "files": [
+    {
+      "bytes": 1577,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/prepare_transmission_continuation.py",
+      "original_sha256": "5b36ced53d9603d91f294c47266ff5dde5f7466de16751d1dec9446d50676fe0",
+      "path": "source/scripts/prepare_transmission_continuation.py",
+      "public_sha256": "5b36ced53d9603d91f294c47266ff5dde5f7466de16751d1dec9446d50676fe0",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 21396,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/replay_transmission_failure.py",
+      "original_sha256": "9c7ae1b3c6f46fdc56eb2768ee07b6fbe069a2b5148726969c5a210c5c6548d7",
+      "path": "source/scripts/replay_transmission_failure.py",
+      "public_sha256": "c27208b7a062513fa0d0eef0a63ecdbcb95a4a75c00bd38ef70fbcc494d17f9a",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 1395,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/run_transmission_campaign.py",
+      "original_sha256": "1ec07b92a90b67b4347e06759b664b757b87f55eab405cf39d35dee25ea81209",
+      "path": "source/scripts/run_transmission_campaign.py",
+      "public_sha256": "1ec07b92a90b67b4347e06759b664b757b87f55eab405cf39d35dee25ea81209",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 22748,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/supervise_transmission_campaign.py",
+      "original_sha256": "4980460cf54e282aef9479bce9a3d8b85d376ce52617614761f177e40e58b9e4",
+      "path": "source/scripts/supervise_transmission_campaign.py",
+      "public_sha256": "4980460cf54e282aef9479bce9a3d8b85d376ce52617614761f177e40e58b9e4",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 9759,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/interfaces.py",
+      "original_sha256": "963901ba4afda6d83f4a4f610b2cbaa1f6c5b1be053564e696d71f38fb9e33ee",
+      "path": "source/src/flybrain/paralimbo_upgrade/interfaces.py",
+      "public_sha256": "963901ba4afda6d83f4a4f610b2cbaa1f6c5b1be053564e696d71f38fb9e33ee",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 35929,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/native_factory.py",
+      "original_sha256": "e9d472bc73d89908c1b40776de11ece74c7625fe310645752d5def6cbf849852",
+      "path": "source/src/flybrain/paralimbo_upgrade/native_factory.py",
+      "public_sha256": "9da3917f08d35bb32f21e860db574bf38ce7b6b81dec1a67b51a960f8001b1cc",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 15675,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/observation.py",
+      "original_sha256": "00d07ba9e7358ce0cf6bbda84be337572b087c12d6c621672cec9e37097b1cf3",
+      "path": "source/src/flybrain/paralimbo_upgrade/observation.py",
+      "public_sha256": "00d07ba9e7358ce0cf6bbda84be337572b087c12d6c621672cec9e37097b1cf3",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 11604,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/retrospective_scoring.py",
+      "original_sha256": "00f834c372d024a2f5481f6f275d7ed789e7b144734bf33dac64037ebbb429c7",
+      "path": "source/src/flybrain/paralimbo_upgrade/retrospective_scoring.py",
+      "public_sha256": "00f834c372d024a2f5481f6f275d7ed789e7b144734bf33dac64037ebbb429c7",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 33002,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/runtime.py",
+      "original_sha256": "5a6845073f6006b8061852d7e39e4f96e1dbb303c2dad9d87b377e006252f2bc",
+      "path": "source/src/flybrain/paralimbo_upgrade/runtime.py",
+      "public_sha256": "5a6845073f6006b8061852d7e39e4f96e1dbb303c2dad9d87b377e006252f2bc",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 212,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/__init__.py",
+      "original_sha256": "793d48d7cca86801285a664c617d5d2a7ceae337debe029f17a6694c055861cf",
+      "path": "source/src/flybrain/transmission_campaign/__init__.py",
+      "public_sha256": "793d48d7cca86801285a664c617d5d2a7ceae337debe029f17a6694c055861cf",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 7496,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/budget.py",
+      "original_sha256": "7a9b8405040841c2e581de02430b88b4832208529b33a0aa12b51d16d25b1347",
+      "path": "source/src/flybrain/transmission_campaign/budget.py",
+      "public_sha256": "7a9b8405040841c2e581de02430b88b4832208529b33a0aa12b51d16d25b1347",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 9463,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/calibration.py",
+      "original_sha256": "972bf1ba5ffe861a4422076d132ad6d1634a88df04c313bf2b09c6bb7bf0fb99",
+      "path": "source/src/flybrain/transmission_campaign/calibration.py",
+      "public_sha256": "972bf1ba5ffe861a4422076d132ad6d1634a88df04c313bf2b09c6bb7bf0fb99",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 37078,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/continuation.py",
+      "original_sha256": "2c4f44970ccc36f43fce8d6c59c86cbc7ef91f27972d3dd45354cfa8b6019121",
+      "path": "source/src/flybrain/transmission_campaign/continuation.py",
+      "public_sha256": "2c4f44970ccc36f43fce8d6c59c86cbc7ef91f27972d3dd45354cfa8b6019121",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 27064,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/controller.py",
+      "original_sha256": "f834f35c09706ed7827ad80d6080b5bfa2a5fc80115af4838e73ac0cb159fbdc",
+      "path": "source/src/flybrain/transmission_campaign/controller.py",
+      "public_sha256": "0101b5225c59827fd714194bb88a8cece033ac80d9323a6ef9c2d35469060788",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 26284,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/data.py",
+      "original_sha256": "8e22ad59e747c4024521aaa4452256f4d82e030fa6660b8227fa5b6d2de46351",
+      "path": "source/src/flybrain/transmission_campaign/data.py",
+      "public_sha256": "18b1f2f00a9bedd2cc114195a199857120f76577e5db58e2a0fa6011552610bc",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 3105,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/dynamics.py",
+      "original_sha256": "35e106af790be005fe781c1149a142adac3f10d0699ead0894db0120abfcedb1",
+      "path": "source/src/flybrain/transmission_campaign/dynamics.py",
+      "public_sha256": "35e106af790be005fe781c1149a142adac3f10d0699ead0894db0120abfcedb1",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 44627,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/execution.py",
+      "original_sha256": "09ca539370d6c04734027eae58d2bdad0195283ede3d97d9ee27162110168394",
+      "path": "source/src/flybrain/transmission_campaign/execution.py",
+      "public_sha256": "09ca539370d6c04734027eae58d2bdad0195283ede3d97d9ee27162110168394",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 8226,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/freezing.py",
+      "original_sha256": "1e12ae75703776b5bda7e9bd45c964f27fdf945cb80810b126e821f566ef0da7",
+      "path": "source/src/flybrain/transmission_campaign/freezing.py",
+      "public_sha256": "1e12ae75703776b5bda7e9bd45c964f27fdf945cb80810b126e821f566ef0da7",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 10985,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/instrumentation.py",
+      "original_sha256": "d3deaecd1ece28f7bf067efa9e3dbbcbdcf2733725450936e568324c41b59c40",
+      "path": "source/src/flybrain/transmission_campaign/instrumentation.py",
+      "public_sha256": "d3deaecd1ece28f7bf067efa9e3dbbcbdcf2733725450936e568324c41b59c40",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 4130,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/integrity.py",
+      "original_sha256": "697eee7ee0c06deef33f9d7f57c30691210a190921e1181025ff114d70b619b6",
+      "path": "source/src/flybrain/transmission_campaign/integrity.py",
+      "public_sha256": "697eee7ee0c06deef33f9d7f57c30691210a190921e1181025ff114d70b619b6",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 4495,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/inventory.py",
+      "original_sha256": "3bea51c07d5b5c9ca034411b1d5f06372148978073195bc17642eb1ecf0d62d7",
+      "path": "source/src/flybrain/transmission_campaign/inventory.py",
+      "public_sha256": "3bea51c07d5b5c9ca034411b1d5f06372148978073195bc17642eb1ecf0d62d7",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 2530,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/ledger.py",
+      "original_sha256": "f005974db290ec37d9eb493b01dc504c8642dec8ae4628440ce83a1f2b324470",
+      "path": "source/src/flybrain/transmission_campaign/ledger.py",
+      "public_sha256": "f005974db290ec37d9eb493b01dc504c8642dec8ae4628440ce83a1f2b324470",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 41839,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/runtime.py",
+      "original_sha256": "1b6d895f077e01d050b3029b0b98449061737001d8cd741b106b3441cec95d0b",
+      "path": "source/src/flybrain/transmission_campaign/runtime.py",
+      "public_sha256": "1b6d895f077e01d050b3029b0b98449061737001d8cd741b106b3441cec95d0b",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 16251,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/scoring.py",
+      "original_sha256": "987d040a1d48ed7fab5c9af8831374bcca3605dae63ef3c281be1b608d3a92cb",
+      "path": "source/src/flybrain/transmission_campaign/scoring.py",
+      "public_sha256": "987d040a1d48ed7fab5c9af8831374bcca3605dae63ef3c281be1b608d3a92cb",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 8908,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/validation_project/common.py",
+      "original_sha256": "18bdeb8012280ce0f8082609a2f8a809c618f1e01e47d22962146fc31596b8c4",
+      "path": "source/src/flybrain/validation_project/common.py",
+      "public_sha256": "18bdeb8012280ce0f8082609a2f8a809c618f1e01e47d22962146fc31596b8c4",
+      "transformation": "byte-identical frozen source"
+    }
+  ],
+  "schema": "transmission-public-source-v1",
+  "scope": "Frozen implementation references, not a standalone native engine package or full campaign manifest. The original identity also binds separately acquired anatomy and inputs. Public file hashes do not reconstruct the entire original identity."
+}

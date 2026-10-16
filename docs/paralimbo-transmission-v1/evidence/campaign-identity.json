@@ -1,0 +1,21 @@
+{
+  "benchmark_sha256": "156d421426b76b863d386a3adad3a505611ffa27966d600acda0f0eb7705ca36",
+  "configuration_sha256": "e4ae80fbe76ca283d6bdefe9a0e2dd0dc2aa569d318d47e696096e1edae85ae9",
+  "dependencies": {
+    "executable_sha256": "ba159225dd53b48213f9c446f89b037de6258d136be6f5db91c98e1ed5a8ab0c",
+    "packages": {
+      "PyYAML": "6.0.3",
+      "numba": "0.67.0",
+      "numpy": "2.5.3",
+      "pandas": "3.0.6",
+      "psutil": "7.2.2",
+      "pyarrow": "25.0.1",
+      "scipy": "1.18.1"
+    },
+    "python": "3.12.13 (main, Mar 20 2026, 00:20:20) [Clang 22.1.1 ]"
+  },
+  "original_manifest_sha256": "b47f70066dc101740646a064dfb3d241f0797d95095de7a0ad08545743955e21",
+  "schema": "transmission-public-identity-v1",
+  "scope": "Original full manifest hash retained as provenance. Machine-specific manifests, installed dependencies, anatomical graphs and optical assignments are not distributed.",
+  "source_identity": "d8e027ebb3b71bfb32fbaa43b958ae641a103010f06f90d8b7a37012274b0671"
+}

@@ -1,0 +1,1142 @@
+{
+  "arm_results": [
+    {
+      "arm": "banc",
+      "balanced_training_mse": 65.29698005360417,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 1.0,
+      "predictions": {
+        "T4-01-59209913440bed0c": {
+          "arrays": {
+            "bytes": 248722,
+            "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/7381986cb9aa20c17a5f4ee3e0ff0551334f24700f59d947efd18fb1bcf9f6bf.npz",
+            "sha256": "0fd8de94c199066c7e244f84b655d3975789877942793d14dfe2dc87f79b8d60"
+          },
+          "checkpoint_path": "active/7381986cb9aa20c17a5f4ee3e0ff0551334f24700f59d947efd18fb1bcf9f6bf.npz",
+          "checkpoint_peak_bytes": 9316153,
+          "checkpoint_seconds": 16.741682874970138,
+          "dt_ms": 0.1,
+          "import_provenance": {
+            "original_attempt": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002",
+            "original_job_id": "7381986cb9aa20c17a5f4ee3e0ff0551334f24700f59d947efd18fb1bcf9f6bf",
+            "original_source_identity": "3a9c10b4a941a064e184fc11c2ac1b82c1cf5198fc9c2b0b2e93afc8268ea6dc",
+            "reuse_contract_sha256": "12e7bcac8dadabd9c225aff21d94ad1f5e84966832e1132a8bd4c76e96a3ecaf",
+            "schema": "transmission-imported-job-v1"
+          },
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 717.0,
+          "population": 175401,
+          "request_sha256": "b98a0920f9dca07479ff1d458f6cf2f23a3f1c057c6cabea68c835efc0ce712b",
+          "runtime_identity": "f64e35883db5f2f3520a15f543c37a827716037f3a9288a7a86177ad457794f3",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 2.597202125005424,
+          "status": "PASS",
+          "wall_seconds": 35.743850417027716
+        },
+        "T4-01-6c9ee7e0c8cd8003": {
+          "arrays": {
+            "bytes": 247663,
+            "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/9459c523ec457f666104f9bf1c7e9c5158e9f2d2d5b2f7e25edc2d42d26a98a5.npz",
+            "sha256": "009b8407738dd4d1e9116d84c0d30ab68c2cbe2d008b4eab61d39da6652431be"
+          },
+          "checkpoint_path": "active/9459c523ec457f666104f9bf1c7e9c5158e9f2d2d5b2f7e25edc2d42d26a98a5.npz",
+          "checkpoint_peak_bytes": 9313843,
+          "checkpoint_seconds": 16.26507662399672,
+          "dt_ms": 0.1,
+          "import_provenance": {
+            "original_attempt": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002",
+            "original_job_id": "9459c523ec457f666104f9bf1c7e9c5158e9f2d2d5b2f7e25edc2d42d26a98a5",
+            "original_source_identity": "3a9c10b4a941a064e184fc11c2ac1b82c1cf5198fc9c2b0b2e93afc8268ea6dc",
+            "reuse_contract_sha256": "12e7bcac8dadabd9c225aff21d94ad1f5e84966832e1132a8bd4c76e96a3ecaf",
+            "schema": "transmission-imported-job-v1"
+          },
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 665.0,
+          "population": 175401,
+          "request_sha256": "3521ecf787a6d2289fe2628d2aa7b8b952c3dd4b43173530be493daa51ac8ad6",
+          "runtime_identity": "cdaf66eca4285b962df0da5c1ca52a65c737e76970eab324552d286b319450a7",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 2.633842875016853,
+          "status": "PASS",
+          "wall_seconds": 34.5372760000173
+        },
+        "T4-01-6d76cbbe65f026d5": {
+          "arrays": {
+            "bytes": 248928,
+            "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/c6e8eec9aaa6bccda474a7756549c360c60631ae714d162cd47d742641f23645.npz",
+            "sha256": "eb24a43b9107d85e9ec95944799f5dfaefb61d07ab23de2fc7a84735f1b2185a"
+          },
+          "checkpoint_path": "active/c6e8eec9aaa6bccda474a7756549c360c60631ae714d162cd47d742641f23645.npz",
+          "checkpoint_peak_bytes": 9315082,
+          "checkpoint_seconds": 17.70344833296258,
+          "dt_ms": 0.1,
+          "import_provenance": {
+            "original_attempt": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002",
+            "original_job_id": "c6e8eec9aaa6bccda474a7756549c360c60631ae714d162cd47d742641f23645",
+            "original_source_identity": "3a9c10b4a941a064e184fc11c2ac1b82c1cf5198fc9c2b0b2e93afc8268ea6dc",
+            "reuse_contract_sha256": "12e7bcac8dadabd9c225aff21d94ad1f5e84966832e1132a8bd4c76e96a3ecaf",
+            "schema": "transmission-imported-job-v1"
+          },
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 728.0,
+          "population": 175401,
+          "request_sha256": "172f07fedcd7446dc7e423a0be680d4356340fbf09d50918f2886ddac151f4b1",
+          "runtime_identity": "c5023f39ebfd3658f0453d353abc43a59341a8d8b079bdd884a51bc069ddb842",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 2.8256076669786125,
+          "status": "PASS",
+          "wall_seconds": 41.017363957944326
+        },
+        "T4-01-b93f1fb51e92ee02": {
+          "arrays": {
+            "bytes": 248757,
+            "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/052681e5f49454ed30fe908029d8128d1a95dbfc30c120293ea52113c927d28b.npz",
+            "sha256": "5930f1be8d4ed45a55c31a54925df3cff6c059cae9747d95fab77f9121d77da3"
+          },
+          "checkpoint_path": "active/052681e5f49454ed30fe908029d8128d1a95dbfc30c120293ea52113c927d28b.npz",
+          "checkpoint_peak_bytes": 9315640,
+          "checkpoint_seconds": 18.293252957984805,
+          "dt_ms": 0.1,
+          "import_provenance": {
+            "original_attempt": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002",
+            "original_job_id": "052681e5f49454ed30fe908029d8128d1a95dbfc30c120293ea52113c927d28b",
+            "original_source_identity": "3a9c10b4a941a064e184fc11c2ac1b82c1cf5198fc9c2b0b2e93afc8268ea6dc",
+            "reuse_contract_sha256": "12e7bcac8dadabd9c225aff21d94ad1f5e84966832e1132a8bd4c76e96a3ecaf",
+            "schema": "transmission-imported-job-v1"
+          },
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 719.0,
+          "population": 175401,
+          "request_sha256": "caa956d650fe81f3f22e3ac7462675ed4aa11893f629093939534a428fd55cda",
+          "runtime_identity": "6345887027ae286364631f147e4e10824f1cbb892e8e8262de4a6aad5df638d6",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.035726625006646,
+          "status": "PASS",
+          "wall_seconds": 55.06427558296127
+        },
+        "T4-01-ce1c1a4de64ba9ec": {
+          "arrays": {
+            "bytes": 250405,
+            "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/1702625ae0070ec4c5bb9c771a09464edacde050030dc8fdaf52145a2b406be1.npz",
+            "sha256": "3f3968596b75c17125186d5336610925e86b84d94c1513e6fa327d76dce9a545"
+          },
+          "checkpoint_path": "active/1702625ae0070ec4c5bb9c771a09464edacde050030dc8fdaf52145a2b406be1.npz",
+          "checkpoint_peak_bytes": 9317639,
+          "checkpoint_seconds": 22.18431766703725,
+          "dt_ms": 0.1,
+          "import_provenance": {
+            "original_attempt": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002",
+            "original_job_id": "1702625ae0070ec4c5bb9c771a09464edacde050030dc8fdaf52145a2b406be1",
+            "original_source_identity": "3a9c10b4a941a064e184fc11c2ac1b82c1cf5198fc9c2b0b2e93afc8268ea6dc",
+            "reuse_contract_sha256": "12e7bcac8dadabd9c225aff21d94ad1f5e84966832e1132a8bd4c76e96a3ecaf",
+            "schema": "transmission-imported-job-v1"
+          },
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 801.0,
+          "population": 175401,
+          "request_sha256": "cfd2e9afeb33b0f7aefade6e9aa2bfcf401970802730a2a6bdf3e78c727407c3",
+          "runtime_identity": "c1540a3ba603c03c4d4ebc09d1cf723b077719f9484be4470b742402bc0be075",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 2.7218502089963295,
+          "status": "PASS",
+          "wall_seconds": 49.13353550003376
+        }
+      },
+      "proposal_index": 0,
+      "split": "development",
+      "status": "PASS"
+    },
+    {
+      "arm": "paralimbo",
+      "balanced_training_mse": 65.09171331318882,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 1.0,
+      "predictions": {
+        "T4-01-59209913440bed0c": {
+          "arrays": {
+            "bytes": 1332339,
+            "path": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/32660c2fce067bcea75fbf217919a4ef12dd9a98f457818fcfc4f3ae6e76590e.npz",
+            "sha256": "8e37c8b89f9a67734f3e1dcc484b5e6be66d49ec864914f5bc144409fbb64d91"
+          },
+          "checkpoint_path": "active/32660c2fce067bcea75fbf217919a4ef12dd9a98f457818fcfc4f3ae6e76590e.npz",
+          "checkpoint_peak_bytes": 18019890,
+          "checkpoint_seconds": 18.646831874968484,
+          "dt_ms": 0.1,
+          "import_provenance": {
+            "original_attempt": "[local-workspace]/build/biological-benchmark/paralimbo-transmission-v1/successors/0002",
+            "original_job_id": "32660c2fce067bcea75fbf217919a4ef12dd9a98f457818fcfc4f3ae6e76590e",
+            "original_source_identity": "3a9c10b4a941a064e184fc11c2ac1b82c1cf5198fc9c2b0b2e93afc8268ea6dc",
+            "reuse_contract_sha256": "12e7bcac8dadabd9c225aff21d94ad1f5e84966832e1132a8bd4c76e96a3ecaf",
+            "schema": "transmission-imported-job-v1"
+          },
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 6.316078327017749e-09,
+          "physical_duration_ms": 717.0,
+          "population": 175401,
+          "request_sha256": "db4636d46412ab1141eb4857d1652ef74163ddb15a638682ec4b59e2a7d24237",
+          "runtime_identity": "2e86add85514f85e3c0abcd0dc751aca53d01dbafda50c17b633b85838e7bb27",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 2.667668625013903,
+          "status": "PASS",
+          "wall_seconds": 49.18270766601199
+        },
+        "T4-01-6c9ee7e0c8cd8003": {
+          "arrays": {
+            "bytes": 1326466,
+            "path": "cache/results/87cf2a3fb7a3bb104efc47c6ef8d3e589d5981bd4450a0ad5a7f47d934c12826.npz",
+            "sha256": "1d44497df81ff88f4d8c097baee13d628a7ce1e5a139cfdb34a55307aad9016b"
+          },
+          "checkpoint_path": "active/87cf2a3fb7a3bb104efc47c6ef8d3e589d5981bd4450a0ad5a7f47d934c12826.npz",
+          "checkpoint_peak_bytes": 17994101,
+          "checkpoint_seconds": 23.180853706027847,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 5.7790643381849804e-09,
+          "physical_duration_ms": 665.0,
+          "population": 175401,
+          "request_sha256": "2abb5ce72fe59feb47f9af98c81fd43418e6de941e23f59a6da48f2dee697e98",
+          "runtime_identity": "82f987782362bb69526abc89bf13563fdc3c596716531827f0bc1df146ce0a02",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 9.30088400002569,
+          "status": "PASS",
+          "wall_seconds": 119.72803004097659
+        },
+        "T4-01-6d76cbbe65f026d5": {
+          "arrays": {
+            "bytes": 1331926,
+            "path": "cache/results/f9b48dc37fde1ea163f3ade9891badd8561dea8af3d8e336f37815b33b0f445f.npz",
+            "sha256": "38e23dbe858d4ea7283b8a94abb01b67e84d1cbe984b675c821e31e2686dc8a9"
+          },
+          "checkpoint_path": "active/f9b48dc37fde1ea163f3ade9891badd8561dea8af3d8e336f37815b33b0f445f.npz",
+          "checkpoint_peak_bytes": 18006185,
+          "checkpoint_seconds": 19.47234799998114,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 4.3640966396196745e-09,
+          "physical_duration_ms": 728.0,
+          "population": 175401,
+          "request_sha256": "51b928ad8ad676420497f98927eea0a5a096bd2e9cb20a79911598c9efd672c3",
+          "runtime_identity": "8941f8ddbb398d6c203153b44d7959e7f29879ca99c15e0bcc6b52e369d6ad34",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 3.832258291018661,
+          "status": "PASS",
+          "wall_seconds": 58.1142536670086
+        },
+        "T4-01-b93f1fb51e92ee02": {
+          "arrays": {
+            "bytes": 1332451,
+            "path": "cache/results/afb6de530331da202663723f6905d602f9cbcad9c321bc3bece064ed466bda05.npz",
+            "sha256": "c185b8f634018b7629a98f2a189bb3be2d0eb5311eae7a7645f33f5af71755e0"
+          },
+          "checkpoint_path": "active/afb6de530331da202663723f6905d602f9cbcad9c321bc3bece064ed466bda05.npz",
+          "checkpoint_peak_bytes": 18014414,
+          "checkpoint_seconds": 19.155978333961684,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 6.681887043669121e-09,
+          "physical_duration_ms": 719.0,
+          "population": 175401,
+          "request_sha256": "ad2352ba2e077aa8f1b6884d52f029e2389ff9a169dbb5e44c74a3a92ba00e18",
+          "runtime_identity": "3ebc313dae3e36c75f1717015401c07c67ba30dd561d7d41da1076bab4fa51e2",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.025264083000366,
+          "status": "PASS",
+          "wall_seconds": 63.22968029201729
+        },
+        "T4-01-ce1c1a4de64ba9ec": {
+          "arrays": {
+            "bytes": 1339381,
+            "path": "cache/results/e60194d05b85812d2cd646b2ff242c614a61e4cdfe8370eda51613a2e1aec2e0.npz",
+            "sha256": "e04cad3112c1d4a28308b4d0a413fabf3b5fb695cfa965021098ae2af919a628"
+          },
+          "checkpoint_path": "active/e60194d05b85812d2cd646b2ff242c614a61e4cdfe8370eda51613a2e1aec2e0.npz",
+          "checkpoint_peak_bytes": 18028336,
+          "checkpoint_seconds": 23.61258800100768,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 5.31189670027743e-09,
+          "physical_duration_ms": 801.0,
+          "population": 175401,
+          "request_sha256": "352831c3948a916fa8a4cc0ac816170a9b89c78b07108c1eea0ea678334d82bf",
+          "runtime_identity": "a90b87ada56c972464d43345625c0d8b540a997d607adc9bc5a9b9388907b71e",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 3.745343042013701,
+          "status": "PASS",
+          "wall_seconds": 65.30030245898524
+        }
+      },
+      "proposal_index": 0,
+      "split": "development",
+      "status": "PASS"
+    },
+    {
+      "arm": "banc",
+      "balanced_training_mse": 65.29698005360417,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 0.5,
+      "predictions": {
+        "T4-01-59209913440bed0c": {
+          "arrays": {
+            "bytes": 248720,
+            "path": "cache/results/91ec17d8a6a8abc8861a162c59ab5156e6bba3723e2975e539a3e052c71b3090.npz",
+            "sha256": "7471d34b32dbfbb378d700445cfb4452db4ab4d454de7c9fcd5d66c4de24c8ed"
+          },
+          "checkpoint_path": "active/91ec17d8a6a8abc8861a162c59ab5156e6bba3723e2975e539a3e052c71b3090.npz",
+          "checkpoint_peak_bytes": 9316078,
+          "checkpoint_seconds": 17.99343187501654,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 717.0,
+          "population": 175401,
+          "request_sha256": "3bcf8b2b14054a13cacb16aad60df07949633017decc844a0742508a32532a7f",
+          "runtime_identity": "8d24fc31fab9c86347e7848df2ddf9667bfb0e09cd28860ff75298136b8d9168",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.401234499993734,
+          "status": "PASS",
+          "wall_seconds": 46.41200566699263
+        },
+        "T4-01-6c9ee7e0c8cd8003": {
+          "arrays": {
+            "bytes": 247660,
+            "path": "cache/results/ef02bc67d9bad6634fa63a08a6dd4417694af94762c12b75de60694997b954b6.npz",
+            "sha256": "dcc323b6fcc99c1e56293e79717f89e21c7ffc4176387a6435b6804a629fd02d"
+          },
+          "checkpoint_path": "active/ef02bc67d9bad6634fa63a08a6dd4417694af94762c12b75de60694997b954b6.npz",
+          "checkpoint_peak_bytes": 9313729,
+          "checkpoint_seconds": 18.204712918028235,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 665.0,
+          "population": 175401,
+          "request_sha256": "ca821de0cef61e285dcbe8a54dd291cf432e09b399c761c466deea539ec09306",
+          "runtime_identity": "4a5c3ca369d45cb34410a421000c942b0003c407e97302f62b3de35f7b54625f",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.099073417019099,
+          "status": "PASS",
+          "wall_seconds": 47.35357670899248
+        },
+        "T4-01-6d76cbbe65f026d5": {
+          "arrays": {
+            "bytes": 248928,
+            "path": "cache/results/5c09a9a1264e5e120f84ad209ce581a4c04a279574a0b3f72d80add39bc34380.npz",
+            "sha256": "7227e86571533bebf82fc442bdeffc0ce5d604ad6675debab07de0a3f7e85e03"
+          },
+          "checkpoint_path": "active/5c09a9a1264e5e120f84ad209ce581a4c04a279574a0b3f72d80add39bc34380.npz",
+          "checkpoint_peak_bytes": 9315233,
+          "checkpoint_seconds": 18.196192582021467,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 728.0,
+          "population": 175401,
+          "request_sha256": "829e06c5751bb943fc317f1b8f060d0c7d6411a693bcda4b533e153b7e53a967",
+          "runtime_identity": "e5ac92e2bab860cf4f1c6d2114b043891dcd42f20b07ae72026d79761da45340",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.288071874994785,
+          "status": "PASS",
+          "wall_seconds": 49.73586662503658
+        },
+        "T4-01-b93f1fb51e92ee02": {
+          "arrays": {
+            "bytes": 248753,
+            "path": "cache/results/9e3008d90fb6899db373abc44c2714e692786e285006844ec94daa46506b91fd.npz",
+            "sha256": "b1f0d281b29d2aeb81436910d768ef223d9a458c19503965a7062201e2163be8"
+          },
+          "checkpoint_path": "active/9e3008d90fb6899db373abc44c2714e692786e285006844ec94daa46506b91fd.npz",
+          "checkpoint_peak_bytes": 9315777,
+          "checkpoint_seconds": 18.53439258399885,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 719.0,
+          "population": 175401,
+          "request_sha256": "541f0fac0298856e70b335e1689f88c84a1a3d1d588d5f7ead0045e3a565a880",
+          "runtime_identity": "ddaa495e8173d470e965da5a4a224ec62e183cd6bb7762a18b0333a6fa678438",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.38866512500681,
+          "status": "PASS",
+          "wall_seconds": 45.56969466601731
+        },
+        "T4-01-ce1c1a4de64ba9ec": {
+          "arrays": {
+            "bytes": 250402,
+            "path": "cache/results/9bbb358d24785cc0943a310004d6cf441f745e574fb1484d5761fd9e57388c34.npz",
+            "sha256": "3b3a0815fd6f5c69fe8cb94ba520d1e631511806bc2f067bc9cba8a41f3dc54d"
+          },
+          "checkpoint_path": "active/9bbb358d24785cc0943a310004d6cf441f745e574fb1484d5761fd9e57388c34.npz",
+          "checkpoint_peak_bytes": 9317584,
+          "checkpoint_seconds": 22.933714083977975,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 801.0,
+          "population": 175401,
+          "request_sha256": "738bb7c5e316937b6a35690923d970bc2fea36766af867aa7a70c5517e16b388",
+          "runtime_identity": "c2933b05bfd0a6a8d0cfca5ba43cd87c2594cbf222c0fa13b019a327fadfd702",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.233595833997242,
+          "status": "PASS",
+          "wall_seconds": 53.74524204101181
+        }
+      },
+      "proposal_index": 1,
+      "split": "development",
+      "status": "PASS"
+    },
+    {
+      "arm": "paralimbo",
+      "balanced_training_mse": 65.19287308077243,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 0.5,
+      "predictions": {
+        "T4-01-59209913440bed0c": {
+          "arrays": {
+            "bytes": 1331215,
+            "path": "cache/results/3723569c3473e5299f53f5953c19e5ab5cf18d211c41805afb875e1732544a40.npz",
+            "sha256": "4e56691cebab3a2f27575917b08569fd8b322bdaadd1f3936c90420bbaf37438"
+          },
+          "checkpoint_path": "active/3723569c3473e5299f53f5953c19e5ab5cf18d211c41805afb875e1732544a40.npz",
+          "checkpoint_peak_bytes": 18011887,
+          "checkpoint_seconds": 19.7671812500339,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 3.1580427162225533e-09,
+          "physical_duration_ms": 717.0,
+          "population": 175401,
+          "request_sha256": "5f340bf2dd4029f605b9ea3de9a584707cc2b3da1c6d9fcd2509e62f12f201ed",
+          "runtime_identity": "867e23011a63bd3e4021493f7073a00f229c0ba8897603142da64fe7d9bbb88f",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 6.541763457993511,
+          "status": "PASS",
+          "wall_seconds": 65.23644783301279
+        },
+        "T4-01-6c9ee7e0c8cd8003": {
+          "arrays": {
+            "bytes": 1326120,
+            "path": "cache/results/eb17d64a1a6271ee0bd29b22050d0919afb07a78d9f217531cd76c75861be261.npz",
+            "sha256": "02e2c74dd837cf335b3d67f115fb131aa3e65be7dacf59fca978b9fa95e0744a"
+          },
+          "checkpoint_path": "active/eb17d64a1a6271ee0bd29b22050d0919afb07a78d9f217531cd76c75861be261.npz",
+          "checkpoint_peak_bytes": 17987776,
+          "checkpoint_seconds": 19.653733833052684,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 2.8895286163788114e-09,
+          "physical_duration_ms": 665.0,
+          "population": 175401,
+          "request_sha256": "3c64c3b1065ad2319a97cb4ea3bd2630b5eb4da9beaeda817f0b4d6181dc86b8",
+          "runtime_identity": "22d8b1bf21d66b2ba088a5822aeffc054d1870dc4a28c5e3f60527aedeb31e1a",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.22374933300307,
+          "status": "PASS",
+          "wall_seconds": 59.407857583020814
+        },
+        "T4-01-6d76cbbe65f026d5": {
+          "arrays": {
+            "bytes": 1331052,
+            "path": "cache/results/41f700fa1f16b85c4902fc75dd76c571faa10616496808fe5f9691d2fdf0dcc0.npz",
+            "sha256": "d65cfc168a9439e24c383c5f6cb69e60a5e9afb1f33d4f6f292fd8c508ee5d74"
+          },
+          "checkpoint_path": "active/41f700fa1f16b85c4902fc75dd76c571faa10616496808fe5f9691d2fdf0dcc0.npz",
+          "checkpoint_peak_bytes": 17999527,
+          "checkpoint_seconds": 19.978242498938926,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 2.182055425237195e-09,
+          "physical_duration_ms": 728.0,
+          "population": 175401,
+          "request_sha256": "0132b6793a0295fb975cc5c6030051e97d4cd92c9f2dc529ac601c03e5853770",
+          "runtime_identity": "4b25582f7306e22a98c88556d42356f0432e3f8439d12bcb6f5cab3c1111bd7b",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.2156810000305995,
+          "status": "PASS",
+          "wall_seconds": 65.27830616600113
+        },
+        "T4-01-b93f1fb51e92ee02": {
+          "arrays": {
+            "bytes": 1331354,
+            "path": "cache/results/44de9961becd9418897f2d1ab6d22c2e50d818e935c8c9dcf88e15a8eab6dc2a.npz",
+            "sha256": "e4088c9b0f0edc5e1558fea5488a2472b8f6c66b44e67912a3072e085a8a97b0"
+          },
+          "checkpoint_path": "active/44de9961becd9418897f2d1ab6d22c2e50d818e935c8c9dcf88e15a8eab6dc2a.npz",
+          "checkpoint_peak_bytes": 18007089,
+          "checkpoint_seconds": 19.60970616695704,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 3.3945184441108722e-09,
+          "physical_duration_ms": 719.0,
+          "population": 175401,
+          "request_sha256": "7d6c410167568b310167e954f360d3c8d5c4e0e310dbac0f8e5abbb861c0e499",
+          "runtime_identity": "3f2a81516d2d23e5db930d3bcfca0e377f6f180dfc2fc400c388ad4d451a61c2",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.1841508749639615,
+          "status": "PASS",
+          "wall_seconds": 59.94109820801532
+        },
+        "T4-01-ce1c1a4de64ba9ec": {
+          "arrays": {
+            "bytes": 1337915,
+            "path": "cache/results/aec9e74299c14e41f8d58d17dd79a2d55e3db05a008426819aadf666b37514fe.npz",
+            "sha256": "ef0657f7c250bdd2d5a6ba74c20798a50e63a8232b9ff09c43e438e2ab9c0a5b"
+          },
+          "checkpoint_path": "active/aec9e74299c14e41f8d58d17dd79a2d55e3db05a008426819aadf666b37514fe.npz",
+          "checkpoint_peak_bytes": 18020674,
+          "checkpoint_seconds": 24.77918895892799,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 2.8284077302487276e-09,
+          "physical_duration_ms": 801.0,
+          "population": 175401,
+          "request_sha256": "b865b65608b24b1019723e8621ff08a658ea9e576e2652ce7ced355d332fa71a",
+          "runtime_identity": "2b65152f248213e4eefb31c8e18242d38c75bac9e617cb2e605d84535a1a82d8",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.308820707956329,
+          "status": "PASS",
+          "wall_seconds": 77.88658533297712
+        }
+      },
+      "proposal_index": 1,
+      "split": "development",
+      "status": "PASS"
+    },
+    {
+      "arm": "banc",
+      "balanced_training_mse": 63.79785121313093,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 2.0,
+      "predictions": {
+        "T4-01-59209913440bed0c": {
+          "arrays": {
+            "bytes": 248722,
+            "path": "cache/results/667ed8778e2c8d8feed0a76926050ca15d0ccce57a3d3c73aba6b5a31e85c684.npz",
+            "sha256": "ac49c837af2ed37617b89d48491a70d5b46fdbee433429954b3a53ca0d961ab4"
+          },
+          "checkpoint_path": "active/667ed8778e2c8d8feed0a76926050ca15d0ccce57a3d3c73aba6b5a31e85c684.npz",
+          "checkpoint_peak_bytes": 9316332,
+          "checkpoint_seconds": 17.996027042041533,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 717.0,
+          "population": 175401,
+          "request_sha256": "5df5bfb01b63c86338f180ca46b4a43ca65130c23d10916ca51a2c3c5a9125a1",
+          "runtime_identity": "06526576a495102dbda841ee94073409b75159cd7c507da652a5ddaba5393db9",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.08530229202006,
+          "status": "PASS",
+          "wall_seconds": 44.04794508399209
+        },
+        "T4-01-6c9ee7e0c8cd8003": {
+          "arrays": {
+            "bytes": 247667,
+            "path": "cache/results/619cbfe995b78bfdebe121776b7ca28780d9aaf5ced16d212361b8b20819d44f.npz",
+            "sha256": "76becbddce3148f4ba8adc84ac63735e2604ff79974bbc61dd8927ff4508f5a6"
+          },
+          "checkpoint_path": "active/619cbfe995b78bfdebe121776b7ca28780d9aaf5ced16d212361b8b20819d44f.npz",
+          "checkpoint_peak_bytes": 9313745,
+          "checkpoint_seconds": 18.006154374976177,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 665.0,
+          "population": 175401,
+          "request_sha256": "1cb84ec9064cd7f58f9737f76e68e1a0a200b6eb1486756c928769142b1de670",
+          "runtime_identity": "c668f77eb780c66d2929209a734ea4058081f74dd9ccab7667183f7503158d6c",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.110388959001284,
+          "status": "PASS",
+          "wall_seconds": 43.114814583037514
+        },
+        "T4-01-6d76cbbe65f026d5": {
+          "arrays": {
+            "bytes": 248931,
+            "path": "cache/results/f5892cbf6503c9cd6b61c23418872b9dde6bdfc9b588e6ae37e947e2053cc258.npz",
+            "sha256": "10bddfda2b0bdde01511e1001fbb97044d15abffa80df90f0f929f145eb7a2d5"
+          },
+          "checkpoint_path": "active/f5892cbf6503c9cd6b61c23418872b9dde6bdfc9b588e6ae37e947e2053cc258.npz",
+          "checkpoint_peak_bytes": 9315115,
+          "checkpoint_seconds": 17.91023854201194,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.105427357601002e-15,
+          "physical_duration_ms": 728.0,
+          "population": 175401,
+          "request_sha256": "8017aaef06808b6ee16b0ffead39d377842bb8d747a6db810d8d335b1d9dc691",
+          "runtime_identity": "c80439ec61835066ab6159be72661344767d08d16462999f7cf15f2b0a4f655e",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.120442167040892,
+          "status": "PASS",
+          "wall_seconds": 45.15282262500841
+        },
+        "T4-01-b93f1fb51e92ee02": {
+          "arrays": {
+            "bytes": 264666,
+            "path": "cache/results/966e98b9cf34dacf77d0b2643c2b79ad5dd5d046ec4d2ca5dc32e826122205db.npz",
+            "sha256": "743469156b961dac5779c85d3d38f8eef003a00a71d7819f54f23010a8f63229"
+          },
+          "checkpoint_path": "active/966e98b9cf34dacf77d0b2643c2b79ad5dd5d046ec4d2ca5dc32e826122205db.npz",
+          "checkpoint_peak_bytes": 9344418,
+          "checkpoint_seconds": 17.82981574902078,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 3.5481269911485924e-05,
+          "physical_duration_ms": 719.0,
+          "population": 175401,
+          "request_sha256": "1fbe03d4c09e9804669561b1cee9434049665d1e8c23d3adc66b48e14eedb096",
+          "runtime_identity": "e459f86b36375ec85f26c4155e70e444c8f94257b59503d34df94ad5157b241c",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.180797333014198,
+          "status": "PASS",
+          "wall_seconds": 46.13633620896144
+        },
+        "T4-01-ce1c1a4de64ba9ec": {
+          "arrays": {
+            "bytes": 271791,
+            "path": "cache/results/ab3714433f236fc3d4369f3ee7d63691b299cafa33a75aa751073cc77f0db45f.npz",
+            "sha256": "f62181dbdcbcacf2e08d8c12eb386738c000aac1ac951d872a5eb7f2877752b2"
+          },
+          "checkpoint_path": "active/ab3714433f236fc3d4369f3ee7d63691b299cafa33a75aa751073cc77f0db45f.npz",
+          "checkpoint_peak_bytes": 9352060,
+          "checkpoint_seconds": 22.171343583031558,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 4.44871234961397e-05,
+          "physical_duration_ms": 801.0,
+          "population": 175401,
+          "request_sha256": "3bc6d5cee8151d5eec0ed619fd2bbadd164be682309406bcf2668d6454c26a73",
+          "runtime_identity": "4babf1150724d16192ceba472652522631748db6c9edc83468dc6c0da434be3b",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.084125042019878,
+          "status": "PASS",
+          "wall_seconds": 52.690723082982004
+        }
+      },
+      "proposal_index": 2,
+      "split": "development",
+      "status": "PASS"
+    },
+    {
+      "arm": "paralimbo",
+      "balanced_training_mse": 64.89864716844889,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 2.0,
+      "predictions": {
+        "T4-01-59209913440bed0c": {
+          "arrays": {
+            "bytes": 1333118,
+            "path": "cache/results/b4452841f16048e213d11ef3db2ce06f099455893d72af791c0c6c5362679885.npz",
+            "sha256": "6ef92deb0dde7fe75c01a542d02a6c6b793e41a8c7c5630dc643b124653388e2"
+          },
+          "checkpoint_path": "active/b4452841f16048e213d11ef3db2ce06f099455893d72af791c0c6c5362679885.npz",
+          "checkpoint_peak_bytes": 18026109,
+          "checkpoint_seconds": 19.723971209023148,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 1.2284118611205486e-08,
+          "physical_duration_ms": 717.0,
+          "population": 175401,
+          "request_sha256": "f6f2bc08762806459fb310de0e599716a61c3acecb09b27d5024a1510fe6ef07",
+          "runtime_identity": "6c01f951c7b7828e811df756ff311a8c45dcbbc0ddd462394be84921e4a254cf",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.191993999993429,
+          "status": "PASS",
+          "wall_seconds": 58.77872245799517
+        },
+        "T4-01-6c9ee7e0c8cd8003": {
+          "arrays": {
+            "bytes": 1327105,
+            "path": "cache/results/403d34fbbbe0e254fec4a20a7614a825d13234bdd2d528d19acf7afb6b609ae3.npz",
+            "sha256": "7c64e00f7a6a6a893cacf720746ed69ec9ff17428e33c700aff284d7c6b2bcc8"
+          },
+          "checkpoint_path": "active/403d34fbbbe0e254fec4a20a7614a825d13234bdd2d528d19acf7afb6b609ae3.npz",
+          "checkpoint_peak_bytes": 18001841,
+          "checkpoint_seconds": 19.684146000014152,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 1.1558128676369961e-08,
+          "physical_duration_ms": 665.0,
+          "population": 175401,
+          "request_sha256": "0ada3e0c2af2baee23de12325d2ab0f36ac00aa4dc79f6d756c3840a57cb826e",
+          "runtime_identity": "d82624a23a5b952a202fa9c74e2341700794aaf5d260602c09314e7940a9b4c0",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.143784457992297,
+          "status": "PASS",
+          "wall_seconds": 58.47555391595233
+        },
+        "T4-01-6d76cbbe65f026d5": {
+          "arrays": {
+            "bytes": 1332988,
+            "path": "cache/results/2b4a40af80502066d500b459196d654ac1969ecc285f9825be41dba109a81e19.npz",
+            "sha256": "cd8ee77be2d2ff0ec2f02660468531fe47ab0b4e37b44282b069b0d3510f2b0a"
+          },
+          "checkpoint_path": "active/2b4a40af80502066d500b459196d654ac1969ecc285f9825be41dba109a81e19.npz",
+          "checkpoint_peak_bytes": 18013395,
+          "checkpoint_seconds": 20.66272837499855,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 7.99762744918553e-09,
+          "physical_duration_ms": 728.0,
+          "population": 175401,
+          "request_sha256": "28c9c6047694b41735a3915ef3adc431b80c887f57408d4e94e35d8f523984e1",
+          "runtime_identity": "a2dc9d931c28da0e888df1ecdec6c87e36a92084b0feb086d47752a6ef8a3785",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.178411375032738,
+          "status": "PASS",
+          "wall_seconds": 62.091603334003594
+        },
+        "T4-01-b93f1fb51e92ee02": {
+          "arrays": {
+            "bytes": 1333170,
+            "path": "cache/results/36c5244db78ad934a20b4860c068f590b1bb07baa6652309a03cc66c0bcf49e6.npz",
+            "sha256": "cd1dfcca2e2dfc46b3c593fbaed10e8df9c1d1085f83bb09559c6c0d8013a544"
+          },
+          "checkpoint_path": "active/36c5244db78ad934a20b4860c068f590b1bb07baa6652309a03cc66c0bcf49e6.npz",
+          "checkpoint_peak_bytes": 18020918,
+          "checkpoint_seconds": 19.721371084044222,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 1.293446416639199e-08,
+          "physical_duration_ms": 719.0,
+          "population": 175401,
+          "request_sha256": "428af62687eae569a5c33a40c3aaccffbd7cf476fea1f844d80bde8ebc5a8f1f",
+          "runtime_identity": "9eeb2c1be450226599c743c10a71c2b388ee86170fd6a2053d693dc532e236ef",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.164807083026972,
+          "status": "PASS",
+          "wall_seconds": 60.38015166600235
+        },
+        "T4-01-ce1c1a4de64ba9ec": {
+          "arrays": {
+            "bytes": 1340142,
+            "path": "cache/results/032d7f05aadb90c761bda58bece412f41c644e75a7c1ee1a9b26df614ac6181d.npz",
+            "sha256": "7b1775bf59b39d05a3f6f050c044ddf2e47db290be65430a7e2e1c1fcb678c4f"
+          },
+          "checkpoint_path": "active/032d7f05aadb90c761bda58bece412f41c644e75a7c1ee1a9b26df614ac6181d.npz",
+          "checkpoint_peak_bytes": 18034321,
+          "checkpoint_seconds": 24.522573832946364,
+          "dt_ms": 0.1,
+          "numerics": {
+            "clamps": 0,
+            "endpoint_finite": true,
+            "first_failure_step": null,
+            "invalid_delayed_spikes": 0,
+            "nonfinite_release_updates": 0,
+            "nonfinite_synaptic_updates": 0,
+            "nonfinite_voltage_updates": 0,
+            "pass": true,
+            "simulated_population": 175401
+          },
+          "observation_refinement_max_abs_mv": 1.0615920587042638e-08,
+          "physical_duration_ms": 801.0,
+          "population": 175401,
+          "request_sha256": "cad566166e921abbfd50445e0147b1e20dc80d357a61c992b10322a77ef968b4",
+          "runtime_identity": "c634ab4f15af20d8dd31ee9e6d9817e31eb3045e2f089c6015ccd9a0ad85127e",
+          "serialized_checkpoint_replay_exact": null,
+          "startup_seconds": 4.201219791953918,
+          "status": "PASS",
+          "wall_seconds": 71.71891258301912
+        }
+      },
+      "proposal_index": 2,
+      "split": "development",
+      "status": "PASS"
+    }
+  ],
+  "attempts": [
+    {
+      "balanced_training_mse": 65.1943466833965,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 1.0,
+      "proposal_index": 0,
+      "split": "development",
+      "status": "PASS"
+    },
+    {
+      "balanced_training_mse": 65.2449265671883,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 0.5,
+      "proposal_index": 1,
+      "split": "development",
+      "status": "PASS"
+    },
+    {
+      "balanced_training_mse": 64.34824919078991,
+      "case_ids": [
+        "T4-01-59209913440bed0c",
+        "T4-01-6c9ee7e0c8cd8003",
+        "T4-01-6d76cbbe65f026d5",
+        "T4-01-b93f1fb51e92ee02",
+        "T4-01-ce1c1a4de64ba9ec"
+      ],
+      "multiplier": 2.0,
+      "proposal_index": 2,
+      "split": "development",
+      "status": "PASS"
+    }
+  ],
+  "failed_proposal_indices": [],
+  "selected": {
+    "balanced_training_mse": 64.34824919078991,
+    "case_ids": [
+      "T4-01-59209913440bed0c",
+      "T4-01-6c9ee7e0c8cd8003",
+      "T4-01-6d76cbbe65f026d5",
+      "T4-01-b93f1fb51e92ee02",
+      "T4-01-ce1c1a4de64ba9ec"
+    ],
+    "multiplier": 2.0,
+    "proposal_index": 2,
+    "split": "development",
+    "status": "PASS"
+  },
+  "selection_sha256": "a4a2c64b783a5e37737fce1e5517d08f03330ea386c83a79c71f58b2408fafc1",
+  "selection_uses": "development_only",
+  "shared_multiplier": 2.0,
+  "status": "SELECTED",
+  "tie_break": "first_proposal_index"
+}

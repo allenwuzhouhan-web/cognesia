@@ -1,0 +1,3060 @@
+{
+  "campaign_source_identity": "d8e027ebb3b71bfb32fbaa43b958ae641a103010f06f90d8b7a37012274b0671",
+  "excluded_files": [
+    "public-provenance.json"
+  ],
+  "files": [
+    {
+      "bytes": 2085,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "ATTRIBUTION.md",
+      "public_sha256": "7539ff6772763388610ecb8deb562c9133c096fa2ee010890ac35a3e628efc79",
+      "transformation": "new publication documentation"
+    },
+    {
+      "bytes": 3454,
+      "changed_fields": [],
+      "original_path": "release/paralimbo-1-publication/LICENSE",
+      "original_sha256": "9f0ab708c16997e34577145e8a0378b15852d4bd77a386009ffc4c920c69ad82",
+      "path": "LICENSE",
+      "public_sha256": "9f0ab708c16997e34577145e8a0378b15852d4bd77a386009ffc4c920c69ad82",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 11649,
+      "changed_fields": [
+        "links",
+        "publication scope"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/maintenance/final-0003/RESULTS.md",
+      "original_sha256": "de93daadaa91906e41b939542caf9cdd4403a56fc3d4fae8d2695179d1ad7745",
+      "path": "README.md",
+      "public_sha256": "667ab58237a6894767087e4ea852e9ceb18d23db7ba77acc7a1fa8b2318b31b3",
+      "transformation": "public report adaptation: relative links, publication scope and validation status"
+    },
+    {
+      "bytes": 3547,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "REPRODUCING.md",
+      "public_sha256": "7645c9e556e7383f7d00227335f815e946c288d06f80b66de506bc7afee69b1e",
+      "transformation": "new publication documentation"
+    },
+    {
+      "bytes": 1619,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "THIRD_PARTY_NOTICES.md",
+      "public_sha256": "8b8d8e4a9df2132aac9de44091b9a35c36f206d5d402a9dc85c0d6c19379712e",
+      "transformation": "new publication documentation"
+    },
+    {
+      "bytes": 1642,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "benchmark-scores.csv",
+      "public_sha256": "8dd10f629ea25ea598b2bce8c13054e4fbd1f91673fd9c1279665d18b2cbad8d",
+      "transformation": "new publication document"
+    },
+    {
+      "bytes": 65209,
+      "changed_fields": [
+        "$.t4_protocol.input_root",
+        "$.t4_protocol.root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/benchmark.json",
+      "original_sha256": "73f680c21786112b4ff1cc04db6615e987c09bb8f990193854dd13695a2bc067",
+      "path": "evidence/benchmark.json",
+      "public_sha256": "39876988ed2d2cfb96a715a75b5c99225f61fc737c7286baf599301464f6d283",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 4000,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/calibration-schedules.json",
+      "original_sha256": "61203990c77b019f2fad406f156a3018445c4526c414c78457feab0687e13dc0",
+      "path": "evidence/calibration-schedules.json",
+      "public_sha256": "61203990c77b019f2fad406f156a3018445c4526c414c78457feab0687e13dc0",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 44902,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/calibration/banc.json",
+      "original_sha256": "7a09696c6d3dfe0e367f9ac424e7cb0e80295fdf23d8eb0796c5334e96de4d90",
+      "path": "evidence/calibration/banc.json",
+      "public_sha256": "7a09696c6d3dfe0e367f9ac424e7cb0e80295fdf23d8eb0796c5334e96de4d90",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 45001,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/calibration/paralimbo.json",
+      "original_sha256": "c41dbda950594e9e3303af6b8a33a5d272e73d04d288562d6b22a5e03d56ac05",
+      "path": "evidence/calibration/paralimbo.json",
+      "public_sha256": "c41dbda950594e9e3303af6b8a33a5d272e73d04d288562d6b22a5e03d56ac05",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 990,
+      "changed_fields": [
+        "files",
+        "frozen_dependencies",
+        "output",
+        "predecessor",
+        "source_root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/manifest.json",
+      "original_sha256": "b47f70066dc101740646a064dfb3d241f0797d95095de7a0ad08545743955e21",
+      "path": "evidence/campaign-identity.json",
+      "public_sha256": "78b10716948ea403c74e7086ec92007659cf5a924dd1390b73cbda998df59a20",
+      "transformation": "identity summary; original machine/input inventory omitted"
+    },
+    {
+      "bytes": 11024,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/causal-controls.json",
+      "original_sha256": "1319d783cbc1bc177ef7c433ce0f8df755d8f34f1f649b1dc58aaf7ae46676ee",
+      "path": "evidence/causal-controls.json",
+      "public_sha256": "1319d783cbc1bc177ef7c433ce0f8df755d8f34f1f649b1dc58aaf7ae46676ee",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 632,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/configuration.json",
+      "original_sha256": "9bf950525b83cd8ede6e750133607b5d94234c03546b89dd4c4d2a183f30026a",
+      "path": "evidence/configuration.json",
+      "public_sha256": "9bf950525b83cd8ede6e750133607b5d94234c03546b89dd4c4d2a183f30026a",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 62396,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/experimental-model.json",
+      "original_sha256": "5f60e63d5917616a4f66d8634cba9ecfdd47142230ed650b20e0ba4566792389",
+      "path": "evidence/experimental-model.json",
+      "public_sha256": "5f60e63d5917616a4f66d8634cba9ecfdd47142230ed650b20e0ba4566792389",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2328,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/failures/a49fede3249c6d33b0b0b4b94ff6c3c96c37e6d037624b5b40fe96b2ecd1ca3f.json",
+      "original_sha256": "daa60e006c5fffe572c530dad2eca2c6d391911187d3410665550966b891b98f",
+      "path": "evidence/failures/a49fede3249c6d33b0b0b4b94ff6c3c96c37e6d037624b5b40fe96b2ecd1ca3f.json",
+      "public_sha256": "daa60e006c5fffe572c530dad2eca2c6d391911187d3410665550966b891b98f",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2364,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/failures/b34cce0b5ab9280ef0b4649defe03559194e103ddedd6feb7cc34777e96ccc76.json",
+      "original_sha256": "5436dd89fe3280c9ceb8db359616b055bf3c53c85a611eb2f14b8dbcb4ee6e25",
+      "path": "evidence/failures/b34cce0b5ab9280ef0b4649defe03559194e103ddedd6feb7cc34777e96ccc76.json",
+      "public_sha256": "5436dd89fe3280c9ceb8db359616b055bf3c53c85a611eb2f14b8dbcb4ee6e25",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2153,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/failures/bbba2fc5b02ae9f013b23d4b174db105afe71d077907adb67c667499c2098288.json",
+      "original_sha256": "e1ca3da48093a2dd5cebf22dbbcd1d1b51f94c5d7942167341ac6b9e3fb433fd",
+      "path": "evidence/failures/bbba2fc5b02ae9f013b23d4b174db105afe71d077907adb67c667499c2098288.json",
+      "public_sha256": "e1ca3da48093a2dd5cebf22dbbcd1d1b51f94c5d7942167341ac6b9e3fb433fd",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 3591,
+      "changed_fields": [
+        "$.provenance.original_attempt"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/failures/f4bb665168b77b7bd1503faaf1bdaf4940b46e211b46d6ebc38b9fab0d1573ec.json",
+      "original_sha256": "5d10f7d15dbbc5e08d5e1e56815566572d666540a3e601dfcbb42890b7d14bc6",
+      "path": "evidence/failures/f4bb665168b77b7bd1503faaf1bdaf4940b46e211b46d6ebc38b9fab0d1573ec.json",
+      "public_sha256": "a0952651c4b51b67103699959415fb48a99c5090cf717b3da110ffdb81975b9c",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 50827,
+      "changed_fields": [
+        "$.arm_results[0].predictions.T4-01-59209913440bed0c.arrays.path",
+        "$.arm_results[0].predictions.T4-01-59209913440bed0c.import_provenance.original_attempt",
+        "$.arm_results[0].predictions.T4-01-6c9ee7e0c8cd8003.arrays.path",
+        "$.arm_results[0].predictions.T4-01-6c9ee7e0c8cd8003.import_provenance.original_attempt",
+        "$.arm_results[0].predictions.T4-01-6d76cbbe65f026d5.arrays.path",
+        "$.arm_results[0].predictions.T4-01-6d76cbbe65f026d5.import_provenance.original_attempt",
+        "$.arm_results[0].predictions.T4-01-b93f1fb51e92ee02.arrays.path",
+        "$.arm_results[0].predictions.T4-01-b93f1fb51e92ee02.import_provenance.original_attempt",
+        "$.arm_results[0].predictions.T4-01-ce1c1a4de64ba9ec.arrays.path",
+        "$.arm_results[0].predictions.T4-01-ce1c1a4de64ba9ec.import_provenance.original_attempt",
+        "$.arm_results[1].predictions.T4-01-59209913440bed0c.arrays.path",
+        "$.arm_results[1].predictions.T4-01-59209913440bed0c.import_provenance.original_attempt"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/input-selection.json",
+      "original_sha256": "db537a892ad06f5ac9b96da88e174ff500c8cb46bf1bb9af2516f8a7854aa917",
+      "path": "evidence/input-selection.json",
+      "public_sha256": "310fc78800fb51a9ceacd6b8919e380a8787886ae24878bd17deda1ded734e80",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/9459c523ec457f666104f9bf1c7e9c5158e9f2d2d5b2f7e25edc2d42d26a98a5.npz",
+      "original_sha256": "009b8407738dd4d1e9116d84c0d30ab68c2cbe2d008b4eab61d39da6652431be",
+      "path": "evidence/native-traces/009b8407738dd4d1e9116d84c0d30ab68c2cbe2d008b4eab61d39da6652431be.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e0c60d37f5852677c5ab475dcda62e5aaaa7b9b604f6c88403f2f960d0e481b2.npz",
+      "original_sha256": "01424c8d0b8fd6f2f801088edd1c89a0df26a84bfd3ad6ec2be57ec3dd9182e5",
+      "path": "evidence/native-traces/01424c8d0b8fd6f2f801088edd1c89a0df26a84bfd3ad6ec2be57ec3dd9182e5.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/3aa6a2b54aa9fdd4ea5031c87c21227f38e2d50cc5dbf93534f86e0096ac9f95.npz",
+      "original_sha256": "028fd6a5a9da1c249e370981d08812bb24d90f25ae62869ddaea18989113ee22",
+      "path": "evidence/native-traces/028fd6a5a9da1c249e370981d08812bb24d90f25ae62869ddaea18989113ee22.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2557,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/eb17d64a1a6271ee0bd29b22050d0919afb07a78d9f217531cd76c75861be261.npz",
+      "original_sha256": "02e2c74dd837cf335b3d67f115fb131aa3e65be7dacf59fca978b9fa95e0744a",
+      "path": "evidence/native-traces/02e2c74dd837cf335b3d67f115fb131aa3e65be7dacf59fca978b9fa95e0744a.npz",
+      "public_sha256": "6cbb292c0fd81daf9290ea46f7b60803e6a7a570c91d8405202dc01598ed21ee",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7644,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/2ec08a14b0a54a347b72e4aa0eb722c962eaf43136d0a03c2c99b578fa4d799a.npz",
+      "original_sha256": "0a165c40611884685d8d1eb91e02075d8521e496883ff1833164c988aaa46757",
+      "path": "evidence/native-traces/0a165c40611884685d8d1eb91e02075d8521e496883ff1833164c988aaa46757.npz",
+      "public_sha256": "3aa06bd978228caf25ef475f9b01481d5e3b4fca8b5aea3786266b2418afab95",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3747,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/eb3002cee35ab5b471912ff381813254905d361de9f9cb541d3dabf8ff4f9401.npz",
+      "original_sha256": "0bbb94d079bac179072cc05dd36f195e6d84803c018427be6ee5cf4947444c76",
+      "path": "evidence/native-traces/0bbb94d079bac179072cc05dd36f195e6d84803c018427be6ee5cf4947444c76.npz",
+      "public_sha256": "9745a52bd880bc5770ef1b70b4080d87d4340dd786d1a58953a00338a0cbee5b",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 5644,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/1a65576b3f5802f55c2096ee202fa8a5f34cdc755ab31acc109a00687540997a.npz",
+      "original_sha256": "0d0715cc17f6f2e2e34ac6be82723e41d00faa41b87a4f669740c1327e090550",
+      "path": "evidence/native-traces/0d0715cc17f6f2e2e34ac6be82723e41d00faa41b87a4f669740c1327e090550.npz",
+      "public_sha256": "ea0d3b2e4e72c8cf5d5a79253145ad24fb1b0a5c3bf30383ada1b5644d33d47d",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3710,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/1dd9d39f174b72de3f1bc2913bb8ddcac5711e5629993f877f2a602e47fa697c.npz",
+      "original_sha256": "0ee98edfb0d3f0fc7e1675015753694b631534124a6915e8aaa3b2f12edd9dab",
+      "path": "evidence/native-traces/0ee98edfb0d3f0fc7e1675015753694b631534124a6915e8aaa3b2f12edd9dab.npz",
+      "public_sha256": "ff87ded887eb9326fcb42630fb3388f4ff09baee4057ee9de1a5198fe4f1cfe0",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/7381986cb9aa20c17a5f4ee3e0ff0551334f24700f59d947efd18fb1bcf9f6bf.npz",
+      "original_sha256": "0fd8de94c199066c7e244f84b655d3975789877942793d14dfe2dc87f79b8d60",
+      "path": "evidence/native-traces/0fd8de94c199066c7e244f84b655d3975789877942793d14dfe2dc87f79b8d60.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/f5892cbf6503c9cd6b61c23418872b9dde6bdfc9b588e6ae37e947e2053cc258.npz",
+      "original_sha256": "10bddfda2b0bdde01511e1001fbb97044d15abffa80df90f0f929f145eb7a2d5",
+      "path": "evidence/native-traces/10bddfda2b0bdde01511e1001fbb97044d15abffa80df90f0f929f145eb7a2d5.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b031a8337cb039b960903a695c8fa4fe4678cd6754872dd8666b6ccc2ab07f24.npz",
+      "original_sha256": "11c23fde9284696ecfb495b6449473fd575a927c10b1d6487074bb0c9c7917ae",
+      "path": "evidence/native-traces/11c23fde9284696ecfb495b6449473fd575a927c10b1d6487074bb0c9c7917ae.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 5680,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/170242f64ebcd3be5b155e5101047b60bc3d679cb46b703d88c17f5e6aa0518a.npz",
+      "original_sha256": "14758685c708bcb8055d4bd5104355fa97c5a9e876288e88a42ff98a7f4ef79a",
+      "path": "evidence/native-traces/14758685c708bcb8055d4bd5104355fa97c5a9e876288e88a42ff98a7f4ef79a.npz",
+      "public_sha256": "0f04b0a0137e229f30bf7258a9a05f1da0d4a1d518d8d6c33efdb055a4a3804a",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2706,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e9abef0cfba7aa3bfdc419e0adbd617a7565bbc8a68a994a04087740912bdd53.npz",
+      "original_sha256": "1488193747ec9ea68b9492061e7b1c4c4d22d768aa7bda7aa6bb1a3677249009",
+      "path": "evidence/native-traces/1488193747ec9ea68b9492061e7b1c4c4d22d768aa7bda7aa6bb1a3677249009.npz",
+      "public_sha256": "bc3aa2ab93c65ed5fe03fdc13a1dd5f3495176223fb09786b28eee67b7701357",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/0ac4c7f0795a6bd9fe95f18cb14db8e47b8a8a1004519cff9bd1484e96747ad1.npz",
+      "original_sha256": "17b86476f0c07fabaf0b1841aa559b98169e90ac9861f156e4162cb6df1216e8",
+      "path": "evidence/native-traces/17b86476f0c07fabaf0b1841aa559b98169e90ac9861f156e4162cb6df1216e8.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/5ed9716b8ab7892faf36dea6d4749e49e1aa7eed2365de71ea407d3a530ce670.npz",
+      "original_sha256": "1978cf6cd185729a8cfc445d6f2547ba7c085753e5127d9ac20e5c7f3234fdf8",
+      "path": "evidence/native-traces/1978cf6cd185729a8cfc445d6f2547ba7c085753e5127d9ac20e5c7f3234fdf8.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3185,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/170ab09c8f24e3dd6b240439e0adc381e69a4f14f85f3a422d241fad28b1e2b1.npz",
+      "original_sha256": "1c1a3e5385036bcc57163a986ae12512e9b12ba455201d6c12c84046e35b1a17",
+      "path": "evidence/native-traces/1c1a3e5385036bcc57163a986ae12512e9b12ba455201d6c12c84046e35b1a17.npz",
+      "public_sha256": "00ee0476ca1cca6a9badb2a93480e7223bfb09b6d675cc061343d54826a66c9e",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2585,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/87cf2a3fb7a3bb104efc47c6ef8d3e589d5981bd4450a0ad5a7f47d934c12826.npz",
+      "original_sha256": "1d44497df81ff88f4d8c097baee13d628a7ce1e5a139cfdb34a55307aad9016b",
+      "path": "evidence/native-traces/1d44497df81ff88f4d8c097baee13d628a7ce1e5a139cfdb34a55307aad9016b.npz",
+      "public_sha256": "1b27d05ec1f0725930c0f6163117fd74ca62b96036ae25942a67a29efddadd91",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 6928,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/f862eaf29177c4f9fc354621e44dd580f3a73a8e8a033c13e18ea896eb80a763.npz",
+      "original_sha256": "1e34b60fedf24a743b831312d536511605f201822498ef2e50a7a7f186b78b39",
+      "path": "evidence/native-traces/1e34b60fedf24a743b831312d536511605f201822498ef2e50a7a7f186b78b39.npz",
+      "public_sha256": "a54acfa25064c3493039244b0d2c074b0e78080114b43ee13cc56528f01e9945",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3260,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/be0221199152941b412dc15951182368c18bfdcd78bc40267b21ce886f6f0bec.npz",
+      "original_sha256": "1e55e85b58b252f4169ea2d8e8ab9d252fa6dc626af15c2d3b3da91cc9e68ab6",
+      "path": "evidence/native-traces/1e55e85b58b252f4169ea2d8e8ab9d252fa6dc626af15c2d3b3da91cc9e68ab6.npz",
+      "public_sha256": "e67192d03d35d1f56facaecdc87b8fca88d8609a434fd00d4538814ffa812f7e",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/9cdb59acc14b9cbe256664a883f157dd804bfcb10958096d0e0f8180cfe8ed86.npz",
+      "original_sha256": "1f9062a1a4ccd62549e04e990414901784f34147fa535d4546139e5ee19c7cfe",
+      "path": "evidence/native-traces/1f9062a1a4ccd62549e04e990414901784f34147fa535d4546139e5ee19c7cfe.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/9f48f0b86bf688a8807e836938b8a05fbacf6125231fc7c1b65d3a9c77e2e2c4.npz",
+      "original_sha256": "2255921aba76582a8d8c9ea86ab9e7ecda02d19c99bf102483f3d7d78eea6639",
+      "path": "evidence/native-traces/2255921aba76582a8d8c9ea86ab9e7ecda02d19c99bf102483f3d7d78eea6639.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3200,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/33c606ba0a18aff43c752c5440fcd63d896926619c9a5243005434ee05809651.npz",
+      "original_sha256": "23e9f9af26b308335bf55059c86c80da132bc0542052f54a014bc9586bd4d53a",
+      "path": "evidence/native-traces/23e9f9af26b308335bf55059c86c80da132bc0542052f54a014bc9586bd4d53a.npz",
+      "public_sha256": "06c177672b52f88822d67d1b5a841ec38ece342307a437e9a02a4ec056650f7f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/5231561c7cdacf8ad420febae94fde6c0186d13b5db8b8c106c760cf2cc2b5cd.npz",
+      "original_sha256": "2cb77aede9174739f4fb4a75bc420254f0ba4a60d4d717073be333065db80f34",
+      "path": "evidence/native-traces/2cb77aede9174739f4fb4a75bc420254f0ba4a60d4d717073be333065db80f34.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/62468f8daaecfcea6e4dcb50bb48094286a31661e99ba2e473cc914a2770f472.npz",
+      "original_sha256": "2fe7a3591506c2d57e9d5e3569114eaca471be0a92b7568aefdf24b6aa374084",
+      "path": "evidence/native-traces/2fe7a3591506c2d57e9d5e3569114eaca471be0a92b7568aefdf24b6aa374084.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3168,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/0e5466e85c4fced15390492d1f0f8d83f53fb6a1eeee669ef3f51d2fc008286f.npz",
+      "original_sha256": "3422de5a1df135e58a58d20c18688d2d2955808260fa8c4fd62fa48e38be805d",
+      "path": "evidence/native-traces/3422de5a1df135e58a58d20c18688d2d2955808260fa8c4fd62fa48e38be805d.npz",
+      "public_sha256": "e91e2034ccaccdeba15a12082b8c0b0a93f25b17b4007d5abbdcacc0cf8daf43",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/8d238a04b112c8b5b026a533ff7283566085f2c7b448de27afd4533da32f4b38.npz",
+      "original_sha256": "3716f911045b0a8a54da50937a08daf6460f3945f27bca77e3e42fd6436bc7b6",
+      "path": "evidence/native-traces/3716f911045b0a8a54da50937a08daf6460f3945f27bca77e3e42fd6436bc7b6.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3064,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/f9b48dc37fde1ea163f3ade9891badd8561dea8af3d8e336f37815b33b0f445f.npz",
+      "original_sha256": "38e23dbe858d4ea7283b8a94abb01b67e84d1cbe984b675c821e31e2686dc8a9",
+      "path": "evidence/native-traces/38e23dbe858d4ea7283b8a94abb01b67e84d1cbe984b675c821e31e2686dc8a9.npz",
+      "public_sha256": "cf54e0a077981f5dcc6f4415f8db57dbecbced65d6d2b277c34912d5db511a89",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3170,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/7be8a3200de49b8f03b6321aec19a77f4eeb7ecc1262343edf43c2209be40fa4.npz",
+      "original_sha256": "3a1b80209c4ceee274757f0347fb6a122bf4f9954d062972e85fc24eb36a10aa",
+      "path": "evidence/native-traces/3a1b80209c4ceee274757f0347fb6a122bf4f9954d062972e85fc24eb36a10aa.npz",
+      "public_sha256": "249d465fb9b20b3143f41ec76ace6cc91e7075cffffce4ad0a3a49fbd65596c1",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1135,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/9bbb358d24785cc0943a310004d6cf441f745e574fb1484d5761fd9e57388c34.npz",
+      "original_sha256": "3b3a0815fd6f5c69fe8cb94ba520d1e631511806bc2f067bc9cba8a41f3dc54d",
+      "path": "evidence/native-traces/3b3a0815fd6f5c69fe8cb94ba520d1e631511806bc2f067bc9cba8a41f3dc54d.npz",
+      "public_sha256": "a64c5e609c1306f695cf0f8a4beccfe58633ede241987611811e9d27c04a11c3",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3141,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/3512c41459ef5d0df6856ad5b379cce31613c7f560401bfd2c6726f2e0650f2b.npz",
+      "original_sha256": "3b5cc94b6fae182d216b0cb33f1b4eaaa76cf9967b8ec9cbb01a8b3d4d281850",
+      "path": "evidence/native-traces/3b5cc94b6fae182d216b0cb33f1b4eaaa76cf9967b8ec9cbb01a8b3d4d281850.npz",
+      "public_sha256": "db14877044ca051266f939d670415ff05cd0694a9b2944b1f2a7893f5e697751",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1135,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/1702625ae0070ec4c5bb9c771a09464edacde050030dc8fdaf52145a2b406be1.npz",
+      "original_sha256": "3f3968596b75c17125186d5336610925e86b84d94c1513e6fa327d76dce9a545",
+      "path": "evidence/native-traces/3f3968596b75c17125186d5336610925e86b84d94c1513e6fa327d76dce9a545.npz",
+      "public_sha256": "a64c5e609c1306f695cf0f8a4beccfe58633ede241987611811e9d27c04a11c3",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 6940,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/752e87b2372903956a457676ec4ed8ff1c12bdb224909be0c652ad7ddc9a3842.npz",
+      "original_sha256": "4045a74ea7c02b0ae94761d0d64a5ba921cc4e3dd65a5620f01964bec4d28c50",
+      "path": "evidence/native-traces/4045a74ea7c02b0ae94761d0d64a5ba921cc4e3dd65a5620f01964bec4d28c50.npz",
+      "public_sha256": "833a0ed549fc3df6b164f63283b0eb1968718ffa4e4862f18b27966a1ea6245d",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/7e0d29f4e4fbf140a6c85d216dd7a3eabe8be3535f9cde4b6b81746835a4170c.npz",
+      "original_sha256": "40566cc9d813464eacf501a9adc885cd9f63332136bbfe76883620dbc498f4fa",
+      "path": "evidence/native-traces/40566cc9d813464eacf501a9adc885cd9f63332136bbfe76883620dbc498f4fa.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3966,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/fb8eef5c1adcf3b52be940b135642883d16fb17835daec1517eb6ac98da15883.npz",
+      "original_sha256": "42435891833915670441edc144281f3396e2815203dbf51fc13ca9bafe914c08",
+      "path": "evidence/native-traces/42435891833915670441edc144281f3396e2815203dbf51fc13ca9bafe914c08.npz",
+      "public_sha256": "96b97524206adeb10f6af91165751c7630da38be33cc0d5d0de5616e57dab00a",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3216,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/7e3f4a890f37c4cf51bc8ce8bd6774dc621a85986efc44bea59bd92dafd32ca3.npz",
+      "original_sha256": "4249dccff2cd15337323341d4bfd5897ca10541a24686b0d5ccf6e86ca4912f6",
+      "path": "evidence/native-traces/4249dccff2cd15337323341d4bfd5897ca10541a24686b0d5ccf6e86ca4912f6.npz",
+      "public_sha256": "8c3c27b1024fb0a090057a32a3e7e66d82906ac2323975a9b99598cc5c389303",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3562,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/30b4013c7923fb19032f8c37760efa61df995dacb0ecc7587adb4516ddb3b212.npz",
+      "original_sha256": "4857382bc49316d06594435786a7a52ac850e64de532a672f5cbc653d69e5bea",
+      "path": "evidence/native-traces/4857382bc49316d06594435786a7a52ac850e64de532a672f5cbc653d69e5bea.npz",
+      "public_sha256": "fcdc26dafc2377e82568edeb8fccf45d73b697c4a522a0cd3c8b2062ef3f7310",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3147,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/dde1aa023a76c2d4f88f7f57fd7cc2b44ebb5dc4709ea7ad585af872f8eb0fec.npz",
+      "original_sha256": "4b558f495a3acfac40b4cd2f8100fcf3b6e7231df2aaa7a9d063cd5b8657840b",
+      "path": "evidence/native-traces/4b558f495a3acfac40b4cd2f8100fcf3b6e7231df2aaa7a9d063cd5b8657840b.npz",
+      "public_sha256": "d160adcfd74a2c52dbee645466286b44541df34779829a3fd3bb644096b34cfe",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3039,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/3723569c3473e5299f53f5953c19e5ab5cf18d211c41805afb875e1732544a40.npz",
+      "original_sha256": "4e56691cebab3a2f27575917b08569fd8b322bdaadd1f3936c90420bbaf37438",
+      "path": "evidence/native-traces/4e56691cebab3a2f27575917b08569fd8b322bdaadd1f3936c90420bbaf37438.npz",
+      "public_sha256": "50c6daa22b141abf5d49b2bc890da1fe2a025afa3545e4266378ce2549dd5a3d",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3973,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/710948fced91e87e977773ea26f1436ef17e9e871cadfe99bccf7a92683e02d7.npz",
+      "original_sha256": "523632bfaee68aa7e914a79e52e9bedb438c4a09e4606fff98887273669ce465",
+      "path": "evidence/native-traces/523632bfaee68aa7e914a79e52e9bedb438c4a09e4606fff98887273669ce465.npz",
+      "public_sha256": "eea497b75bf30b4a4d01c077251e728ee9defa74606608d19d1be5036a6425c7",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/eb611adf79c61e88e34e1e3a960bb088989afacb27fe3bb17c2f71e8dd4594b0.npz",
+      "original_sha256": "536de99f36400bd64f7443ed7aa5ec66c45e3bea9e9d6299353324c0ee052d0b",
+      "path": "evidence/native-traces/536de99f36400bd64f7443ed7aa5ec66c45e3bea9e9d6299353324c0ee052d0b.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3150,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/f0e8c8cab92fe55805ea338d20ed2f7ff7ce032c544a4afb921b54edd5e1b57c.npz",
+      "original_sha256": "555bb8f60ddec126b334df4af1b92e8c5c56f53c93b4348c3c234e0c47206145",
+      "path": "evidence/native-traces/555bb8f60ddec126b334df4af1b92e8c5c56f53c93b4348c3c234e0c47206145.npz",
+      "public_sha256": "7cab75649bdc70cb3b803c8628e329ca7254b2f62041d13aa50832a8e16a980e",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7648,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/7336f54bb529a2c4d278b397e661ec61bb25fbfc14ae1433fc8e73243a702042.npz",
+      "original_sha256": "55edb36cd7c54c7136b2a23a3e0ac789370e806a70619331e59e6e279b126524",
+      "path": "evidence/native-traces/55edb36cd7c54c7136b2a23a3e0ac789370e806a70619331e59e6e279b126524.npz",
+      "public_sha256": "89a6615bbef1ae47c1a897da2d521ed03ccb1cc0aaa7d5f8e7ed71928984cfc8",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2535,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/d620000e50dd49d93a283f4a42d6c91c84f649cae56874598044de91688d900b.npz",
+      "original_sha256": "560f175d90beb97a08b72d2bd722b3ad2556fa16f8a564d1e10a53d75aa0e41b",
+      "path": "evidence/native-traces/560f175d90beb97a08b72d2bd722b3ad2556fa16f8a564d1e10a53d75aa0e41b.npz",
+      "public_sha256": "e76709ae941fdfa87c94efee704a0305d3a8d0d6d7a121ca50e88eaa41c66fac",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2740,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/5b90edb3a7c6b1c5e74cddf319e068a16a818c61846cbc72d5ba522a6e3cd0ec.npz",
+      "original_sha256": "58024d95e1f08070cde5c0f75f6326a5d8da3b2d731081211f8ae69a372aae91",
+      "path": "evidence/native-traces/58024d95e1f08070cde5c0f75f6326a5d8da3b2d731081211f8ae69a372aae91.npz",
+      "public_sha256": "5b58dbc2a58d39e538c5a8e57363b4ad06fbaf7a39de5a4c89176670c515eb60",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3036,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/98cca7f4ea57f70d13257fcd86f94a46b44d10a423a424d5dd35348cb9c94822.npz",
+      "original_sha256": "582fdc72d6b2382a8d2500a24c0b5f99b4c366cabe9ff084fed8b82189d34b00",
+      "path": "evidence/native-traces/582fdc72d6b2382a8d2500a24c0b5f99b4c366cabe9ff084fed8b82189d34b00.npz",
+      "public_sha256": "45c9f054bcacd6b64f6f4f5b94b5084815b5a279fe3c36a88cca41ce4b3689e4",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3691,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/f1f1586365f882d5c75b24ab6e40751fab589f46fb9deb3de77d134297617eb1.npz",
+      "original_sha256": "58aadcfd87b6d7cb148281290b4980598225f9359d698ad9d411ce9a127d8662",
+      "path": "evidence/native-traces/58aadcfd87b6d7cb148281290b4980598225f9359d698ad9d411ce9a127d8662.npz",
+      "public_sha256": "336d159dd5492c816cdfea864ede9a37b117be32cee3d3a88bb6326a70aef0ba",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/052681e5f49454ed30fe908029d8128d1a95dbfc30c120293ea52113c927d28b.npz",
+      "original_sha256": "5930f1be8d4ed45a55c31a54925df3cff6c059cae9747d95fab77f9121d77da3",
+      "path": "evidence/native-traces/5930f1be8d4ed45a55c31a54925df3cff6c059cae9747d95fab77f9121d77da3.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2655,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/c0e054a255c8520ac2bff0aa16f7c74b206b15241dfd6bd44765b0fa682ff137.npz",
+      "original_sha256": "5948ac46bfecc4f8e27009af96068fed46e2030a0c7e01ecdccaae1975a12120",
+      "path": "evidence/native-traces/5948ac46bfecc4f8e27009af96068fed46e2030a0c7e01ecdccaae1975a12120.npz",
+      "public_sha256": "b8c5a70843bbdc406a7741fcdec04762df6170f41c2cdef6869b3a8f6407f539",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/44f722bef0a551bc45b391f88682705f1311de0ee0aeb0adeb6e823e4dff2101.npz",
+      "original_sha256": "59ec68ac83b5dd47e1a6924592a0496eef50b82ad93ff6f245260ca84ad28477",
+      "path": "evidence/native-traces/59ec68ac83b5dd47e1a6924592a0496eef50b82ad93ff6f245260ca84ad28477.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3391,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/c2797ee36aed0e9f9a708897e064661a2babd65b045cac51d9166261b3cb5e74.npz",
+      "original_sha256": "5d8c976d4e138f76b295c9531dd0ed7233e2d24a518ea7624784c4bc66d32236",
+      "path": "evidence/native-traces/5d8c976d4e138f76b295c9531dd0ed7233e2d24a518ea7624784c4bc66d32236.npz",
+      "public_sha256": "eaa633d4770a5a956217acb7eb4faa470ebf6aa957f58f389fad83b3e203a8d8",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b7d23bdf391496b3f72d5d08bfb310742caa553eeb2cb46c59d0d4491cf83f8a.npz",
+      "original_sha256": "5f746688d16e3e77b238cac68eac31f5a8ff6b9141da8d60efe8d4809b30d900",
+      "path": "evidence/native-traces/5f746688d16e3e77b238cac68eac31f5a8ff6b9141da8d60efe8d4809b30d900.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2725,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/883ec53c41397fa6066ee9fe55e2ff814ba9e79666b47e28f3049356aefddd43.npz",
+      "original_sha256": "619bbb6ba1e25d4065922edd9d3f4742b810c366e8369eaeee0f9eb8ba0c88b6",
+      "path": "evidence/native-traces/619bbb6ba1e25d4065922edd9d3f4742b810c366e8369eaeee0f9eb8ba0c88b6.npz",
+      "public_sha256": "523e9e6deb7f385e48dbed2edbd793c85f00d5b478841267c5b6dd75f092cd21",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b2ce9915f9ae6c4c5de4cd8f85c35ef9331fa95fd476531d522d7d35637431ec.npz",
+      "original_sha256": "62996ba1c1af60a7b67d71c66d18416dd7c9d6ab3e787cfbdd9549e907b95995",
+      "path": "evidence/native-traces/62996ba1c1af60a7b67d71c66d18416dd7c9d6ab3e787cfbdd9549e907b95995.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3027,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/4de914f414589cbc54e975618d87f1460f5e7bff8acd759fcf94990648ae7394.npz",
+      "original_sha256": "62e8c476ff3f82f5b753e79794c82b25a9fe7a249c9c91c223fe9d8f568df560",
+      "path": "evidence/native-traces/62e8c476ff3f82f5b753e79794c82b25a9fe7a249c9c91c223fe9d8f568df560.npz",
+      "public_sha256": "7a3b108dde707a9050c4d75d63a7dfc38404fe00188094db88f3ad4fe186fb87",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2720,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/de4697bb3c3c320f780ad07c33ac96bff2c5232b83f453573ae67e93ab438a5f.npz",
+      "original_sha256": "644c7e0a8bd7947849e79db11ac68d36ccc2b5a775b5300881bb609d2b7c3468",
+      "path": "evidence/native-traces/644c7e0a8bd7947849e79db11ac68d36ccc2b5a775b5300881bb609d2b7c3468.npz",
+      "public_sha256": "babab7544b6f88f33ec131247f871a20ecf84acef8d3ce0a1df9a5658e011057",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2532,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/2e45286ec225f74440aab5d78e311c41ccd7df092eaa58ce033981dae7db2ef5.npz",
+      "original_sha256": "6596e9d1484bba47e330e8dc5dea6a4e439be233dd0eccc893b506ada1764feb",
+      "path": "evidence/native-traces/6596e9d1484bba47e330e8dc5dea6a4e439be233dd0eccc893b506ada1764feb.npz",
+      "public_sha256": "1021fa42b6de255b094e4e0252e1cd02153564be7ade070f0649d4a4d5e75755",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 5680,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/04513d95342243f9f260b6f58ac4ba239c49eba2c7e0ee0787359682a16c577b.npz",
+      "original_sha256": "684154d2cd8ff1bf0d6e193f482e09f15879edc79103e47f0abec023c64f18b6",
+      "path": "evidence/native-traces/684154d2cd8ff1bf0d6e193f482e09f15879edc79103e47f0abec023c64f18b6.npz",
+      "public_sha256": "02d8a64cec5e2ab7025a09656b2975113b47a3fb90ed1da1fe0711fcf38f2160",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3159,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/bc1d4ba3d46157c0ff15fdd7cb3ac64000989f032f8c20f0944663a097320dda.npz",
+      "original_sha256": "686214106ca6db604e0ee45e3daec914f94a21bc145b7be8c12b9bb5cc124187",
+      "path": "evidence/native-traces/686214106ca6db604e0ee45e3daec914f94a21bc145b7be8c12b9bb5cc124187.npz",
+      "public_sha256": "e2db7e4cd802288cda601b9873bf47706e33caf50055ad849258938e6235dd1a",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3886,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/30f8a8be6a3bee6d4907c6fa4ccd0dcfc210507d5ad3758bc58a8f8a01467e58.npz",
+      "original_sha256": "6874b1a95507fe28b2741082552ed836116a5a9c9be5447fda50e756fdcddc50",
+      "path": "evidence/native-traces/6874b1a95507fe28b2741082552ed836116a5a9c9be5447fda50e756fdcddc50.npz",
+      "public_sha256": "56900017d78bfd3f5e199697a6d526267eae09491690f95f7446c18454cb5f48",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2680,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/213d547d452986843d8bbfea663cb937c23f31685ed88afe891a40bcc682f341.npz",
+      "original_sha256": "690ce2c4ea6cb5c415c3675cc722c6e87686193b72dab0172427c3a144cadd92",
+      "path": "evidence/native-traces/690ce2c4ea6cb5c415c3675cc722c6e87686193b72dab0172427c3a144cadd92.npz",
+      "public_sha256": "bc4328b3cb9e7e39048d143f6b45ff97cdaaae0c92a5884105e44714319b82e4",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2707,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e82b0be3ca0134d3269682cfcc1ec6a34887b477072fdd1cc061f0dbb126d624.npz",
+      "original_sha256": "6ae19076559fbd627fc2fc66740465171752845aba5a003e507873037bbdf3f8",
+      "path": "evidence/native-traces/6ae19076559fbd627fc2fc66740465171752845aba5a003e507873037bbdf3f8.npz",
+      "public_sha256": "ae0ce704673cca9b34c02574653f5913339556780f5bca8de2b19f4757628379",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3208,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/0ae482aa907738758460a877d3be4036c65291cfb45623397e3a52bf5452182d.npz",
+      "original_sha256": "6cef2641e54cb96fc2962ff911bbe99c6d4cebe4b894570f8b72cebad4dd32f8",
+      "path": "evidence/native-traces/6cef2641e54cb96fc2962ff911bbe99c6d4cebe4b894570f8b72cebad4dd32f8.npz",
+      "public_sha256": "6b99bb43da4d7eb9b98fc9fb83f903eef97d60b2ed3356ebfb5a6d08c280b1b2",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3134,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b4452841f16048e213d11ef3db2ce06f099455893d72af791c0c6c5362679885.npz",
+      "original_sha256": "6ef92deb0dde7fe75c01a542d02a6c6b793e41a8c7c5630dc643b124653388e2",
+      "path": "evidence/native-traces/6ef92deb0dde7fe75c01a542d02a6c6b793e41a8c7c5630dc643b124653388e2.npz",
+      "public_sha256": "6acd06993afc4c8004bdc45c8dcf4cdf02f7914df4356b81689530a3a9c8456a",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3323,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/4112b296e580787b0225cb7ddd18f04ba1c97d038d5790aaa4ce4b5c0c1ec30b.npz",
+      "original_sha256": "70b85ecd9b3182fe4540ed5e599167077be9d1972bd597aa8ccbbae2fa808ff7",
+      "path": "evidence/native-traces/70b85ecd9b3182fe4540ed5e599167077be9d1972bd597aa8ccbbae2fa808ff7.npz",
+      "public_sha256": "7f3901baa710429e1c8aa940c2d401f31f80a94ae97a7f8701920bd6df0eb0d3",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3706,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/c9d7ace40bb2e50971793ab3fde9fd767827ef01a77c1d755a10e9e9c812c2e9.npz",
+      "original_sha256": "719dadeccfab1e150fb97373f90272be9f36969cccab8c374362d88d6a9e3355",
+      "path": "evidence/native-traces/719dadeccfab1e150fb97373f90272be9f36969cccab8c374362d88d6a9e3355.npz",
+      "public_sha256": "36bce890248a82b58b880d4eb773e3a9a3fa93013217c0c012f55557d5699fb6",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/5c09a9a1264e5e120f84ad209ce581a4c04a279574a0b3f72d80add39bc34380.npz",
+      "original_sha256": "7227e86571533bebf82fc442bdeffc0ce5d604ad6675debab07de0a3f7e85e03",
+      "path": "evidence/native-traces/7227e86571533bebf82fc442bdeffc0ce5d604ad6675debab07de0a3f7e85e03.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2711,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/966e98b9cf34dacf77d0b2643c2b79ad5dd5d046ec4d2ca5dc32e826122205db.npz",
+      "original_sha256": "743469156b961dac5779c85d3d38f8eef003a00a71d7819f54f23010a8f63229",
+      "path": "evidence/native-traces/743469156b961dac5779c85d3d38f8eef003a00a71d7819f54f23010a8f63229.npz",
+      "public_sha256": "16ac83d2750534a2b4ed49b6e1bb68be8a16f3b8547dcb751320b3789fbadde1",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/91ec17d8a6a8abc8861a162c59ab5156e6bba3723e2975e539a3e052c71b3090.npz",
+      "original_sha256": "7471d34b32dbfbb378d700445cfb4452db4ab4d454de7c9fcd5d66c4de24c8ed",
+      "path": "evidence/native-traces/7471d34b32dbfbb378d700445cfb4452db4ab4d454de7c9fcd5d66c4de24c8ed.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3199,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/dbf4574337568c6a5716eecde59e4260b2a55b432c8975f9e03004500ef7c338.npz",
+      "original_sha256": "7479dad9e4244d9344726831bf95741e259ed33b19eb54e3d016ff125cb99ce4",
+      "path": "evidence/native-traces/7479dad9e4244d9344726831bf95741e259ed33b19eb54e3d016ff125cb99ce4.npz",
+      "public_sha256": "13ac7b2cbd494f82c25d2bb2a839f18eeb5bd4e63360253a36683d640aec8bf4",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3142,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e48f09978aa4448c83cc36a956007f978a32b6a16f9762cdc00cb560d7b8a978.npz",
+      "original_sha256": "7564f26ddb0aeed1e974a98ddc3d3c5df83a6ff173941a18652de94f916eeade",
+      "path": "evidence/native-traces/7564f26ddb0aeed1e974a98ddc3d3c5df83a6ff173941a18652de94f916eeade.npz",
+      "public_sha256": "8bff4d677f39d3bc20eda0488f152403539eb3e0d39d05b17dcc455819c1ed89",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7607,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/379e051e82a6db183654b72dca2a8dc94d2612dfaa40620961dee2fe8a6bd01c.npz",
+      "original_sha256": "757a73d3b8b85e7d33e1f48ffb6dde66cc13d473091439cb4a9be9c454a6978b",
+      "path": "evidence/native-traces/757a73d3b8b85e7d33e1f48ffb6dde66cc13d473091439cb4a9be9c454a6978b.npz",
+      "public_sha256": "51f8f81614ce24c70ed0e117679dc1f15094df90d7f538887eb6221f84598dd1",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3391,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/49c88d68e35d6e86dc35fef758c43bfdfc754238480583ef17ef081db106ce92.npz",
+      "original_sha256": "759fba9d546d5e4adc0ca0ee6ce64b3fa0489697a946b1941aab83fefb0417c2",
+      "path": "evidence/native-traces/759fba9d546d5e4adc0ca0ee6ce64b3fa0489697a946b1941aab83fefb0417c2.npz",
+      "public_sha256": "eaa633d4770a5a956217acb7eb4faa470ebf6aa957f58f389fad83b3e203a8d8",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3335,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/f70b17749bb51a3786c7bd2a173e52bc4353eeac21e2c271084d818a750d5b65.npz",
+      "original_sha256": "768b490989e3dd028ead8eb93c8946cd2f6f00231e3fa024b9a50b715632269e",
+      "path": "evidence/native-traces/768b490989e3dd028ead8eb93c8946cd2f6f00231e3fa024b9a50b715632269e.npz",
+      "public_sha256": "6d3dd9b61777bd3b25b96e1f3d9942c9d29c24ac9ea055a61dea183390be8b2c",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/619cbfe995b78bfdebe121776b7ca28780d9aaf5ced16d212361b8b20819d44f.npz",
+      "original_sha256": "76becbddce3148f4ba8adc84ac63735e2604ff79974bbc61dd8927ff4508f5a6",
+      "path": "evidence/native-traces/76becbddce3148f4ba8adc84ac63735e2604ff79974bbc61dd8927ff4508f5a6.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3759,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/59b9119216697a843939f52c0852e59079a7f0e20c5f09f6f1bba4f67c0ab870.npz",
+      "original_sha256": "7a631ef61c3dacc3d4f001208d8a7877767978e1eb01388c70fc44967d14c445",
+      "path": "evidence/native-traces/7a631ef61c3dacc3d4f001208d8a7877767978e1eb01388c70fc44967d14c445.npz",
+      "public_sha256": "82451928ca5e418e7b3d43772bc3d31f753b8473bdb8e9392505c75db47a9aa1",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3228,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e79e5f6aa626a2cac7a86129d21243814a3367db0022080cd0e22806428eb0ee.npz",
+      "original_sha256": "7af9b455f8416f0c4d41f33a83f7acfafc7a9bbea9218f64077a95fbc1b2cf20",
+      "path": "evidence/native-traces/7af9b455f8416f0c4d41f33a83f7acfafc7a9bbea9218f64077a95fbc1b2cf20.npz",
+      "public_sha256": "e647e2ff8dec8fea2d0d35599a4bbead2b1cc0616755f11d60b0a3c901d03ae8",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3689,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/032d7f05aadb90c761bda58bece412f41c644e75a7c1ee1a9b26df614ac6181d.npz",
+      "original_sha256": "7b1775bf59b39d05a3f6f050c044ddf2e47db290be65430a7e2e1c1fcb678c4f",
+      "path": "evidence/native-traces/7b1775bf59b39d05a3f6f050c044ddf2e47db290be65430a7e2e1c1fcb678c4f.npz",
+      "public_sha256": "339abdb70bc441ee5d9aba65095c85de3789a72dc4cda9b387427db42eba2d65",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/5f8b031cc3681bbe21ff9d34c7e7d1fe3b2d418b2d34b9e5f87de5413b8fc505.npz",
+      "original_sha256": "7b3811c7515bc81a8340d94cb7c97391199a3938d267b4b74ddaee06561b8f91",
+      "path": "evidence/native-traces/7b3811c7515bc81a8340d94cb7c97391199a3938d267b4b74ddaee06561b8f91.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2652,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/403d34fbbbe0e254fec4a20a7614a825d13234bdd2d528d19acf7afb6b609ae3.npz",
+      "original_sha256": "7c64e00f7a6a6a893cacf720746ed69ec9ff17428e33c700aff284d7c6b2bcc8",
+      "path": "evidence/native-traces/7c64e00f7a6a6a893cacf720746ed69ec9ff17428e33c700aff284d7c6b2bcc8.npz",
+      "public_sha256": "abf43d2ac54680b6353a1e1de60f6e682c37b4602e83412e4981202b06b7e47c",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/4422a8f6ec9fef5a52a6fdc4e4aded22fc4778fc35bbb813c5e56eb7d82b891b.npz",
+      "original_sha256": "7ff12025f052a99fc299d1a70a5e56f60b11eba8fd312f01d74668d28d78b11c",
+      "path": "evidence/native-traces/7ff12025f052a99fc299d1a70a5e56f60b11eba8fd312f01d74668d28d78b11c.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3843,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/8876fa1f1e0561fbeadf725641f77a97d99eebb7a904fe8936ba68495f3876d5.npz",
+      "original_sha256": "8188314fe5dd2ffd8055814f227111bf070b5254904bb3215d15689e1ea1b362",
+      "path": "evidence/native-traces/8188314fe5dd2ffd8055814f227111bf070b5254904bb3215d15689e1ea1b362.npz",
+      "public_sha256": "3bcaee9df5813fb3757f26d6c07e8de19661816e51fa0eba630a5e196358a00c",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3232,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/92fa28748642e2d5b68272d39972b7bb35284280ca36bf600d8baf4fccabdea3.npz",
+      "original_sha256": "83cb59107ba932c1ea82af1ac586fc448e6b7c7f3945e357c0ad12cc39bd1baf",
+      "path": "evidence/native-traces/83cb59107ba932c1ea82af1ac586fc448e6b7c7f3945e357c0ad12cc39bd1baf.npz",
+      "public_sha256": "0517ce35dd47b4c720ebc14bfec63b1d1d07fd05dcff2fb6e65c37987244ac0b",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3351,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/4e8504c01c1c1c8dba6eb99f3f822dbd87efb2a28edce3b29072aea901eb4c15.npz",
+      "original_sha256": "844c25d5799cdd7b5678cdefb6cc9983d3da6687106809d48bd7dd0611815708",
+      "path": "evidence/native-traces/844c25d5799cdd7b5678cdefb6cc9983d3da6687106809d48bd7dd0611815708.npz",
+      "public_sha256": "e3afca58613d1842551f447816cf8ea2300c5a4a70240a614d77b8307ced94fb",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2776,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/fa9bcc26083e6ca60dfb952b5a4e634a51d587368c82b862e36d04a8ce9311b4.npz",
+      "original_sha256": "8668e72f312e72b12c21f12c9fc72bbada436953f935354e7a2b697e1c35663c",
+      "path": "evidence/native-traces/8668e72f312e72b12c21f12c9fc72bbada436953f935354e7a2b697e1c35663c.npz",
+      "public_sha256": "ef075692d5441fecb293c27fb6b6ed6f257e2181fc7b480ccaa20435befacc79",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3977,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/509b3151d1785ae4525cf1fae474c3b4b8b76a84f6bf70374a7de2ad723378eb.npz",
+      "original_sha256": "86c41f08cc712c280bc6aac58690e8ca4dcdcc72a68149d18f64089a2d7d18bc",
+      "path": "evidence/native-traces/86c41f08cc712c280bc6aac58690e8ca4dcdcc72a68149d18f64089a2d7d18bc.npz",
+      "public_sha256": "8df35bdaa1074d10d36849567191b24a05943642de48604b25e9e9b6c33b7127",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3964,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/953f143bacfb15986af52890eee1a651931296851925ddbe9b405fb4488c85a8.npz",
+      "original_sha256": "86cd3127a01c0fc698be3246a9152f4bc9489c23193c7bd08f1750c47890161a",
+      "path": "evidence/native-traces/86cd3127a01c0fc698be3246a9152f4bc9489c23193c7bd08f1750c47890161a.npz",
+      "public_sha256": "57a0dd4499c00644592c5cdb56670ada34e636e7c317773eb4f8e666cee56709",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3684,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b760dbeee5375608bd3358447246b3c01c1b9de432c94210835a65af0cccfea9.npz",
+      "original_sha256": "883678ee8004e9f5c6fd94be4fc631cdf7e34511008cc81c57686dafc5dc4feb",
+      "path": "evidence/native-traces/883678ee8004e9f5c6fd94be4fc631cdf7e34511008cc81c57686dafc5dc4feb.npz",
+      "public_sha256": "ba3700693f94e3191fb5371e03cbe2341bbb76278b60223b815673b08dc4b453",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/97f9718e38b519e5c84d3a5867d0c219cadef6cb4df40ed8311d623d08ba1f89.npz",
+      "original_sha256": "88a4e9fd7f6de689cf9e3bdba4ca8a37b13fb9665170ffd93447b32f9c0c575a",
+      "path": "evidence/native-traces/88a4e9fd7f6de689cf9e3bdba4ca8a37b13fb9665170ffd93447b32f9c0c575a.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7526,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/052536e564a10d2e3df8c641ae2de881fc72fab9158a2bf7cdd6acbf6f815c6d.npz",
+      "original_sha256": "8e07be7f4e639e7f874ace4b8765bd645b78189242b24045680fcd136affebf7",
+      "path": "evidence/native-traces/8e07be7f4e639e7f874ace4b8765bd645b78189242b24045680fcd136affebf7.npz",
+      "public_sha256": "c7b478ae6a8805f54d3aa8eb154a6abfca84c0d0c9c6f2e89f9c5b2b92aa27af",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3085,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/32660c2fce067bcea75fbf217919a4ef12dd9a98f457818fcfc4f3ae6e76590e.npz",
+      "original_sha256": "8e37c8b89f9a67734f3e1dcc484b5e6be66d49ec864914f5bc144409fbb64d91",
+      "path": "evidence/native-traces/8e37c8b89f9a67734f3e1dcc484b5e6be66d49ec864914f5bc144409fbb64d91.npz",
+      "public_sha256": "04fc96230066b23672a76e3f1e0d2d648702e7753f0452cd7a361e84ec403433",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3234,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/c6e0a409c6bc1ef33178db1ccad9026ef96495be4570dbab67f47146d0a11a48.npz",
+      "original_sha256": "8f251881d78ca330408703e01df8e4241c5e458f7a28ec8f95bbfd05067622ee",
+      "path": "evidence/native-traces/8f251881d78ca330408703e01df8e4241c5e458f7a28ec8f95bbfd05067622ee.npz",
+      "public_sha256": "a4b1c35e7e5bb21ad61b4f641e9ebfb2642bb1409d64828728757725729b9dec",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3872,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/fa63457ed26a867b52648c3730298561dad4d44323ecdd46362a4d51385d4711.npz",
+      "original_sha256": "8fb6c8df0c8177a19a0f0a3427b7cf4d2bcb1ee74211ecd774b87ab65932db49",
+      "path": "evidence/native-traces/8fb6c8df0c8177a19a0f0a3427b7cf4d2bcb1ee74211ecd774b87ab65932db49.npz",
+      "public_sha256": "ac0a8133e0a5b6b65b0ff7023382222769ede71e6c10466e787e79ead5268003",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/a947b59e8987a9767760af6848357e80f022fcca07a15261d917a928e2a2678a.npz",
+      "original_sha256": "92efddc880fa9763bf2b6dce1f4ab6cc1f8a8a2be44c4c88cc289318e7cd7eb4",
+      "path": "evidence/native-traces/92efddc880fa9763bf2b6dce1f4ab6cc1f8a8a2be44c4c88cc289318e7cd7eb4.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/6984af767e5e34cf2b919d0b5bf3e547f9fbc09a9dc05536b2309814e34b1293.npz",
+      "original_sha256": "995afc299fed67b47ea2f68bd291c36caa28bab109c55034500c5bf3af9c4376",
+      "path": "evidence/native-traces/995afc299fed67b47ea2f68bd291c36caa28bab109c55034500c5bf3af9c4376.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3133,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/f0ce6973ffdda6a73a05cfe725d854d88571ea63b35fbbbc8ae78b00053a2a3f.npz",
+      "original_sha256": "a059a4b97c6af9e544b8c00fbb0612ebe481a764857537469058b492417390d6",
+      "path": "evidence/native-traces/a059a4b97c6af9e544b8c00fbb0612ebe481a764857537469058b492417390d6.npz",
+      "public_sha256": "d452239358cdcbdd114429f60b563d3788bafb924f30be2ce17473d3e161f14f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3238,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b420843c54e497ae53807f93d83445c6f734fc12438b8b36e8a72b3aca2cc0b5.npz",
+      "original_sha256": "a544152423b8aa4ad905229d34006be52a55a0e59c0468e4120da50bf4657dfe",
+      "path": "evidence/native-traces/a544152423b8aa4ad905229d34006be52a55a0e59c0468e4120da50bf4657dfe.npz",
+      "public_sha256": "2773c0f0aebf3641d866178130c6b2bcfff08af10e36a221a1a9545ad862d9f5",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3167,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/06973dd521511b4f46a255eec83c9356cfac0f96f98170a9b29ac67642c00264.npz",
+      "original_sha256": "a76bfab7e779e54fcb7b7fd82c157a0bebc968046a21b98a11f04a66a2a899d5",
+      "path": "evidence/native-traces/a76bfab7e779e54fcb7b7fd82c157a0bebc968046a21b98a11f04a66a2a899d5.npz",
+      "public_sha256": "20d28e1e28e3f000c842410daa9b7af8a6d01e4843f2e378015260a1c356c5b7",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3103,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/fcc0bda5a765380725c306b08db37380286522c395bc8dfee6dc68021d3d1a1a.npz",
+      "original_sha256": "a7d293c12df9091310ac8b668c2c677d10d68cb2c9107ec52788af2124fa5aef",
+      "path": "evidence/native-traces/a7d293c12df9091310ac8b668c2c677d10d68cb2c9107ec52788af2124fa5aef.npz",
+      "public_sha256": "b76dbafb501c70fc26bbd00a053f4c5b2568b642bb6706bd129ea6a8295c4af6",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3848,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/95b46c10ae87e5c5a49ca5400df3e10e0865d2cf460a791192d2cf4de243e1ee.npz",
+      "original_sha256": "a8bf39b9e13006baa9972ad5741e50006d71fb991380e7b6c5fb9dad99578fc3",
+      "path": "evidence/native-traces/a8bf39b9e13006baa9972ad5741e50006d71fb991380e7b6c5fb9dad99578fc3.npz",
+      "public_sha256": "9125744eb1b0c7d4825dcb8917deaa936a4905475aa503dca009fab021d4159b",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7650,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/ab6e7292886af59c365abaa34d707c81af9b8747ca91667f4c33044253747b48.npz",
+      "original_sha256": "a98ff4e8eb50e7c3e85b2f4a994f2721eab1e4f79a50d8c85bfcdfab92ff7216",
+      "path": "evidence/native-traces/a98ff4e8eb50e7c3e85b2f4a994f2721eab1e4f79a50d8c85bfcdfab92ff7216.npz",
+      "public_sha256": "057ec03121886320ca3ddb50e3ffe61d4d140f46eef3df831ed61d7bb4210fc1",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3095,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/bfcf60035943695c138fed8a45460d051fd41121a91d1093fcfc1451a3e0ed7b.npz",
+      "original_sha256": "aa6923bb0ffea3d826998c5fb860e833691c5a61d86e54051abba7f5ac576416",
+      "path": "evidence/native-traces/aa6923bb0ffea3d826998c5fb860e833691c5a61d86e54051abba7f5ac576416.npz",
+      "public_sha256": "9fe606d4cbf767a3c8c1bb17e29359b2e8dc5ea596489d73b49450ba83c9a867",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3254,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/277ceec767d69cb250eaf418791ada328984e2f997f0ee8b949f7a61792f18ea.npz",
+      "original_sha256": "aaab65a1743479835825afe7161082cfea39d55d9dd029bc21988a34958e8b17",
+      "path": "evidence/native-traces/aaab65a1743479835825afe7161082cfea39d55d9dd029bc21988a34958e8b17.npz",
+      "public_sha256": "b29d189659d4cd66bc130d36f6c69031453ab27fdf82629ee26c4fd5e777fe61",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3130,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/988935b1a593ed57e0d9f1c91fcbf25a5e1d5297269da8af78dcaebabbcae39c.npz",
+      "original_sha256": "ac049388f4752d51330fa9b9dba09153e595bb9c9231f5f914c9c3277ec67b47",
+      "path": "evidence/native-traces/ac049388f4752d51330fa9b9dba09153e595bb9c9231f5f914c9c3277ec67b47.npz",
+      "public_sha256": "de4dbb39e81439acc22e489e92822d174484c3cc602ac81730ab342122279d51",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/667ed8778e2c8d8feed0a76926050ca15d0ccce57a3d3c73aba6b5a31e85c684.npz",
+      "original_sha256": "ac49c837af2ed37617b89d48491a70d5b46fdbee433429954b3a53ca0d961ab4",
+      "path": "evidence/native-traces/ac49c837af2ed37617b89d48491a70d5b46fdbee433429954b3a53ca0d961ab4.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/2fadc5dcdd114c264d72364e458623cfbaea34a5ca90c113e3a5a55d2c86549c.npz",
+      "original_sha256": "ad7e020e6565fd72d28d5d08c5de7b9405614327c1818f260161508ce43b82ca",
+      "path": "evidence/native-traces/ad7e020e6565fd72d28d5d08c5de7b9405614327c1818f260161508ce43b82ca.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2681,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/62becb5b57054c22caceb3697233a64a468e73bf33a6b45b946dbe3cd49e2fbe.npz",
+      "original_sha256": "ad7f9483a923d1101bbc05f882d6d4950bb0e5d51912bf1ea61321f40c5bfe98",
+      "path": "evidence/native-traces/ad7f9483a923d1101bbc05f882d6d4950bb0e5d51912bf1ea61321f40c5bfe98.npz",
+      "public_sha256": "0370deb6384aff3a520542861c47deda77aa10ff259403cdb74e0720f15d23bf",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2702,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/8d2cbeaab822ef35c3b7994328ec2970909228f50d08a8c831501698a7240232.npz",
+      "original_sha256": "aee4606efbd2a540989544ced4e5f28f7a9c6186c688223642612ad8a9be32f9",
+      "path": "evidence/native-traces/aee4606efbd2a540989544ced4e5f28f7a9c6186c688223642612ad8a9be32f9.npz",
+      "public_sha256": "f93c6c974162cf4584e156f271207595e0e98b7ecd5ba2e8d5b836531287613d",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3229,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/d013bc1a1742e347696450515caa136993b0b0a24d94044ff5e367098b24a637.npz",
+      "original_sha256": "aef803ec26d8ae44c474bb5ca0c7e87dc070d9392f415401f011490af9846761",
+      "path": "evidence/native-traces/aef803ec26d8ae44c474bb5ca0c7e87dc070d9392f415401f011490af9846761.npz",
+      "public_sha256": "126f37cecffe3424c24bbc5a4062905d8476556b9c01c7cbe40fb7d04a6f9ccb",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/6b7c9e577d2b7d7e7ed0d769d841a7b133f43a5ffb0ef718a5630ea5a404a603.npz",
+      "original_sha256": "b04d9885b69bfb63725bcb6aac5e62b43695f7dc56b0580e6446e9d4cfa9e0f3",
+      "path": "evidence/native-traces/b04d9885b69bfb63725bcb6aac5e62b43695f7dc56b0580e6446e9d4cfa9e0f3.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 5652,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/980cad02068cf4d541cf0891ac07c456355f551b5573ecb3718985fb02005c86.npz",
+      "original_sha256": "b1242a7e7742908f6aecc68871bbcc4bcff6b04bccd7dc0a005384d40e6a0498",
+      "path": "evidence/native-traces/b1242a7e7742908f6aecc68871bbcc4bcff6b04bccd7dc0a005384d40e6a0498.npz",
+      "public_sha256": "9a421dadeaa80c218335a8af605b8939252abf411fc1a86734f6d133ff8d8b2f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 6850,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/c9a3c8b6d30d2ebd5567f72c3bf626cbd63ca9427ae3424590b47e11da8361fe.npz",
+      "original_sha256": "b1971c849bbc4e9e7143ba8faacd20d1f28ec66932c883947daeae2243eb9529",
+      "path": "evidence/native-traces/b1971c849bbc4e9e7143ba8faacd20d1f28ec66932c883947daeae2243eb9529.npz",
+      "public_sha256": "f0686a8904d577ac43c21dd6e31f71673f45e5736acd8bc5e83a42c13c650a3f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/9e3008d90fb6899db373abc44c2714e692786e285006844ec94daa46506b91fd.npz",
+      "original_sha256": "b1f0d281b29d2aeb81436910d768ef223d9a458c19503965a7062201e2163be8",
+      "path": "evidence/native-traces/b1f0d281b29d2aeb81436910d768ef223d9a458c19503965a7062201e2163be8.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b9f32d438ff2be0ccf44b3e499e162492d869756a32def8826eb3d388d6f5efa.npz",
+      "original_sha256": "b210c061952daceb6c1afee44aa0b8f946bc34b9c366e4e06ac25bc341f4584a",
+      "path": "evidence/native-traces/b210c061952daceb6c1afee44aa0b8f946bc34b9c366e4e06ac25bc341f4584a.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3703,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/9e35bfb66312480ce563d62e7a5aac23ad446af128419a219d751f973a8137e7.npz",
+      "original_sha256": "b418f1fb3d2104cada9bc6cee58d306b095f2df2f76bcd9e6866cc246eb94f18",
+      "path": "evidence/native-traces/b418f1fb3d2104cada9bc6cee58d306b095f2df2f76bcd9e6866cc246eb94f18.npz",
+      "public_sha256": "25b5b6d28c732ec630fa9f3a4f1368122cebfa1addf266a666a3679224e1d2d9",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2983,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/6b6211bc3c1abde52420c22a6427c3b0a3c061e3b8dff0f1232fb922db9d549a.npz",
+      "original_sha256": "b5b653a27eb6cfa06d2ef00b693937e6df5ee2c2e6d73de67360ef5d699e8d59",
+      "path": "evidence/native-traces/b5b653a27eb6cfa06d2ef00b693937e6df5ee2c2e6d73de67360ef5d699e8d59.npz",
+      "public_sha256": "02dfcea04bc02f3f317fd1e3e5b9f410acb2a43ad11933c234fcaa33330889a8",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3977,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/8bef618421de97cd0a666d23b89052d650c4eeda0e50f8830d64dc6e6d2447ec.npz",
+      "original_sha256": "b84bf70e6627b48aaf814797900e08c01d2fcce40f143b6de2c240cd788887cb",
+      "path": "evidence/native-traces/b84bf70e6627b48aaf814797900e08c01d2fcce40f143b6de2c240cd788887cb.npz",
+      "public_sha256": "5c6dd9a75e4f091228bcd91d69df4f89ee008f1a5cba3abab14c91eebc5ec6e7",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/55ae5e9a1f5e6e36046176bd7ceefc6e4abe153d2468b177785989f04ec942a5.npz",
+      "original_sha256": "b88ae334b5f4bf314224add1a9e7188225ea5e8318dfbcb94704c74efe9db561",
+      "path": "evidence/native-traces/b88ae334b5f4bf314224add1a9e7188225ea5e8318dfbcb94704c74efe9db561.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/8280a0a34a06cc2a9e5342b383ef6355ad0cd781780aa7f9155d7caaeed21841.npz",
+      "original_sha256": "ba1521ca5b168d45c39a4096baa4da8bfb1924c69e370559a4d76e7a38ef5b75",
+      "path": "evidence/native-traces/ba1521ca5b168d45c39a4096baa4da8bfb1924c69e370559a4d76e7a38ef5b75.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2738,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/915c7d5b4767cc0c75f481dde5a5b5ce434debc164bd39e7662443260d6e5afb.npz",
+      "original_sha256": "bfc07b4800997a59cba73d456f95a1cb614c9e964164ba3322c53a2011dc2262",
+      "path": "evidence/native-traces/bfc07b4800997a59cba73d456f95a1cb614c9e964164ba3322c53a2011dc2262.npz",
+      "public_sha256": "9b510c478431ced808ea019b3e7db6376959d228ee1ef5d3e4e355e759e5fc11",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3091,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/afb6de530331da202663723f6905d602f9cbcad9c321bc3bece064ed466bda05.npz",
+      "original_sha256": "c185b8f634018b7629a98f2a189bb3be2d0eb5311eae7a7645f33f5af71755e0",
+      "path": "evidence/native-traces/c185b8f634018b7629a98f2a189bb3be2d0eb5311eae7a7645f33f5af71755e0.npz",
+      "public_sha256": "975c99176cb65f4f4139a6d5cd935ece48c42b631e7ef65db8f2367113d9c1e5",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3141,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/fcb055cc52903f83880cbd4de8393ba0cbd936614be61594e52ad9c8bace37b5.npz",
+      "original_sha256": "c20f9c23e59a3463fc3d2b0fd1f332235016677d18347904c524e9491cb98197",
+      "path": "evidence/native-traces/c20f9c23e59a3463fc3d2b0fd1f332235016677d18347904c524e9491cb98197.npz",
+      "public_sha256": "35a5ab28336447aeec4a0c4b473f7224cc534db6e31c1d5f9d8ed4b74c5c50a5",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/74e153af425fe2f0da30d5f4b75e61d1af19e7c90cdba22e034fc14a316d00cf.npz",
+      "original_sha256": "c4e9cc2dafedcc10c66c074338311c920d1487e2323471aac65b72dc7cbd9f02",
+      "path": "evidence/native-traces/c4e9cc2dafedcc10c66c074338311c920d1487e2323471aac65b72dc7cbd9f02.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/a454a4738756460c25bf9c908b9c4fff8da4a114556dcabac80c966369938592.npz",
+      "original_sha256": "c59a17540ec43afe77b79abe4f7aed83b321b0c2450bc457f3ad204e01b30077",
+      "path": "evidence/native-traces/c59a17540ec43afe77b79abe4f7aed83b321b0c2450bc457f3ad204e01b30077.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3126,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/9ce1a7132ecb1cb29611b5745e7fd389d5f7b4cee9554acddc8123c45f0f6652.npz",
+      "original_sha256": "c5fd4d39a851d4faa2a44ab36f0622753a6ffa2e5cf56cdd7062bf6381c2a0ed",
+      "path": "evidence/native-traces/c5fd4d39a851d4faa2a44ab36f0622753a6ffa2e5cf56cdd7062bf6381c2a0ed.npz",
+      "public_sha256": "a68d8c98ecb3cb4f716ee34e0b6fa7632f7f056bb8002031d18e421c4b737279",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3242,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b5b87f5abdc31ca957e21f8e7cb2e578a0ff76e37a8613438cdad6c1c0d3391a.npz",
+      "original_sha256": "c6356e14c32f3c1ecf524ad1281d045347b7062ea0fc3cce70a7084864f70e58",
+      "path": "evidence/native-traces/c6356e14c32f3c1ecf524ad1281d045347b7062ea0fc3cce70a7084864f70e58.npz",
+      "public_sha256": "dfb78e00b931b16349ab4ecf5e7bdf8caa5e708e5fd4c846ebea4f6b8793121c",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/345bcf45541109873ed447e746ecb4c794d8845bca3458d8f089161b0c70ea3a.npz",
+      "original_sha256": "cb476ac7f004cf18be239dcfba4d41dd53ac4c4901adfb6b6eef710a711cc2bf",
+      "path": "evidence/native-traces/cb476ac7f004cf18be239dcfba4d41dd53ac4c4901adfb6b6eef710a711cc2bf.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3131,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/36c5244db78ad934a20b4860c068f590b1bb07baa6652309a03cc66c0bcf49e6.npz",
+      "original_sha256": "cd1dfcca2e2dfc46b3c593fbaed10e8df9c1d1085f83bb09559c6c0d8013a544",
+      "path": "evidence/native-traces/cd1dfcca2e2dfc46b3c593fbaed10e8df9c1d1085f83bb09559c6c0d8013a544.npz",
+      "public_sha256": "e7f74c8ef79c60a43b20cd3008c3a557f9a6ed56c60cdf58257a63139ac557ee",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/81e03fcb817bc541d109bdb213b7a88fd732f3286423f37064ef5f81bd8c718d.npz",
+      "original_sha256": "cd48d02e684edc711e003f550efb6af27dabda7c0128f57dc6bf5b2ec57cc718",
+      "path": "evidence/native-traces/cd48d02e684edc711e003f550efb6af27dabda7c0128f57dc6bf5b2ec57cc718.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3108,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/2b4a40af80502066d500b459196d654ac1969ecc285f9825be41dba109a81e19.npz",
+      "original_sha256": "cd8ee77be2d2ff0ec2f02660468531fe47ab0b4e37b44282b069b0d3510f2b0a",
+      "path": "evidence/native-traces/cd8ee77be2d2ff0ec2f02660468531fe47ab0b4e37b44282b069b0d3510f2b0a.npz",
+      "public_sha256": "bb0556c2f0af2dde9055ffb65ed60c514298483f10ea4b6c0207fea2020fb9dc",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2722,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/04f5c45eba47cdd1006bd123558f1064d032520bdad92fb1d24a1e69714a00c1.npz",
+      "original_sha256": "cfcc4d5ed9012ab3715b2c7ea5961b9cbd18ffec5798c747aca20f92b8c8ba8d",
+      "path": "evidence/native-traces/cfcc4d5ed9012ab3715b2c7ea5961b9cbd18ffec5798c747aca20f92b8c8ba8d.npz",
+      "public_sha256": "ce7fe23af5cab1a00e2779e8a456c726c0ba3b5d692068adee2c73e376b6da14",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/1b18d9618156e315a8196cb32327bf9e8f88c02c85fb38074d0811edfd511e98.npz",
+      "original_sha256": "d3bd0336e1c08eb53b055fc2efa00a7c4698261e11fe18edddb45a693cc4b32c",
+      "path": "evidence/native-traces/d3bd0336e1c08eb53b055fc2efa00a7c4698261e11fe18edddb45a693cc4b32c.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3917,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e66a63993bd0be6a4c44b15e80a3e8ad896b98b51dc6590e0849453195def300.npz",
+      "original_sha256": "d47de2308bd1d83104e5666005e3ceedc7f3f6f4defb67acda4b32edd8f9bba1",
+      "path": "evidence/native-traces/d47de2308bd1d83104e5666005e3ceedc7f3f6f4defb67acda4b32edd8f9bba1.npz",
+      "public_sha256": "bd11f69689d361e2f5b98a00e2c3bd69a759ad4614570249be0e5d20648d807d",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3014,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/41f700fa1f16b85c4902fc75dd76c571faa10616496808fe5f9691d2fdf0dcc0.npz",
+      "original_sha256": "d65cfc168a9439e24c383c5f6cb69e60a5e9afb1f33d4f6f292fd8c508ee5d74",
+      "path": "evidence/native-traces/d65cfc168a9439e24c383c5f6cb69e60a5e9afb1f33d4f6f292fd8c508ee5d74.npz",
+      "public_sha256": "b402cc87ebd4d5f24f635f0946332b4a60e40aaf237d2764a6e3c98f790c40d0",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1149,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/a792622acf9037e8563a12d14ad2cfdd1a343844591b109cb6d466280e1c1993.npz",
+      "original_sha256": "d83c47f0f365ea92309e8d6a437138baf487023f8d7d7912cae898d943c7a631",
+      "path": "evidence/native-traces/d83c47f0f365ea92309e8d6a437138baf487023f8d7d7912cae898d943c7a631.npz",
+      "public_sha256": "1b63f9fa3c7106a5dece78af2b9c09a5fcf2a21593973ba5ff00330b8d36ed9f",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3258,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/36ea7b4264079f7eaf871a3754b91bcb5d39afde467262e79d4c44df3875af42.npz",
+      "original_sha256": "d9819587b2fb147e348009705522e94e29d79cbcab4675bf6b9924d59daaacd4",
+      "path": "evidence/native-traces/d9819587b2fb147e348009705522e94e29d79cbcab4675bf6b9924d59daaacd4.npz",
+      "public_sha256": "1880cd65162589a151181be34f35faee64c2e886e6a54667f1e71e4f01111ff7",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/ef02bc67d9bad6634fa63a08a6dd4417694af94762c12b75de60694997b954b6.npz",
+      "original_sha256": "dcc323b6fcc99c1e56293e79717f89e21c7ffc4176387a6435b6804a629fd02d",
+      "path": "evidence/native-traces/dcc323b6fcc99c1e56293e79717f89e21c7ffc4176387a6435b6804a629fd02d.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e808e4a29164c644fbf816ff02a016be0f90041e7ac707d428cadef90010f4e9.npz",
+      "original_sha256": "dce720869323f3b6529fae8107853745f1ea0324c90a741e4576775396dbde1b",
+      "path": "evidence/native-traces/dce720869323f3b6529fae8107853745f1ea0324c90a741e4576775396dbde1b.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3877,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/fc926f9bd15185d7d7400a4f0a2b701b3e98f9cb674e1cff63183c9e0d43e80d.npz",
+      "original_sha256": "ddf41444463df7468b239ea8444a367517a882246d57de6424619014a0f6c33a",
+      "path": "evidence/native-traces/ddf41444463df7468b239ea8444a367517a882246d57de6424619014a0f6c33a.npz",
+      "public_sha256": "fd0989ea736d4192168562c89f7b6d0f9a33031e5200c3845da7a974735c2c57",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3406,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/15d3b5c6f55d7f0d28c3f0a1282adf6d6b29d32e1ff53afcc739a001edfca91e.npz",
+      "original_sha256": "def29996abf728fbfa37957c041434d80f1d344926f1be00d60c71d81f9f50b9",
+      "path": "evidence/native-traces/def29996abf728fbfa37957c041434d80f1d344926f1be00d60c71d81f9f50b9.npz",
+      "public_sha256": "6628d17152b593c944849d8e15293ed6c36f5c1baab702f6f66f9181bd08dd46",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/489a8ecd2351b9fc527149bbb252b01d013165cb400614033a8f719bbd2e93f5.npz",
+      "original_sha256": "df2aaf439f70f88d1d54ec69d12847a27fb8695dd8c941f81dffcb90117d45d3",
+      "path": "evidence/native-traces/df2aaf439f70f88d1d54ec69d12847a27fb8695dd8c941f81dffcb90117d45d3.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7579,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/bb33e858079b945638e499a69f61da5b24bda7033472280a2b46184c0ed9bb3c.npz",
+      "original_sha256": "df802f2bc786dab80a338d38b47be3a3b9ac7033145577e7651859890cc2d3d1",
+      "path": "evidence/native-traces/df802f2bc786dab80a338d38b47be3a3b9ac7033145577e7651859890cc2d3d1.npz",
+      "public_sha256": "feee5cdfc14c2ba114bcf264367d68d6003380cf7c32d67a9b44a4c3d6bfd4a0",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3647,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/e60194d05b85812d2cd646b2ff242c614a61e4cdfe8370eda51613a2e1aec2e0.npz",
+      "original_sha256": "e04cad3112c1d4a28308b4d0a413fabf3b5fb695cfa965021098ae2af919a628",
+      "path": "evidence/native-traces/e04cad3112c1d4a28308b4d0a413fabf3b5fb695cfa965021098ae2af919a628.npz",
+      "public_sha256": "961bc7d0d17d9a3e6509482cd356f92b8a18cdbd1607a0a84448bff2d4d2a5ea",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/1c185fb913d9b1e41955b2425cffef8b9a37d0d348c8aa156a60627efca89567.npz",
+      "original_sha256": "e12fe3cf334e06410fa2e258a7e7426cd5513d30886cabaa252eac3cda932ab8",
+      "path": "evidence/native-traces/e12fe3cf334e06410fa2e258a7e7426cd5513d30886cabaa252eac3cda932ab8.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 6860,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/39f51321d718da3b50cf6f44f6fce9f0ea9cfd2bb7e196dfa2fb1f238869b9a2.npz",
+      "original_sha256": "e1eab4b1b1627f3cfbcae566181b75ce532e7bb93e908948e901e40c13c916b3",
+      "path": "evidence/native-traces/e1eab4b1b1627f3cfbcae566181b75ce532e7bb93e908948e901e40c13c916b3.npz",
+      "public_sha256": "a1bfe4eb3cabf9335ffd29a894f96b5ef8e156c0a092040cb0420be313ea7110",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3352,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/302a1ecbb13aa0ca42ecf123dcacf90d7c7dcb8d4209a02af6cfb5c7ba7d77e0.npz",
+      "original_sha256": "e32dcad2e3443a5d1b2eeff2cc3cc8cf17006056ceb6fe97149effbb967177a2",
+      "path": "evidence/native-traces/e32dcad2e3443a5d1b2eeff2cc3cc8cf17006056ceb6fe97149effbb967177a2.npz",
+      "public_sha256": "298e6303fb3ea75d84e3db7d2e4afe743ccd62d792d3fb7cca063cb40b2632ab",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3323,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/4f85704adffd9bfedfc4052f7204a69e85c7563baf49a52ccff33933b2b54e2e.npz",
+      "original_sha256": "e33ee27aff24ceed91bd905c6adb450ed8dc588d5b1cc75d5966520bd1c77443",
+      "path": "evidence/native-traces/e33ee27aff24ceed91bd905c6adb450ed8dc588d5b1cc75d5966520bd1c77443.npz",
+      "public_sha256": "c73943f9a1ce698edec72324fc8ff9b3a0a4dc7911f7dee277963039865e55b5",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/ef448ea91e1aeca82598286f3ad3c73f4e2b32d912b7e9cf11af52216e55a6bc.npz",
+      "original_sha256": "e3d18cd7fe6e8284eac0adf82d3aca7c0e2fc58fb272e2434656df2a933fc34c",
+      "path": "evidence/native-traces/e3d18cd7fe6e8284eac0adf82d3aca7c0e2fc58fb272e2434656df2a933fc34c.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3039,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/44de9961becd9418897f2d1ab6d22c2e50d818e935c8c9dcf88e15a8eab6dc2a.npz",
+      "original_sha256": "e4088c9b0f0edc5e1558fea5488a2472b8f6c66b44e67912a3072e085a8a97b0",
+      "path": "evidence/native-traces/e4088c9b0f0edc5e1558fea5488a2472b8f6c66b44e67912a3072e085a8a97b0.npz",
+      "public_sha256": "e5cd36ab1bb4e7147b3dab2f648b2b19ea416a00273e7376dc540aace4bd2a84",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7583,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/7cbe6a21bbf26cac8bf9b7b8812de98f7c68717c55f7a4b3192814d358266153.npz",
+      "original_sha256": "e45ec27114a941a49f615f58e486eb146051b4869bb9ede8d833863c21f63843",
+      "path": "evidence/native-traces/e45ec27114a941a49f615f58e486eb146051b4869bb9ede8d833863c21f63843.npz",
+      "public_sha256": "fd661bf8b37754cf2b9f9720cb4450895d7a84a4c60023f853e2bd1be6e19dc5",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2771,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/eee24a9a9466241e0d19f9562a43cd30fc8f3fc66dcd9ba4db3ac5b3dd8c7c8d.npz",
+      "original_sha256": "e4825110bbf603ed1c46db3ab8ba68c3966d0f04ed858b85a81f5157581b93f6",
+      "path": "evidence/native-traces/e4825110bbf603ed1c46db3ab8ba68c3966d0f04ed858b85a81f5157581b93f6.npz",
+      "public_sha256": "eb09a15e214a965456133d51712fd84a765a308aa4d7c1ecbf93d20ffe965cf1",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/8ac8ed8eeb70822338756048257e4837f9bce0b52ac38dec7944d60ee4d4acb3.npz",
+      "original_sha256": "e7e26a82eb30550f9d54ab8501f767d2970c996162e58039fe8ae3cfbbf0b4b0",
+      "path": "evidence/native-traces/e7e26a82eb30550f9d54ab8501f767d2970c996162e58039fe8ae3cfbbf0b4b0.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3176,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b8186532b2d1b7be7b4cc7d321d10a88c1d12444c227cf4162ae68eaa5628bde.npz",
+      "original_sha256": "ea8e35fa9607a60574d6274c0fc135661e8cbee5e57859976fb3b71c60caaa41",
+      "path": "evidence/native-traces/ea8e35fa9607a60574d6274c0fc135661e8cbee5e57859976fb3b71c60caaa41.npz",
+      "public_sha256": "ae7ba2465f0b4a075eac7ef06f3ece470fc5e2523edbe8538267a0c0a76abd4b",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0002/cache/results/c6e8eec9aaa6bccda474a7756549c360c60631ae714d162cd47d742641f23645.npz",
+      "original_sha256": "eb24a43b9107d85e9ec95944799f5dfaefb61d07ab23de2fc7a84735f1b2185a",
+      "path": "evidence/native-traces/eb24a43b9107d85e9ec95944799f5dfaefb61d07ab23de2fc7a84735f1b2185a.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 2644,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/d913435642be0d802dfba58abc1221af6285710ba9d802319db5891166c9dbb8.npz",
+      "original_sha256": "ee4fa63aa34b11c0df2ab6136bb6c8d850b20ce7ab5b17041d2fe0752d070abb",
+      "path": "evidence/native-traces/ee4fa63aa34b11c0df2ab6136bb6c8d850b20ce7ab5b17041d2fe0752d070abb.npz",
+      "public_sha256": "506944de47aca37d02759ea8973d35d5a1929e18d558c2dbc1fb6a0e0ee1abb3",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7710,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/68d98842b3f8b9822c367297f623a9c44c1f507f69703dce06f3be787e74a6c6.npz",
+      "original_sha256": "ee7d5f299ea0fa5d2b315e5cad752ac1b671523eb4119ac09f3c7c29afbc2b3e",
+      "path": "evidence/native-traces/ee7d5f299ea0fa5d2b315e5cad752ac1b671523eb4119ac09f3c7c29afbc2b3e.npz",
+      "public_sha256": "ff297d3a1a5681c16447f70d709541e06772cb7dae6f213499fb72aab86b4377",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3597,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/aec9e74299c14e41f8d58d17dd79a2d55e3db05a008426819aadf666b37514fe.npz",
+      "original_sha256": "ef0657f7c250bdd2d5a6ba74c20798a50e63a8232b9ff09c43e438e2ab9c0a5b",
+      "path": "evidence/native-traces/ef0657f7c250bdd2d5a6ba74c20798a50e63a8232b9ff09c43e438e2ab9c0a5b.npz",
+      "public_sha256": "046c139819ebe2afd39746d1d1df1c85fda66af72e5c414d3acfa7223c03c64e",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/2144bffb0879c8d19b1fd44b3e10cf51219791d5d68f4658feccd8e773d22bf6.npz",
+      "original_sha256": "ef2b3e19c5107b55790601571a776113830a3aa0a44c50b98688660730394729",
+      "path": "evidence/native-traces/ef2b3e19c5107b55790601571a776113830a3aa0a44c50b98688660730394729.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b6dfe327bf6c760d6125ca60c683c6ffc29f60210dc9c3246337c56f569fbc4b.npz",
+      "original_sha256": "f0f1a0eb9ae44302d23b2ee6c6bf23803a9d61d6dee6b01329ac6ebb2e2ed438",
+      "path": "evidence/native-traces/f0f1a0eb9ae44302d23b2ee6c6bf23803a9d61d6dee6b01329ac6ebb2e2ed438.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 7712,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/d31ae34102d6fa2fa6e31ff333da376579aa06d32b6417cd83d57299475e8a92.npz",
+      "original_sha256": "f3049fb2f2eeb494a45e96a204223ba2c50ac0fd7a193b4078a9b1942fb2b264",
+      "path": "evidence/native-traces/f3049fb2f2eeb494a45e96a204223ba2c50ac0fd7a193b4078a9b1942fb2b264.npz",
+      "public_sha256": "65f271829aadaecf4bdda8e4123724c4cb3cec5d06f6201568a02900f9c6a9c5",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/b9ab01d1a2ea71f57edce94c6e63aa0b41f80aec3729fdac50cd8e59c2c17057.npz",
+      "original_sha256": "f354a89a925cd786d9647a2d1b7deaae94f4e97bd96701e4ad3d70650c04a35b",
+      "path": "evidence/native-traces/f354a89a925cd786d9647a2d1b7deaae94f4e97bd96701e4ad3d70650c04a35b.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3759,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/d4634235a1f595b3ce5ac0f706139d79ecc5cc10e3dbef02febf41f651cac1fe.npz",
+      "original_sha256": "f44296c7e977817b57f89cc15b6c58cfc9b1cf5a7260cd4c772c4900c483cf98",
+      "path": "evidence/native-traces/f44296c7e977817b57f89cc15b6c58cfc9b1cf5a7260cd4c772c4900c483cf98.npz",
+      "public_sha256": "82451928ca5e418e7b3d43772bc3d31f753b8473bdb8e9392505c75db47a9aa1",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3318,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/ab3714433f236fc3d4369f3ee7d63691b299cafa33a75aa751073cc77f0db45f.npz",
+      "original_sha256": "f62181dbdcbcacf2e08d8c12eb386738c000aac1ac951d872a5eb7f2877752b2",
+      "path": "evidence/native-traces/f62181dbdcbcacf2e08d8c12eb386738c000aac1ac951d872a5eb7f2877752b2.npz",
+      "public_sha256": "b4c41cb20268a413905e70886d4c10fc9bc6e3f64d126f8cf6589025ce78462c",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/9f29b2023236d5fa270089348cf3353b18f45536ef0cf6f83a1472cf6568acf3.npz",
+      "original_sha256": "f630e12ec7b4fbb75101d0d4d574f6fcecbb527e6e3b76a99a6034489c91dc48",
+      "path": "evidence/native-traces/f630e12ec7b4fbb75101d0d4d574f6fcecbb527e6e3b76a99a6034489c91dc48.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 3135,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/cb514308434b20dc47714a5bf8bb98aee582fec173ec9e2464456853af8d3a18.npz",
+      "original_sha256": "f6d95ecdf2b90a0391650bff14c234339a3653d1deb14fd5a26d28971c69cbd0",
+      "path": "evidence/native-traces/f6d95ecdf2b90a0391650bff14c234339a3653d1deb14fd5a26d28971c69cbd0.npz",
+      "public_sha256": "5e9646980828612d7f36de5376257124dcded0120008be923fa082984d476bc7",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1080,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/63c07f2826161ed68910812895a481edc9ee7c74942c6ce6408c71b3238a48ce.npz",
+      "original_sha256": "f7ec5b41ba06aca3452e4bcf6c5946bea36aadadf66c97d71bd6b0b301b5bb30",
+      "path": "evidence/native-traces/f7ec5b41ba06aca3452e4bcf6c5946bea36aadadf66c97d71bd6b0b301b5bb30.npz",
+      "public_sha256": "f981a0df2fb84f7df85d30123c2900b778ada64201b89f05b39a4f300cc840ad",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1034,
+      "changed_fields": [
+        "NPZ member inventory: retain observation_time_ms, observation_values_mv, refined_observation_values_mv only"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/cache/results/d726c050d4cd5aa7aab5a0b30f5ce3cfa8911fe05d18ced62851c6b555a62b28.npz",
+      "original_sha256": "fe18268b72e5538817b113b945e3643fc7a296f78d5b69506c0fa3d75e7d761d",
+      "path": "evidence/native-traces/fe18268b72e5538817b113b945e3643fc7a296f78d5b69506c0fa3d75e7d761d.npz",
+      "public_sha256": "6982fb8e92d55f4a5c1c2319b4446c33978d4bb4fea43587c9a0c2a4fcf08c09",
+      "transformation": "trace-only exact member extraction; full-neuron hidden states omitted"
+    },
+    {
+      "bytes": 1011,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-59209913440bed0c.json",
+      "original_sha256": "91d10499262d202c97b42fbe6da9f108f15a42cba70c4f5c14d27f202ada8763",
+      "path": "evidence/observations/development/T4-01-59209913440bed0c.json",
+      "public_sha256": "91d10499262d202c97b42fbe6da9f108f15a42cba70c4f5c14d27f202ada8763",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 10559,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-59209913440bed0c.npz",
+      "original_sha256": "47f15fefff930a7793d8dc57341eeceaf8ef147e39bf22df5ea12a489448b5e8",
+      "path": "evidence/observations/development/T4-01-59209913440bed0c.npz",
+      "public_sha256": "47f15fefff930a7793d8dc57341eeceaf8ef147e39bf22df5ea12a489448b5e8",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1009,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-6c9ee7e0c8cd8003.json",
+      "original_sha256": "e3cddda98977802e8a2ea43c7d81634c5502cb38ddc8ce415b97a061ba7a1052",
+      "path": "evidence/observations/development/T4-01-6c9ee7e0c8cd8003.json",
+      "public_sha256": "e3cddda98977802e8a2ea43c7d81634c5502cb38ddc8ce415b97a061ba7a1052",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 9308,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-6c9ee7e0c8cd8003.npz",
+      "original_sha256": "5bd29c3b5dd8c96aac2141aa719096b312f0ac2b0def122f0dc86305a2d0cf44",
+      "path": "evidence/observations/development/T4-01-6c9ee7e0c8cd8003.npz",
+      "public_sha256": "5bd29c3b5dd8c96aac2141aa719096b312f0ac2b0def122f0dc86305a2d0cf44",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1011,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-6d76cbbe65f026d5.json",
+      "original_sha256": "e8ec39b20b936f5315e144eef91f1a01696e0fdf046c7bf60c7c90eafcd69afd",
+      "path": "evidence/observations/development/T4-01-6d76cbbe65f026d5.json",
+      "public_sha256": "e8ec39b20b936f5315e144eef91f1a01696e0fdf046c7bf60c7c90eafcd69afd",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 10548,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-6d76cbbe65f026d5.npz",
+      "original_sha256": "a5e2344dca1ff3ce757ff2fb142b63dc70e10dbf025b79e514bd52e173449b71",
+      "path": "evidence/observations/development/T4-01-6d76cbbe65f026d5.npz",
+      "public_sha256": "a5e2344dca1ff3ce757ff2fb142b63dc70e10dbf025b79e514bd52e173449b71",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1009,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-b93f1fb51e92ee02.json",
+      "original_sha256": "66a76267edc112c19a9c5dc9fd1e75cb86af11d64e25530e63df50b6ba46f44a",
+      "path": "evidence/observations/development/T4-01-b93f1fb51e92ee02.json",
+      "public_sha256": "66a76267edc112c19a9c5dc9fd1e75cb86af11d64e25530e63df50b6ba46f44a",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 10566,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-b93f1fb51e92ee02.npz",
+      "original_sha256": "24756e46ad91f6bcd4a9010024b70908a57ef1023e9e81064fb297335cd7879d",
+      "path": "evidence/observations/development/T4-01-b93f1fb51e92ee02.npz",
+      "public_sha256": "24756e46ad91f6bcd4a9010024b70908a57ef1023e9e81064fb297335cd7879d",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1011,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-ce1c1a4de64ba9ec.json",
+      "original_sha256": "a8bfba5e695d0761ea46606698306337314879e709e482ee77e5bf3440cb9baa",
+      "path": "evidence/observations/development/T4-01-ce1c1a4de64ba9ec.json",
+      "public_sha256": "a8bfba5e695d0761ea46606698306337314879e709e482ee77e5bf3440cb9baa",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 12123,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/T4-01-ce1c1a4de64ba9ec.npz",
+      "original_sha256": "e0824609c16a6c1ab3238cd0e77c2348b7b92dab7874d4335afe0ba56835884d",
+      "path": "evidence/observations/development/T4-01-ce1c1a4de64ba9ec.npz",
+      "public_sha256": "e0824609c16a6c1ab3238cd0e77c2348b7b92dab7874d4335afe0ba56835884d",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2116,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/development/manifest.json",
+      "original_sha256": "e6cd060ff8f7c3714b666fde5ffc3ec990fea4fb29cb3df0bbc00e90a90ecad2",
+      "path": "evidence/observations/development/manifest.json",
+      "public_sha256": "e6cd060ff8f7c3714b666fde5ffc3ec990fea4fb29cb3df0bbc00e90a90ecad2",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1008,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-2602ac761b2f5902.json",
+      "original_sha256": "9b074e39f6617b9a4149c34ff73385152828fa342f40f8cfe0f2b7126c4ab272",
+      "path": "evidence/observations/evaluation/T4-01-2602ac761b2f5902.json",
+      "public_sha256": "9b074e39f6617b9a4149c34ff73385152828fa342f40f8cfe0f2b7126c4ab272",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 12471,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-2602ac761b2f5902.npz",
+      "original_sha256": "4afcd40e70cb86aabd5e38c47320dc766ef031df7dc7b394f925e14da9422ff0",
+      "path": "evidence/observations/evaluation/T4-01-2602ac761b2f5902.npz",
+      "public_sha256": "4afcd40e70cb86aabd5e38c47320dc766ef031df7dc7b394f925e14da9422ff0",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1010,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-4b1df4fe36ea6a3c.json",
+      "original_sha256": "d64970e7e9ef24d2a5717f43a4843bbafad48e459ed4a9fc99dce776a18e56fe",
+      "path": "evidence/observations/evaluation/T4-01-4b1df4fe36ea6a3c.json",
+      "public_sha256": "d64970e7e9ef24d2a5717f43a4843bbafad48e459ed4a9fc99dce776a18e56fe",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 22505,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-4b1df4fe36ea6a3c.npz",
+      "original_sha256": "2febf1ef855741b6faddbff0e2c8e8d405516a84f331a8c25e5d5eac6015da8f",
+      "path": "evidence/observations/evaluation/T4-01-4b1df4fe36ea6a3c.npz",
+      "public_sha256": "2febf1ef855741b6faddbff0e2c8e8d405516a84f331a8c25e5d5eac6015da8f",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1010,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-51fa5db4acd09248.json",
+      "original_sha256": "4299a8909944e069b9d9b5027a586c07324512c8a77f8fac785da249e451ef25",
+      "path": "evidence/observations/evaluation/T4-01-51fa5db4acd09248.json",
+      "public_sha256": "4299a8909944e069b9d9b5027a586c07324512c8a77f8fac785da249e451ef25",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 12185,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-51fa5db4acd09248.npz",
+      "original_sha256": "e6d934eff7ce57a081a34acf9801766376e607283781a317bd5e4aca0087eb91",
+      "path": "evidence/observations/evaluation/T4-01-51fa5db4acd09248.npz",
+      "public_sha256": "e6d934eff7ce57a081a34acf9801766376e607283781a317bd5e4aca0087eb91",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1010,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-a93bc8d103abecbd.json",
+      "original_sha256": "945e4c50a7404ca76ebd38eec6cba607c98ff469a880b6fee3cc4de98af4c454",
+      "path": "evidence/observations/evaluation/T4-01-a93bc8d103abecbd.json",
+      "public_sha256": "945e4c50a7404ca76ebd38eec6cba607c98ff469a880b6fee3cc4de98af4c454",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 22763,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/T4-01-a93bc8d103abecbd.npz",
+      "original_sha256": "5401e0d1804d925aa84d8fd32d03d21b044a103d15dc6b95ce24e61133b4be64",
+      "path": "evidence/observations/evaluation/T4-01-a93bc8d103abecbd.npz",
+      "public_sha256": "5401e0d1804d925aa84d8fd32d03d21b044a103d15dc6b95ce24e61133b4be64",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1753,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/observations/evaluation/manifest.json",
+      "original_sha256": "2ba946dde2cd5356a3c8da084796219c3167093b84fc4cbcf903a5f78cb20de0",
+      "path": "evidence/observations/evaluation/manifest.json",
+      "public_sha256": "2ba946dde2cd5356a3c8da084796219c3167093b84fc4cbcf903a5f78cb20de0",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 14277,
+      "changed_fields": [
+        "$.native_t4_input_only_pilots[0].optical.arrays.path",
+        "$.native_t4_input_only_pilots[0].refined.arrays.path",
+        "$.native_t4_input_only_pilots[0].result.arrays.path",
+        "$.native_t4_input_only_pilots[1].optical.arrays.path",
+        "$.native_t4_input_only_pilots[1].refined.arrays.path",
+        "$.native_t4_input_only_pilots[1].result.arrays.path",
+        "$.records[0].arrays.path",
+        "$.records[0].summary.path",
+        "$.records[1].arrays.path",
+        "$.records[1].summary.path",
+        "$.records[2].arrays.path",
+        "$.records[2].summary.path",
+        "$.records[3].arrays.path",
+        "$.records[3].summary.path"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/pilot.json",
+      "original_sha256": "91465a49bd052596ad7d36f8dd55b19d33496f8cfc79201cdec476b101dc3a3f",
+      "path": "evidence/pilot.json",
+      "public_sha256": "2781bd04beb8541662729a1bb56df0e8683e2843cc639413e303c26166478a4d",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 849,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/banc_T4-01-2602ac761b2f5902.npz",
+      "original_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "path": "evidence/predictions-t4d/banc_T4-01-2602ac761b2f5902.npz",
+      "public_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 849,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/banc_T4-01-51fa5db4acd09248.npz",
+      "original_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "path": "evidence/predictions-t4d/banc_T4-01-51fa5db4acd09248.npz",
+      "public_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 782,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/banc_T4-01-59209913440bed0c.npz",
+      "original_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "path": "evidence/predictions-t4d/banc_T4-01-59209913440bed0c.npz",
+      "public_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 737,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/banc_T4-01-6c9ee7e0c8cd8003.npz",
+      "original_sha256": "c588e84da63e0a19614f8dc03c7c41d5259a5341495ba3960028a345233fcfb4",
+      "path": "evidence/predictions-t4d/banc_T4-01-6c9ee7e0c8cd8003.npz",
+      "public_sha256": "c588e84da63e0a19614f8dc03c7c41d5259a5341495ba3960028a345233fcfb4",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 782,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/banc_T4-01-6d76cbbe65f026d5.npz",
+      "original_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "path": "evidence/predictions-t4d/banc_T4-01-6d76cbbe65f026d5.npz",
+      "public_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2267,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-2602ac761b2f5902.npz",
+      "original_sha256": "7ed45a0a2a2308f193d3145baa49e33c45e3ec360c25ff06d8a9b14394823ecb",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-2602ac761b2f5902.npz",
+      "public_sha256": "7ed45a0a2a2308f193d3145baa49e33c45e3ec360c25ff06d8a9b14394823ecb",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 4306,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-4b1df4fe36ea6a3c.npz",
+      "original_sha256": "20d08b6ce6b2d25fa9bdf276c1a3c5ab4789a132a92f6b283372c214cda7370a",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-4b1df4fe36ea6a3c.npz",
+      "public_sha256": "20d08b6ce6b2d25fa9bdf276c1a3c5ab4789a132a92f6b283372c214cda7370a",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2260,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-51fa5db4acd09248.npz",
+      "original_sha256": "e001c6ad34babf9cfe982a82234692df68948f5bc754a4c74e92f059ee240a8f",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-51fa5db4acd09248.npz",
+      "public_sha256": "e001c6ad34babf9cfe982a82234692df68948f5bc754a4c74e92f059ee240a8f",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1858,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-59209913440bed0c.npz",
+      "original_sha256": "7c34ccb614764e16c3bee06e91821f3b24d1343f91738051f7c14cc2c2ce02a8",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-59209913440bed0c.npz",
+      "public_sha256": "7c34ccb614764e16c3bee06e91821f3b24d1343f91738051f7c14cc2c2ce02a8",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1605,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-6c9ee7e0c8cd8003.npz",
+      "original_sha256": "b176e9ef9dac622d422b1c2c92bb7f3f0c3c2e899b17dd98884099a71dc535db",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-6c9ee7e0c8cd8003.npz",
+      "public_sha256": "b176e9ef9dac622d422b1c2c92bb7f3f0c3c2e899b17dd98884099a71dc535db",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1864,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-6d76cbbe65f026d5.npz",
+      "original_sha256": "a5eacb74733e8beb7066363907e96877a0ca07948b6985f6f9bece491d41a954",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-6d76cbbe65f026d5.npz",
+      "public_sha256": "a5eacb74733e8beb7066363907e96877a0ca07948b6985f6f9bece491d41a954",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 4271,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-a93bc8d103abecbd.npz",
+      "original_sha256": "2e94c571f9bc0ad377431fb283c9b63910eb28a3dd92d1c61292acc6fd5a22b3",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-a93bc8d103abecbd.npz",
+      "public_sha256": "2e94c571f9bc0ad377431fb283c9b63910eb28a3dd92d1c61292acc6fd5a22b3",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1871,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-b93f1fb51e92ee02.npz",
+      "original_sha256": "63d255f6b7bd3519f17ccce6ef6f832cfe06e30c141ca2b99d34dd0020b01527",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-b93f1fb51e92ee02.npz",
+      "public_sha256": "63d255f6b7bd3519f17ccce6ef6f832cfe06e30c141ca2b99d34dd0020b01527",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2190,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/paralimbo_T4-01-ce1c1a4de64ba9ec.npz",
+      "original_sha256": "5970722e13c69ba5242bb54575f84994c571cc72925167d389d416e93b576055",
+      "path": "evidence/predictions-t4d/paralimbo_T4-01-ce1c1a4de64ba9ec.npz",
+      "public_sha256": "5970722e13c69ba5242bb54575f84994c571cc72925167d389d416e93b576055",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 70003,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions-t4d/prediction-seal.json",
+      "original_sha256": "298cbb7f24220a45387fb38754e9012967c5e45b40061b2f10c1aa1dfc574c4a",
+      "path": "evidence/predictions-t4d/prediction-seal.json",
+      "public_sha256": "298cbb7f24220a45387fb38754e9012967c5e45b40061b2f10c1aa1dfc574c4a",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 849,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/banc_T4-01-2602ac761b2f5902.npz",
+      "original_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "path": "evidence/predictions/banc_T4-01-2602ac761b2f5902.npz",
+      "public_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 849,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/banc_T4-01-51fa5db4acd09248.npz",
+      "original_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "path": "evidence/predictions/banc_T4-01-51fa5db4acd09248.npz",
+      "public_sha256": "b029b1ce44fa7b5013f09955fd0831606131cde42cdb68881a22c55a10b10a75",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 782,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/banc_T4-01-59209913440bed0c.npz",
+      "original_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "path": "evidence/predictions/banc_T4-01-59209913440bed0c.npz",
+      "public_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 737,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/banc_T4-01-6c9ee7e0c8cd8003.npz",
+      "original_sha256": "c588e84da63e0a19614f8dc03c7c41d5259a5341495ba3960028a345233fcfb4",
+      "path": "evidence/predictions/banc_T4-01-6c9ee7e0c8cd8003.npz",
+      "public_sha256": "c588e84da63e0a19614f8dc03c7c41d5259a5341495ba3960028a345233fcfb4",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 782,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/banc_T4-01-6d76cbbe65f026d5.npz",
+      "original_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "path": "evidence/predictions/banc_T4-01-6d76cbbe65f026d5.npz",
+      "public_sha256": "942468b4dd0b012a4a8e100cefb0e8b1de6e8ccc9cda1d1d793774f7000caaa6",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2219,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-2602ac761b2f5902.npz",
+      "original_sha256": "9b459da5ce2dea6e95d61fc3f6f2e1243a40d25f00e5967f3bc0400bc1a676e5",
+      "path": "evidence/predictions/paralimbo_T4-01-2602ac761b2f5902.npz",
+      "public_sha256": "9b459da5ce2dea6e95d61fc3f6f2e1243a40d25f00e5967f3bc0400bc1a676e5",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 4239,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-4b1df4fe36ea6a3c.npz",
+      "original_sha256": "ae615100c754b0bb531261f668cda9775435a1b621f47044aa99745ccfbb7a83",
+      "path": "evidence/predictions/paralimbo_T4-01-4b1df4fe36ea6a3c.npz",
+      "public_sha256": "ae615100c754b0bb531261f668cda9775435a1b621f47044aa99745ccfbb7a83",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2235,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-51fa5db4acd09248.npz",
+      "original_sha256": "51b3202dede53bcaf539ef7848bf473aed136af476702828b05b298750cce2e9",
+      "path": "evidence/predictions/paralimbo_T4-01-51fa5db4acd09248.npz",
+      "public_sha256": "51b3202dede53bcaf539ef7848bf473aed136af476702828b05b298750cce2e9",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1860,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-59209913440bed0c.npz",
+      "original_sha256": "99143b505edaa8c8ca3cd317928822a80abd071b8f84a5f5c26ccba6fb467179",
+      "path": "evidence/predictions/paralimbo_T4-01-59209913440bed0c.npz",
+      "public_sha256": "99143b505edaa8c8ca3cd317928822a80abd071b8f84a5f5c26ccba6fb467179",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1588,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-6c9ee7e0c8cd8003.npz",
+      "original_sha256": "5edca06752c901c67979283f7b4753641e36420fe4eb7c12e3deec94c898369d",
+      "path": "evidence/predictions/paralimbo_T4-01-6c9ee7e0c8cd8003.npz",
+      "public_sha256": "5edca06752c901c67979283f7b4753641e36420fe4eb7c12e3deec94c898369d",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1838,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-6d76cbbe65f026d5.npz",
+      "original_sha256": "1543de4b5f9f46e024b780b59fe8cf6bdc9406d2abf5ed02e09cf3c0379a31e3",
+      "path": "evidence/predictions/paralimbo_T4-01-6d76cbbe65f026d5.npz",
+      "public_sha256": "1543de4b5f9f46e024b780b59fe8cf6bdc9406d2abf5ed02e09cf3c0379a31e3",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 4256,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-a93bc8d103abecbd.npz",
+      "original_sha256": "2b2c15b68aee7e5de610039ffd17eebd86d9f2a867a493c096494cba9aef1eb1",
+      "path": "evidence/predictions/paralimbo_T4-01-a93bc8d103abecbd.npz",
+      "public_sha256": "2b2c15b68aee7e5de610039ffd17eebd86d9f2a867a493c096494cba9aef1eb1",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1848,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-b93f1fb51e92ee02.npz",
+      "original_sha256": "7905e0c367b41e508c3d54d95aca071dc2e2d0ddf343050899e677d55c71cfd7",
+      "path": "evidence/predictions/paralimbo_T4-01-b93f1fb51e92ee02.npz",
+      "public_sha256": "7905e0c367b41e508c3d54d95aca071dc2e2d0ddf343050899e677d55c71cfd7",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 2155,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/paralimbo_T4-01-ce1c1a4de64ba9ec.npz",
+      "original_sha256": "d45d197654f74d59c752856213dd379729b82a561b3a369e2ef400881a9236d5",
+      "path": "evidence/predictions/paralimbo_T4-01-ce1c1a4de64ba9ec.npz",
+      "public_sha256": "d45d197654f74d59c752856213dd379729b82a561b3a369e2ef400881a9236d5",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 69614,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/predictions/prediction-seal.json",
+      "original_sha256": "90d28bd67890ae787316be443ee76641263517c1cb2835035e01e658f1551eb6",
+      "path": "evidence/predictions/prediction-seal.json",
+      "public_sha256": "90d28bd67890ae787316be443ee76641263517c1cb2835035e01e658f1551eb6",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 23845,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/report.json",
+      "original_sha256": "a96b6939dc18b19f185717d672a92ce173740799c6548b5fb26a13f6234a3fa1",
+      "path": "evidence/report.json",
+      "public_sha256": "a96b6939dc18b19f185717d672a92ce173740799c6548b5fb26a13f6234a3fa1",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1952,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/schedule.json",
+      "original_sha256": "ba23db79dc4992745151fe3af3bca1377fa72a66151a1221ac1603a079df1553",
+      "path": "evidence/schedule.json",
+      "public_sha256": "ba23db79dc4992745151fe3af3bca1377fa72a66151a1221ac1603a079df1553",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 974,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/scientific-plan-seal.json",
+      "original_sha256": "25d97cd3c8906dfd4d632cdf9c7201cffdf6b420ea3d9a4af9fb40fc845b2305",
+      "path": "evidence/scientific-plan-seal.json",
+      "public_sha256": "25d97cd3c8906dfd4d632cdf9c7201cffdf6b420ea3d9a4af9fb40fc845b2305",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 11095,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/scores-t4d.json",
+      "original_sha256": "bf27dce959672ddf7230d4c0af34d2b0792b1a6709e6125e8482ca2d4e538125",
+      "path": "evidence/scores-t4d.json",
+      "public_sha256": "bf27dce959672ddf7230d4c0af34d2b0792b1a6709e6125e8482ca2d4e538125",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 11095,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/scores.json",
+      "original_sha256": "9430d4905bfc2f898373950435979ea8e1706a57ed01eb285089f7bc371720ca",
+      "path": "evidence/scores.json",
+      "public_sha256": "9430d4905bfc2f898373950435979ea8e1706a57ed01eb285089f7bc371720ca",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 101597,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/selected-candidates.json",
+      "original_sha256": "8b43ab8f4e660e2847206a2c21a99df0554599a2d14e4595f9ea6b18e8a8bcd1",
+      "path": "evidence/selected-candidates.json",
+      "public_sha256": "8b43ab8f4e660e2847206a2c21a99df0554599a2d14e4595f9ea6b18e8a8bcd1",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 236438,
+      "changed_fields": [
+        "$.failed_probes[0].failure.provenance.original_attempt",
+        "$.measurements[0].result.arrays.path",
+        "$.measurements[0].result.import_provenance.original_attempt",
+        "$.measurements[1].result.arrays.path",
+        "$.measurements[1].result.import_provenance.original_attempt",
+        "$.measurements[2].result.arrays.path",
+        "$.measurements[2].result.import_provenance.original_attempt",
+        "$.measurements[3].result.arrays.path",
+        "$.measurements[3].result.import_provenance.original_attempt",
+        "$.measurements[4].result.arrays.path",
+        "$.measurements[4].result.import_provenance.original_attempt",
+        "$.measurements[5].result.arrays.path",
+        "$.measurements[5].result.import_provenance.original_attempt",
+        "$.measurements[6].result.arrays.path",
+        "$.measurements[6].result.import_provenance.original_attempt",
+        "$.measurements[7].result.arrays.path",
+        "$.measurements[7].result.import_provenance.original_attempt",
+        "$.measurements[8].result.arrays.path",
+        "$.measurements[8].result.import_provenance.original_attempt",
+        "$.measurements[9].result.arrays.path",
+        "$.measurements[9].result.import_provenance.original_attempt",
+        "$.measurements[10].result.arrays.path",
+        "$.measurements[10].result.import_provenance.original_attempt",
+        "$.measurements[11].result.arrays.path",
+        "$.measurements[11].result.import_provenance.original_attempt",
+        "$.measurements[12].result.arrays.path",
+        "$.measurements[12].result.import_provenance.original_attempt",
+        "$.measurements[13].result.arrays.path",
+        "$.measurements[13].result.import_provenance.original_attempt",
+        "$.measurements[14].result.arrays.path",
+        "$.measurements[14].result.import_provenance.original_attempt",
+        "$.measurements[15].result.arrays.path",
+        "$.measurements[15].result.import_provenance.original_attempt",
+        "$.measurements[16].result.arrays.path",
+        "$.measurements[16].result.import_provenance.original_attempt",
+        "$.measurements[17].result.arrays.path",
+        "$.measurements[17].result.import_provenance.original_attempt",
+        "$.measurements[18].result.arrays.path",
+        "$.measurements[18].result.import_provenance.original_attempt",
+        "$.measurements[19].result.arrays.path",
+        "$.measurements[19].result.import_provenance.original_attempt",
+        "$.measurements[20].result.arrays.path",
+        "$.measurements[20].result.import_provenance.original_attempt",
+        "$.measurements[21].result.arrays.path",
+        "$.measurements[21].result.import_provenance.original_attempt",
+        "$.measurements[22].result.arrays.path",
+        "$.measurements[22].result.import_provenance.original_attempt",
+        "$.measurements[23].result.arrays.path",
+        "$.measurements[23].result.import_provenance.original_attempt",
+        "$.measurements[24].result.arrays.path",
+        "$.measurements[24].result.import_provenance.original_attempt",
+        "$.measurements[25].result.arrays.path",
+        "$.measurements[25].result.import_provenance.original_attempt",
+        "$.measurements[26].result.arrays.path",
+        "$.measurements[26].result.import_provenance.original_attempt",
+        "$.measurements[27].result.arrays.path",
+        "$.measurements[27].result.import_provenance.original_attempt",
+        "$.measurements[28].result.arrays.path",
+        "$.measurements[28].result.import_provenance.original_attempt",
+        "$.measurements[29].result.arrays.path",
+        "$.measurements[29].result.import_provenance.original_attempt",
+        "$.measurements[30].result.arrays.path",
+        "$.measurements[30].result.import_provenance.original_attempt",
+        "$.measurements[31].result.arrays.path",
+        "$.measurements[31].result.import_provenance.original_attempt",
+        "$.measurements[32].result.arrays.path",
+        "$.measurements[32].result.import_provenance.original_attempt",
+        "$.measurements[33].result.arrays.path",
+        "$.measurements[33].result.import_provenance.original_attempt",
+        "$.measurements[34].result.arrays.path",
+        "$.measurements[34].result.import_provenance.original_attempt",
+        "$.measurements[35].result.arrays.path",
+        "$.measurements[35].result.import_provenance.original_attempt",
+        "$.measurements[36].result.arrays.path",
+        "$.measurements[36].result.import_provenance.original_attempt",
+        "$.measurements[37].result.arrays.path",
+        "$.measurements[37].result.import_provenance.original_attempt",
+        "$.measurements[38].result.arrays.path",
+        "$.measurements[38].result.import_provenance.original_attempt",
+        "$.measurements[39].result.arrays.path",
+        "$.measurements[39].result.import_provenance.original_attempt",
+        "$.measurements[40].result.arrays.path",
+        "$.measurements[40].result.import_provenance.original_attempt",
+        "$.measurements[41].result.arrays.path",
+        "$.measurements[41].result.import_provenance.original_attempt",
+        "$.measurements[42].result.arrays.path",
+        "$.measurements[42].result.import_provenance.original_attempt",
+        "$.measurements[43].result.arrays.path",
+        "$.measurements[43].result.import_provenance.original_attempt",
+        "$.measurements[44].result.arrays.path",
+        "$.measurements[44].result.import_provenance.original_attempt",
+        "$.measurements[45].result.arrays.path",
+        "$.measurements[45].result.import_provenance.original_attempt",
+        "$.measurements[46].result.arrays.path",
+        "$.measurements[46].result.import_provenance.original_attempt",
+        "$.measurements[47].result.arrays.path",
+        "$.measurements[47].result.import_provenance.original_attempt",
+        "$.measurements[48].result.arrays.path",
+        "$.measurements[48].result.import_provenance.original_attempt",
+        "$.measurements[49].result.arrays.path",
+        "$.measurements[49].result.import_provenance.original_attempt",
+        "$.measurements[50].result.arrays.path",
+        "$.measurements[50].result.import_provenance.original_attempt",
+        "$.measurements[51].result.arrays.path",
+        "$.measurements[51].result.import_provenance.original_attempt",
+        "$.measurements[52].result.arrays.path",
+        "$.measurements[52].result.import_provenance.original_attempt",
+        "$.measurements[53].result.arrays.path",
+        "$.measurements[53].result.import_provenance.original_attempt",
+        "$.measurements[54].result.arrays.path",
+        "$.measurements[54].result.import_provenance.original_attempt",
+        "$.measurements[55].result.arrays.path",
+        "$.measurements[55].result.import_provenance.original_attempt",
+        "$.measurements[56].result.arrays.path",
+        "$.measurements[56].result.import_provenance.original_attempt",
+        "$.measurements[57].result.arrays.path",
+        "$.measurements[57].result.import_provenance.original_attempt",
+        "$.measurements[58].result.arrays.path",
+        "$.measurements[58].result.import_provenance.original_attempt",
+        "$.measurements[59].result.arrays.path",
+        "$.measurements[59].result.import_provenance.original_attempt",
+        "$.measurements[61].failure.provenance.original_attempt"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/sensitivity.json",
+      "original_sha256": "cbf939d301fa7c4c2b7652d422c37d512f46e5bac544aa8366cb65d5cca4e0dc",
+      "path": "evidence/sensitivity.json",
+      "public_sha256": "4b44f5cdd20f174cbe63896da00967f3f45e1612367b990c9f8c6219691c6e7f",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 24264,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/site-inventory.json",
+      "original_sha256": "e2f0d9bd0146f6bd402f523e42cc24e8330f4fbf16cc42f4fbe0c0cc656a6a6d",
+      "path": "evidence/site-inventory.json",
+      "public_sha256": "e2f0d9bd0146f6bd402f523e42cc24e8330f4fbf16cc42f4fbe0c0cc656a6a6d",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 547010,
+      "changed_fields": [
+        "rows[*].probes",
+        "rows[*].causal_controls",
+        "rows[*].whole_graph_classification.*.arrays"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/transmission-diagnosis.json",
+      "original_sha256": "811c41499b09ae12e03f877fb4f809fd787b447f63ab3f4f2135b3cda0537542",
+      "path": "evidence/transmission-diagnosis.json",
+      "public_sha256": "c3b356327bbb4362a7a72473c90e6edcaf6b787a42a9a6b078aae0ec9b8b7153",
+      "transformation": "compact diagnostic projection; raw control/cache arrays excluded"
+    },
+    {
+      "bytes": 979,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/verification.json",
+      "original_sha256": "1ed9df1cf454a931c15e125ea07c71bbb07c9febb5520152fefe2ba0348f5c55",
+      "path": "evidence/verification.json",
+      "public_sha256": "1ed9df1cf454a931c15e125ea07c71bbb07c9febb5520152fefe2ba0348f5c55",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1085,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "licenses/shiu-drosophila-brain-model-LICENSE.txt",
+      "public_sha256": "3621f6d6476189190e2960fa43f11b275ba4eca848fdac50a1ba2925de6223e8",
+      "transformation": "new publication documentation"
+    },
+    {
+      "bytes": 1309,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "release.json",
+      "public_sha256": "d6fea0ae40f07fef0b9d71c304523aba0a5c39f9778022fc45c588761ea90150",
+      "transformation": "new publication documentation"
+    },
+    {
+      "bytes": 7455,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/maintenance/final-0003/engineering-review.md",
+      "original_sha256": "535b7e0137b7b1ce09f4f6c8e06c3d6fd25049ac4c8baa1d0587f7b3cad3ebd1",
+      "path": "reviews/engineering-review.md",
+      "public_sha256": "535b7e0137b7b1ce09f4f6c8e06c3d6fd25049ac4c8baa1d0587f7b3cad3ebd1",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 1804,
+      "changed_fields": [
+        "$.attempt"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/maintenance/final-0003/final-acceptance.json",
+      "original_sha256": "d726d5869a4e3273b4b80868673c2989de12b4e6ebfb5e73cdca9c09bbb23639",
+      "path": "reviews/final-acceptance.json",
+      "public_sha256": "f2abb39bbb855ab9f82eddecfdd91c8a9da4b5a2c5161913626ea04efaebb297",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 4977,
+      "changed_fields": [
+        "local machine paths"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/maintenance/final-0003/pinned-sensitivity-review.md",
+      "original_sha256": "7b4af4f14253092e9318a8d57828303da4885bc0e5168ea2e33e2e9a8f81733d",
+      "path": "reviews/pinned-sensitivity-review.md",
+      "public_sha256": "2caea2dd8a2b941af1c2e33c998169de5a9458d208186193615254ac6c8f67e7",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 2819,
+      "changed_fields": [
+        "$.machine_review",
+        "$.pinned_original",
+        "$.preserved_earlier_copy",
+        "$.recovered_copy"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/maintenance/final-0003/review-document-reconciliation.json",
+      "original_sha256": "31317bd4ec2af6211bdae34f9f1b5d812090c723c3d47c6033d92081752fb9ec",
+      "path": "reviews/review-document-reconciliation.json",
+      "public_sha256": "cc1629cb183f3a171d7dd5f3e94ac4aa36a80ae578f88a32a88502a3eefe97f0",
+      "transformation": "host-path-normalized public derivative; historical hashes retained as provenance, not derivative seals"
+    },
+    {
+      "bytes": 12678,
+      "changed_fields": [
+        "local machine paths",
+        "public relative evidence link"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/maintenance/final-0003/scientific-review.md",
+      "original_sha256": "f3ab38ea8ce4ace90445880e30c5ba56f5e123cc40af684e02f72470ac149b0b",
+      "path": "reviews/scientific-review.md",
+      "public_sha256": "6cd87852f873c47a29d1ebf74eae6379e898100e1688566755d36d79a42948b2",
+      "transformation": "host-path and relative-link-normalized public derivative; historical hashes retained as provenance"
+    },
+    {
+      "bytes": 21557,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/maintenance/final-0003/scientific-verification.json",
+      "original_sha256": "ceae32a70c85289bb10f9a0e520498c053b2bd22c116a26bfcf4c0bb39bbc0f3",
+      "path": "reviews/scientific-verification.json",
+      "public_sha256": "ceae32a70c85289bb10f9a0e520498c053b2bd22c116a26bfcf4c0bb39bbc0f3",
+      "transformation": "byte-identical"
+    },
+    {
+      "bytes": 13951,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "source-inventory.json",
+      "public_sha256": "b70c174a5794567003101f81350dd5aa7f9e600ef3a76a43e0fe0d85d6e78f49",
+      "transformation": "new publication document"
+    },
+    {
+      "bytes": 1577,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/prepare_transmission_continuation.py",
+      "original_sha256": "5b36ced53d9603d91f294c47266ff5dde5f7466de16751d1dec9446d50676fe0",
+      "path": "source/scripts/prepare_transmission_continuation.py",
+      "public_sha256": "5b36ced53d9603d91f294c47266ff5dde5f7466de16751d1dec9446d50676fe0",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 21396,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/replay_transmission_failure.py",
+      "original_sha256": "9c7ae1b3c6f46fdc56eb2768ee07b6fbe069a2b5148726969c5a210c5c6548d7",
+      "path": "source/scripts/replay_transmission_failure.py",
+      "public_sha256": "c27208b7a062513fa0d0eef0a63ecdbcb95a4a75c00bd38ef70fbcc494d17f9a",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 1395,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/run_transmission_campaign.py",
+      "original_sha256": "1ec07b92a90b67b4347e06759b664b757b87f55eab405cf39d35dee25ea81209",
+      "path": "source/scripts/run_transmission_campaign.py",
+      "public_sha256": "1ec07b92a90b67b4347e06759b664b757b87f55eab405cf39d35dee25ea81209",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 22748,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/scripts/supervise_transmission_campaign.py",
+      "original_sha256": "4980460cf54e282aef9479bce9a3d8b85d376ce52617614761f177e40e58b9e4",
+      "path": "source/scripts/supervise_transmission_campaign.py",
+      "public_sha256": "4980460cf54e282aef9479bce9a3d8b85d376ce52617614761f177e40e58b9e4",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 9759,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/interfaces.py",
+      "original_sha256": "963901ba4afda6d83f4a4f610b2cbaa1f6c5b1be053564e696d71f38fb9e33ee",
+      "path": "source/src/flybrain/paralimbo_upgrade/interfaces.py",
+      "public_sha256": "963901ba4afda6d83f4a4f610b2cbaa1f6c5b1be053564e696d71f38fb9e33ee",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 35929,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/native_factory.py",
+      "original_sha256": "e9d472bc73d89908c1b40776de11ece74c7625fe310645752d5def6cbf849852",
+      "path": "source/src/flybrain/paralimbo_upgrade/native_factory.py",
+      "public_sha256": "9da3917f08d35bb32f21e860db574bf38ce7b6b81dec1a67b51a960f8001b1cc",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 15675,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/observation.py",
+      "original_sha256": "00d07ba9e7358ce0cf6bbda84be337572b087c12d6c621672cec9e37097b1cf3",
+      "path": "source/src/flybrain/paralimbo_upgrade/observation.py",
+      "public_sha256": "00d07ba9e7358ce0cf6bbda84be337572b087c12d6c621672cec9e37097b1cf3",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 11604,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/retrospective_scoring.py",
+      "original_sha256": "00f834c372d024a2f5481f6f275d7ed789e7b144734bf33dac64037ebbb429c7",
+      "path": "source/src/flybrain/paralimbo_upgrade/retrospective_scoring.py",
+      "public_sha256": "00f834c372d024a2f5481f6f275d7ed789e7b144734bf33dac64037ebbb429c7",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 33002,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/paralimbo_upgrade/runtime.py",
+      "original_sha256": "5a6845073f6006b8061852d7e39e4f96e1dbb303c2dad9d87b377e006252f2bc",
+      "path": "source/src/flybrain/paralimbo_upgrade/runtime.py",
+      "public_sha256": "5a6845073f6006b8061852d7e39e4f96e1dbb303c2dad9d87b377e006252f2bc",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 212,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/__init__.py",
+      "original_sha256": "793d48d7cca86801285a664c617d5d2a7ceae337debe029f17a6694c055861cf",
+      "path": "source/src/flybrain/transmission_campaign/__init__.py",
+      "public_sha256": "793d48d7cca86801285a664c617d5d2a7ceae337debe029f17a6694c055861cf",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 7496,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/budget.py",
+      "original_sha256": "7a9b8405040841c2e581de02430b88b4832208529b33a0aa12b51d16d25b1347",
+      "path": "source/src/flybrain/transmission_campaign/budget.py",
+      "public_sha256": "7a9b8405040841c2e581de02430b88b4832208529b33a0aa12b51d16d25b1347",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 9463,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/calibration.py",
+      "original_sha256": "972bf1ba5ffe861a4422076d132ad6d1634a88df04c313bf2b09c6bb7bf0fb99",
+      "path": "source/src/flybrain/transmission_campaign/calibration.py",
+      "public_sha256": "972bf1ba5ffe861a4422076d132ad6d1634a88df04c313bf2b09c6bb7bf0fb99",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 37078,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/continuation.py",
+      "original_sha256": "2c4f44970ccc36f43fce8d6c59c86cbc7ef91f27972d3dd45354cfa8b6019121",
+      "path": "source/src/flybrain/transmission_campaign/continuation.py",
+      "public_sha256": "2c4f44970ccc36f43fce8d6c59c86cbc7ef91f27972d3dd45354cfa8b6019121",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 27064,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/controller.py",
+      "original_sha256": "f834f35c09706ed7827ad80d6080b5bfa2a5fc80115af4838e73ac0cb159fbdc",
+      "path": "source/src/flybrain/transmission_campaign/controller.py",
+      "public_sha256": "0101b5225c59827fd714194bb88a8cece033ac80d9323a6ef9c2d35469060788",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 26284,
+      "changed_fields": [
+        "portable default workspace root"
+      ],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/data.py",
+      "original_sha256": "8e22ad59e747c4024521aaa4452256f4d82e030fa6660b8227fa5b6d2de46351",
+      "path": "source/src/flybrain/transmission_campaign/data.py",
+      "public_sha256": "18b1f2f00a9bedd2cc114195a199857120f76577e5db58e2a0fa6011552610bc",
+      "transformation": "portable root substitution; reference source only"
+    },
+    {
+      "bytes": 3105,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/dynamics.py",
+      "original_sha256": "35e106af790be005fe781c1149a142adac3f10d0699ead0894db0120abfcedb1",
+      "path": "source/src/flybrain/transmission_campaign/dynamics.py",
+      "public_sha256": "35e106af790be005fe781c1149a142adac3f10d0699ead0894db0120abfcedb1",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 44627,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/execution.py",
+      "original_sha256": "09ca539370d6c04734027eae58d2bdad0195283ede3d97d9ee27162110168394",
+      "path": "source/src/flybrain/transmission_campaign/execution.py",
+      "public_sha256": "09ca539370d6c04734027eae58d2bdad0195283ede3d97d9ee27162110168394",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 8226,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/freezing.py",
+      "original_sha256": "1e12ae75703776b5bda7e9bd45c964f27fdf945cb80810b126e821f566ef0da7",
+      "path": "source/src/flybrain/transmission_campaign/freezing.py",
+      "public_sha256": "1e12ae75703776b5bda7e9bd45c964f27fdf945cb80810b126e821f566ef0da7",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 10985,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/instrumentation.py",
+      "original_sha256": "d3deaecd1ece28f7bf067efa9e3dbbcbdcf2733725450936e568324c41b59c40",
+      "path": "source/src/flybrain/transmission_campaign/instrumentation.py",
+      "public_sha256": "d3deaecd1ece28f7bf067efa9e3dbbcbdcf2733725450936e568324c41b59c40",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 4130,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/integrity.py",
+      "original_sha256": "697eee7ee0c06deef33f9d7f57c30691210a190921e1181025ff114d70b619b6",
+      "path": "source/src/flybrain/transmission_campaign/integrity.py",
+      "public_sha256": "697eee7ee0c06deef33f9d7f57c30691210a190921e1181025ff114d70b619b6",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 4495,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/inventory.py",
+      "original_sha256": "3bea51c07d5b5c9ca034411b1d5f06372148978073195bc17642eb1ecf0d62d7",
+      "path": "source/src/flybrain/transmission_campaign/inventory.py",
+      "public_sha256": "3bea51c07d5b5c9ca034411b1d5f06372148978073195bc17642eb1ecf0d62d7",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 2530,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/ledger.py",
+      "original_sha256": "f005974db290ec37d9eb493b01dc504c8642dec8ae4628440ce83a1f2b324470",
+      "path": "source/src/flybrain/transmission_campaign/ledger.py",
+      "public_sha256": "f005974db290ec37d9eb493b01dc504c8642dec8ae4628440ce83a1f2b324470",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 41839,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/runtime.py",
+      "original_sha256": "1b6d895f077e01d050b3029b0b98449061737001d8cd741b106b3441cec95d0b",
+      "path": "source/src/flybrain/transmission_campaign/runtime.py",
+      "public_sha256": "1b6d895f077e01d050b3029b0b98449061737001d8cd741b106b3441cec95d0b",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 16251,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/transmission_campaign/scoring.py",
+      "original_sha256": "987d040a1d48ed7fab5c9af8831374bcca3605dae63ef3c281be1b608d3a92cb",
+      "path": "source/src/flybrain/transmission_campaign/scoring.py",
+      "public_sha256": "987d040a1d48ed7fab5c9af8831374bcca3605dae63ef3c281be1b608d3a92cb",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 8908,
+      "changed_fields": [],
+      "original_path": "build/biological-benchmark/paralimbo-transmission-v1/successors/0003/frozen/workspace/src/flybrain/validation_project/common.py",
+      "original_sha256": "18bdeb8012280ce0f8082609a2f8a809c618f1e01e47d22962146fc31596b8c4",
+      "path": "source/src/flybrain/validation_project/common.py",
+      "public_sha256": "18bdeb8012280ce0f8082609a2f8a809c618f1e01e47d22962146fc31596b8c4",
+      "transformation": "byte-identical frozen source"
+    },
+    {
+      "bytes": 152578,
+      "changed_fields": [],
+      "original_path": null,
+      "original_sha256": null,
+      "path": "trace-inventory.json",
+      "public_sha256": "2cc5a837a9c3013b14e5547ad16f761f8f404c312123e15134814385206b32b6",
+      "transformation": "new publication document"
+    }
+  ],
+  "schema": "transmission-public-provenance-v1",
+  "scope": "Explicit publication derivatives; untouched historical evidence remains local. Historical identifiers do not seal changed public projections."
+}
